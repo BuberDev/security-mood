@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://luxaura.care/sitemap.xml",
+    sitemap: "https://securitymood.pl/sitemap.xml",
   };
 }

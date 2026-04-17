@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { articles, products } from "@/lib/site-data";
 
-const SITE_URL = "https://luxaura.care";
+const SITE_URL = "https://securitymood.pl";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [

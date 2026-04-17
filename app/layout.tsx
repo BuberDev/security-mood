@@ -15,7 +15,7 @@ import { siteMeta } from "@/lib/site-data";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://securitymood.com"),
+  metadataBase: new URL("https://securitymood.pl"),
   title: {
     default: "Security Mood | Security Protocols & Preparedness Gear",
     template: "%s | Security Mood",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Security Mood | Security Protocols & Preparedness Gear",
     description: siteMeta.description,
-    url: "https://securitymood.com",
+    url: "https://securitymood.pl",
     siteName: "Security Mood",
     locale: "en_US",
     type: "website",
@@ -59,10 +59,10 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://securitymood.com",
+    canonical: "https://securitymood.pl",
     languages: {
-      "en-US": "https://securitymood.com",
-      "pl-PL": "https://securitymood.com",
+      "en-US": "https://securitymood.pl",
+      "pl-PL": "https://securitymood.pl",
     },
   },
 };
