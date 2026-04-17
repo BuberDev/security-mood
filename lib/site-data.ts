@@ -448,9 +448,9 @@ export const products: Product[] = [
       "A compact, stylish alarm that helps detour potential threats and draw attention in emergency situations.",
     trustSignal: "Popular",
     image:
-      "https://images.unsplash.com/photo-1585145199013-bc593006764a?auto=format&fit=crop&w=900&q=80",
+      "/Birdie–The Original_Personal_Safety_Alarm.png",
     imageAlt: "Personal safety alarm in charcoal grey",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://amzn.to/4dTPuaj",
   },
   {
     id: "hardware-security-key",
@@ -461,9 +461,9 @@ export const products: Product[] = [
       "The gold standard for digital security, providing physical proof of identity for all your sensitive accounts.",
     trustSignal: "Editor favorite",
     image:
-      "https://images.unsplash.com/photo-1633265485768-3069cc8fc581?auto=format&fit=crop&w=900&q=80",
+      "/Yubico-YubiKey_5C_NFC.png",
     imageAlt: "Yubikey hardware security key on a desk",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://amzn.to/4cQxPz9",
   },
   {
     id: "solar-emergency-radio",
@@ -598,9 +598,9 @@ export const products: Product[] = [
     description:
       "A slim, aerospace-grade aluminum wallet that blocks RFID scanners while maintaining a modern aesthetic.",
     trustSignal: "Popular",
-    image: "/ridge_wallet.png",
+    image: "/Ridge_Wallet_for_Men.png",
     imageAlt: "Metal minimalist wallet with cards",
-    amazonUrl: "https://amzn.to/41WZCaT",
+    amazonUrl: "https://amzn.to/41GLeDB",
   },
   {
     id: "privacy-screen",
