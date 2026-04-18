@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "../../public/security_mood_logo.png"
+import Logo from "@/public/security_mood_logo.png"
 import {
   Mail,
   Phone,

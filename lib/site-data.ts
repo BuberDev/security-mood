@@ -405,7 +405,7 @@ export const categories: Category[] = [
     name: "Personal Safety",
     description: "Everyday carry (EDC) essentials and non-lethal defense for total confidence.",
     image:
-      "https://images.unsplash.com/photo-1611210405187-73907c1b5900?auto=format&fit=crop&w=1200&q=80",
+      "https://plus.unsplash.com/premium_photo-1682088920151-b9b2923c03b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     heroLine: "Preparedness you can carry with you.",
   },
   {
@@ -509,10 +509,9 @@ export const products: Product[] = [
     description:
       "Maximum strength protection with a targeted gel formula that stays on target and off bystanders.",
     trustSignal: "Editor favorite",
-    image:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=900&q=80",
+    image: "/pepper_spray.png",
     imageAlt: "Pepper spray container being held",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://www.amazon.com/s?k=SABRE+Red+Pepper+Spray+Gel",
   },
   {
     id: "door-security-bar",
@@ -522,10 +521,9 @@ export const products: Product[] = [
     description:
       "A heavy-duty steel bar that provides physical resistance to swinging and sliding doors.",
     trustSignal: "Popular",
-    image:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Security bar propping a door closed",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://www.amazon.com/s?k=Master+Lock+Door+Security+Bar",
   },
   {
     id: "water-filtration-straw",
@@ -535,10 +533,9 @@ export const products: Product[] = [
     description:
       "Removes 99.9999% of waterborne bacteria and parasites, essential for wilderness and urban survival.",
     trustSignal: "Top rated",
-    image:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80",
+    image: "/water_filter_straw.png",
     imageAlt: "LifeStraw being used in a stream",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://www.amazon.com/s?k=LifeStraw+Personal+Water+Filter",
   },
   {
     id: "faraday-bag",
@@ -548,10 +545,9 @@ export const products: Product[] = [
     description:
       "Blocks all wireless signals (WiFi, Cellular, GPS, RFID) to prevent tracking and remote hacking.",
     trustSignal: "Popular",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Small black faraday bag on a table",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://www.amazon.com/s?k=Mission+Darkness+Faraday+Bag",
   },
   {
     id: "emergency-food-supply",
@@ -573,10 +569,9 @@ export const products: Product[] = [
     description:
       "A lightweight but rugged lockbox that anchors to fixed objects, perfect for travel and dorm rooms.",
     trustSignal: "Top rated",
-    image:
-      "https://images.unsplash.com/photo-1510070112810-d4e9a46d9e91?auto=format&fit=crop&w=900&q=80",
+    image: "https://images.unsplash.com/photo-1584347209146-da42cce486f0?auto=format&fit=crop&w=900&q=80",
     imageAlt: "White portable safe locked to a chair",
-    amazonUrl: "https://www.amazon.com/",
+    amazonUrl: "https://www.amazon.com/s?k=SAFEGO+Portable+Safe",
   },
   {
     id: "webcam-covers",
@@ -586,9 +581,9 @@ export const products: Product[] = [
     description:
       "Ultra-thin covers that slide to block your camera, ensuring your privacy is never compromised.",
     trustSignal: "Top rated",
-    image: "/webcam_cover.png",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Small webcam cover on a laptop",
-    amazonUrl: "https://amzn.to/480WDBY",
+    amazonUrl: "https://www.amazon.com/s?k=CloudValley+Webcam+Cover+Slide",
   },
   {
     id: "rfid-wallet",
@@ -610,7 +605,7 @@ export const products: Product[] = [
     description:
       "Narrows the viewing angle of your laptop screen so only you can see your sensitive information.",
     trustSignal: "Editor favorite",
-    image: "/privacy_screen.png",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Laptop with privacy screen filtered view",
     amazonUrl: "https://amzn.to/4vogHrF",
   },
@@ -622,8 +617,8 @@ export const products: Product[] = [
     description:
       "An organized, waterproof kit with labeled compartments for fast deployment in high-stress moments.",
     trustSignal: "Top rated",
-    image: "/first_aid_kit.png",
-    imageAlt: "Red waterproof first aid kit open",
+    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80",
+    imageAlt: "Tactical gear layout with red elements",
     amazonUrl: "https://amzn.to/4sFqWpd",
   },
   {
@@ -646,7 +641,7 @@ export const products: Product[] = [
     description:
       "A thick ferro rod that throws 5,500°F sparks to ignite tinder instantly, even when wet.",
     trustSignal: "Editor favorite",
-    image: "/ferro_rod.png",
+    image: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Ferro rod creating sparks",
     amazonUrl: "https://amzn.to/4bY0MZC",
   },
@@ -658,7 +653,7 @@ export const products: Product[] = [
     description:
       "Long-range wireless motion sensors that alert you before someone reaches your front door.",
     trustSignal: "Popular",
-    image: "/driveway_alarm.png",
+    image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Motion sensor mounted on a post",
     amazonUrl: "https://amzn.to/4cnPAnV",
   },
@@ -670,7 +665,7 @@ export const products: Product[] = [
     description:
       "Space-age blankets that are compact, waterproof, and windproof—essential for every car and go-bag.",
     trustSignal: "Popular",
-    image: "/emergency_blanket.png",
+    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80",
     imageAlt: "Reflective emergency blanket folded",
     amazonUrl: "https://amzn.to/3ObFRt3",
   },
