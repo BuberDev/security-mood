@@ -531,9 +531,9 @@ export const products: Product[] = [
     description:
       "An organized, waterproof kit with labeled compartments for fast deployment in high-stress moments.",
     trustSignal: "Top rated",
-    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80",
+    image: "/Mini_First_Aid_Kit_150_pcs_Waterproof_Travel_Emergency.png",
     imageAlt: "Tactical gear layout with red elements",
-    amazonUrl: "https://amzn.to/4sFqWpd",
+    amazonUrl: "https://amzn.to/4d9Cj35",
   },
   {
     id: "tactical-flashlight",
@@ -585,16 +585,15 @@ export const products: Product[] = [
   },
   {
     id: "solar-motion-light",
-    name: "Hawkray Solar Motion Sensor Light",
+    name: "Solar Motion Sensor Lights Outdoor",
     categoryId: "home-security",
     benefit: "Bright perimeter lighting that discourages unwanted approach after dark.",
     description:
       "A weather-resistant solar light with motion activation for driveways, fences, and side entrances.",
     trustSignal: "Top rated",
-    image:
-      "https://images.unsplash.com/photo-1512891369909-0f2c5f8f8c8d?auto=format&fit=crop&w=1200&q=80",
+    image: "/Solar_Motion_Sensor_Lights_Outdoor.png",
     imageAlt: "Outdoor wall light illuminating a house exterior at night",
-    amazonUrl: "https://www.amazon.com/s?k=solar+motion+sensor+light",
+    amazonUrl: "https://amzn.to/4ub1Srf",
   },
   {
     id: "window-alarm-kit",
