@@ -10,14 +10,14 @@ import "@fontsource/playfair-display/latin-700.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { generateOrganizationJsonLd, toJsonLd } from "@/lib/seo";
-import { siteMeta } from "@/lib/site-data";
+import { products, siteMeta } from "@/lib/site-data";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://securitymood.pl"),
+  metadataBase: new URL("https://securitymood.com"),
   title: {
-    default: "Security Mood | Security Protocols & Preparedness Gear",
+    default: "Security Mood | Home Security Products & Preparedness Gear",
     template: "%s | Security Mood",
   },
   description: siteMeta.description,
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Security Mood | Security Protocols & Preparedness Gear",
+    title: "Security Mood | Home Security Products & Preparedness Gear",
     description: siteMeta.description,
-    url: "https://securitymood.pl",
+    url: "https://securitymood.com",
     siteName: "Security Mood",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Security Mood | Security Protocols & Preparedness Gear",
+    title: "Security Mood | Home Security Products & Preparedness Gear",
     description: siteMeta.description,
     creator: "@securitymood",
     images: ["/og-image.jpg"],
@@ -59,10 +59,9 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://securitymood.pl",
+    canonical: "https://securitymood.com",
     languages: {
-      "en-US": "https://securitymood.pl",
-      "pl-PL": "https://securitymood.pl",
+      "en-US": "https://securitymood.com",
     },
   },
 };
@@ -83,7 +82,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background-primary text-text-primary antialiased">
-        <SiteHeader />
+        <SiteHeader searchProducts={products} />
         <main className="flex-1">{children}</main>
         <SiteFooter />
       </body>

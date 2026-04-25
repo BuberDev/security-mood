@@ -15,7 +15,7 @@ export default function NotFound() {
             Explore our latest field deployments and operational guides to keep building your defensive perimeter.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <CTAButton href="/blog" label="Operational Protocols" />
+            <CTAButton href="/blog" label="Security Guides" />
             <Link
               href="/favorites"
               className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm uppercase tracking-[0.12em] text-text-secondary transition-colors hover:text-text-primary"

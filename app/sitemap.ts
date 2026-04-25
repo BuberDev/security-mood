@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
 
-import { articles, products } from "@/lib/site-data";
+import { articles, landingPages, products } from "@/lib/site-data";
 
-const SITE_URL = "https://securitymood.pl";
+const SITE_URL = "https://securitymood.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${SITE_URL}/landing`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
   ];
 
   const articleRoutes = articles.map((article) => ({
@@ -40,5 +46,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.72,
   }));
 
-  return [...staticRoutes, ...articleRoutes, ...productRoutes];
+  const landingRoutes = landingPages.map((page) => ({
+    url: `${SITE_URL}/landing/${page.slug}`,
+    lastModified: new Date(page.publishedAt),
+    changeFrequency: "monthly" as const,
+    priority: 0.76,
+  }));
+
+  return [...staticRoutes, ...articleRoutes, ...productRoutes, ...landingRoutes];
 }

@@ -11,10 +11,11 @@ type ProductHeroProps = {
   product: Product;
   proof: ProductProof;
   emotionalHook: string;
+  bestFor: string;
   keyBenefits: string[];
 };
 
-export function ProductHero({ product, proof, emotionalHook, keyBenefits }: ProductHeroProps) {
+export function ProductHero({ product, proof, emotionalHook, bestFor, keyBenefits }: ProductHeroProps) {
   return (
     <section className="border-b border-white/10 pb-14 pt-14 md:pb-20 md:pt-20">
       <Container>
@@ -32,9 +33,12 @@ export function ProductHero({ product, proof, emotionalHook, keyBenefits }: Prod
           </div>
 
           <div className="space-y-6">
-            <Badge>Luxury Affiliate Pick</Badge>
+            <Badge>Security Mood Pick</Badge>
             <h1 className="font-heading text-4xl leading-tight sm:text-5xl md:text-6xl">{product.name}</h1>
             <p className="max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">{emotionalHook}</p>
+            <p className="max-w-2xl rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm leading-relaxed text-white/80 md:text-base">
+              <span className="font-semibold text-white">Best for:</span> {bestFor}
+            </p>
 
             <ul className="space-y-3" aria-label="Key benefits">
               {keyBenefits.map((benefit) => (

@@ -42,12 +42,12 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   }
 
   return {
-    title: `${article.title} | Operational Protocol`,
+    title: `${article.title} | Security Mood Guide`,
     description: article.excerpt,
     alternates: {
       canonical: `/blog/${article.slug}`,
     },
-    keywords: [article.categoryId, "routine guide", "lifestyle reset", ...siteMeta.keywords],
+    keywords: [article.categoryId, "buying guide", "security guide", ...siteMeta.keywords],
     openGraph: {
       title: article.title,
       description: article.excerpt,
@@ -116,6 +116,51 @@ function ArticleProductBlock({ productId }: { productId: string }) {
   );
 }
 
+function getRecommendedLanding(articleSlug: string, categoryId: string) {
+  if (articleSlug === "best-home-security-upgrades-for-renters") {
+    return {
+      href: "/landing/home-security-renters",
+      title: "Turn this guide into a renter-friendly security plan",
+      description:
+        "The renter landing page groups the fastest removable upgrades into a cleaner purchase flow.",
+    };
+  }
+
+  if (articleSlug === "five-minute-home-security-audit" || categoryId === "home-security") {
+    return {
+      href: "/landing/shelter-in-place-kit",
+      title: "Build the matching home lockdown kit",
+      description:
+        "The shelter-in-place page organizes the next home security layers in a more purchase-ready order.",
+    };
+  }
+
+  if (articleSlug === "digital-privacy-cyber-shield-guide" || categoryId === "cyber-shield") {
+    return {
+      href: "/landing/travel-privacy-kit",
+      title: "Put the privacy stack together",
+      description:
+        "The travel privacy page bundles the most useful privacy and anti-skim essentials in one place.",
+    };
+  }
+
+  if (articleSlug === "edc-essentials-solo-travelers" || categoryId === "personal-safety") {
+    return {
+      href: "/landing/solo-travel-edc-safety",
+      title: "See the matching solo travel safety kit",
+      description:
+        "The EDC landing page shows the fastest path from inspiration to a practical travel-ready setup.",
+    };
+  }
+
+  return {
+    href: "/landing/crisis-readiness-kit",
+    title: "See the full crisis readiness kit",
+    description:
+      "If this guide pushed you toward broader preparedness, the crisis kit page turns it into a clear shopping sequence.",
+  };
+}
+
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
@@ -132,6 +177,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     "body-oil",
     "bath-salts",
   ]);
+  const recommendedLanding = getRecommendedLanding(article.slug, article.categoryId);
 
   const breadcrumbsJsonLd = generateBreadcrumbsJsonLd([
     { name: "Home", item: "/" },
@@ -185,7 +231,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           name: "Security Mood",
           logo: {
             "@type": "ImageObject",
-            url: toAbsoluteUrl("/lux_aura_care_logo.png"),
+            url: toAbsoluteUrl("/security_mood_logo.png"),
           },
         },
         isPartOf: {
@@ -257,6 +303,20 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           </div>
         </Container>
       </section>
+
+      <Section className="border-b border-white/10 py-10 md:py-12">
+        <Container>
+          <InlineCtaPanel
+            eyebrow="Fastest next step"
+            title={recommendedLanding.title}
+            description={recommendedLanding.description}
+            primaryHref={recommendedLanding.href}
+            primaryLabel="Open the matching kit"
+            secondaryHref="/favorites"
+            secondaryLabel="Browse all favorites"
+          />
+        </Container>
+      </Section>
 
       <Section>
         <Container>

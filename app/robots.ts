@@ -12,6 +12,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://securitymood.pl/sitemap.xml",
+    sitemap: "https://securitymood.com/sitemap.xml",
   };
 }

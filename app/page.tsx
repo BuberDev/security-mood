@@ -6,8 +6,10 @@ import { ArticleCard } from "@/components/article-card";
 import { CategoryCard } from "@/components/category-card";
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
+import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/heading";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
+import { LandingPageCard } from "@/components/landing-page-card";
 import { FadeIn } from "@/components/motion/fade-in";
 import { NewsletterBlock } from "@/components/newsletter-block";
 import { ProductCard } from "@/components/product-card";
@@ -16,12 +18,12 @@ import { TopPicksSection } from "@/components/sections/top-picks-section";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
-import { categories, getAmazonFavorites, getFeaturedArticles, siteMeta } from "@/lib/site-data";
+import { categories, getAmazonFavorites, getFeaturedArticles, getLandingPages, siteMeta } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Security Protocols & Preparedness Gear | Security Mood",
+  title: "Home Security & Crisis Preparedness Products | Security Mood",
   description:
-    "Master your home and personal security with curated protocols, battle-tested gear guides, and high-conversion survival essentials. Your trusted guide to safety.",
+    "Discover home security products, crisis preparedness gear, blackout essentials, personal safety tools, cyber privacy equipment, and emergency readiness favorites.",
   keywords: [...siteMeta.keywords, ...siteMeta.plKeywords],
   alternates: {
     canonical: "/",
@@ -30,18 +32,18 @@ export const metadata: Metadata = {
 
 const trustSignals = [
   {
-    label: "Monthly Strategists",
-    value: "50K+",
+    label: "Preparedness Kits",
+    value: "72-Hour",
     icon: Sparkles,
   },
   {
-    label: "Equipment Reliability",
+    label: "Gear Confidence",
     value: "4.9/5",
     icon: ShieldCheck,
   },
   {
-    label: "Secure Deployments",
-    value: "15K+",
+    label: "Actionable Layers",
+    value: "3 Steps",
     icon: TrendingUp,
   },
 ];
@@ -49,6 +51,31 @@ const trustSignals = [
 export default function HomePage() {
   const featuredArticles = getFeaturedArticles();
   const favorites = getAmazonFavorites();
+  const landingPages = getLandingPages();
+  const quickStartRoutes = [
+    {
+      label: "Renters",
+      title: "Apartment-friendly home security",
+      description: "Start with renter-safe upgrades, window protection, and low-friction security layers.",
+      href: "/landing/home-security-renters",
+    },
+    {
+      label: "Homeowners",
+      title: "Full crisis readiness kit",
+      description: "Build a stronger baseline with blackout prep, water, power, and home defense layers.",
+      href: "/landing/crisis-readiness-kit",
+    },
+    {
+      label: "Families",
+      title: "Shelter-in-place plan",
+      description: "Get the essentials for long-duration readiness, evacuation, and household coordination.",
+      href: "/landing/shelter-in-place-kit",
+    },
+  ];
+  const crisisPages = landingPages.filter((page) =>
+    ["crisis-readiness-kit", "bug-out-bag-essentials", "shelter-in-place-kit"].includes(page.slug)
+  );
+  const otherPages = landingPages.filter((page) => !crisisPages.some((crisisPage) => crisisPage.slug === page.slug));
 
   const breadcrumbsJsonLd = generateBreadcrumbsJsonLd([
     { name: "Home", item: "/" },
@@ -84,13 +111,24 @@ export default function HomePage() {
       },
       {
         "@type": "ItemList",
-        name: "Featured Security Protocols",
-        description: "Latest operational guides for home and personal safety.",
+        name: "Featured Security Guides",
+        description: "Latest guides for home security, privacy, and emergency readiness.",
         itemListElement: featuredArticles.map((article, index) => ({
           "@type": "ListItem",
           position: index + 1,
           url: toAbsoluteUrl(`/blog/${article.slug}`),
           name: article.title,
+        })),
+      },
+      {
+        "@type": "ItemList",
+        name: "Quick Start Paths",
+        description: "Fast routes to the most relevant preparedness landing pages.",
+        itemListElement: quickStartRoutes.map((route, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: toAbsoluteUrl(route.href),
+          name: route.title,
         })),
       },
     ],
@@ -119,14 +157,17 @@ export default function HomePage() {
 
         <Container className="relative flex min-h-[85vh] items-end pb-20 pt-28 md:pb-24">
           <FadeIn className="max-w-3xl space-y-8">
-            <Badge>Designed for High-Intent Preparedness</Badge>
+            <Badge>Crisis-Ready Affiliate Guides</Badge>
             <h1 className="font-heading text-5xl leading-[1.05] text-text-primary sm:text-6xl md:text-7xl">
-              Hardened security protocols that turn vulnerability into total peace of mind.
+              Build a safer home, a stronger kit, and a faster exit plan before the next crisis.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">{siteMeta.tagline}</p>
+            <p className="max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
+              Security Mood helps readers buy the right products for home security, blackout readiness, evacuation,
+              and emergency preparedness without the noise.
+            </p>
             <div className="flex flex-wrap gap-4">
-              <CTAButton href="/blog" label="Explore Security Protocols" />
-              <CTAButton href="/favorites" label="Shop Deployment Gear" variant="secondary" />
+              <CTAButton href="/landing/crisis-readiness-kit" label="Start Crisis Prep" />
+              <CTAButton href="/landing" label="View Prep Kits" variant="secondary" />
             </div>
           </FadeIn>
         </Container>
@@ -148,15 +189,65 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      <Section className="border-b border-white/10 py-10 md:py-12">
+        <Container>
+          <Heading
+            eyebrow="Choose Your Starting Point"
+            title="Pick the path that matches your household"
+            description="These quick routes reduce choice overload and send readers straight to the kit that fits their situation best."
+          />
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {quickStartRoutes.map((route) => (
+              <Card key={route.label} className="border-white/12 bg-white/[0.02] p-6">
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">{route.label}</p>
+                <h3 className="mt-3 font-heading text-2xl text-text-primary">{route.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{route.description}</p>
+                <div className="mt-5">
+                  <CTAButton href={route.href} label="Open this path" />
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="[content-visibility:auto] [contain-intrinsic-size:1px_1000px]">
+        <Container>
+          <Heading
+            eyebrow="Crisis Preparedness"
+            title="Start with the 72-hour kit, then layer your home and vehicle readiness"
+            description="These pages are the fastest path to practical preparedness: one page for the kit, one for the house, one for evacuation."
+          />
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {crisisPages.map((page) => (
+              <LandingPageCard key={page.slug} page={page} />
+            ))}
+          </div>
+
+          <InlineCtaPanel
+            className="mt-12"
+            eyebrow="Most Important First"
+            title="If you only build one thing this week, build the crisis kit first"
+            description="A clear 72-hour plan, a home lockdown layer, and an evacuation bag are easier to buy when they are presented as a sequence."
+            primaryHref="/landing/crisis-readiness-kit"
+            primaryLabel="Open Crisis Kit"
+            secondaryHref="/landing/bug-out-bag-essentials"
+            secondaryLabel="Open Evacuation Kit"
+          />
+        </Container>
+      </Section>
+
       <TopPicksSection />
 
       <Section id="categories" className="[content-visibility:auto] [contain-intrinsic-size:1px_900px]">
         <Container>
-          <Heading
-            eyebrow="Operational Categories"
-            title="Layer your defense with specialized gear and protocols"
-            description="From perimeter hardening to digital shielding, our categories are structured for rapid response and tactical clarity."
-          />
+            <Heading
+              eyebrow="Operational Categories"
+              title="Layer your defense with specialized gear and crisis-prep protocols"
+              description="From perimeter hardening to blackout readiness and evacuation prep, our categories are structured for rapid response and practical clarity."
+            />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
@@ -167,8 +258,8 @@ export default function HomePage() {
           <InlineCtaPanel
             className="mt-12"
             eyebrow="Initial Deployment?"
-            title="Start with one protocol, then scale your gear as your profile grows"
-            description="Strategic preparedness begins with a single layer. Benchmark your home with our audit guides and deploy gear only where gaps exist."
+            title="Start with one protocol, then scale your gear as your needs grow"
+            description="Strategic preparedness begins with a single layer. Benchmark your home with our audit guides and deploy gear only where gaps exist, especially before outages or disruptive events."
             primaryHref="/blog"
             primaryLabel="See Deployment Guides"
             secondaryHref="/favorites"
@@ -181,13 +272,29 @@ export default function HomePage() {
         <Container>
           <Heading
             eyebrow="Operational Guides"
-            title="Battle-tested security routines for home and personal safety"
-            description="Exhaustive, high-performing protocols structured for those who prioritize readiness."
+            title="Battle-tested guides for home security and crisis readiness"
+            description="Exhaustive, high-performing protocols structured for blackouts, unrest, and everyday preparedness."
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
             {featuredArticles.map((article) => (
               <ArticleCard key={article.slug} article={article} />
+            ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section id="landing-pages" className="[content-visibility:auto] [contain-intrinsic-size:1px_900px]">
+        <Container>
+          <Heading
+            eyebrow="Additional Prep Kits"
+            title="Focused pages built to convert a specific preparedness need"
+            description="These are the supporting pages to send search and Pinterest traffic to when you want a cleaner match between emergency intent, content, and purchase intent."
+          />
+
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {otherPages.map((page) => (
+              <LandingPageCard key={page.slug} page={page} />
             ))}
           </div>
         </Container>
@@ -199,8 +306,8 @@ export default function HomePage() {
         <Container>
           <Heading
             eyebrow="Deployment-Ready Gear"
-            title="Curated field essentials with proven field reliability"
-            description="Professional-grade upgrades chosen for durability, effectiveness, and rapid deployment."
+            title="Curated field essentials with proven readiness value"
+            description="Professional-grade upgrades chosen for durability, effectiveness, and the fastest path to a more prepared home."
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
@@ -222,7 +329,7 @@ export default function HomePage() {
             primaryHref="/favorites"
             primaryLabel="Browse Gear Collections"
             secondaryHref="/blog"
-            secondaryLabel="Review All Protocols"
+            secondaryLabel="Review All Guides"
           />
         </Container>
       </Section>

@@ -18,8 +18,8 @@ export function TopPicksSection({ className }: TopPicksSectionProps) {
       <Container>
         <Heading
           eyebrow="Top Picks"
-          title="Most-clicked products this week"
-          description="A focused shortlist for Pinterest readers: high-trust favorites with strong ratings, social proof, and clear routine benefits."
+          title="Most-clicked preparedness products this week"
+          description="A focused shortlist for readers who want practical, high-trust essentials for home security and emergency readiness."
         />
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">

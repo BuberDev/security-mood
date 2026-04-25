@@ -10,7 +10,6 @@ import {
   Pin,
   Play,
   Sparkles,
-  ShieldCheck,
 } from "lucide-react";
 
 import { FooterBackgroundGradient, TextHoverEffect } from "@/components/ui/hover-footer";
