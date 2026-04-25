@@ -317,6 +317,7 @@ export default function HomePage() {
                 product={product}
                 compact
                 urgencyOverride={index < 2 ? "High-demand essential" : undefined}
+                detailsHref={`/favorites/${product.id}`}
               />
             ))}
           </div>

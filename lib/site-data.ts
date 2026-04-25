@@ -429,15 +429,15 @@ export const products: Product[] = [
   },
   {
     id: "door-security-bar",
-    name: "Master Lock Door Security Bar",
+    name: "Door Security Bar for Home & Apartment | Adjustable Door Jammer ",
     categoryId: "home-security",
     benefit: "Mechanical reinforcement against forced entry.",
     description:
       "A heavy-duty steel bar that provides physical resistance to swinging and sliding doors.",
     trustSignal: "Popular",
-    image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=1200&q=80",
+    image: "/AceMining_Upgraded_Door_Security.png",
     imageAlt: "Security bar propping a door closed",
-    amazonUrl: "https://www.amazon.com/s?k=Master+Lock+Door+Security+Bar",
+    amazonUrl: "https://amzn.to/4cMJspO",
   },
   {
     id: "water-filtration-straw",

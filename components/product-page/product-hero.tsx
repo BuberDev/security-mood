@@ -27,7 +27,7 @@ export function ProductHero({ product, proof, emotionalHook, bestFor, keyBenefit
               fill
               priority
               sizes="(max-width: 1024px) 100vw, 52vw"
-              className="object-cover"
+              className="object-top object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
           </div>
