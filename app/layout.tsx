@@ -43,7 +43,6 @@ export const metadata: Metadata = {
     title: "Security Mood | Home Security Products & Preparedness Gear",
     description: siteMeta.description,
     creator: "@securitymood",
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,

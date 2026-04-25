@@ -34,7 +34,7 @@ export function RoutineSection() {
                       alt={step.product.imageAlt}
                       fill
                       sizes="(max-width: 768px) 100vw, 120px"
-                      className="object-cover"
+                      className="object-top object-cover"
                     />
                   </div>
 

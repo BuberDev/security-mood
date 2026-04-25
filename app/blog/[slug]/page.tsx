@@ -84,7 +84,7 @@ function ArticleProductBlock({ productId }: { productId: string }) {
             alt={product.imageAlt}
             fill
             sizes="(max-width: 768px) 100vw, 220px"
-            className="object-cover"
+            className="object-top object-cover"
           />
         </div>
 

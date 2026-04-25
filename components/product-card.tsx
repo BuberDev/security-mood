@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getProductProof, type Product, type TopPickBadge } from "@/lib/site-data";
+import { cn } from "@/lib/utils";
 
 type ProductCardProps = {
   product: Product;
@@ -32,7 +33,12 @@ export function ProductCard({
   const detailsAriaLabel = detailsLabel ?? "View details";
 
   return (
-    <Card className="overflow-hidden border-white/12 bg-white/[0.02] transition-colors hover:border-accent-gold/45">
+    <Card
+      className={cn(
+        "overflow-hidden border-white/12 bg-white/[0.02] transition-all duration-300",
+        detailsHref ? "hover:-translate-y-1 hover:border-accent-gold/45" : "transition-colors"
+      )}
+    >
       <div className={compact ? "grid gap-4 p-4" : "grid gap-5 p-5 md:p-6"}>
         {detailsHref ? (
           <Link
@@ -47,7 +53,7 @@ export function ProductCard({
                   alt={product.imageAlt}
                   fill
                   sizes={compact ? "(max-width: 768px) 100vw, 33vw" : "(max-width: 768px) 100vw, 25vw"}
-                  className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  className="object-top object-cover transition-transform duration-300 group-hover:scale-[1.03]"
                 />
               </div>
 
@@ -95,7 +101,7 @@ export function ProductCard({
                 alt={product.imageAlt}
                 fill
                 sizes={compact ? "(max-width: 768px) 100vw, 33vw" : "(max-width: 768px) 100vw, 25vw"}
-                className="object-cover"
+                className="object-top object-cover"
               />
             </div>
 

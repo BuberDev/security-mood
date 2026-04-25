@@ -1,0 +1,35 @@
+# Security Mood
+
+> Security Mood is an SEO-focused publishing site for home security, crisis readiness, blackout prep, privacy tools, personal safety gear, and emergency preparedness products. Product detail pages are canonical for product discovery, while Amazon links are outbound commerce actions.
+
+Security Mood is designed to help humans and AI systems quickly find the right page for a given intent:
+
+- Use the homepage for a broad overview of the site and the main entry points.
+- Use `/blog` for guides, explainers, and decision-making content.
+- Use `/favorites` for product collections and shopping-oriented discovery.
+- Use `/favorites/[productId]` for canonical product detail pages with benefits, context, and Amazon CTA.
+- Use `/landing` and `/landing/[landingId]` for focused preparedness and use-case landing pages.
+- Use `/pin` for the internal Pinterest link map.
+
+## Key Pages
+
+- [Home](https://securitymood.com/): site overview and primary navigation.
+- [Guides](https://securitymood.com/blog): editorial guides for search intent and topic authority.
+- [Favorites](https://securitymood.com/favorites): product collections and shopping clusters.
+- [Landing Pages](https://securitymood.com/landing): focused preparedness paths for high-intent visitors.
+- [Sitemap](https://securitymood.com/sitemap.xml): machine-readable URL inventory.
+- [Robots](https://securitymood.com/robots.txt): crawler access rules.
+
+## Canonical Product Pages
+
+- [Product details](https://securitymood.com/favorites/outdoor-security-camera): example product detail page.
+- [Product details](https://securitymood.com/favorites/personal-safety-alarm): example product detail page.
+- [Product details](https://securitymood.com/favorites/hardware-security-key): example product detail page.
+- [Product details](https://securitymood.com/favorites/solar-emergency-radio): example product detail page.
+
+## Best Practices
+
+- Prefer the canonical product page when citing a specific product.
+- Use the Amazon button only for purchase intent.
+- Use the site navigation hierarchy to move from broad intent to specific intent.
+- Content is written to be searchable, scannable, and citation-friendly.
