@@ -447,9 +447,9 @@ export const products: Product[] = [
     description:
       "Removes 99.9999% of waterborne bacteria and parasites, essential for wilderness and urban survival.",
     trustSignal: "Top rated",
-    image: "/water_filter_straw.png",
+    image: "/LifeStraw_Personal_Water_Filter.png",
     imageAlt: "LifeStraw being used in a stream",
-    amazonUrl: "https://www.amazon.com/s?k=LifeStraw+Personal+Water+Filter",
+    amazonUrl: "https://amzn.to/4cLMGcX",
   },
   {
     id: "faraday-bag",
@@ -623,29 +623,29 @@ export const products: Product[] = [
   },
   {
     id: "hidden-camera-detector",
-    name: "SABRE Hidden Camera Detector",
+    name: "AI Hidden Camera Detector, Anti-Spy Camera Finder RF Signal",
     categoryId: "cyber-shield",
     benefit: "Quick visual privacy checks for rentals, changing rooms, and travel stays.",
     description:
       "A portable detector that helps reveal suspicious lenses so you can stay confident in unfamiliar spaces.",
     trustSignal: "Top rated",
     image:
-      "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80",
+      "/Hidden_Camera_Detector.png",
     imageAlt: "Dark room with a small LED device used for privacy scanning",
-    amazonUrl: "https://www.amazon.com/s?k=hidden+camera+detector",
+    amazonUrl: "https://amzn.to/48k1QoA",
   },
   {
     id: "rfid-passport-wallet",
-    name: "Travelambo RFID Passport Wallet",
+    name: "RFID Passport Holder Travel Wallet – Secure Organizer for Cards, Cash & Documents^",
     categoryId: "cyber-shield",
     benefit: "Protects passports, cards, and travel documents in one slim organizer.",
     description:
       "A slim RFID-blocking wallet built for airports, hotels, and everyday carry when you want secure, organized travel.",
     trustSignal: "Popular",
     image:
-      "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&w=1200&q=80",
+      "/RFID_Passport_Holder_Travel_Wallet.png",
     imageAlt: "Travel wallet beside a passport and boarding pass",
-    amazonUrl: "https://www.amazon.com/s?k=RFID+passport+wallet",
+    amazonUrl: "https://amzn.to/4cMNPkp",
   },
   {
     id: "portable-power-station",
@@ -669,9 +669,9 @@ export const products: Product[] = [
       "A compact car kit designed for winter commutes, road trips, and everyday confidence behind the wheel.",
     trustSignal: "Popular",
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+      "/Everlit_Survival_Car_Emergency_Kit.png",
     imageAlt: "Car emergency supplies laid out on a trunk mat",
-    amazonUrl: "https://www.amazon.com/s?k=emergency+car+kit",
+    amazonUrl: "https://amzn.to/4cIzoPT",
   },
 ];
 
