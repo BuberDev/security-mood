@@ -10,12 +10,13 @@ import "@fontsource/playfair-display/latin-700.css";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { generateOrganizationJsonLd, toJsonLd } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site";
 import { products, siteMeta } from "@/lib/site-data";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://securitymood.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Security Mood | Home Security Products & Preparedness Gear",
     template: "%s | Security Mood",
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Security Mood | Home Security Products & Preparedness Gear",
     description: siteMeta.description,
-    url: "https://securitymood.com",
+    url: SITE_URL,
     siteName: "Security Mood",
     locale: "en_US",
     type: "website",
@@ -58,10 +59,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://securitymood.com",
-    languages: {
-      "en-US": "https://securitymood.com",
-    },
+    canonical: "/",
   },
 };
 

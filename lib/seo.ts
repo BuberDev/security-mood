@@ -1,8 +1,7 @@
-const SITE_URL = "https://securitymood.com";
+import { SITE_URL, absoluteUrl } from "./site";
 
 export function toAbsoluteUrl(path: string) {
-  if (path.startsWith("http")) return path;
-  return new URL(path, SITE_URL).toString();
+  return absoluteUrl(path);
 }
 
 export function toJsonLd(data: unknown) {

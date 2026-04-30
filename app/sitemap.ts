@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { articles, landingPages, products } from "@/lib/site-data";
-
-const SITE_URL = "https://securitymood.com";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
