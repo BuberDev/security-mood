@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ShieldCheck, Sparkles, TrendingUp } from "lucide-react";
 
 import { ArticleCard } from "@/components/article-card";
@@ -17,6 +16,11 @@ import { RoutineSection } from "@/components/sections/routine-section";
 import { TopPicksSection } from "@/components/sections/top-picks-section";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
+import { Radar, IconContainer } from "@/components/ui/radar-effect";
+import { HiShieldCheck, HiLockClosed } from "react-icons/hi";
+import { AiFillSafetyCertificate } from "react-icons/ai";
+import { BsShieldLockFill, BsFingerprint } from "react-icons/bs";
+import { RiServerFill, RiKey2Fill } from "react-icons/ri";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { categories, getAmazonFavorites, getFeaturedArticles, getLandingPages, siteMeta } from "@/lib/site-data";
 
@@ -144,24 +148,52 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: toJsonLd(homeJsonLd) }}
       />
-      <section className="relative isolate min-h-[85vh] overflow-hidden border-b border-white/10">
-        <Image
-          src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2200&q=80"
-          alt="Modern secure home exterior with smart lighting and surveillance"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-black/60" />
+      <section className="relative isolate min-h-[85vh] overflow-hidden border-b border-white/10 bg-[#000000]">
+        {/* Background Radar Effect */}
+        <div className="absolute inset-0 z-0 pointer-events-none flex flex-col items-center justify-center opacity-60">
+          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
+            
+            {/* Absolute positioning for floating security icons in the background */}
+            <div className="absolute top-[15%] left-[10%] md:left-[15%]">
+              <IconContainer text="Threat Detection" delay={0.2} icon={<HiShieldCheck className="h-8 w-8 text-slate-600" />} />
+            </div>
+            
+            <div className="absolute top-[20%] right-[10%] md:right-[20%]">
+              <IconContainer delay={0.4} text="Access Control" icon={<BsFingerprint className="h-8 w-8 text-slate-600" />} />
+            </div>
 
-        <Container className="relative flex min-h-[85vh] items-end pb-20 pt-28 md:pb-24">
-          <FadeIn className="max-w-3xl space-y-8">
+            <div className="absolute top-[45%] right-[5%] md:right-[12%]">
+              <IconContainer text="Data Encryption" delay={0.3} icon={<BsShieldLockFill className="h-8 w-8 text-slate-600" />} />
+            </div>
+
+            <div className="absolute bottom-[30%] right-[25%] md:right-[30%]">
+              <IconContainer text="Server Hardening" delay={0.5} icon={<RiServerFill className="h-8 w-8 text-slate-600" />} />
+            </div>
+
+            <div className="absolute bottom-[40%] left-[5%] md:left-[15%]">
+              <IconContainer text="Vulnerability Scans" delay={0.8} icon={<AiFillSafetyCertificate className="h-8 w-8 text-slate-600" />} />
+            </div>
+
+            <div className="absolute top-[55%] left-[25%] hidden md:block">
+              <IconContainer delay={0.6} text="Zero Trust" icon={<HiLockClosed className="h-8 w-8 text-slate-600" />} />
+            </div>
+
+            <div className="absolute top-[30%] left-[45%] hidden md:block">
+              <IconContainer delay={0.7} text="Key Management" icon={<RiKey2Fill className="h-8 w-8 text-slate-600" />} />
+            </div>
+
+            <Radar className="absolute -bottom-24 md:-bottom-32 scale-150" />
+          </div>
+          <div className="absolute bottom-0 z-[41] h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+        </div>
+
+        <Container className="relative z-10 flex min-h-[85vh] items-end pb-20 pt-28 md:pb-24 pointer-events-none">
+          <FadeIn className="max-w-3xl space-y-8 pointer-events-auto">
             <Badge>Crisis-Ready Affiliate Guides</Badge>
-            <h1 className="font-heading text-5xl leading-[1.05] text-text-primary sm:text-6xl md:text-7xl">
+            <h1 className="font-heading text-5xl leading-[1.05] text-text-primary sm:text-6xl md:text-7xl drop-shadow-md">
               Build a safer home, a stronger kit, and a faster exit plan before the next crisis.
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl">
+            <p className="max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl drop-shadow-md">
               Security Mood helps readers buy the right products for home security, blackout readiness, evacuation,
               and emergency preparedness without the noise.
             </p>

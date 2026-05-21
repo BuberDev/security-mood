@@ -545,7 +545,7 @@ export const products: Product[] = [
     trustSignal: "Popular",
     image: "/OLIGHT_2_Pack_IMINI2EDC.png",
     imageAlt: "Two mini Olight flashlights on a keychain",
-    amazonUrl: "https://amzn.to/4c0ZSdu",
+    amazonUrl: "https://amzn.to/3Ru5s1r",
   },
   {
     id: "fire-starter-set",
@@ -2544,3 +2544,48 @@ export function getTopPicksByCategory(categoryId: CategoryId, limit = 4) {
       };
     });
 }
+
+export type ProductBundle = {
+  id: string;
+  title: string;
+  tagline: string;
+  description: string;
+  productIds: string[];
+  discount?: {
+    label: string;
+    savings: string;
+  };
+};
+
+export const productBundles: ProductBundle[] = [
+  {
+    id: "home-fortress-starter",
+    title: "Home Fortress Kit",
+    tagline: "The essential routine for a secure perimeter",
+    description: "Everything you need to secure your home—from smart locks to motion sensors.",
+    productIds: [
+      "outdoor-security-camera",
+      "smart-door-lock",
+      "door-security-bar",
+    ],
+    discount: {
+      label: "Save 15% when bought together",
+      savings: "$20-35",
+    },
+  },
+];
+
+export function getBundleById(id: string) {
+  return productBundles.find((bundle) => bundle.id === id);
+}
+
+export function getBundleProducts(bundleId: string) {
+  const bundle = getBundleById(bundleId);
+  if (!bundle) return [];
+  return getProductsByIds(bundle.productIds);
+}
+
+export function getFeaturedBundles(limit = 4) {
+  return productBundles.slice(0, limit);
+}
+

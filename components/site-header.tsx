@@ -23,6 +23,7 @@ type SiteHeaderProps = {
 const nav = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Guides" },
+  { href: "/shop", label: "Shop" },
   { href: "/landing", label: "Prep Kits" },
   { href: "/favorites", label: "Deployments" },
 ];
