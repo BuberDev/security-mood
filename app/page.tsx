@@ -148,56 +148,52 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: toJsonLd(homeJsonLd) }}
       />
-      <section className="relative isolate min-h-[85vh] overflow-hidden border-b border-white/10 bg-[#000000]">
-        {/* Background Radar Effect */}
-        <div className="absolute inset-0 z-0 pointer-events-none flex flex-col items-center justify-center opacity-60">
-          <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
-            
-            {/* Absolute positioning for floating security icons in the background */}
-            <div className="absolute top-[15%] left-[10%] md:left-[15%]">
-              <IconContainer text="Threat Detection" delay={0.2} icon={<HiShieldCheck className="h-8 w-8 text-slate-600" />} />
-            </div>
-            
-            <div className="absolute top-[20%] right-[10%] md:right-[20%]">
-              <IconContainer delay={0.4} text="Access Control" icon={<BsFingerprint className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <div className="absolute top-[45%] right-[5%] md:right-[12%]">
-              <IconContainer text="Data Encryption" delay={0.3} icon={<BsShieldLockFill className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <div className="absolute bottom-[30%] right-[25%] md:right-[30%]">
-              <IconContainer text="Server Hardening" delay={0.5} icon={<RiServerFill className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <div className="absolute bottom-[40%] left-[5%] md:left-[15%]">
-              <IconContainer text="Vulnerability Scans" delay={0.8} icon={<AiFillSafetyCertificate className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <div className="absolute top-[55%] left-[25%] hidden md:block">
-              <IconContainer delay={0.6} text="Zero Trust" icon={<HiLockClosed className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <div className="absolute top-[30%] left-[45%] hidden md:block">
-              <IconContainer delay={0.7} text="Key Management" icon={<RiKey2Fill className="h-8 w-8 text-slate-600" />} />
-            </div>
-
-            <Radar className="absolute -bottom-24 md:-bottom-32 scale-150" />
+      {/* -mt pulls the hero behind the header, pt compensates to keep text centered */}
+      <section className="relative isolate min-h-[100vh] -mt-[4.5rem] md:-mt-[6rem] pt-[4.5rem] md:pt-[6rem] overflow-hidden border-b border-white/10 bg-[#000000]">
+        
+        {/* Full-width Ambient Radar Background */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-60 pointer-events-none overflow-hidden">
+          {/* Radar scaled massively to serve as a grid/texture across the whole screen */}
+          <Radar className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[2.5] md:scale-[3.5]" />
+          
+          {/* Orbiting Icons - Positioned far from the center text */}
+          <div className="absolute top-[15%] left-[10%] md:left-[20%]">
+            <IconContainer text="Threat Detection" delay={0.2} icon={<HiShieldCheck className="h-8 w-8 text-amber-500" />} />
           </div>
-          <div className="absolute bottom-0 z-[41] h-px w-full bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
+          <div className="absolute top-[20%] right-[10%] md:right-[20%]">
+            <IconContainer delay={0.4} text="Access Control" icon={<BsFingerprint className="h-8 w-8 text-amber-500" />} />
+          </div>
+          <div className="absolute bottom-[20%] left-[15%] md:left-[25%]">
+            <IconContainer text="Data Encryption" delay={0.3} icon={<BsShieldLockFill className="h-8 w-8 text-amber-500" />} />
+          </div>
+          <div className="absolute bottom-[25%] right-[15%] md:right-[25%]">
+            <IconContainer text="Server Hardening" delay={0.5} icon={<RiServerFill className="h-8 w-8 text-amber-500" />} />
+          </div>
+          <div className="absolute top-[50%] left-[5%] hidden md:block">
+            <IconContainer text="Zero Trust" delay={0.6} icon={<HiLockClosed className="h-8 w-8 text-amber-500" />} />
+          </div>
+          <div className="absolute top-[60%] right-[5%] hidden md:block">
+            <IconContainer text="Vulnerability Scans" delay={0.8} icon={<AiFillSafetyCertificate className="h-8 w-8 text-amber-500" />} />
+          </div>
         </div>
 
-        <Container className="relative z-10 flex min-h-[85vh] items-end pb-20 pt-28 md:pb-24 pointer-events-none">
-          <FadeIn className="max-w-3xl space-y-8 pointer-events-auto">
-            <Badge>Crisis-Ready Affiliate Guides</Badge>
-            <h1 className="font-heading text-5xl leading-[1.05] text-text-primary sm:text-6xl md:text-7xl drop-shadow-md">
-              Build a safer home, a stronger kit, and a faster exit plan before the next crisis.
+        {/* Foreground Content - Centered and Optimized */}
+        <Container className="relative z-10 flex min-h-[90vh] flex-col items-center justify-center py-20 text-center pointer-events-none">
+          <FadeIn className="max-w-4xl flex flex-col items-center space-y-8 pointer-events-auto rounded-[3rem] bg-white/[0.04] p-8 sm:p-14 backdrop-blur-3xl border border-white/10 shadow-2xl relative">
+            <Badge className="relative z-10 bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs">
+              Crisis-Ready Affiliate Guides
+            </Badge>
+            
+            <h1 className="relative z-10 font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] font-medium mix-blend-plus-lighter">
+              Professional Grade <br className="hidden sm:block" />
+              <span className="text-slate-300">Crisis Readiness.</span>
             </h1>
-            <p className="max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl drop-shadow-md">
-              Security Mood helps readers buy the right products for home security, blackout readiness, evacuation,
-              and emergency preparedness without the noise.
+            
+            <p className="relative z-10 max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed drop-shadow-md">
+              Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials.
             </p>
-            <div className="flex flex-wrap gap-4">
+            
+            <div className="relative z-10 flex flex-wrap items-center justify-center gap-4 pt-4">
               <CTAButton href="/landing/crisis-readiness-kit" label="Start Crisis Prep" />
               <CTAButton href="/landing" label="View Prep Kits" variant="secondary" />
             </div>

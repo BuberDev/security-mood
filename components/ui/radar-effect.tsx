@@ -36,13 +36,15 @@ export const Radar = ({ className }: { className?: string }) => {
           animation: radar-spin 10s linear infinite;
         }
       `}</style>
-      {/* Rotating sweep line */}
+      {/* Realistic Rotating Radar Sweep with Trail */}
       <div
-        style={{ transformOrigin: "right center" }}
-        className="animate-radar-spin absolute right-1/2 top-1/2 z-40 flex h-[5px] w-[400px] items-end justify-center overflow-hidden bg-transparent"
-      >
-        <div className="relative z-40 h-[1px] w-full bg-gradient-to-r from-transparent via-sky-600 to-transparent" />
-      </div>
+        className="absolute z-40 animate-radar-spin rounded-full pointer-events-none"
+        style={{
+          width: "40rem",
+          height: "40rem",
+          background: "conic-gradient(from 0deg at 50% 50%, transparent 0deg, transparent 270deg, rgba(245, 158, 11, 0.05) 320deg, rgba(245, 158, 11, 0.4) 359deg, rgba(245, 158, 11, 0.8) 360deg)",
+        }}
+      />
       {/* Concentric circles */}
       {circles.map((_, idx) => (
         <Circle
@@ -75,15 +77,15 @@ export const IconContainer = ({
       transition={{ duration: 0.2, delay: delay ?? 0 }}
       className="relative z-50 flex flex-col items-center justify-center space-y-2"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-800 shadow-inner">
+      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-amber-500/30 bg-black/60 shadow-[0_0_20px_rgba(245,158,11,0.15)] backdrop-blur-md">
         {icon || (
-          <svg className="h-8 w-8 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
+          <svg className="h-8 w-8 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
           </svg>
         )}
       </div>
-      <div className="hidden rounded-md px-2 py-1 md:block">
-        <div className="text-center text-xs font-bold text-slate-400">
+      <div className="hidden rounded-md px-2 py-1 md:block bg-black/40 backdrop-blur-md border border-white/5">
+        <div className="text-center text-xs font-bold text-amber-500/90 tracking-wider uppercase">
           {text || "Web Development"}
         </div>
       </div>
