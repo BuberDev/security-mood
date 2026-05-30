@@ -14,6 +14,7 @@ import { NewsletterBlock } from "@/components/newsletter-block";
 import { ProductCard } from "@/components/product-card";
 import { RoutineSection } from "@/components/sections/routine-section";
 import { TopPicksSection } from "@/components/sections/top-picks-section";
+import { PremiumProductsSection } from "@/components/sections/premium-products-section";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { Radar, IconContainer } from "@/components/ui/radar-effect";
@@ -268,6 +269,8 @@ export default function HomePage() {
       </Section>
 
       <TopPicksSection />
+
+      <PremiumProductsSection />
 
       <Section id="categories" className="[content-visibility:auto] [contain-intrinsic-size:1px_900px]">
         <Container>

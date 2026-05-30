@@ -311,7 +311,7 @@ export const categories: Category[] = [
     name: "Home Fortification",
     description: "Indoor and outdoor security solutions that turn your home into a fortress.",
     image:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
+      "/images/categories/home_fortification.png",
     heroLine: "Peace of mind starts at your front door.",
   },
   {
@@ -319,7 +319,7 @@ export const categories: Category[] = [
     name: "Personal Safety",
     description: "Everyday carry (EDC) essentials and non-lethal defense for total confidence.",
     image:
-      "https://plus.unsplash.com/premium_photo-1682088920151-b9b2923c03b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/images/categories/personal_safety.png",
     heroLine: "Preparedness you can carry with you.",
   },
   {
@@ -327,7 +327,7 @@ export const categories: Category[] = [
     name: "Cyber Shield",
     description: "Digital privacy and security tools to protect your most valuable data.",
     image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80",
+      "/images/categories/cyber_shield.png",
     heroLine: "Your digital life, fully protected.",
   },
   {
@@ -335,12 +335,46 @@ export const categories: Category[] = [
     name: "Emergency Prep",
     description: "Survival kits and backup systems for when the unexpected happens.",
     image:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=1200&q=80",
+      "/images/categories/emergency_prep.svg",
     heroLine: "Readiness for the real world.",
   },
 ];
 
 export const products: Product[] = [
+  {
+    id: "biometric-smart-lock",
+    name: "Fortress™ Biometric Smart Lock",
+    categoryId: "home-security",
+    benefit: "Twoje bezpieczeństwo w zasięgu palca. Wojskowa precyzja.",
+    description: "Zabezpiecz swój dom z niezrównaną skutecznością. Szybki czytnik linii papilarnych, blokada z poziomu aplikacji oraz obudowa ze stopu cynku z atestami wojskowymi. (Tylko 3 sztuki w tej cenie!)",
+    trustSignal: "Top rated",
+    image: "/images/products/biometric_lock.png",
+    imageAlt: "Biometric Smart Lock installed on a premium wooden door",
+    amazonUrl: "https://your-shopify-store.com/products/biometric-smart-lock",
+  },
+  {
+    id: "mini-spy-camera-4k",
+    name: "InvisiGuard™ 4K Mini Camera",
+    categoryId: "home-security",
+    benefit: "Zobacz wszystko. Niewidoczna ochrona Twojego domu 24/7.",
+    description: "Ultrakompaktowa kamera 4K z czujnikiem ruchu i trybem nocnym. Nagrywa na żywo prosto na Twój telefon. Idealna do dyskretnego monitoringu niani, zwierząt czy pokoju hotelowego. Bestseller tego tygodnia!",
+    trustSignal: "Popular",
+    image: "/images/products/mini_camera.png",
+    imageAlt: "Tiny 4k mini security camera on a dark surface",
+    amazonUrl: "https://your-shopify-store.com/products/mini-spy-camera-4k",
+  },
+  {
+    id: "anti-theft-smart-backpack",
+    name: "UrbanSafe™ Anti-Theft Smart Backpack",
+    categoryId: "personal-safety",
+    benefit: "Twój mobilny sejf. 100% ochrony przed kradzieżą.",
+    description: "Zaprojektowany z myślą o nowoczesnych nomadach. Ukryte suwaki, blokada RFID na karty, port ładowania USB i odporny na przecięcia materiał. Zabezpiecz swój sprzęt w każdej podróży.",
+    trustSignal: "Editor favorite",
+    image: "/images/products/anti_theft_backpack.png",
+    imageAlt: "Person wearing modern tactical black anti-theft smart backpack",
+    amazonUrl: "https://your-shopify-store.com/products/anti-theft-smart-backpack",
+  },
+
   {
     id: "outdoor-security-camera",
     name: "TP-Link Tapo Smart Home Camera",
@@ -459,7 +493,7 @@ export const products: Product[] = [
     description:
       "Blocks all wireless signals (WiFi, Cellular, GPS, RFID) to prevent tracking and remote hacking.",
     trustSignal: "Popular",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/faraday_bag.png",
     imageAlt: "Small black faraday bag on a table",
     amazonUrl: "https://www.amazon.com/s?k=Mission+Darkness+Faraday+Bag",
   },
@@ -483,7 +517,7 @@ export const products: Product[] = [
     description:
       "A lightweight but rugged lockbox that anchors to fixed objects, perfect for travel and dorm rooms.",
     trustSignal: "Top rated",
-    image: "https://images.unsplash.com/photo-1584347209146-da42cce486f0?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/portable_safe.png",
     imageAlt: "White portable safe locked to a chair",
     amazonUrl: "https://www.amazon.com/s?k=SAFEGO+Portable+Safe",
   },
@@ -495,7 +529,7 @@ export const products: Product[] = [
     description:
       "Ultra-thin covers that slide to block your camera, ensuring your privacy is never compromised.",
     trustSignal: "Top rated",
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/webcam_covers.svg",
     imageAlt: "Small webcam cover on a laptop",
     amazonUrl: "https://www.amazon.com/s?k=CloudValley+Webcam+Cover+Slide",
   },
@@ -519,7 +553,7 @@ export const products: Product[] = [
     description:
       "Narrows the viewing angle of your laptop screen so only you can see your sensitive information.",
     trustSignal: "Editor favorite",
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/privacy_screen.svg",
     imageAlt: "Laptop with privacy screen filtered view",
     amazonUrl: "https://amzn.to/4vogHrF",
   },
@@ -555,7 +589,7 @@ export const products: Product[] = [
     description:
       "A thick ferro rod that throws 5,500°F sparks to ignite tinder instantly, even when wet.",
     trustSignal: "Editor favorite",
-    image: "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/fire_starter.svg",
     imageAlt: "Ferro rod creating sparks",
     amazonUrl: "https://amzn.to/4bY0MZC",
   },
@@ -567,7 +601,7 @@ export const products: Product[] = [
     description:
       "Long-range wireless motion sensors that alert you before someone reaches your front door.",
     trustSignal: "Popular",
-    image: "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/products/driveway_alarm.svg",
     imageAlt: "Motion sensor mounted on a post",
     amazonUrl: "https://amzn.to/4cnPAnV",
   },
@@ -579,7 +613,7 @@ export const products: Product[] = [
     description:
       "Space-age blankets that are compact, waterproof, and windproof—essential for every car and go-bag.",
     trustSignal: "Popular",
-    image: "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80",
+    image: "/images/products/emergency_blanket.svg",
     imageAlt: "Reflective emergency blanket folded",
     amazonUrl: "https://amzn.to/3ObFRt3",
   },
@@ -604,7 +638,7 @@ export const products: Product[] = [
       "A simple peel-and-stick alarm set that adds instant sound-based deterrence without tools or drilling.",
     trustSignal: "Popular",
     image:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+      "/images/products/window_door_alarm.png",
     imageAlt: "Close-up of a window latch in a modern home",
     amazonUrl: "https://www.amazon.com/s?k=window+door+alarm",
   },
@@ -617,7 +651,7 @@ export const products: Product[] = [
       "A compact wedge alarm that reinforces an entry point and sounds a loud alert when pressure is applied.",
     trustSignal: "Editor favorite",
     image:
-      "https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80",
+      "/images/products/door_wedge_alarm.svg",
     imageAlt: "A hotel-style doorway with modern trim and locked handle",
     amazonUrl: "https://www.amazon.com/s?k=door+wedge+alarm",
   },
@@ -676,6 +710,37 @@ export const products: Product[] = [
 ];
 
 export const productProofById: Record<string, ProductProof> = {
+  "biometric-smart-lock": {
+    rating: 4.9,
+    reviews: "1,200+ pozytywnych opinii",
+    socialProof: "Popular right now",
+    highlights: [
+      "Czytnik linii papilarnych 3D o czasie reakcji 0.2s",
+      "Szyfrowanie AES-128 chroniące dane",
+      "Prosty montaż w 15 minut",
+    ],
+  },
+  "mini-spy-camera-4k": {
+    rating: 4.8,
+    reviews: "8,500+ zadowolonych klientów",
+    socialProof: "Trending on social media",
+    highlights: [
+      "Rozdzielczość 4K Ultra HD",
+      "Niewidoczne diody IR do trybu nocnego",
+      "Detekcja ruchu ze wsparciem AI",
+    ],
+  },
+  "anti-theft-smart-backpack": {
+    rating: 5.0,
+    reviews: "Testowany przez 10,000+ podróżników",
+    socialProof: "Most saved on Pinterest this week",
+    highlights: [
+      "Opatentowany system ukrytych suwaków",
+      "Odporny na przecięcia materiał Kevlar-blend",
+      "Kieszeń z blokadą RFID na karty kredytowe",
+    ],
+  },
+
   "outdoor-security-camera": {
     rating: 4.4,
     reviews: "25,000+ reviews",
@@ -949,13 +1014,12 @@ export const productProofById: Record<string, ProductProof> = {
 };
 
 export const topPicks = [
+  { productId: "faraday-bag", badge: "Best Seller" as const },
+  { productId: "anti-theft-smart-backpack", badge: "Most Loved" as const },
   { productId: "portable-power-station", badge: "Most Loved" as const },
   { productId: "solar-emergency-radio", badge: "Best Seller" as const },
   { productId: "first-aid-kit", badge: "Most Loved" as const },
   { productId: "water-filtration-straw", badge: "Trending" as const },
-  { productId: "emergency-car-kit", badge: "Trending" as const },
-  { productId: "smart-door-lock", badge: "Best Seller" as const },
-  { productId: "solar-motion-light", badge: "Trending" as const },
   { productId: "hidden-camera-detector", badge: "Trending" as const },
   { productId: "rfid-passport-wallet", badge: "Most Loved" as const },
 ];
@@ -1000,7 +1064,7 @@ export const articles: Article[] = [
     intro:
       "Home security isn't about expensive gadgets; it's about eliminating vulnerability. This 5-minute audit focuses on the three layers of protection that stop a breach before it starts.",
     heroImage:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/home_security_audit.svg",
     heroAlt: "Front door with modern security camera and reinforced locks",
     categoryId: "home-security",
     readTime: "6 min read",
@@ -1035,7 +1099,7 @@ export const articles: Article[] = [
     intro:
       "Preparedness is a mindset, but it's supported by the right tools. When the grid fails, your survival depends on three pillars: water, communication, and heat.",
     heroImage:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/survival_kit_checklist.svg",
     heroAlt: "Survival gear including radio, water filter, and emergency blankets on a rugged surface",
     categoryId: "emergency-prep",
     readTime: "8 min read",
@@ -1070,7 +1134,7 @@ export const articles: Article[] = [
     intro:
       "Your digital front door is tested thousands of times a day. If you don't have a hardware barrier between your data and the net, you are at risk. This guide simplifies digital self-defense.",
     heroImage:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/cyber_shield_guide.svg",
     heroAlt: "Laptop with hardware security key and privacy screen in a dark room",
     categoryId: "cyber-shield",
     readTime: "7 min read",
@@ -1105,7 +1169,7 @@ export const articles: Article[] = [
     intro:
       "Solo travel is empowering, but it requires a heightened sense of readiness. Your EDC should focus on deterrents and multi-purpose survival tools that pass security audits.",
     heroImage:
-      "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/solo_travelers_edc.svg",
     heroAlt: "Flat lay of EDC gear: Kydex multitool sheath, alarm, and RFID wallet",
     categoryId: "personal-safety",
     readTime: "5 min read",
@@ -1140,7 +1204,7 @@ export const articles: Article[] = [
     intro:
       "Every smart device is a potential back door into your private life. Securing your smart home requires a balance of physical barriers and digital network hygiene.",
     heroImage:
-      "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/smart_home_security.svg",
     heroAlt: "Smart home dashboard and security camera setup",
     categoryId: "home-security",
     readTime: "9 min read",
@@ -1175,7 +1239,7 @@ export const articles: Article[] = [
     intro:
       "Renters often need more security, not more renovation. This guide focuses on quick-install products that improve deterrence, visibility, and peace of mind without permanent changes.",
     heroImage:
-      "https://images.unsplash.com/photo-1560185008-b033106af74a?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/renter_security_upgrades.png",
     heroAlt: "Apartment doorway with a smart lock and entryway light",
     categoryId: "home-security",
     readTime: "7 min read",
@@ -1210,7 +1274,7 @@ export const articles: Article[] = [
     intro:
       "If your apartment has weak windows, the right alarm kit can give you faster alerts without complicated installation. Here is how to choose one that fits your space.",
     heroImage:
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/apartment_window_alarm.svg",
     heroAlt: "Apartment window with daylight and sheer curtains",
     categoryId: "home-security",
     readTime: "6 min read",
@@ -1245,7 +1309,7 @@ export const articles: Article[] = [
     intro:
       "Travel privacy is a growing search intent because people want to feel safe in unfamiliar rooms. This guide shows how a detector fits into a quick arrival checklist.",
     heroImage:
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/hidden_camera_detector_guide.png",
     heroAlt: "Modern hotel room with bed and soft lighting",
     categoryId: "cyber-shield",
     readTime: "5 min read",
@@ -1280,7 +1344,7 @@ export const articles: Article[] = [
     intro:
       "When the power goes out, a portable power station can keep the essentials running. This guide explains what to charge first and why it matters.",
     heroImage:
-      "https://images.unsplash.com/photo-1612810806695-30f7c6fef3b0?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/portable_power_station_guide.png",
     heroAlt: "Portable battery station on a desk with charging cable",
     categoryId: "emergency-prep",
     readTime: "6 min read",
@@ -1315,7 +1379,7 @@ export const articles: Article[] = [
     intro:
       "Travel gear converts well when it solves one clear problem. This checklist focuses on reducing friction and keeping important documents protected during trips.",
     heroImage:
-      "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/rfid_passport_wallet_guide.png",
     heroAlt: "Passport, boarding pass, and wallet on a travel table",
     categoryId: "cyber-shield",
     readTime: "4 min read",
@@ -1354,7 +1418,7 @@ export const landingPages: LandingPage[] = [
       "When people search for crisis preparedness, they usually want a simple answer: what to buy first, what keeps the family safer, and what helps in the first 72 hours. This page gives that answer without noise.",
     eyebrow: "Crisis Preparedness",
     heroImage:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/survival_kit_checklist.svg",
     heroAlt: "Emergency gear laid out for preparedness with radio, power station, and first aid supplies",
     categoryId: "emergency-prep",
     readTime: "6 min read",
@@ -1429,7 +1493,7 @@ export const landingPages: LandingPage[] = [
       "Bug out content converts well because it removes guesswork. This page keeps the list tight, actionable, and centered on the essentials that matter when time is limited.",
     eyebrow: "Evacuation Prep",
     heroImage:
-      "https://images.unsplash.com/photo-1532634896-26909d0d7d2d?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/bug_out_bag.svg",
     heroAlt: "Packed survival backpack with flashlight, map, and emergency gear",
     categoryId: "emergency-prep",
     readTime: "5 min read",
@@ -1503,7 +1567,7 @@ export const landingPages: LandingPage[] = [
       "Sometimes the right move is not to leave but to lock down, reduce exposure, and wait things out. This page focuses on the tools that support that decision.",
     eyebrow: "Home Lockdown",
     heroImage:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/home_security_audit.svg",
     heroAlt: "Darkened home exterior with lighting and security camera",
     categoryId: "home-security",
     readTime: "6 min read",
@@ -1558,7 +1622,7 @@ export const landingPages: LandingPage[] = [
       "Vehicle kits are one of the easiest preparedness purchases because they solve a real problem every driver understands. This page focuses on the gear that matters first in the trunk.",
     eyebrow: "Vehicle Readiness",
     heroImage:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/emergency_vehicle_kit.svg",
     heroAlt: "Emergency gear and road supplies laid out in the trunk of a car",
     categoryId: "emergency-prep",
     readTime: "5 min read",
@@ -1613,7 +1677,7 @@ export const landingPages: LandingPage[] = [
       "Renters usually need security that installs fast and leaves no damage behind. This page narrows the decision to the renter-friendly upgrades that create the biggest jump in peace of mind.",
     eyebrow: "Renter-Friendly Security",
     heroImage:
-      "https://images.unsplash.com/photo-1560185008-b033106af74a?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/renter_security_upgrades.png",
     heroAlt: "Apartment entryway with modern security lighting and door hardware",
     categoryId: "home-security",
     readTime: "5 min read",
@@ -1662,7 +1726,7 @@ export const landingPages: LandingPage[] = [
       "Travel searches convert best when they solve a real anxiety. This kit focuses on privacy, organization, and low-stress travel routines that keep your important items protected.",
     eyebrow: "Travel Privacy",
     heroImage:
-      "https://images.unsplash.com/photo-1455849318743-b2233052fcff?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/travel_privacy_kit.svg",
     heroAlt: "Passport, wallet, and travel essentials laid out beside a carry-on bag",
     categoryId: "cyber-shield",
     readTime: "6 min read",
@@ -1711,7 +1775,7 @@ export const landingPages: LandingPage[] = [
       "When the grid gets unreliable, buyers want simple priorities. This page focuses on which essentials to charge, pack, and keep ready first so your response feels calm instead of chaotic.",
     eyebrow: "Outage Preparedness",
     heroImage:
-      "https://images.unsplash.com/photo-1612810806695-30f7c6fef3b0?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/portable_power_station_guide.png",
     heroAlt: "Portable power station with charging cables and emergency gear",
     categoryId: "emergency-prep",
     readTime: "5 min read",
@@ -1760,7 +1824,7 @@ export const landingPages: LandingPage[] = [
       "The highest-converting EDC pages are the ones that help people feel prepared immediately. This kit combines simple deterrents, utility tools, and privacy protection in one clean plan.",
     eyebrow: "Personal Safety",
     heroImage:
-      "https://plus.unsplash.com/premium_photo-1682088920151-b9b2923c03b6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "/images/blog/solo_travelers_edc.svg",
     heroAlt: "Minimal everyday carry safety gear arranged on a dark surface",
     categoryId: "personal-safety",
     readTime: "4 min read",
@@ -1811,7 +1875,7 @@ export const landingPages: LandingPage[] = [
       "The best crisis plans are simple enough to use under stress. This checklist focuses on water, communication, power, medical basics, and home security so you can act fast without overbuying.",
     eyebrow: "Crisis Preparedness",
     heroImage:
-      "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/survival_kit_checklist.svg",
     heroAlt: "Emergency preparedness gear arranged in a clear survival checklist",
     categoryId: "emergency-prep",
     readTime: "7 min read",
@@ -1888,7 +1952,7 @@ export const landingPages: LandingPage[] = [
       "Bug out bags convert well because the intent is clear: people want the first essentials, not a giant fantasy loadout. This guide keeps the list short and actionable so it is easier to buy and easier to use.",
     eyebrow: "Evacuation Prep",
     heroImage:
-      "https://images.unsplash.com/photo-1532634896-26909d0d7d2d?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/bug_out_bag.svg",
     heroAlt: "Packed backpack with emergency gear laid out on a table",
     categoryId: "emergency-prep",
     readTime: "6 min read",
@@ -1965,7 +2029,7 @@ export const landingPages: LandingPage[] = [
       "Sometimes the best decision is to stay home, lock down, and reduce exposure. This guide focuses on the products that help a home stay functional and harder to disturb when conditions get worse.",
     eyebrow: "Home Lockdown",
     heroImage:
-      "https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/home_security_audit.svg",
     heroAlt: "Modern house exterior at night with bright security lighting",
     categoryId: "home-security",
     readTime: "7 min read",
@@ -2062,7 +2126,7 @@ export const landingPages: LandingPage[] = [
       "Vehicle kits are easy wins because they solve problems drivers already understand. This checklist focuses on the items that keep you warm, informed, and mobile if the car becomes your fallback plan.",
     eyebrow: "Vehicle Readiness",
     heroImage:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/emergency_vehicle_kit.svg",
     heroAlt: "Emergency gear laid out in a car trunk for winter readiness",
     categoryId: "emergency-prep",
     readTime: "5 min read",
@@ -2158,7 +2222,7 @@ export const landingPages: LandingPage[] = [
       "When power goes out, visibility, access control, and deterrence become more important. This plan keeps the home safer without turning it into a construction project.",
     eyebrow: "Blackout Prep",
     heroImage:
-      "https://images.unsplash.com/photo-1560185008-b033106af74a?auto=format&fit=crop&w=2200&q=80",
+      "/images/blog/renter_security_upgrades.png",
     heroAlt: "House exterior at dusk with exterior lights and closed blinds",
     categoryId: "home-security",
     readTime: "6 min read",

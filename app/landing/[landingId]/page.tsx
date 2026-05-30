@@ -19,6 +19,7 @@ import {
   getCategoryById,
   getLandingPageBySlug,
   getLandingPages,
+  getProductProof,
   getProductsByIds,
   siteMeta,
 } from "@/lib/site-data";
@@ -100,11 +101,46 @@ export default async function LandingPage({ params }: LandingPageProps) {
       "@type": "ImageObject",
       url: toAbsoluteUrl(page.heroImage),
     },
-    mainEntity: products.map((product) => ({
-      "@type": "Product",
-      name: product.name,
-      url: toAbsoluteUrl(`/favorites/${product.id}`),
-    })),
+    mainEntity: products.map((product) => {
+      const proof = getProductProof(product.id);
+      return {
+        "@type": "Product",
+        name: product.name,
+        description: product.description,
+        image: [toAbsoluteUrl(product.image)],
+        url: toAbsoluteUrl(`/favorites/${product.id}`),
+        brand: {
+          "@type": "Brand",
+          "@id": toAbsoluteUrl("/#organization"),
+          name: "Security Mood",
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: proof.rating,
+          reviewCount: Number.parseInt(proof.reviews.replace(/[^\d]/g, ""), 10) || 1000,
+        },
+        review: {
+          "@type": "Review",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: proof.rating,
+          },
+          author: {
+            "@type": "Person",
+            name: "Security Mood Editorial",
+          },
+        },
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          priceCurrency: "USD",
+          url: toAbsoluteUrl(`/go/${product.id}`),
+          seller: {
+            "@id": toAbsoluteUrl("/#organization"),
+          },
+        },
+      };
+    }),
   };
 
   return (

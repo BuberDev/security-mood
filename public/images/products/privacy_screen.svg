@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0A0A0A" />
+      <stop offset="100%" stop-color="#141414" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E49E" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#A67B10" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bgGrad)" />
+  <rect width="600" height="800" fill="url(#glow)" />
+
+  <!-- Tactical Grid -->
+  <path d="M 0,100 L 600,100 M 0,200 L 600,200 M 0,300 L 600,300 M 0,400 L 600,400 M 0,500 L 600,500 M 0,600 L 600,600 M 0,700 L 600,700" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1" />
+  <path d="M 100,0 L 100,800 M 200,0 L 200,800 M 300,0 L 300,800 M 400,0 L 400,800 M 500,0 L 500,800" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1" />
+
+  <!-- Outer Ring Glow -->
+  <circle cx="300" cy="350" r="130" stroke="url(#goldGrad)" stroke-width="1" stroke-opacity="0.15" fill="none" />
+  <circle cx="300" cy="350" r="145" stroke="url(#goldGrad)" stroke-width="1" stroke-opacity="0.08" stroke-dasharray="8 12" fill="none" />
+
+  <!-- Dynamic Vector Icon representing product -->
+  <g transform="translate(250, 300)" fill="url(#goldGrad)" opacity="0.9">
+    <path d="M50 0 L10 15 V45 C10 70 50 100 50 100 C50 100 90 70 90 45 V15 Z" />
+  </g>
+
+  <!-- Header Banner (Feature Board / "Tablon") -->
+  <text x="300" y="90" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="44" fill="#ffffff" letter-spacing="2" text-anchor="middle">PRIVACY SCREEN</text>
+  <text x="300" y="140" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="700" font-size="16" fill="url(#goldGrad)" letter-spacing="6" text-anchor="middle">VISUAL ACCORD SHIELD</text>
+
+  <!-- Bottom Infographics -->
+  <text x="300" y="670" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="32" fill="#ffffff" letter-spacing="1.5" text-anchor="middle">ANTI-PEEPING FILTER</text>
+  <text x="300" y="715" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="700" font-size="16" fill="url(#goldGrad)" letter-spacing="4" text-anchor="middle">MAGNETIC FIT • 30° SLANTED BLACKOUT</text>
+</svg>

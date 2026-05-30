@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#080808" />
+      <stop offset="100%" stop-color="#141414" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5E49E" />
+      <stop offset="50%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#A67B10" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bgGrad)" />
+  <rect width="600" height="800" fill="url(#glow)" />
+
+  <!-- Tech Hex or Grid Pattern -->
+  <path d="M 0,150 L 600,150 M 0,300 L 600,300 M 0,450 L 600,450 M 0,600 L 600,600" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1.5" />
+  <path d="M 150,0 L 150,800 M 300,0 L 300,800 M 450,0 L 450,800" stroke="#ffffff" stroke-opacity="0.02" stroke-width="1.5" />
+
+  <!-- Shield Ring Glow -->
+  <circle cx="300" cy="400" r="180" stroke="url(#goldGrad)" stroke-width="1" stroke-opacity="0.1" fill="none" />
+  <path d="M 300,180 L 300,620 M 80,400 L 520,400" stroke="url(#goldGrad)" stroke-width="1" stroke-opacity="0.04" />
+
+  <!-- Big Shield Icon Outline in Background -->
+  <g transform="translate(265, 360)" fill="url(#goldGrad)" opacity="0.25">
+    <path d="M35 0 C15 0 0 15 0 35 C0 65 35 100 35 100 C35 100 70 65 70 35 C70 15 55 0 35 0 Z" />
+  </g>
+
+  <!-- Banner Overlay Card (Cohesive Pinterest style) -->
+  <g transform="translate(30, 220)">
+    <!-- Semi-transparent card background -->
+    <rect width="540" height="360" fill="#0A0A0A" fill-opacity="0.85" rx="16" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.3" />
+    
+    <!-- Decorative mini lines -->
+    <line x1="200" y1="40" x2="340" y2="40" stroke="url(#goldGrad)" stroke-width="2" stroke-opacity="0.8" />
+
+    <!-- Title and Subtitle inside card -->
+    <foreignObject x="30" y="80" width="480" height="200">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="color: #ffffff; font-family: 'Inter', sans-serif; text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+        <h2 style="margin: 0; font-size: 32px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; line-height: 1.35;">Secure Your Smart Home Hub</h2>
+        <p style="margin: 15px 0 0 0; font-size: 15px; font-weight: 700; color: #D4AF37; letter-spacing: 5px; text-transform: uppercase;">Total Privacy Layering</p>
+      </div>
+    </foreignObject>
+    
+    <!-- Action call in bottom of pin card -->
+    <text x="270" y="320" font-family="'Inter', sans-serif" font-weight="700" font-size="12" fill="#ffffff" fill-opacity="0.6" letter-spacing="4" text-anchor="middle">READ THE FULL POST →</text>
+  </g>
+</svg>
