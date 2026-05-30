@@ -154,7 +154,7 @@ export default function HomePage() {
       <section className="relative isolate min-h-[100vh] -mt-[4.5rem] md:-mt-[6rem] pt-[4.5rem] md:pt-[6rem] overflow-hidden border-b border-white/10 bg-[#000000]">
         
         {/* Full-width Ambient Radar Background */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-60 pointer-events-none overflow-hidden">
           <Radar className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[2.5] md:scale-[3.5]" />
           
           <div className="absolute top-[15%] left-[10%] md:left-[20%]">
@@ -182,17 +182,26 @@ export default function HomePage() {
           
           {/* Left — Text Content */}
           <div className="w-full lg:w-[50%] xl:w-[45%] relative z-10">
+            {/* Massive soft black blob behind text to absorb background radar and ensure 100% contrast */}
+            <div className="absolute top-1/2 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-[-20%] -translate-y-1/2 w-[150vw] h-[70vh] lg:w-[800px] lg:h-[600px] bg-black/90 blur-[100px] rounded-full pointer-events-none -z-10" />
+            
             <FadeIn className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-7 pointer-events-auto max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
-              <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs">
+              <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(0,0,0,0.8)]">
                 Crisis-Ready Affiliate Guides
               </Badge>
               
-              <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05] text-white font-medium drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
+              <h1 
+                className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05] text-white font-medium relative z-10"
+                style={{ textShadow: "0 0 40px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 4px 8px rgba(0,0,0,0.8)" }}
+              >
                 Be Prepared <br className="hidden sm:block" />
                 <span className="text-slate-200">Be Safe.</span>
               </h1>
               
-              <p className="max-w-xl text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              <p 
+                className="max-w-xl text-lg md:text-xl text-white/95 leading-relaxed relative z-10 font-medium"
+                style={{ textShadow: "0 0 20px rgba(0,0,0,1), 0 2px 4px rgba(0,0,0,0.8)" }}
+              >
                 Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials.
               </p>
               
