@@ -203,19 +203,11 @@ export default function HomePage() {
             </FadeIn>
           </div>
 
-          {/* Right — Globe (Desktop Absolute) */}
-          <FadeIn delay={0.2} className="hidden lg:flex absolute right-[-8%] xl:right-[-5%] top-1/2 -translate-y-1/2 w-[55%] max-w-[850px] aspect-square items-center justify-center pointer-events-auto z-0">
+          {/* Globe (Unified for both Mobile & Desktop to prevent resize vanishing) */}
+          <FadeIn delay={0.2} className="relative w-full mt-10 md:mt-16 flex items-center justify-center pointer-events-auto z-0 lg:absolute lg:right-[-8%] xl:right-[-5%] lg:top-1/2 lg:-translate-y-1/2 lg:w-[55%] lg:mt-0 max-w-[500px] lg:max-w-[850px] aspect-square">
             <div className="relative w-full h-full">
               <div className="absolute inset-0 rounded-full bg-amber-500/[0.06] blur-3xl scale-110" />
               <RotatingEarth width={850} height={850} className="relative z-10 w-full h-full" />
-            </div>
-          </FadeIn>
-
-          {/* Mobile Globe */}
-          <FadeIn delay={0.2} className="flex lg:hidden relative w-full mt-10 md:mt-16 items-center justify-center pointer-events-auto z-0">
-            <div className="relative w-full max-w-[500px] aspect-square">
-              <div className="absolute inset-0 rounded-full bg-amber-500/[0.06] blur-3xl scale-110" />
-              <RotatingEarth width={500} height={500} className="relative z-10 w-full h-full" />
             </div>
           </FadeIn>
 

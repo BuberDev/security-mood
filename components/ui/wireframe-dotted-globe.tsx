@@ -280,11 +280,11 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
   if (error) return null
 
   return (
-    <div ref={containerRef} className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative block ${className}`}>
       <canvas
         ref={canvasRef}
-        className="w-full h-auto"
-        style={{ maxWidth: "100%", height: "auto" }}
+        className="block w-full h-full"
+        style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
       />
     </div>
   )
