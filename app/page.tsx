@@ -22,6 +22,7 @@ import { HiShieldCheck, HiLockClosed } from "react-icons/hi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { BsShieldLockFill, BsFingerprint } from "react-icons/bs";
 import { RiServerFill, RiKey2Fill } from "react-icons/ri";
+import RotatingEarth from "@/components/ui/wireframe-dotted-globe";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { categories, getAmazonFavorites, getFeaturedArticles, getLandingPages, siteMeta } from "@/lib/site-data";
 
@@ -153,11 +154,9 @@ export default function HomePage() {
       <section className="relative isolate min-h-[100vh] -mt-[4.5rem] md:-mt-[6rem] pt-[4.5rem] md:pt-[6rem] overflow-hidden border-b border-white/10 bg-[#000000]">
         
         {/* Full-width Ambient Radar Background */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-60 pointer-events-none overflow-hidden">
-          {/* Radar scaled massively to serve as a grid/texture across the whole screen */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-40 pointer-events-none overflow-hidden">
           <Radar className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[2.5] md:scale-[3.5]" />
           
-          {/* Orbiting Icons - Positioned far from the center text */}
           <div className="absolute top-[15%] left-[10%] md:left-[20%]">
             <IconContainer text="Threat Detection" delay={0.2} icon={<HiShieldCheck className="h-8 w-8 text-amber-500" />} />
           </div>
@@ -178,27 +177,48 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Foreground Content - Centered and Optimized */}
-        <Container className="relative z-10 flex min-h-[90vh] flex-col items-center justify-center py-20 text-center pointer-events-none">
-          <FadeIn className="max-w-4xl flex flex-col items-center space-y-8 pointer-events-auto rounded-[3rem] bg-white/[0.04] p-8 sm:p-14 backdrop-blur-3xl border border-white/10 shadow-2xl relative">
-            <Badge className="relative z-10 bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs">
-              Crisis-Ready Affiliate Guides
-            </Badge>
-            
-            <h1 className="relative z-10 font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.05] text-white drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] font-medium mix-blend-plus-lighter">
-              Professional Grade <br className="hidden sm:block" />
-              <span className="text-slate-300">Crisis Readiness.</span>
-            </h1>
-            
-            <p className="relative z-10 max-w-2xl text-lg md:text-xl text-white/80 leading-relaxed drop-shadow-md">
-              Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials.
-            </p>
-            
-            <div className="relative z-10 flex flex-wrap items-center justify-center gap-4 pt-4">
-              <CTAButton href="/landing/crisis-readiness-kit" label="Start Crisis Prep" />
-              <CTAButton href="/landing" label="View Prep Kits" variant="secondary" />
+        {/* Foreground Content — Split Layout */}
+        <Container className="relative z-10 flex flex-col lg:flex-row min-h-[90vh] items-center justify-center lg:justify-start pt-32 pb-16 lg:py-20">
+          
+          {/* Left — Text Content */}
+          <div className="w-full lg:w-[50%] xl:w-[45%] relative z-10">
+            <FadeIn className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-7 pointer-events-auto max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
+              <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs">
+                Crisis-Ready Affiliate Guides
+              </Badge>
+              
+              <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05] text-white font-medium drop-shadow-[0_4px_24px_rgba(0,0,0,0.8)]">
+                Be Prepared <br className="hidden sm:block" />
+                <span className="text-slate-200">Be Safe.</span>
+              </h1>
+              
+              <p className="max-w-xl text-lg md:text-xl text-white/90 leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials.
+              </p>
+              
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                <CTAButton href="/landing/crisis-readiness-kit" label="Start Crisis Prep" />
+                <CTAButton href="/landing" label="View Prep Kits" variant="secondary" />
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Right — Globe (Desktop Absolute) */}
+          <FadeIn delay={0.2} className="hidden lg:flex absolute right-[-8%] xl:right-[-5%] top-1/2 -translate-y-1/2 w-[55%] max-w-[850px] aspect-square items-center justify-center pointer-events-auto z-0">
+            <div className="relative w-full h-full">
+              <div className="absolute inset-0 rounded-full bg-amber-500/[0.06] blur-3xl scale-110" />
+              <RotatingEarth width={850} height={850} className="relative z-10 w-full h-full" />
             </div>
           </FadeIn>
+
+          {/* Mobile Globe */}
+          <FadeIn delay={0.2} className="flex lg:hidden relative w-full mt-10 md:mt-16 items-center justify-center pointer-events-auto z-0">
+            <div className="relative w-full max-w-[500px] aspect-square">
+              <div className="absolute inset-0 rounded-full bg-amber-500/[0.06] blur-3xl scale-110" />
+              <RotatingEarth width={500} height={500} className="relative z-10 w-full h-full" />
+            </div>
+          </FadeIn>
+
         </Container>
       </section>
 
@@ -274,11 +294,11 @@ export default function HomePage() {
 
       <Section id="categories" className="[content-visibility:auto] [contain-intrinsic-size:1px_900px]">
         <Container>
-            <Heading
-              eyebrow="Operational Categories"
-              title="Layer your defense with specialized gear and crisis-prep protocols"
-              description="From perimeter hardening to blackout readiness and evacuation prep, our categories are structured for rapid response and practical clarity."
-            />
+          <Heading
+            eyebrow="Operational Categories"
+            title="Layer your defense with specialized gear and crisis-prep protocols"
+            description="From perimeter hardening to blackout readiness and evacuation prep, our categories are structured for rapid response and practical clarity."
+          />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {categories.map((category) => (
