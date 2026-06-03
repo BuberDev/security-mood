@@ -350,7 +350,7 @@ export const products: Product[] = [
     trustSignal: "Top rated",
     image: "/images/products/biometric_lock.png",
     imageAlt: "Biometric Smart Lock installed on a premium wooden door",
-    amazonUrl: "https://your-shopify-store.com/products/biometric-smart-lock",
+    amazonUrl: "https://security-mood.myshopify.com/cart/53914655523155:1",
   },
   {
     id: "mini-spy-camera-4k",
@@ -361,7 +361,7 @@ export const products: Product[] = [
     trustSignal: "Popular",
     image: "/images/products/mini_camera.png",
     imageAlt: "Tiny 4k mini security camera on a dark surface",
-    amazonUrl: "https://your-shopify-store.com/products/mini-spy-camera-4k",
+    amazonUrl: "https://security-mood.myshopify.com/cart/53914655555923:1",
   },
   {
     id: "anti-theft-smart-backpack",
@@ -372,7 +372,7 @@ export const products: Product[] = [
     trustSignal: "Editor favorite",
     image: "/images/products/anti_theft_backpack.png",
     imageAlt: "Person wearing modern tactical black anti-theft smart backpack",
-    amazonUrl: "https://your-shopify-store.com/products/anti-theft-smart-backpack",
+    amazonUrl: "https://security-mood.myshopify.com/cart/53914655588691:1",
   },
 
   {
