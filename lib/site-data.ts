@@ -451,15 +451,15 @@ export const products: Product[] = [
   },
   {
     id: "pepper-spray-gel",
-    name: "SABRE Red Pepper Spray Gel",
+    name: "SABRE Pepper Spray with Fast Flip Top & Snap-Clip Keychain",
     categoryId: "personal-safety",
-    benefit: "Long-range protection with zero wind blowback.",
+    benefit: "Compact keychain protection with quick flip-top access.",
     description:
-      "Maximum strength protection with a targeted gel formula that stays on target and off bystanders.",
+      "Maximum police strength OC spray with snap-clip carry, finger grip, UV marking dye, and a 14-foot range.",
     trustSignal: "Editor favorite",
-    image: "/pepper_spray.png",
-    imageAlt: "Pepper spray container being held",
-    amazonUrl: "https://www.amazon.com/s?k=SABRE+Red+Pepper+Spray+Gel",
+    image: "/images/products/sabre-pepper-spray.png",
+    imageAlt: "SABRE pepper spray keychain two pack",
+    amazonUrl: "https://amzn.to/4vnUidi",
   },
   {
     id: "door-security-bar",
@@ -487,15 +487,15 @@ export const products: Product[] = [
   },
   {
     id: "faraday-bag",
-    name: "Mission Darkness Faraday Bag",
+    name: "Mission Darkness Non-Window Faraday Bag for Phones",
     categoryId: "cyber-shield",
     benefit: "Total RF shielding for phones and key fobs.",
     description:
       "Blocks all wireless signals (WiFi, Cellular, GPS, RFID) to prevent tracking and remote hacking.",
     trustSignal: "Popular",
-    image: "/images/products/faraday_bag.png",
-    imageAlt: "Small black faraday bag on a table",
-    amazonUrl: "https://www.amazon.com/s?k=Mission+Darkness+Faraday+Bag",
+    image: "/images/products/mission-darkness-faraday-bag.png",
+    imageAlt: "Mission Darkness non-window faraday bag for phones",
+    amazonUrl: "https://amzn.to/4xaAEn4",
   },
   {
     id: "emergency-food-supply",
@@ -511,27 +511,27 @@ export const products: Product[] = [
   },
   {
     id: "portable-safe",
-    name: "SAFEGO Portable Indoor/Outdoor Safe",
+    name: "Portable Indoor/Outdoor Lock Box Safe",
     categoryId: "home-security",
     benefit: "Security for valuables in high-traffic or travel areas.",
     description:
       "A lightweight but rugged lockbox that anchors to fixed objects, perfect for travel and dorm rooms.",
     trustSignal: "Top rated",
-    image: "/images/products/portable_safe.png",
-    imageAlt: "White portable safe locked to a chair",
-    amazonUrl: "https://www.amazon.com/s?k=SAFEGO+Portable+Safe",
+    image: "/images/products/safego-portable-safe.png",
+    imageAlt: "Orange SAFEGO portable indoor outdoor lock box safe",
+    amazonUrl: "https://amzn.to/43f2NLQ",
   },
   {
     id: "webcam-covers",
-    name: "CloudValley Webcam Cover Slide",
+    name: "CloudValley Webcam Cover Slide, Ultra-Thin 2 Pack",
     categoryId: "cyber-shield",
     benefit: "Physical assurance against camera hacking.",
     description:
       "Ultra-thin covers that slide to block your camera, ensuring your privacy is never compromised.",
     trustSignal: "Top rated",
-    image: "/images/products/webcam_covers.svg",
-    imageAlt: "Small webcam cover on a laptop",
-    amazonUrl: "https://www.amazon.com/s?k=CloudValley+Webcam+Cover+Slide",
+    image: "/images/products/cloudvalley-webcam-cover.png",
+    imageAlt: "CloudValley white ultra-thin webcam cover slide two pack",
+    amazonUrl: "https://amzn.to/4fnCIl1",
   },
   {
     id: "rfid-wallet",
@@ -631,29 +631,27 @@ export const products: Product[] = [
   },
   {
     id: "window-alarm-kit",
-    name: "GE Personal Security Window and Door Alarm",
+    name: "GE Personal Security Window and Door Alarm, 2 Pack",
     categoryId: "home-security",
     benefit: "Budget-friendly first-line alert for windows, patio doors, and rentals.",
     description:
       "A simple peel-and-stick alarm set that adds instant sound-based deterrence without tools or drilling.",
     trustSignal: "Popular",
-    image:
-      "/images/products/window_door_alarm.png",
-    imageAlt: "Close-up of a window latch in a modern home",
-    amazonUrl: "https://www.amazon.com/s?k=window+door+alarm",
+    image: "/images/products/ge-window-door-alarm.png",
+    imageAlt: "GE Personal Security magnetic window and door alarm two pack",
+    amazonUrl: "https://amzn.to/4e3ZlbT",
   },
   {
     id: "door-wedge-alarm",
-    name: "Sabre Door Wedge Alarm",
+    name: "Sabre 120 dB Wedge Door Stop Security Alarm",
     categoryId: "home-security",
     benefit: "Fast, rental-friendly protection for bedroom doors and hotel stays.",
     description:
       "A compact wedge alarm that reinforces an entry point and sounds a loud alert when pressure is applied.",
     trustSignal: "Editor favorite",
-    image:
-      "/images/products/door_wedge_alarm.svg",
-    imageAlt: "A hotel-style doorway with modern trim and locked handle",
-    amazonUrl: "https://www.amazon.com/s?k=door+wedge+alarm",
+    image: "/images/products/sabre-door-wedge-alarm.png",
+    imageAlt: "Sabre 120 dB wedge door stop security alarm with warning decals",
+    amazonUrl: "https://amzn.to/4ap6BxT",
   },
   {
     id: "hidden-camera-detector",
@@ -802,13 +800,13 @@ export const productProofById: Record<string, ProductProof> = {
     ],
   },
   "pepper-spray-gel": {
-    rating: 4.9,
-    reviews: "35,000+ reviews",
+    rating: 4.7,
+    reviews: "10,032 ratings",
     socialProof: "Popular right now",
     highlights: [
-      "25 bursts with a 12-foot range",
-      "UV marking dye for suspect identification",
-      "Gel formula prevents indoor blowback",
+      "Fast flip top safety with snap-clip keychain",
+      "10-second spray time with 14-foot range",
+      "Maximum police strength OC with UV marking dye",
     ],
   },
   "door-security-bar": {
@@ -832,13 +830,13 @@ export const productProofById: Record<string, ProductProof> = {
     ],
   },
   "faraday-bag": {
-    rating: 4.7,
-    reviews: "6,200+ reviews",
+    rating: 4.6,
+    reviews: "7,021 ratings",
     socialProof: "Trending on social media",
     highlights: [
-      "Double-shielded seams for total isolation",
-      "Prevents key fob relay attacks at home",
-      "Internal pocket for small cards or cash",
+      "Non-window Faraday bag for phones",
+      "Blocks cellular, Wi-Fi, GPS, RFID, and Bluetooth",
+      "Built for device shielding and digital forensics",
     ],
   },
   "emergency-food-supply": {
@@ -853,22 +851,22 @@ export const productProofById: Record<string, ProductProof> = {
   },
   "portable-safe": {
     rating: 4.5,
-    reviews: "7,800+ reviews",
+    reviews: "3,859 ratings",
     socialProof: "Most loved by routine creators",
     highlights: [
-      "Water-resistant for beach or poolside use",
-      "Customize with a 3-digit combination",
-      "Large enough for phone, cash, and passport",
+      "Key and 3-digit combination access",
+      "Portable indoor/outdoor lock box",
+      "Bright orange body for travel and beach use",
     ],
   },
   "webcam-covers": {
-    rating: 4.8,
-    reviews: "20,000+ reviews",
+    rating: 4.6,
+    reviews: "54,147 ratings",
     socialProof: "Popular right now",
     highlights: [
-      "Ultra-thin (0.027in) for laptop closure",
-      "Stays in place with 3M adhesive",
-      "Matches most modern device aesthetics",
+      "Ultra-thin 0.023 inch slide design",
+      "White 2-pack for laptops, tablets, and desktops",
+      "Physical camera privacy in one motion",
     ],
   },
   "rfid-wallet": {
@@ -952,23 +950,23 @@ export const productProofById: Record<string, ProductProof> = {
     ],
   },
   "window-alarm-kit": {
-    rating: 4.6,
-    reviews: "21,500+ reviews",
+    rating: 4.5,
+    reviews: "16,800 ratings",
     socialProof: "Trending on social media",
     highlights: [
-      "Adds instant sound-based deterrence",
-      "Works well for rentals and sliding doors",
-      "Installs in minutes with no drilling",
+      "2-pack magnetic window/door alarm",
+      "Battery-operated with batteries included",
+      "115 dB alarm for DIY home protection",
     ],
   },
   "door-wedge-alarm": {
-    rating: 4.8,
-    reviews: "9,800+ reviews",
+    rating: 4.4,
+    reviews: "6,962 ratings",
     socialProof: "Limited-time favorite",
     highlights: [
-      "Portable protection for hotel and bedroom doors",
-      "Loud siren activates when pressure is applied",
-      "Ideal for travel safety and apartment living",
+      "120 dB wireless wedge door stop alarm",
+      "Audible up to 1,500 ft",
+      "Compact for home, travel, apartment, or dorm",
     ],
   },
   "hidden-camera-detector": {
@@ -2652,4 +2650,3 @@ export function getBundleProducts(bundleId: string) {
 export function getFeaturedBundles(limit = 4) {
   return productBundles.slice(0, limit);
 }
-
