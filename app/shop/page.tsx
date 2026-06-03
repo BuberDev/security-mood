@@ -129,23 +129,29 @@ export default function ShopPage() {
                   </ul>
 
                   {/* Price */}
-                  <div className="flex items-baseline gap-3 pt-1">
-                    <span className="text-2xl font-bold text-white">
-                      €{product.price.toFixed(2)}
-                    </span>
-                    <span className="text-sm line-through" style={{ color: "#a8a8a8" }}>
-                      €{product.compareAtPrice.toFixed(2)}
-                    </span>
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{ background: "rgb(201 169 110 / 0.15)", color: "#c9a96e" }}>
-                      -{Math.round((1 - product.price / product.compareAtPrice) * 100)}%
-                    </span>
-                  </div>
+                  {product.price > 0 ? (
+                    <div className="flex items-baseline gap-3 pt-1">
+                      <span className="text-2xl font-bold text-white">
+                        ${product.price.toFixed(2)}
+                      </span>
+                      <span className="text-sm line-through" style={{ color: "#a8a8a8" }}>
+                        ${product.compareAtPrice.toFixed(2)}
+                      </span>
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{ background: "rgb(201 169 110 / 0.15)", color: "#c9a96e" }}>
+                        -{Math.round((1 - product.price / product.compareAtPrice) * 100)}%
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="pt-1 text-sm font-semibold" style={{ color: "#c9a96e" }}>
+                      Curated buying guide
+                    </div>
+                  )}
 
                   <div
                     className="w-full text-center py-3 rounded-xl text-sm font-semibold text-black transition-opacity group-hover:opacity-90"
                     style={{ background: "#c9a96e" }}
                   >
-                    View Product →
+                    {product.price > 0 ? "View Product →" : "Open Checklist →"}
                   </div>
                 </div>
               </Link>

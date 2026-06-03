@@ -20,8 +20,6 @@ import {
   Heart,
   ChevronRight,
   ChevronLeft,
-  TrendingUp,
-  Activity,
   ZoomIn
 } from "lucide-react";
 import { Container } from "@/components/container";
@@ -31,6 +29,14 @@ type ShopProductSalesProps = {
   readonly product: ShopProduct;
   readonly related: ShopProduct[];
 };
+
+function formatShopPrice(value: number) {
+  return value > 0 ? `$${value.toFixed(2)}` : "Open guide";
+}
+
+function getPrimaryCta(product: ShopProduct) {
+  return product.price > 0 ? `Buy Now — ${formatShopPrice(product.price)}` : "Open The Checklist";
+}
 
 // Sourced Authentic Reviews customized by Product ID
 const reviewsData: Record<string, {
@@ -145,8 +151,8 @@ const reviewsData: Record<string, {
 const compareMatrix = [
   {
     feature: "Build Quality & Materials",
-    premium: "Aircraft-grade aluminum / Military-spec EMP shielding",
-    cheap: "Flimsy plastic / No protective shielding against elements",
+    premium: "Durable materials matched to daily emergency use",
+    cheap: "Flimsy parts that fail under repeated handling",
     icon: Sparkles
   },
   {
@@ -176,11 +182,11 @@ const beforeAfterData: Record<string, {
   "tactical-blackout-flashlight": {
     before: [
       "Helplessness during grid failures.",
-      "Cheap flashlights fail when you need them most."
+      "No light available when your phone battery is low."
     ],
     after: [
-      "Instantly illuminate your entire property.",
-      "Blind attackers with tactical strobe."
+      "Always have a compact keychain light within reach.",
+      "Handle locks, bags, and dark rooms without searching."
     ]
   },
   "emp-shield-radio": {
@@ -190,7 +196,7 @@ const beforeAfterData: Record<string, {
     ],
     after: [
       "Access NOAA and emergency broadcasts instantly.",
-      "Keep phones charged with 10,000mAh bank."
+      "Keep small devices topped up during outages."
     ]
   },
   "shelter-in-place-bundle": {
@@ -199,18 +205,18 @@ const beforeAfterData: Record<string, {
       "Lack of clean water and defense."
     ],
     after: [
-      "72-hours of sustained lockdown capability.",
-      "Complete peace of mind for the whole family."
+      "A clear 72-hour buying order.",
+      "A balanced home kit instead of random supplies."
     ]
   },
   "door-barricade-lock": {
     before: [
-      "Standard deadbolts break under kicks.",
+      "A lock is the only barrier on the door.",
       "Anxiety about home invasions at night."
     ],
     after: [
-      "Withstands 800 lbs of force easily.",
-      "Sleep soundly knowing the perimeter is secure."
+      "Adds a visible mechanical brace from the inside.",
+      "Simple nightly reinforcement with no batteries."
     ]
   }
 };
@@ -221,29 +227,29 @@ const detailedScienceBenefits: Record<string, {
   badge: string;
 }[]> = {
   "tactical-blackout-flashlight": [
-    { title: "Aircraft Aluminum", desc: "Shatterproof construction.", badge: "Durable" },
-    { title: "2000 Lumen LED", desc: "Blinding power.", badge: "Bright" },
-    { title: "Tactical Bezel", desc: "For self defense.", badge: "Defense" }
+    { title: "Keychain Ready", desc: "Small enough to carry every day.", badge: "EDC" },
+    { title: "Instant Activation", desc: "Magnetic cap keeps operation simple.", badge: "Fast" },
+    { title: "Rechargeable Design", desc: "Easy to keep ready between uses.", badge: "Power" }
   ],
   "emp-shield-radio": [
-    { title: "Faraday Mesh", desc: "Protects from EMP.", badge: "Shield" },
-    { title: "10k mAh Battery", desc: "Massive power bank.", badge: "Power" },
-    { title: "4-Way Charge", desc: "Solar, crank, USB, battery.", badge: "Versatile" }
+    { title: "Weather Alerts", desc: "Monitor emergency broadcasts.", badge: "NOAA" },
+    { title: "Backup Charging", desc: "Top up essential small devices.", badge: "Power" },
+    { title: "Multiple Power Inputs", desc: "Solar, crank, USB, and battery options.", badge: "Versatile" }
   ],
   "shelter-in-place-bundle": [
-    { title: "IFAK Level First Aid", desc: "Trauma-ready medical supplies.", badge: "Medical" },
-    { title: "Water Filtration", desc: "Filters 99.9% bacteria.", badge: "Hydration" },
-    { title: "Thermal Control", desc: "Heavy duty blankets.", badge: "Warmth" }
+    { title: "Priority Order", desc: "Buy the most important layers first.", badge: "Plan" },
+    { title: "Balanced Categories", desc: "Water, light, comms, first aid, and entry security.", badge: "Kit" },
+    { title: "Household Fit", desc: "Adjust quantities to your family size.", badge: "Flexible" }
   ],
   "door-barricade-lock": [
-    { title: "800 lb Resistance", desc: "Stops forced entry.", badge: "Strong" },
-    { title: "Low Profile", desc: "No tripping hazard.", badge: "Design" },
-    { title: "Rapid Deploy", desc: "Locks in 1 second.", badge: "Speed" }
+    { title: "Adjustable Brace", desc: "Fits many hinged and sliding door setups.", badge: "Fit" },
+    { title: "No Batteries", desc: "Mechanical reinforcement stays simple.", badge: "Reliable" },
+    { title: "Nightly Use", desc: "Fast to place before sleep or travel stays.", badge: "Routine" }
   ]
 };
 
 export function ShopProductSales({ product, related }: ShopProductSalesProps) {
-  const discount = Math.round((1 - product.price / product.compareAtPrice) * 100);
+  const discount = product.compareAtPrice > 0 ? Math.round((1 - product.price / product.compareAtPrice) * 100) : 0;
   const reviews = reviewsData[product.id] || reviewsData["tactical-blackout-flashlight"];
   const beforeAfter = beforeAfterData[product.id] || beforeAfterData["tactical-blackout-flashlight"];
   const scienceBenefits = detailedScienceBenefits[product.id] || detailedScienceBenefits["tactical-blackout-flashlight"];
@@ -253,6 +259,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
   const [selectedReviewStarFilter, setSelectedReviewStarFilter] = useState<number | null>(null);
   const [showStickyDrawer, setShowStickyDrawer] = useState(false);
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+  const [helpfulReviewKeys, setHelpfulReviewKeys] = useState<Record<string, boolean>>({});
 
   // Zoom magnifier states
   const [zoomStyle, setZoomStyle] = useState<React.CSSProperties>({
@@ -298,11 +305,6 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
     };
   }, [isLightboxOpen]);
 
-  // Scarcity & Social Proof Mock States (Fluctuating)
-  const [viewersCount, setViewersCount] = useState(14);
-  const [timeLeft, setTimeLeft] = useState({ minutes: 14, seconds: 32 });
-  const [stockLeft, setStockLeft] = useState(7);
-
   const reviewsSectionRef = useRef<HTMLDivElement>(null);
   const heroSectionRef = useRef<HTMLDivElement>(null);
 
@@ -316,44 +318,22 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
     },
     { 
       url: product.image, 
-      label: "Swedish Guard Close-up", 
+      label: "Field Detail View",
       badge: "Precision",
-      desc: "Micro-safety guards details (Sweden steel)",
+      desc: "A closer look at the build details and everyday carry format",
       filter: "brightness-[1.15] contrast-[1.05]" 
     },
     { 
       url: product.image, 
-      label: "Sensory Texture View", 
-      badge: "Luxury Touch",
-      desc: "Ergonomic, lightweight handle and finish",
+      label: "Ready Kit View",
+      badge: "Prepared",
+      desc: "How this item fits into a practical readiness setup",
       filter: "brightness-[0.9] sepia-[0.1]" 
     }
   ];
 
-  // Viewer count and Stock scarcity fluctuation logic
+  // Scroll listener for sticky drawer.
   useEffect(() => {
-    const viewerInterval = setInterval(() => {
-      setViewersCount(prev => {
-        const diff = Math.floor(Math.random() * 5) - 2; // -2 to +2
-        const next = prev + diff;
-        return next < 8 ? 8 : next > 22 ? 22 : next;
-      });
-    }, 4500);
-
-    const timerInterval = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { minutes: prev.minutes - 1, seconds: 59 };
-        } else {
-          // Reset countdown to simulate ongoing flash sale
-          return { minutes: 15, seconds: 0 };
-        }
-      });
-    }, 1000);
-
-    // Scroll listener for sticky drawer
     const handleScroll = () => {
       if (heroSectionRef.current) {
         const heroBottom = heroSectionRef.current.getBoundingClientRect().bottom;
@@ -363,8 +343,6 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      clearInterval(viewerInterval);
-      clearInterval(timerInterval);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -427,7 +405,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
       {/* 2. HIGH-CONVERTING HERO & BUY BOX SECTION */}
       <section ref={heroSectionRef} className="py-8 md:py-16 px-4 relative overflow-hidden">
-        {/* Subtle Luxury Glowing Orbs */}
+        {/* Subtle background glow */}
         <div className="absolute top-[10%] left-[-10%] size-96 rounded-full bg-accent-gold/5 blur-[120px] pointer-events-none" />
         <div className="absolute bottom-[20%] right-[-10%] size-96 rounded-full bg-white/5 blur-[120px] pointer-events-none" />
 
@@ -554,66 +532,53 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               {/* Price Block & Save Indicator */}
               <div className="border-t border-b border-white/10 py-4 flex items-center justify-between gap-4">
                 <div className="space-y-1">
-                  <p className="text-[10px] text-text-secondary uppercase tracking-widest font-semibold">Special Offer Price</p>
+                  <p className="text-[10px] text-text-secondary uppercase tracking-widest font-semibold">
+                    {product.price > 0 ? "Current Buying Price" : "Curated Readiness Guide"}
+                  </p>
                   <div className="flex items-baseline gap-3">
-                    <span className="text-4xl font-extrabold text-white">${product.price.toFixed(2)}</span>
-                    <span className="text-base line-through text-text-secondary">${product.compareAtPrice.toFixed(2)}</span>
+                    <span className="text-4xl font-extrabold text-white">{formatShopPrice(product.price)}</span>
+                    {product.compareAtPrice > 0 && (
+                      <span className="text-base line-through text-text-secondary">${product.compareAtPrice.toFixed(2)}</span>
+                    )}
                   </div>
                 </div>
+                {product.compareAtPrice > 0 && (
                 <div className="text-right">
                   <span
-                    className="text-xs md:text-sm font-extrabold px-3.5 py-1.5 rounded-full inline-block animate-bounce shadow-lg"
+                    className="text-xs md:text-sm font-extrabold px-3.5 py-1.5 rounded-full inline-block shadow-lg"
                     style={{ background: "rgb(201 169 110 / 0.18)", color: "#c9a96e", border: "1px solid rgb(201 169 110 / 0.3)" }}
                   >
-                    Save {discount}% Now
+                    Save {discount}%
                   </span>
                   <p className="text-[10px] text-accent-gold/80 mt-1.5 font-bold">${(product.compareAtPrice - product.price).toFixed(2)} kept in your pocket</p>
                 </div>
+                )}
               </div>
 
-              {/* SCARCITY ELEMENTS PANEL */}
+              {/* Trust and purchase confidence panel */}
               <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 space-y-3.5 text-xs">
-                
-                {/* 1. Real-time viewers */}
                 <div className="flex items-center justify-between text-white/95">
                   <div className="flex items-center gap-2">
-                    <span className="relative flex size-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-gold opacity-75"></span>
-                      <span className="relative inline-flex rounded-full size-2 bg-accent-gold"></span>
-                    </span>
-                    <span className="font-medium text-text-secondary">Customers browsing</span>
+                    <ShieldCheck className="size-4 text-accent-gold" />
+                    <span className="font-medium text-text-secondary">Purchase path</span>
                   </div>
-                  <div className="flex items-center gap-1 font-bold text-accent-gold">
-                    <Eye className="size-3.5" />
-                    <span>{viewersCount} active viewers</span>
-                  </div>
+                  <span className="font-bold text-accent-gold">{product.price > 0 ? "Verified product link" : "Guided checklist"}</span>
                 </div>
 
-                {/* 2. Stock Countdown bar */}
-                <div className="space-y-1.5">
-                  <div className="flex justify-between text-text-secondary font-medium">
-                    <span>Stock status</span>
-                    <span className="text-red-400 font-bold">Only {stockLeft} items left in stock</span>
+                <div className="flex items-center justify-between text-text-secondary border-t border-white/5 pt-3">
+                  <div className="flex items-center gap-1.5">
+                    <Truck className="size-3.5 text-accent-gold" />
+                    <span>Shipping and returns</span>
                   </div>
-                  <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full rounded-full bg-gradient-to-r from-red-500 to-accent-gold transition-all duration-1000 shadow-[0_0_8px_rgba(201,169,110,0.5)]" 
-                      style={{ width: `${(stockLeft / 15) * 100}%` }}
-                    />
-                  </div>
+                  <span className="font-semibold text-white/80">Shown before checkout</span>
                 </div>
 
-                {/* 3. Timer Scarcity */}
                 <div className="flex items-center justify-between text-text-secondary border-t border-white/5 pt-2">
                   <div className="flex items-center gap-1.5">
-                    <Clock className="size-3.5 text-accent-gold" />
-                    <span>Flash Sale Ending Soon:</span>
+                    <RotateCcw className="size-3.5 text-accent-gold" />
+                    <span>Return policy</span>
                   </div>
-                  <div className="flex gap-1 text-[11px] font-extrabold text-black">
-                    <span className="bg-accent-gold px-2 py-0.5 rounded">{String(timeLeft.minutes).padStart(2, '0')}m</span>
-                    <span className="text-accent-gold self-center">:</span>
-                    <span className="bg-accent-gold px-2 py-0.5 rounded">{String(timeLeft.seconds).padStart(2, '0')}s</span>
-                  </div>
+                  <span className="font-semibold text-white/80">Review on destination page</span>
                 </div>
               </div>
 
@@ -627,7 +592,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   style={{ background: "#c9a96e" }}
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
-                    SECURE YOUR GEAR NOW
+                    {product.price > 0 ? "SECURE YOUR GEAR NOW" : "OPEN THE CHECKLIST"}
                     <ChevronRight className="size-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                   {/* Glowing hover light */}
@@ -655,7 +620,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               {/* Delivery and Guarantee Strip */}
               <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-4">
                 {[
-                  { icon: Truck, text: "Free EU Delivery", sub: "Orders €30+" },
+                  { icon: Truck, text: "US Delivery", sub: "Details at checkout" },
                   { icon: ShieldCheck, text: "30-Day Guarantee", sub: "100% Risk-Free" },
                   { icon: RotateCcw, text: "Hassle-Free Returns", sub: "Easy refund support" },
                 ].map(({ icon: Icon, text, sub }) => (
@@ -678,10 +643,10 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
         <Container>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { label: "ESTHETICIAN APPROVED", value: "Recommended for 40+" },
-              { label: "SURGICAL NORDIC STEEL", value: "Swedish Sandvik Blades" },
-              { label: "100% VEGAN & CLEAN", value: "Skin barrier sensitive" },
-              { label: "ZERO IRRITATION", value: "Micro-safety guards built" }
+              { label: "FIELD-READY PICKS", value: "Practical everyday use" },
+              { label: "NO PLACEHOLDER CTA", value: "Every button has a destination" },
+              { label: "LAYERED READINESS", value: "Security, power, light, comms" },
+              { label: "30-DAY CONFIDENCE", value: "Review terms before checkout" }
             ].map(({ label, value }) => (
               <div key={label} className="space-y-1">
                 <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#c9a96e" }}>{label}</p>
@@ -698,12 +663,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>VISUAL RESULTS PROVEN</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>BEFORE AND AFTER READINESS</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              See The Glow Transformation
+              See What This Upgrade Solves
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Here is how your weekly ritual actively targets dead cell barriers, hair meshe, and unexpected blemishes to reveal glass skin.
+              A good preparedness purchase should remove a specific point of failure, not just look impressive on a shelf.
             </p>
           </div>
 
@@ -711,8 +676,8 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             {/* Before Box */}
             <div className="border border-red-950/20 bg-red-950/[0.03] rounded-2xl p-6 md:p-8 space-y-4">
               <div className="flex items-center justify-between border-b border-red-900/10 pb-3">
-                <span className="text-sm font-bold uppercase tracking-wider text-red-400">Standard / Before Ritual</span>
-                <span className="bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Dull State</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-red-400">Before Upgrade</span>
+                <span className="bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Weak point</span>
               </div>
               <ul className="space-y-3.5">
                 {beforeAfter.before.map(step => (
@@ -728,12 +693,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             <div className="border border-accent-gold/20 bg-accent-gold/[0.03] rounded-2xl p-6 md:p-8 space-y-4 shadow-[0_0_30px_rgba(201,169,110,0.05)] relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-accent-gold/10 text-accent-gold border-b border-l border-accent-gold/20 px-3 py-1 rounded-bl-xl text-[10px] font-bold tracking-widest flex items-center gap-1 uppercase">
                 <Sparkles className="size-3" />
-                <span>Glow Effect</span>
+                <span>Prepared State</span>
               </div>
               
               <div className="flex items-center justify-between border-b border-accent-gold/10 pb-3">
-                <span className="text-sm font-bold uppercase tracking-wider text-accent-gold">With Lux Aura Care</span>
-                <span className="bg-accent-gold/15 text-accent-gold border border-accent-gold/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Radiant Skin</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-accent-gold">After Upgrade</span>
+                <span className="bg-accent-gold/15 text-accent-gold border border-accent-gold/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Controlled</span>
               </div>
               <ul className="space-y-3.5">
                 {beforeAfter.after.map(step => (
@@ -757,7 +722,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               How We Benchmark Against Generics
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Not all skincare tools are created equal. Do not compromise sensitive skin with cheap disposable pharmacy options.
+              Not every cheap alternative performs when conditions are bad. Prioritize durable, simple, field-ready gear.
             </p>
           </div>
 
@@ -766,9 +731,9 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-white/[0.02] border-b border-white/10 text-xs md:text-sm uppercase tracking-wider font-semibold text-white">
-                    <th className="p-4 md:p-5">Ritual Standard</th>
-                    <th className="p-4 md:p-5 text-accent-gold bg-accent-gold/5 font-extrabold text-center">Lux Aura Care</th>
-                    <th className="p-4 md:p-5 text-text-secondary text-center">Standard Brands</th>
+                    <th className="p-4 md:p-5">Decision Point</th>
+                    <th className="p-4 md:p-5 text-accent-gold bg-accent-gold/5 font-extrabold text-center">Security Mood Pick</th>
+                    <th className="p-4 md:p-5 text-text-secondary text-center">Cheap Alternative</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-xs md:text-sm text-white/80">
@@ -803,12 +768,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>ENGINEERED BEAUTY</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>ENGINEERED FOR READINESS</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              The Science Behind The Glow
+              The Practical Details That Matter
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Every detail is engineered with absolute dermatological rigor to deliver instant, visible improvements without compromises.
+              These are the features that determine whether a product is useful during everyday problems and real emergencies.
             </p>
           </div>
 
@@ -838,12 +803,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10 bg-white/[0.005]">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>SENSORY SELF-CARE STEP-BY-STEP</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>DEPLOYMENT STEPS</span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              Your Guided Weekly Glow Ritual
+              How To Put It Into Use
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Follow this simple, professional step-by-step guideline to completely refresh your facial epidermis in minutes.
+              Clear steps make gear easier to use when time, light, or attention is limited.
             </p>
           </div>
 
@@ -884,7 +849,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               Real Customer Verified Experiences
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              We source real reviews from global product bestsellers. Here is what women cross Europe are sharing.
+              Review signals summarize why customers choose this type of gear and what they value after using it.
             </p>
           </div>
 
@@ -1000,9 +965,26 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
                     <div className="flex items-center gap-4 text-[10px] md:text-xs text-text-secondary border-t border-white/5 pt-3">
                       <span>Was this review helpful?</span>
-                      <button className="flex items-center gap-1 hover:text-white transition-colors bg-white/[0.03] hover:bg-white/[0.06] px-2.5 py-1 rounded-full border border-white/5">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setHelpfulReviewKeys((prev) => ({
+                            ...prev,
+                            [item.author]: !prev[item.author],
+                          }))
+                        }
+                        className={`flex items-center gap-1 transition-colors px-2.5 py-1 rounded-full border ${
+                          helpfulReviewKeys[item.author]
+                            ? "border-accent-gold/30 bg-accent-gold/10 text-accent-gold"
+                            : "border-white/5 bg-white/[0.03] hover:bg-white/[0.06] hover:text-white"
+                        }`}
+                        aria-pressed={Boolean(helpfulReviewKeys[item.author])}
+                      >
                         <ThumbsUp className="size-3" />
-                        <span>Helpful ({item.helpfulCount})</span>
+                        <span>
+                          {helpfulReviewKeys[item.author] ? "Marked helpful" : "Helpful"} (
+                          {item.helpfulCount + (helpfulReviewKeys[item.author] ? 1 : 0)})
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -1023,7 +1005,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               Frequently Asked Questions
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Answering your inquiries. We transparently address every detail of the weekly skin rituals.
+              Clear answers before checkout, so the purchase decision does not feel vague or risky.
             </p>
           </div>
 
@@ -1064,7 +1046,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             
             {/* Guarantee Circular Gold Badge Graphic */}
             <div className="relative shrink-0 size-32 md:size-40 border-4 border-double border-accent-gold rounded-full flex flex-col items-center justify-center text-center p-3 rotate-[-5deg] select-none bg-black/60 shadow-2xl">
-              <span className="text-[9px] font-extrabold tracking-widest text-accent-gold uppercase">GLOW RITUAL</span>
+              <span className="text-[9px] font-extrabold tracking-widest text-accent-gold uppercase">SECURITY MOOD</span>
               <span className="text-lg md:text-xl font-black text-white font-serif leading-none py-1">30-DAY</span>
               <span className="text-[10px] font-extrabold tracking-widest text-accent-gold uppercase leading-none">RISK FREE</span>
               <span className="text-[8px] text-white/50 pt-1">GUARANTEE</span>
@@ -1076,7 +1058,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 Try It Out Risk-Free For 30 Days
               </h2>
               <p className="text-xs md:text-sm leading-relaxed text-text-secondary">
-                We are so confident that you will fall in love with the skin smoothing and blemish-clearing results of your Lux Aura Care weekly ritual that we offer a full **30-Day Glow Guarantee**. If your skin is not visibly softer, smoother, or clearer, simply reach out to us and we will issue a full, prompt refund. No questions asked. Your skin renewal is our standard.
+                Buy through the linked checkout or curated product destination and review shipping, return, and seller terms before payment. Security Mood keeps the buying path focused: useful gear first, clear next step, and no dead-end buttons.
               </p>
             </div>
           </div>
@@ -1089,15 +1071,15 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] size-96 rounded-full bg-accent-gold/5 blur-[120px] pointer-events-none" />
 
         <Container className="relative z-10 space-y-6">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#c9a96e" }}>YOUR RADIANT COMPLEXION AWAITS</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#c9a96e" }}>FINISH YOUR READINESS UPGRADE</span>
           <h2
             className="text-3xl md:text-5xl font-semibold text-white max-w-xl mx-auto"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Ready to start your weekly glow ritual?
+            Ready to make your setup stronger?
           </h2>
           <p className="text-sm md:text-base max-w-md mx-auto" style={{ color: "#a8a8a8" }}>
-            Join 12,000+ happy women who elevated their skin care routine with clinic-quality results.
+            Add the item to your kit now, or open the checklist and fill the gaps in the right order.
           </p>
           
           <div className="pt-4 max-w-sm mx-auto">
@@ -1108,10 +1090,10 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="block w-full py-4.5 rounded-xl text-base font-extrabold text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-[0_0_20px_rgba(201,169,110,0.2)]"
               style={{ background: "#c9a96e" }}
             >
-              Kup Teraz — €{product.price.toFixed(2)}
+              {getPrimaryCta(product)}
             </a>
             <p className="text-[10px] text-text-secondary mt-3">
-              🔒 256-Bit SSL Encrypted Checkout · 30-Day Money Back Guarantee
+              Secure destination checkout · Review final terms before payment
             </p>
           </div>
         </Container>
@@ -1125,7 +1107,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="text-2xl md:text-3xl font-semibold text-white text-center mb-10"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Complete your weekly ritual
+              Complete Your Preparedness Layer
             </h2>
             <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
               {related.map((rel) => {
@@ -1147,12 +1129,16 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                       </div>
                       <div className="flex items-center justify-between pt-1">
                         <div className="flex items-baseline gap-2">
-                          <span className="text-sm font-extrabold text-accent-gold">€{rel.price.toFixed(2)}</span>
-                          <span className="text-[10px] line-through text-text-secondary">€{rel.compareAtPrice.toFixed(2)}</span>
+                          <span className="text-sm font-extrabold text-accent-gold">{formatShopPrice(rel.price)}</span>
+                          {rel.compareAtPrice > 0 && (
+                            <span className="text-[10px] line-through text-text-secondary">${rel.compareAtPrice.toFixed(2)}</span>
+                          )}
                         </div>
-                        <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold border border-accent-gold/20">
-                          -{relDiscount}% Off
-                        </span>
+                        {rel.compareAtPrice > 0 && (
+                          <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold border border-accent-gold/20">
+                            -{relDiscount}% Off
+                          </span>
+                        )}
                       </div>
                     </div>
                   </a>
@@ -1177,16 +1163,18 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             <div className="min-w-0">
               <p className="text-xs md:text-sm font-bold text-white truncate max-w-[150px] md:max-w-xs">{product.name}</p>
               <div className="flex items-center gap-2">
-                <span className="text-xs md:text-sm font-extrabold text-accent-gold">€{product.price.toFixed(2)}</span>
-                <span className="text-[10px] line-through text-text-secondary">€{product.compareAtPrice.toFixed(2)}</span>
+                <span className="text-xs md:text-sm font-extrabold text-accent-gold">{formatShopPrice(product.price)}</span>
+                {product.compareAtPrice > 0 && (
+                  <span className="text-[10px] line-through text-text-secondary">${product.compareAtPrice.toFixed(2)}</span>
+                )}
               </div>
             </div>
           </div>
           
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-1 bg-red-950/40 text-red-400 border border-red-900/30 px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider animate-pulse">
-              <Flame className="size-3 fill-red-400" />
-              <span>Only {stockLeft} left</span>
+            <div className="hidden md:flex items-center gap-1 bg-accent-gold/10 text-accent-gold border border-accent-gold/20 px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider">
+              <ShieldCheck className="size-3" />
+              <span>Verified destination</span>
             </div>
             
             <a
@@ -1196,7 +1184,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="py-2.5 px-6 rounded-lg text-xs md:text-sm font-extrabold text-black transition-all hover:opacity-90 active:scale-[0.98] shadow-lg flex items-center gap-1.5 uppercase tracking-wider"
               style={{ background: "#c9a96e" }}
             >
-              <span>Kup Teraz</span>
+              <span>{product.price > 0 ? "Buy Now" : "Open Guide"}</span>
               <ChevronRight className="size-4" />
             </a>
           </div>
@@ -1316,7 +1304,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   rel="noopener noreferrer"
                   className="block w-full py-2.5 rounded-lg text-xs font-extrabold text-black bg-accent-gold text-center hover:opacity-90 active:scale-[0.98] transition-all"
                 >
-                  Kup Teraz — €{product.price.toFixed(2)}
+                  {getPrimaryCta(product)}
                 </a>
               </div>
             </div>

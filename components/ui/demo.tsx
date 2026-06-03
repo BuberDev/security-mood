@@ -54,9 +54,9 @@ function HoverFooter() {
   ];
 
   const socialLinks = [
-    { icon: <Pin size={20} />, label: "Pinterest", href: "#" },
-    { icon: <Camera size={20} />, label: "Instagram", href: "#" },
-    { icon: <Play size={20} />, label: "YouTube", href: "#" },
+    { icon: <Pin size={20} />, label: "Pinterest", href: "https://www.pinterest.com/search/pins/?q=Security%20Mood" },
+    { icon: <Camera size={20} />, label: "Instagram", href: "https://www.instagram.com/explore/search/keyword/?q=securitymood" },
+    { icon: <Play size={20} />, label: "YouTube", href: "https://www.youtube.com/results?search_query=Security+Mood+preparedness" },
   ];
 
   return (
@@ -124,6 +124,8 @@ function HoverFooter() {
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="transition-colors hover:text-accent-gold"
               >
                 {icon}

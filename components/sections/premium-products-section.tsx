@@ -37,7 +37,7 @@ export function PremiumProductsSection({ className }: PremiumProductsSectionProp
         </div>
 
         <div className="mt-12 flex justify-center">
-          <CTAButton href="#" label="View All Premium Gear" variant="secondary" />
+          <CTAButton href="/favorites" label="View All Premium Gear" variant="secondary" />
         </div>
       </Container>
     </Section>
