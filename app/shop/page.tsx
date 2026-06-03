@@ -65,97 +65,123 @@ export default function ShopPage() {
       <section className="py-16 px-4">
         <Container>
           <div className="grid gap-8 md:grid-cols-3">
-            {shopProducts.map((product) => (
-              <Link
-                key={product.id}
-                href={`/shop/${product.id}`}
-                className="group block rounded-2xl border border-white/10 overflow-hidden hover:border-white/25 transition-all duration-300"
-                style={{ background: "rgb(255 255 255 / 0.02)" }}
-              >
-                {/* Image */}
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={product.image}
-                    alt={product.imageAlt}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <span
-                    className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
-                    style={{ background: "#c9a96e", color: "#000" }}
-                  >
-                    {product.badge}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="p-6 space-y-4">
-                  <div>
-                    <h2 className="text-xl font-semibold text-white mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-                      {product.name}
-                    </h2>
-                    <p className="text-sm" style={{ color: "#a8a8a8" }}>{product.tagline}</p>
-                  </div>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="size-3.5"
-                          style={{
-                            fill: i < Math.floor(product.rating) ? "#c9a96e" : "transparent",
-                            color: "#c9a96e",
-                          }}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-xs" style={{ color: "#a8a8a8" }}>
-                      {product.rating} ({product.reviews} reviews)
+            {shopProducts.map((product) => {
+              const cardClassName =
+                "group block rounded-2xl border border-white/10 overflow-hidden hover:border-white/25 transition-all duration-300";
+              const cardStyle = { background: "rgb(255 255 255 / 0.02)" };
+              const cardContent = (
+                <>
+                  {/* Image */}
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <span
+                      className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
+                      style={{ background: "#c9a96e", color: "#000" }}
+                    >
+                      {product.badge}
                     </span>
                   </div>
 
-                  {/* Benefits preview */}
-                  <ul className="space-y-1.5">
-                    {product.benefits.slice(0, 3).map((b) => (
-                      <li key={b} className="flex items-start gap-2 text-xs" style={{ color: "#a8a8a8" }}>
-                        <Check className="size-3.5 mt-0.5 shrink-0" style={{ color: "#c9a96e" }} />
-                        {b}
-                      </li>
-                    ))}
-                  </ul>
+                  {/* Content */}
+                  <div className="p-6 space-y-4">
+                    <div>
+                      <h2 className="text-xl font-semibold text-white mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
+                        {product.name}
+                      </h2>
+                      <p className="text-sm" style={{ color: "#a8a8a8" }}>{product.tagline}</p>
+                    </div>
 
-                  {/* Price */}
-                  {product.price > 0 ? (
-                    <div className="flex items-baseline gap-3 pt-1">
-                      <span className="text-2xl font-bold text-white">
-                        ${product.price.toFixed(2)}
-                      </span>
-                      <span className="text-sm line-through" style={{ color: "#a8a8a8" }}>
-                        ${product.compareAtPrice.toFixed(2)}
-                      </span>
-                      <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{ background: "rgb(201 169 110 / 0.15)", color: "#c9a96e" }}>
-                        -{Math.round((1 - product.price / product.compareAtPrice) * 100)}%
+                    {/* Rating */}
+                    <div className="flex items-center gap-2">
+                      <div className="flex">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="size-3.5"
+                            style={{
+                              fill: i < Math.floor(product.rating) ? "#c9a96e" : "transparent",
+                              color: "#c9a96e",
+                            }}
+                          />
+                        ))}
+                      </div>
+                      <span className="text-xs" style={{ color: "#a8a8a8" }}>
+                        {product.rating} ({product.reviews} reviews)
                       </span>
                     </div>
-                  ) : (
-                    <div className="pt-1 text-sm font-semibold" style={{ color: "#c9a96e" }}>
-                      Curated buying guide
-                    </div>
-                  )}
 
-                  <div
-                    className="w-full text-center py-3 rounded-xl text-sm font-semibold text-black transition-opacity group-hover:opacity-90"
-                    style={{ background: "#c9a96e" }}
-                  >
-                    {product.price > 0 ? "View Product →" : "Open Checklist →"}
+                    {/* Benefits preview */}
+                    <ul className="space-y-1.5">
+                      {product.benefits.slice(0, 3).map((b) => (
+                        <li key={b} className="flex items-start gap-2 text-xs" style={{ color: "#a8a8a8" }}>
+                          <Check className="size-3.5 mt-0.5 shrink-0" style={{ color: "#c9a96e" }} />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Price */}
+                    {product.price > 0 ? (
+                      <div className="flex items-baseline gap-3 pt-1">
+                        <span className="text-2xl font-bold text-white">
+                          ${product.price.toFixed(2)}
+                        </span>
+                        <span className="text-sm line-through" style={{ color: "#a8a8a8" }}>
+                          ${product.compareAtPrice.toFixed(2)}
+                        </span>
+                        <span className="text-xs font-semibold px-2 py-0.5 rounded" style={{ background: "rgb(201 169 110 / 0.15)", color: "#c9a96e" }}>
+                          -{Math.round((1 - product.price / product.compareAtPrice) * 100)}%
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="pt-1 text-sm font-semibold" style={{ color: "#c9a96e" }}>
+                        Curated buying guide
+                      </div>
+                    )}
+
+                    <div
+                      className="w-full text-center py-3 rounded-xl text-sm font-semibold text-black transition-opacity group-hover:opacity-90"
+                      style={{ background: "#c9a96e" }}
+                    >
+                      {product.price > 0 ? "Buy Now →" : "Open Checklist →"}
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </>
+              );
+
+              if (product.price > 0) {
+                return (
+                  <a
+                    key={product.id}
+                    href={product.shopifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                    className={cardClassName}
+                    style={cardStyle}
+                  >
+                    {cardContent}
+                  </a>
+                );
+              }
+
+              return (
+                <Link
+                  key={product.id}
+                  href={product.shopifyUrl}
+                  className={cardClassName}
+                  style={cardStyle}
+                >
+                  {cardContent}
+                </Link>
+              );
+            })}
           </div>
         </Container>
       </section>

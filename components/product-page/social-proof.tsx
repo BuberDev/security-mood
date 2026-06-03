@@ -10,9 +10,17 @@ type SocialProofProps = {
   ratingLabel: string;
   reviews: string;
   ctaHref: string;
+  ctaLabel?: string;
 };
 
-export function SocialProof({ headline, socialLine, ratingLabel, reviews, ctaHref }: SocialProofProps) {
+export function SocialProof({
+  headline,
+  socialLine,
+  ratingLabel,
+  reviews,
+  ctaHref,
+  ctaLabel = "Check on Amazon",
+}: SocialProofProps) {
   return (
     <Section className="atmosphere-surface [content-visibility:auto] [contain-intrinsic-size:1px_520px]">
       <Container>
@@ -33,7 +41,7 @@ export function SocialProof({ headline, socialLine, ratingLabel, reviews, ctaHre
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-text-secondary">&ldquo;{socialLine}&rdquo;</p>
 
           <div className="mt-7">
-            <CTAButton href={ctaHref} label="Check on Amazon" />
+            <CTAButton href={ctaHref} label={ctaLabel} />
           </div>
         </div>
       </Container>

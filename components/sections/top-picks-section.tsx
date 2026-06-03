@@ -29,7 +29,6 @@ export function TopPicksSection({ className }: TopPicksSectionProps) {
               product={item.product}
               compact
               featuredBadge={item.badge}
-              ctaLabel="View on Amazon"
               detailsHref={`/favorites/${item.product.id}`}
             />
           ))}

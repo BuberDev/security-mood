@@ -11,6 +11,7 @@ import { RelatedProducts } from "@/components/product-page/related-products";
 import { RoutineSection } from "@/components/product-page/routine-section";
 import { SocialProof } from "@/components/product-page/social-proof";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel, isShopifyCommerceUrl } from "@/lib/commerce";
 import { getProductPageContent } from "@/lib/product-page-content";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { getProductById, getProductProof, products, siteMeta, type Product } from "@/lib/site-data";
@@ -83,6 +84,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const proof = getProductProof(product.id);
   const content = getProductPageContent(product, proof);
   const relatedProducts = getRelatedProducts(product);
+  const commerceCtaLabel = getCommerceCtaLabel(product);
+  const isShopifyDestination = isShopifyCommerceUrl(product.amazonUrl);
 
   const breadcrumbsJsonLd = generateBreadcrumbsJsonLd([
     { name: "Home", item: "/" },
@@ -178,6 +181,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
         problemParagraph={content.problemParagraph}
         solutionParagraph={content.solutionParagraph}
         ctaHref={getAffiliateRoute(product.id, "product-problem-solution")}
+        ctaLabel={commerceCtaLabel}
       />
       <BenefitList items={content.detailedBenefits} />
       <RoutineSection
@@ -192,9 +196,19 @@ export default async function ProductPage({ params }: ProductPageProps) {
         ratingLabel={content.socialRatingLabel}
         reviews={proof.reviews}
         ctaHref={getAffiliateRoute(product.id, "product-social-proof")}
+        ctaLabel={commerceCtaLabel}
       />
       <RelatedProducts products={relatedProducts} />
-      <CTASection ctaHref={getAffiliateRoute(product.id, "product-final-cta")} />
+      <CTASection
+        ctaHref={getAffiliateRoute(product.id, "product-final-cta")}
+        ctaLabel={commerceCtaLabel}
+        description={
+          isShopifyDestination
+            ? "Open the current store listing to confirm availability, shipping, and checkout terms before payment."
+            : undefined
+        }
+        headline={isShopifyDestination ? "Open the current store listing" : undefined}
+      />
     </>
   );
 }

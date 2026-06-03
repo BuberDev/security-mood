@@ -11,6 +11,7 @@ import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel } from "@/lib/commerce";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import {
   articles,
@@ -109,7 +110,10 @@ function ArticleProductBlock({ productId }: { productId: string }) {
           </ul>
 
           <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">{proof.socialProof}</p>
-          <CTAButton href={getAffiliateRoute(product.id, "article-product-block")} label="Check on Amazon" />
+          <CTAButton
+            href={getAffiliateRoute(product.id, "article-product-block")}
+            label={getCommerceCtaLabel(product)}
+          />
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { getShopifyProductUrl } from "@/lib/commerce";
+
 export type CategoryId = "home-security" | "personal-safety" | "cyber-shield" | "emergency-prep";
 
 export type Category = {
@@ -17,7 +19,7 @@ export type Product = {
   trustSignal: "Top rated" | "Popular" | "Editor favorite";
   image: string;
   imageAlt: string;
-  amazonUrl: string;
+  amazonUrl: string; // Primary commerce destination: Amazon affiliate URL or Shopify product page.
 };
 
 export type ProductProof = {
@@ -350,7 +352,7 @@ export const products: Product[] = [
     trustSignal: "Top rated",
     image: "/images/products/biometric_lock.png",
     imageAlt: "Biometric Smart Lock installed on a premium wooden door",
-    amazonUrl: "https://security-mood.myshopify.com/cart/53914655523155:1",
+    amazonUrl: getShopifyProductUrl("biometric-smart-lock", "53914655523155"),
   },
   {
     id: "mini-spy-camera-4k",
@@ -361,7 +363,7 @@ export const products: Product[] = [
     trustSignal: "Popular",
     image: "/images/products/mini_camera.png",
     imageAlt: "Tiny 4k mini security camera on a dark surface",
-    amazonUrl: "https://security-mood.myshopify.com/cart/53914655555923:1",
+    amazonUrl: getShopifyProductUrl("mini-spy-camera-4k", "53914655555923"),
   },
   {
     id: "anti-theft-smart-backpack",
@@ -372,7 +374,7 @@ export const products: Product[] = [
     trustSignal: "Editor favorite",
     image: "/images/products/anti_theft_backpack.png",
     imageAlt: "Person wearing modern tactical black anti-theft smart backpack",
-    amazonUrl: "https://security-mood.myshopify.com/cart/53914655588691:1",
+    amazonUrl: getShopifyProductUrl("anti-theft-smart-backpack", "53914655588691"),
   },
 
   {

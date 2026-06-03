@@ -31,7 +31,7 @@ export function PremiumProductsSection({ className }: PremiumProductsSectionProp
               key={product.id}
               product={product}
               featuredBadge={index === 0 ? "Best Seller" : "Trending"}
-              ctaLabel="Check In Store"
+              ctaLabel="View in store"
             />
           ))}
         </div>

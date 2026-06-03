@@ -7,6 +7,7 @@ import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel } from "@/lib/commerce";
 import { getGlowRoutineSteps, getProductProof } from "@/lib/site-data";
 
 export function RoutineSection() {
@@ -55,7 +56,7 @@ export function RoutineSection() {
                       <p className="text-sm text-text-secondary">{step.product.name}</p>
                       <CTAButton
                         href={getAffiliateRoute(step.product.id, "routine-step")}
-                        label="Check on Amazon"
+                        label={getCommerceCtaLabel(step.product)}
                         className="h-10 px-5 text-sm"
                       />
                     </div>

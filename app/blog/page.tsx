@@ -237,7 +237,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                     product={item.product}
                     compact
                     featuredBadge={item.badge}
-                    ctaLabel="View on Amazon"
                   />
                 ))}
               </div>

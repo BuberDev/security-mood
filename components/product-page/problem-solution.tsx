@@ -7,6 +7,7 @@ type ProblemSolutionProps = {
   problemParagraph: string;
   solutionParagraph: string;
   ctaHref: string;
+  ctaLabel?: string;
 };
 
 export function ProblemSolution({
@@ -14,6 +15,7 @@ export function ProblemSolution({
   problemParagraph,
   solutionParagraph,
   ctaHref,
+  ctaLabel = "Check on Amazon",
 }: ProblemSolutionProps) {
   return (
     <Section className="[content-visibility:auto] [contain-intrinsic-size:1px_440px]">
@@ -26,7 +28,7 @@ export function ProblemSolution({
           </p>
 
           <div className="mt-7">
-            <CTAButton href={ctaHref} label="Check on Amazon" variant="secondary" />
+            <CTAButton href={ctaHref} label={ctaLabel} variant="secondary" />
           </div>
         </div>
       </Container>

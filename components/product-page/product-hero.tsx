@@ -5,6 +5,7 @@ import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel } from "@/lib/commerce";
 import type { Product, ProductProof } from "@/lib/site-data";
 
 type ProductHeroProps = {
@@ -62,7 +63,7 @@ export function ProductHero({ product, proof, emotionalHook, bestFor, keyBenefit
 
             <CTAButton
               href={getAffiliateRoute(product.id, "product-hero")}
-              label="Check on Amazon"
+              label={getCommerceCtaLabel(product)}
               className="w-full sm:w-auto"
             />
           </div>

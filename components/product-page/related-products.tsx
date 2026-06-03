@@ -5,6 +5,7 @@ import { Container } from "@/components/container";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel } from "@/lib/commerce";
 import type { Product } from "@/lib/site-data";
 
 type RelatedProductsProps = {
@@ -57,7 +58,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
                     rel="noopener noreferrer sponsored"
                     className="inline-flex text-xs uppercase tracking-[0.14em] text-text-secondary transition-colors hover:text-accent-gold"
                   >
-                    Check on Amazon
+                    {getCommerceCtaLabel(product)}
                   </a>
                 </div>
               </div>

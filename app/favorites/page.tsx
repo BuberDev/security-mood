@@ -151,7 +151,6 @@ export default function FavoritesPage() {
                     key={product.id}
                     product={product}
                     compact
-                    ctaLabel="View on Amazon"
                     detailsHref={`/favorites/${product.id}`}
                   />
                 ))}

@@ -6,6 +6,7 @@ import { CTAButton } from "@/components/cta-button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getCommerceCtaLabel } from "@/lib/commerce";
 import { getProductProof, type Product, type TopPickBadge } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
@@ -144,7 +145,7 @@ export function ProductCard({
 
         <CTAButton
           href={getAffiliateRoute(product.id, "product-card")}
-          label={ctaLabel ?? (compact ? "View on Amazon" : "Check on Amazon")}
+          label={ctaLabel ?? getCommerceCtaLabel(product, compact ? "View on Amazon" : "Check on Amazon")}
           className="w-full"
         />
       </div>
