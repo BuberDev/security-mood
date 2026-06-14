@@ -20,6 +20,7 @@ export type Product = {
   image: string;
   imageAlt: string;
   amazonUrl: string; // Primary commerce destination: Amazon affiliate URL or Shopify product page.
+  price?: number; // Approximate USD price for structured data (schema.org offers)
 };
 
 export type ProductProof = {
@@ -353,6 +354,7 @@ export const products: Product[] = [
     image: "/images/products/biometric_lock.png",
     imageAlt: "Biometric Smart Lock installed on a premium wooden door",
     amazonUrl: getShopifyProductUrl("biometric-smart-lock", "53914655523155"),
+    price: 49.99,
   },
   {
     id: "mini-spy-camera-4k",
@@ -364,6 +366,7 @@ export const products: Product[] = [
     image: "/images/products/mini_camera.png",
     imageAlt: "Tiny 4k mini security camera on a dark surface",
     amazonUrl: getShopifyProductUrl("mini-spy-camera-4k", "53914655555923"),
+    price: 39.99,
   },
   {
     id: "anti-theft-smart-backpack",
@@ -375,6 +378,7 @@ export const products: Product[] = [
     image: "/images/products/anti_theft_backpack.png",
     imageAlt: "Person wearing modern tactical black anti-theft smart backpack",
     amazonUrl: getShopifyProductUrl("anti-theft-smart-backpack", "53914655588691"),
+    price: 59.99,
   },
 
   {
@@ -388,6 +392,7 @@ export const products: Product[] = [
     image: "/smart_camera.png",
     imageAlt: "TP-Link Tapo Smart Home Camera with app interface",
     amazonUrl: "https://amzn.to/3OccnLE",
+    price: 24.99,
   },
   {
     id: "personal-safety-alarm",
@@ -401,6 +406,7 @@ export const products: Product[] = [
       "/Birdie–The Original_Personal_Safety_Alarm.png",
     imageAlt: "Personal safety alarm in charcoal grey",
     amazonUrl: "https://amzn.to/4dTPuaj",
+    price: 29.99,
   },
   {
     id: "hardware-security-key",
@@ -414,6 +420,7 @@ export const products: Product[] = [
       "/Yubico-YubiKey_5C_NFC.png",
     imageAlt: "Yubikey hardware security key on a desk",
     amazonUrl: "https://amzn.to/4cQxPz9",
+    price: 55,
   },
   {
     id: "solar-emergency-radio",
@@ -426,6 +433,7 @@ export const products: Product[] = [
     image: "/radio_survival.png",
     imageAlt: "Orange NOAA survival radio with solar panel and hand crank",
     amazonUrl: "https://amzn.to/47W82D1",
+    price: 39.99,
   },
   {
     id: "smart-door-lock",
@@ -438,6 +446,7 @@ export const products: Product[] = [
     image: "/Cover_Wyze_Auto-Lock_Bolt.png",
     imageAlt: "Wyze Auto-Lock Bolt v2 smart lock with fingerprint scanner",
     amazonUrl: "https://amzn.to/4tM6JyH",
+    price: 89.99,
   },
   {
     id: "tactical-pen",
@@ -450,6 +459,7 @@ export const products: Product[] = [
     image: "/Kydex Multitool Sheath.png",
     imageAlt: "Kydex sheath on a belt holding a Leatherman multitool",
     amazonUrl: "https://amzn.to/4enMhzK",
+    price: 34.99,
   },
   {
     id: "pepper-spray-gel",
@@ -462,6 +472,7 @@ export const products: Product[] = [
     image: "/images/products/sabre-pepper-spray.png",
     imageAlt: "SABRE pepper spray keychain two pack",
     amazonUrl: "https://amzn.to/4vnUidi",
+    price: 14.99,
   },
   {
     id: "door-security-bar",
@@ -474,6 +485,7 @@ export const products: Product[] = [
     image: "/AceMining_Upgraded_Door_Security.png",
     imageAlt: "Security bar propping a door closed",
     amazonUrl: "https://amzn.to/4cMJspO",
+    price: 34.99,
   },
   {
     id: "water-filtration-straw",
@@ -486,6 +498,7 @@ export const products: Product[] = [
     image: "/LifeStraw_Personal_Water_Filter.png",
     imageAlt: "LifeStraw being used in a stream",
     amazonUrl: "https://amzn.to/4cLMGcX",
+    price: 19.99,
   },
   {
     id: "faraday-bag",
@@ -498,6 +511,7 @@ export const products: Product[] = [
     image: "/images/products/mission-darkness-faraday-bag.png",
     imageAlt: "Mission Darkness non-window faraday bag for phones",
     amazonUrl: "https://amzn.to/4xaAEn4",
+    price: 34.99,
   },
   {
     id: "emergency-food-supply",
@@ -510,6 +524,7 @@ export const products: Product[] = [
     image: "/Preppers_long_term_book.png",
     imageAlt: "Prepper's Long-Term Survival Guide book cover",
     amazonUrl: "https://amzn.to/4sriLfW",
+    price: 14.99,
   },
   {
     id: "portable-safe",
@@ -522,6 +537,7 @@ export const products: Product[] = [
     image: "/images/products/safego-portable-safe.png",
     imageAlt: "Orange SAFEGO portable indoor outdoor lock box safe",
     amazonUrl: "https://amzn.to/43f2NLQ",
+    price: 39.99,
   },
   {
     id: "webcam-covers",
@@ -534,6 +550,7 @@ export const products: Product[] = [
     image: "/images/products/cloudvalley-webcam-cover.png",
     imageAlt: "CloudValley white ultra-thin webcam cover slide two pack",
     amazonUrl: "https://amzn.to/4fnCIl1",
+    price: 9.99,
   },
   {
     id: "rfid-wallet",
@@ -546,6 +563,7 @@ export const products: Product[] = [
     image: "/Ridge_Wallet_for_Men.png",
     imageAlt: "Metal minimalist wallet with cards",
     amazonUrl: "https://amzn.to/41GLeDB",
+    price: 45,
   },
   {
     id: "privacy-screen",
@@ -558,6 +576,7 @@ export const products: Product[] = [
     image: "/images/products/privacy_screen.svg",
     imageAlt: "Laptop with privacy screen filtered view",
     amazonUrl: "https://amzn.to/4vogHrF",
+    price: 29.99,
   },
   {
     id: "first-aid-kit",
@@ -570,6 +589,7 @@ export const products: Product[] = [
     image: "/Mini_First_Aid_Kit_150_pcs_Waterproof_Travel_Emergency.png",
     imageAlt: "Tactical gear layout with red elements",
     amazonUrl: "https://amzn.to/4d9Cj35",
+    price: 39.99,
   },
   {
     id: "tactical-flashlight",
@@ -582,6 +602,7 @@ export const products: Product[] = [
     image: "/OLIGHT_2_Pack_IMINI2EDC.png",
     imageAlt: "Two mini Olight flashlights on a keychain",
     amazonUrl: "https://amzn.to/3Ru5s1r",
+    price: 24.99,
   },
   {
     id: "fire-starter-set",
@@ -594,6 +615,7 @@ export const products: Product[] = [
     image: "/images/products/fire_starter.svg",
     imageAlt: "Ferro rod creating sparks",
     amazonUrl: "https://amzn.to/4bY0MZC",
+    price: 14.99,
   },
   {
     id: "outdoor-motion-alarm",
@@ -606,6 +628,7 @@ export const products: Product[] = [
     image: "/images/products/driveway_alarm.svg",
     imageAlt: "Motion sensor mounted on a post",
     amazonUrl: "https://amzn.to/4cnPAnV",
+    price: 79.99,
   },
   {
     id: "emergency-blanket-set",
@@ -618,6 +641,7 @@ export const products: Product[] = [
     image: "/images/products/emergency_blanket.svg",
     imageAlt: "Reflective emergency blanket folded",
     amazonUrl: "https://amzn.to/3ObFRt3",
+    price: 14.99,
   },
   {
     id: "solar-motion-light",
@@ -630,6 +654,7 @@ export const products: Product[] = [
     image: "/Solar_Motion_Sensor_Lights_Outdoor.png",
     imageAlt: "Outdoor wall light illuminating a house exterior at night",
     amazonUrl: "https://amzn.to/4ub1Srf",
+    price: 34.99,
   },
   {
     id: "window-alarm-kit",
@@ -642,6 +667,7 @@ export const products: Product[] = [
     image: "/images/products/ge-window-door-alarm.png",
     imageAlt: "GE Personal Security magnetic window and door alarm two pack",
     amazonUrl: "https://amzn.to/4e3ZlbT",
+    price: 19.99,
   },
   {
     id: "door-wedge-alarm",
@@ -654,6 +680,7 @@ export const products: Product[] = [
     image: "/images/products/sabre-door-wedge-alarm.png",
     imageAlt: "Sabre 120 dB wedge door stop security alarm with warning decals",
     amazonUrl: "https://amzn.to/4ap6BxT",
+    price: 19.99,
   },
   {
     id: "hidden-camera-detector",
@@ -667,6 +694,7 @@ export const products: Product[] = [
       "/Hidden_Camera_Detector.png",
     imageAlt: "Dark room with a small LED device used for privacy scanning",
     amazonUrl: "https://amzn.to/48k1QoA",
+    price: 39.99,
   },
   {
     id: "rfid-passport-wallet",
@@ -680,6 +708,7 @@ export const products: Product[] = [
       "/RFID_Passport_Holder_Travel_Wallet.png",
     imageAlt: "Travel wallet beside a passport and boarding pass",
     amazonUrl: "https://amzn.to/4cMNPkp",
+    price: 19.99,
   },
   {
     id: "portable-power-station",
@@ -693,6 +722,7 @@ export const products: Product[] = [
       "/Anker_SOLIX_C300.png",
     imageAlt: "Portable power station with cables on a table",
     amazonUrl: "https://amzn.to/4cN4GUg",
+    price: 279.99,
   },
   {
     id: "emergency-car-kit",
@@ -706,6 +736,7 @@ export const products: Product[] = [
       "/Everlit_Survival_Car_Emergency_Kit.png",
     imageAlt: "Car emergency supplies laid out on a trunk mat",
     amazonUrl: "https://amzn.to/4cIzoPT",
+    price: 59.99,
   },
 ];
 

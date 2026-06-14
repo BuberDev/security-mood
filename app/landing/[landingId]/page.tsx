@@ -134,6 +134,7 @@ export default async function LandingPage({ params }: LandingPageProps) {
           "@type": "Offer",
           availability: "https://schema.org/InStock",
           priceCurrency: "USD",
+          ...(product.price !== undefined && { price: product.price }),
           url: toAbsoluteUrl(`/go/${product.id}`),
           seller: {
             "@id": toAbsoluteUrl("/#organization"),
