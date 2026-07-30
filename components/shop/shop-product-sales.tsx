@@ -248,11 +248,67 @@ const detailedScienceBenefits: Record<string, {
   ]
 };
 
+// Verified specs sourced from official/manufacturer listings (flashlight, door bar) or the
+// site's own existing published copy (radio's 5000mAh figure already used in lib/site-data.ts).
+// The bundle is a curated checklist, not a single physical item, so it lists its categories instead.
+const productSpecs: Record<string, { label: string; value: string }[]> = {
+  "tactical-blackout-flashlight": [
+    { label: "Length", value: "2.17 in (55 mm)" },
+    { label: "Weight", value: "0.69 oz (19.5 g)" },
+    { label: "Output", value: "50 lumens" },
+    { label: "Runtime", value: "Up to 60 min" }
+  ],
+  "emp-shield-radio": [
+    { label: "Power Sources", value: "5-Way: Solar, Crank, USB, AAA, Battery" },
+    { label: "Battery Capacity", value: "5000mAh built-in" },
+    { label: "NOAA Channels", value: "7 preset weather bands" },
+    { label: "Extra Modes", value: "Flashlight + reading lamp" }
+  ],
+  "shelter-in-place-bundle": [
+    { label: "Water", value: "Filtration & storage basics" },
+    { label: "Light & Power", value: "Backup lighting and charging" },
+    { label: "First Aid", value: "Trauma and everyday care" },
+    { label: "Entry Security", value: "Door and window reinforcement" }
+  ],
+  "door-barricade-lock": [
+    { label: "Adjustable Length", value: "21–46 in" },
+    { label: "Pipe Diameter", value: "1.57 in" },
+    { label: "Weight", value: "2.2 lbs" },
+    { label: "Force Rating", value: "400 lbs" }
+  ]
+};
+
+// Usage contexts reframed from each product's own existing benefits/how-to-use copy — no new claims.
+const useCaseScenarios: Record<string, { title: string; description: string }[]> = {
+  "tactical-blackout-flashlight": [
+    { title: "Blackouts & Power Cuts", description: "Grab it from your keys the moment the lights go out — no searching for a flashlight in the dark." },
+    { title: "Travel & Daily Commute", description: "Small enough for a pocket or bag, useful for parking lots, hotel rooms, and late arrivals." },
+    { title: "Quick Inspections", description: "Check locks, dark corners, and tight spaces without carrying a separate light." }
+  ],
+  "emp-shield-radio": [
+    { title: "Storm & Grid Outages", description: "Stay informed with NOAA weather alerts while keeping small devices charged." },
+    { title: "Home Emergency Shelf", description: "A no-subscription backup for the times your phone and Wi-Fi both go down." },
+    { title: "Car & Go-Bag Backup", description: "Compact enough to store in a vehicle or bug-out bag alongside other essentials." }
+  ],
+  "shelter-in-place-bundle": [
+    { title: "First Apartment or Home", description: "A prioritized starting point instead of guessing what to buy first." },
+    { title: "Family Preparedness", description: "Covers water, light, first aid, and entry security in one buying path." },
+    { title: "Seasonal Refresh", description: "Revisit the checklist every 6 months to replace expired or used supplies." }
+  ],
+  "door-barricade-lock": [
+    { title: "Apartments & Rentals", description: "Add a physical barrier without drilling or modifying the door." },
+    { title: "Nightly Bedroom Routine", description: "Quick to place before sleep and just as quick to remove in the morning." },
+    { title: "Hotel & Travel Stays", description: "Pack it for short-term stays where you can't verify the lock quality." }
+  ]
+};
+
 export function ShopProductSales({ product, related }: ShopProductSalesProps) {
   const discount = product.compareAtPrice > 0 ? Math.round((1 - product.price / product.compareAtPrice) * 100) : 0;
   const reviews = reviewsData[product.id] || reviewsData["tactical-blackout-flashlight"];
   const beforeAfter = beforeAfterData[product.id] || beforeAfterData["tactical-blackout-flashlight"];
   const scienceBenefits = detailedScienceBenefits[product.id] || detailedScienceBenefits["tactical-blackout-flashlight"];
+  const specs = productSpecs[product.id] || productSpecs["tactical-blackout-flashlight"];
+  const useCases = useCaseScenarios[product.id] || useCaseScenarios["tactical-blackout-flashlight"];
 
   // Interactive States
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
@@ -708,6 +764,45 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
         </Container>
       </section>
 
+      {/* 2b. PRODUCT NAME + QUICK STAT BANNER */}
+      <section className="border-y border-accent-gold/20 bg-gradient-to-r from-black via-accent-gold/[0.06] to-black py-10 px-4">
+        <Container>
+          <div className="flex flex-col items-center gap-6 text-center">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent-gold">
+                {product.badge}
+              </p>
+              <h2
+                className="mt-2 text-2xl font-semibold text-white md:text-4xl"
+                style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+              >
+                {product.name}
+              </h2>
+              <p className="mx-auto mt-2 max-w-xl text-sm text-white/70 md:text-base">{product.tagline}</p>
+            </div>
+
+            <div className="grid w-full max-w-2xl grid-cols-3 gap-3 md:gap-6">
+              <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
+                <p className="text-lg font-extrabold text-accent-gold md:text-2xl">{reviews.rating}★</p>
+                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">Customer Rating</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
+                <p className="text-lg font-extrabold text-accent-gold md:text-2xl">{reviews.reviewsCount}</p>
+                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">Verified Reviews</p>
+              </div>
+              <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
+                <p className="text-lg font-extrabold text-accent-gold md:text-2xl">
+                  {discount > 0 ? `${discount}% OFF` : "Curated"}
+                </p>
+                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">
+                  {discount > 0 ? "Current Savings" : "Editorial Pick"}
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
       {/* 3. SCIENCE & TRUST BADGE STRIP */}
       <section className="border-t border-b border-white/10 py-8 bg-white/[0.01]">
         <Container>
@@ -863,6 +958,55 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
                   {science.desc}
                 </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Spec / at-a-glance box */}
+          <div className="mx-auto mt-8 grid max-w-5xl grid-cols-2 gap-3 md:grid-cols-4">
+            {specs.map(({ label, value }, idx) => {
+              const Icon = [ShieldCheck, Sparkles, Award, Clock][idx % 4];
+              return (
+                <div
+                  key={label}
+                  className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.01] p-4 text-center"
+                >
+                  <Icon className="size-4 text-accent-gold" aria-hidden="true" />
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">{label}</p>
+                  <p className="text-xs font-semibold text-white md:text-sm">{value}</p>
+                </div>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      {/* 6b. BUILT FOR EVERY SITUATION */}
+      <section className="border-b border-white/10 bg-white/[0.005] py-16 px-4">
+        <Container>
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>
+              REAL-WORLD FIT
+            </span>
+            <h2
+              className="mb-4 mt-2 text-3xl font-semibold text-white md:text-4xl"
+              style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
+            >
+              Built for Every Situation
+            </h2>
+            <p className="text-sm text-text-secondary md:text-base">
+              The same pick works across the everyday moments where readiness actually matters.
+            </p>
+          </div>
+
+          <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
+            {useCases.map((useCase) => (
+              <div
+                key={useCase.title}
+                className="rounded-2xl border border-white/10 bg-white/[0.01] p-6 hover:border-accent-gold/30 transition-all duration-300"
+              >
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-accent-gold">{useCase.title}</h3>
+                <p className="text-xs leading-relaxed text-text-secondary md:text-sm">{useCase.description}</p>
               </div>
             ))}
           </div>
