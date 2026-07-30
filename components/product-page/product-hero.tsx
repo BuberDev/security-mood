@@ -3,9 +3,10 @@ import { Check, Star } from "lucide-react";
 
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
+import { QuantityTierBuyBox } from "@/components/product-page/quantity-tier-buy-box";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
-import { getCommerceCtaLabel } from "@/lib/commerce";
+import { getCommerceCtaLabel, isShopifyCommerceUrl } from "@/lib/commerce";
 import type { Product, ProductProof } from "@/lib/site-data";
 
 type ProductHeroProps = {
@@ -61,11 +62,15 @@ export function ProductHero({ product, proof, emotionalHook, bestFor, keyBenefit
               </span>
             </div>
 
-            <CTAButton
-              href={getAffiliateRoute(product.id, "product-hero")}
-              label={getCommerceCtaLabel(product)}
-              className="w-full sm:w-auto"
-            />
+            {isShopifyCommerceUrl(product.amazonUrl) ? (
+              <QuantityTierBuyBox product={product} placement="product-hero" />
+            ) : (
+              <CTAButton
+                href={getAffiliateRoute(product.id, "product-hero")}
+                label={getCommerceCtaLabel(product)}
+                className="w-full sm:w-auto"
+              />
+            )}
           </div>
         </div>
       </Container>

@@ -25,7 +25,12 @@ export async function GET(request: NextRequest, context: GoRouteContext) {
     searchContext.pinId ??
     sanitizeTrackingValue(request.cookies.get(TRACKING_COOKIES.pinId)?.value, 80);
 
-  const destination = buildAmazonAffiliateUrl(productId, { source, campaign, pinId });
+  const rawQuantity = Number(request.nextUrl.searchParams.get("qty"));
+  const quantity = Number.isFinite(rawQuantity)
+    ? Math.max(1, Math.min(10, Math.trunc(rawQuantity)))
+    : undefined;
+
+  const destination = buildAmazonAffiliateUrl(productId, { source, campaign, pinId }, quantity);
 
   if (!destination) {
     return NextResponse.redirect(new URL("/favorites", request.url), 307);

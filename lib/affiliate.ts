@@ -1,3 +1,4 @@
+import { isShopifyCommerceUrl, withCartQuantity } from "@/lib/commerce";
 import { getProductById } from "@/lib/site-data";
 import { sanitizeTrackingValue, withQuery, type TrafficContext } from "@/lib/tracking";
 
@@ -7,8 +8,11 @@ function isAmazonUrl(url: URL) {
   return AMAZON_HOST_PATTERN.test(url.hostname);
 }
 
-export function getAffiliateRoute(productId: string, placement?: string) {
-  return withQuery(`/go/${productId}`, { placement });
+export function getAffiliateRoute(productId: string, placement?: string, quantity?: number) {
+  return withQuery(`/go/${productId}`, {
+    placement,
+    qty: quantity && quantity > 1 ? String(quantity) : undefined,
+  });
 }
 
 export function getTrafficContextFromSearchParams(searchParams: URLSearchParams): TrafficContext {
@@ -27,7 +31,8 @@ export function getTrafficContextFromSearchParams(searchParams: URLSearchParams)
 
 export function buildAmazonAffiliateUrl(
   productId: string,
-  context: TrafficContext
+  context: TrafficContext,
+  quantity?: number
 ) {
   const product = getProductById(productId);
   if (!product) {
@@ -57,6 +62,8 @@ export function buildAmazonAffiliateUrl(
     if (subtagParts.length > 0) {
       destination.searchParams.set("ascsubtag", subtagParts.join("|").slice(0, 120));
     }
+  } else if (quantity && quantity > 1 && isShopifyCommerceUrl(destination.toString())) {
+    destination = new URL(withCartQuantity(destination.toString(), quantity));
   }
 
   return destination;

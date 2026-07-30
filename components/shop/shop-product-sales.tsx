@@ -506,6 +506,24 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </p>
               </div>
 
+              {/* Quick-glance feature highlights */}
+              <div className="grid grid-cols-2 gap-2.5">
+                {product.benefits.slice(0, 4).map((benefit, idx) => {
+                  const Icon = [ShieldCheck, Sparkles, Award, Eye][idx % 4];
+                  return (
+                    <div
+                      key={benefit}
+                      className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.02] px-3 py-2.5"
+                    >
+                      <Icon className="size-4 shrink-0 text-accent-gold" aria-hidden="true" />
+                      <span className="text-[11px] md:text-xs font-medium leading-tight text-white/90 line-clamp-2">
+                        {benefit}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
+
               {/* Verified Rating click-to-scroll */}
               <div 
                 onClick={scrollToReviews} 
@@ -607,6 +625,36 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </div>
               </div>
 
+              {/* Featured review quote */}
+              {reviews.items[0] && (
+                <button
+                  type="button"
+                  onClick={scrollToReviews}
+                  className="w-full rounded-2xl border border-white/10 bg-white/[0.02] p-4 text-left transition-colors hover:border-accent-gold/30"
+                >
+                  <div className="mb-2 flex items-center gap-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="size-3.5"
+                          style={{
+                            fill: i < reviews.items[0].rating ? "#c9a96e" : "transparent",
+                            color: "#c9a96e",
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-accent-gold">
+                      {reviews.items[0].author} • Verified Buyer
+                    </span>
+                  </div>
+                  <p className="line-clamp-2 text-xs italic leading-relaxed text-white/85 md:text-sm">
+                    &quot;{reviews.items[0].content}&quot;
+                  </p>
+                </button>
+              )}
+
               {/* Benefit Bullet points list */}
               <ul className="space-y-3 pt-2 text-xs md:text-sm">
                 {product.benefits.map((benefit) => (
@@ -631,6 +679,28 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   </div>
                 ))}
               </div>
+
+              {/* Frequently paired with */}
+              {related[0] && (
+                <a
+                  href={`/shop/${related[0].id}`}
+                  className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-accent-gold/30 hover:bg-white/[0.04]"
+                >
+                  <div className="relative size-14 shrink-0 overflow-hidden rounded-lg border border-white/5">
+                    <Image src={related[0].image} alt={related[0].imageAlt} fill className="object-cover" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-accent-gold">
+                      Frequently Paired With
+                    </p>
+                    <p className="truncate text-xs font-semibold text-white transition-colors group-hover:text-accent-gold md:text-sm">
+                      {related[0].name}
+                    </p>
+                    <p className="text-[11px] text-text-secondary">{formatShopPrice(related[0].price)}</p>
+                  </div>
+                  <ChevronRight className="size-4 shrink-0 text-text-secondary transition-colors group-hover:text-accent-gold" />
+                </a>
+              )}
 
             </div>
 
