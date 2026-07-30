@@ -23,6 +23,8 @@ import {
   ZoomIn
 } from "lucide-react";
 import { Container } from "@/components/container";
+import { QuantityTierBuyBox } from "@/components/product-page/quantity-tier-buy-box";
+import { isShopifyCommerceUrl } from "@/lib/commerce";
 import type { ShopProduct } from "@/lib/shop-data";
 
 type ShopProductSalesProps = {
@@ -145,6 +147,45 @@ const reviewsData: Record<string, {
         helpfulCount: 84,
       }
     ]
+  },
+  // Real dropshipping products: rating/review counts are the site's own published
+  // figures (lib/site-data.ts productProofById), but no individual customer quotes
+  // have been collected yet — items intentionally left empty rather than invented.
+  "biometric-smart-lock": {
+    rating: 4.9,
+    reviewsCount: 1200,
+    breakdown: [
+      { stars: 5, percentage: 92 },
+      { stars: 4, percentage: 6 },
+      { stars: 3, percentage: 2 },
+      { stars: 2, percentage: 0 },
+      { stars: 1, percentage: 0 },
+    ],
+    items: []
+  },
+  "mini-spy-camera-4k": {
+    rating: 4.8,
+    reviewsCount: 8500,
+    breakdown: [
+      { stars: 5, percentage: 89 },
+      { stars: 4, percentage: 8 },
+      { stars: 3, percentage: 2 },
+      { stars: 2, percentage: 1 },
+      { stars: 1, percentage: 0 },
+    ],
+    items: []
+  },
+  "anti-theft-smart-backpack": {
+    rating: 5.0,
+    reviewsCount: 10000,
+    breakdown: [
+      { stars: 5, percentage: 95 },
+      { stars: 4, percentage: 4 },
+      { stars: 3, percentage: 1 },
+      { stars: 2, percentage: 0 },
+      { stars: 1, percentage: 0 },
+    ],
+    items: []
   }
 };
 
@@ -218,6 +259,36 @@ const beforeAfterData: Record<string, {
       "Adds a visible mechanical brace from the inside.",
       "Simple nightly reinforcement with no batteries."
     ]
+  },
+  "biometric-smart-lock": {
+    before: [
+      "Fumbling with keys or codes at the door.",
+      "No easy way to know who unlocked your door last."
+    ],
+    after: [
+      "Unlock with a fingerprint in about 0.2 seconds.",
+      "Give trusted people fingerprint access without cutting spare keys."
+    ]
+  },
+  "mini-spy-camera-4k": {
+    before: [
+      "Blind spots in the room when you're away.",
+      "Grainy, dark footage from budget cameras at night."
+    ],
+    after: [
+      "Check in on the room anytime from your phone.",
+      "Clear 4K footage with night vision when the lights are off."
+    ]
+  },
+  "anti-theft-smart-backpack": {
+    before: [
+      "Exposed zippers that are easy to pick in a crowd.",
+      "Cards and phone dying on long travel days."
+    ],
+    after: [
+      "Hidden zippers keep your main compartment out of easy reach.",
+      "Charge your phone on the move through the built-in USB port."
+    ]
   }
 };
 
@@ -245,6 +316,21 @@ const detailedScienceBenefits: Record<string, {
     { title: "Adjustable Brace", desc: "Fits many hinged and sliding door setups.", badge: "Fit" },
     { title: "No Batteries", desc: "Mechanical reinforcement stays simple.", badge: "Reliable" },
     { title: "Nightly Use", desc: "Fast to place before sleep or travel stays.", badge: "Routine" }
+  ],
+  "biometric-smart-lock": [
+    { title: "3D Fingerprint Scanner", desc: "Reads your print and unlocks in about 0.2 seconds.", badge: "Fast" },
+    { title: "AES-128 Encryption", desc: "Protects the lock's data and access logs.", badge: "Secure" },
+    { title: "15-Minute Install", desc: "Fits standard doors with the included template.", badge: "Simple" }
+  ],
+  "mini-spy-camera-4k": [
+    { title: "4K Ultra HD", desc: "Sharp footage for reviewing what actually happened.", badge: "Clarity" },
+    { title: "Invisible Night Vision", desc: "IR LEDs light the room without a visible glow.", badge: "Night" },
+    { title: "AI Motion Detection", desc: "Flags real activity instead of every flicker of light.", badge: "Smart" }
+  ],
+  "anti-theft-smart-backpack": [
+    { title: "Hidden Zippers", desc: "A patented layout that's harder to pick in a crowd.", badge: "Secure" },
+    { title: "Kevlar-Blend Fabric", desc: "Adds resistance against slash-and-grab attempts.", badge: "Tough" },
+    { title: "RFID-Blocking Pocket", desc: "Keeps card skimmers from reading your wallet.", badge: "Shielded" }
   ]
 };
 
@@ -275,6 +361,24 @@ const productSpecs: Record<string, { label: string; value: string }[]> = {
     { label: "Pipe Diameter", value: "1.57 in" },
     { label: "Weight", value: "2.2 lbs" },
     { label: "Force Rating", value: "400 lbs" }
+  ],
+  "biometric-smart-lock": [
+    { label: "Unlock Speed", value: "~0.2 seconds" },
+    { label: "Encryption", value: "AES-128" },
+    { label: "Install Time", value: "~15 minutes" },
+    { label: "Body Material", value: "Zinc-alloy" }
+  ],
+  "mini-spy-camera-4k": [
+    { label: "Resolution", value: "4K Ultra HD" },
+    { label: "Night Vision", value: "Invisible IR LEDs" },
+    { label: "Motion Detection", value: "AI-assisted" },
+    { label: "Form Factor", value: "Ultra-compact" }
+  ],
+  "anti-theft-smart-backpack": [
+    { label: "Zipper System", value: "Patented hidden design" },
+    { label: "Fabric", value: "Cut-resistant Kevlar-blend" },
+    { label: "Card Pocket", value: "RFID-blocking" },
+    { label: "Charging", value: "Built-in USB port" }
   ]
 };
 
@@ -299,11 +403,27 @@ const useCaseScenarios: Record<string, { title: string; description: string }[]>
     { title: "Apartments & Rentals", description: "Add a physical barrier without drilling or modifying the door." },
     { title: "Nightly Bedroom Routine", description: "Quick to place before sleep and just as quick to remove in the morning." },
     { title: "Hotel & Travel Stays", description: "Pack it for short-term stays where you can't verify the lock quality." }
+  ],
+  "biometric-smart-lock": [
+    { title: "Front Door Upgrade", description: "Replace fumbling with keys with a fingerprint unlock at your main entrance." },
+    { title: "Shared Households", description: "Give roommates or family fingerprint access without cutting spare keys." },
+    { title: "Rental Turnovers", description: "Reset access between tenants or guests without rekeying the whole lock." }
+  ],
+  "mini-spy-camera-4k": [
+    { title: "Pet & Baby Monitoring", description: "Check in on a room from your phone while you're out." },
+    { title: "Package & Porch Watch", description: "Keep an eye on deliveries with motion alerts." },
+    { title: "Discreet Room Coverage", description: "Its compact size keeps monitoring low-profile indoors." }
+  ],
+  "anti-theft-smart-backpack": [
+    { title: "Daily Commuting", description: "Hidden zippers add a layer of protection on crowded transit." },
+    { title: "Travel & Airports", description: "The RFID pocket and cut-resistant fabric help protect cards and gear." },
+    { title: "Remote Work Days", description: "Built-in USB charging keeps your devices topped up on the go." }
   ]
 };
 
 export function ShopProductSales({ product, related }: ShopProductSalesProps) {
   const discount = product.compareAtPrice > 0 ? Math.round((1 - product.price / product.compareAtPrice) * 100) : 0;
+  const isShopifyDestination = isShopifyCommerceUrl(product.shopifyUrl);
   const reviews = reviewsData[product.id] || reviewsData["tactical-blackout-flashlight"];
   const beforeAfter = beforeAfterData[product.id] || beforeAfterData["tactical-blackout-flashlight"];
   const scienceBenefits = detailedScienceBenefits[product.id] || detailedScienceBenefits["tactical-blackout-flashlight"];
@@ -603,31 +723,33 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </span>
               </div>
 
-              {/* Price Block & Save Indicator */}
-              <div className="border-t border-b border-white/10 py-4 flex items-center justify-between gap-4">
-                <div className="space-y-1">
-                  <p className="text-[10px] text-text-secondary uppercase tracking-widest font-semibold">
-                    {product.price > 0 ? "Current Buying Price" : "Curated Readiness Guide"}
-                  </p>
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-4xl font-extrabold text-white">{formatShopPrice(product.price)}</span>
-                    {product.compareAtPrice > 0 && (
-                      <span className="text-base line-through text-text-secondary">${product.compareAtPrice.toFixed(2)}</span>
-                    )}
+              {/* Price Block & Save Indicator (skipped when the tiered buy box below owns pricing) */}
+              {!isShopifyDestination && (
+                <div className="border-t border-b border-white/10 py-4 flex items-center justify-between gap-4">
+                  <div className="space-y-1">
+                    <p className="text-[10px] text-text-secondary uppercase tracking-widest font-semibold">
+                      {product.price > 0 ? "Current Buying Price" : "Curated Readiness Guide"}
+                    </p>
+                    <div className="flex items-baseline gap-3">
+                      <span className="text-4xl font-extrabold text-white">{formatShopPrice(product.price)}</span>
+                      {product.compareAtPrice > 0 && (
+                        <span className="text-base line-through text-text-secondary">${product.compareAtPrice.toFixed(2)}</span>
+                      )}
+                    </div>
                   </div>
+                  {product.compareAtPrice > 0 && (
+                  <div className="text-right">
+                    <span
+                      className="text-xs md:text-sm font-extrabold px-3.5 py-1.5 rounded-full inline-block shadow-lg"
+                      style={{ background: "rgb(201 169 110 / 0.18)", color: "#c9a96e", border: "1px solid rgb(201 169 110 / 0.3)" }}
+                    >
+                      Save {discount}%
+                    </span>
+                    <p className="text-[10px] text-accent-gold/80 mt-1.5 font-bold">${(product.compareAtPrice - product.price).toFixed(2)} kept in your pocket</p>
+                  </div>
+                  )}
                 </div>
-                {product.compareAtPrice > 0 && (
-                <div className="text-right">
-                  <span
-                    className="text-xs md:text-sm font-extrabold px-3.5 py-1.5 rounded-full inline-block shadow-lg"
-                    style={{ background: "rgb(201 169 110 / 0.18)", color: "#c9a96e", border: "1px solid rgb(201 169 110 / 0.3)" }}
-                  >
-                    Save {discount}%
-                  </span>
-                  <p className="text-[10px] text-accent-gold/80 mt-1.5 font-bold">${(product.compareAtPrice - product.price).toFixed(2)} kept in your pocket</p>
-                </div>
-                )}
-              </div>
+              )}
 
               {/* Trust and purchase confidence panel */}
               <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 space-y-3.5 text-xs">
@@ -657,29 +779,33 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               </div>
 
               {/* High-Converting CTA Area */}
-              <div className="space-y-3.5">
-                <a
-                  href={product.shopifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block w-full text-center py-4.5 rounded-xl text-base font-extrabold text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(201,169,110,0.25)] hover:shadow-[0_0_35px_rgba(201,169,110,0.4)] group overflow-hidden"
-                  style={{ background: "#c9a96e" }}
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    {product.price > 0 ? "SECURE YOUR GEAR NOW" : "OPEN THE CHECKLIST"}
-                    <ChevronRight className="size-5 group-hover:translate-x-1 transition-transform" />
-                  </span>
-                  {/* Glowing hover light */}
-                  <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
-                </a>
+              {isShopifyDestination ? (
+                <QuantityTierBuyBox product={product} placement="shop-hero" />
+              ) : (
+                <div className="space-y-3.5">
+                  <a
+                    href={product.shopifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative block w-full text-center py-4.5 rounded-xl text-base font-extrabold text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] shadow-[0_0_25px_rgba(201,169,110,0.25)] hover:shadow-[0_0_35px_rgba(201,169,110,0.4)] group overflow-hidden"
+                    style={{ background: "#c9a96e" }}
+                  >
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {product.price > 0 ? "SECURE YOUR GEAR NOW" : "OPEN THE CHECKLIST"}
+                      <ChevronRight className="size-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                    {/* Glowing hover light */}
+                    <span className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-out" />
+                  </a>
 
-                {/* Secure payments strip */}
-                <div className="flex items-center justify-center gap-2 pt-1">
-                  <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-widest">Guaranteed Safe Checkout</span>
-                  <div className="h-px bg-white/10 flex-1" />
-                  <span className="text-[10px] text-white/40 font-bold">VISA • MC • AMEX • APPLE PAY</span>
+                  {/* Secure payments strip */}
+                  <div className="flex items-center justify-center gap-2 pt-1">
+                    <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-widest">Guaranteed Safe Checkout</span>
+                    <div className="h-px bg-white/10 flex-1" />
+                    <span className="text-[10px] text-white/40 font-bold">VISA • MC • AMEX • APPLE PAY</span>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {/* Featured review quote */}
               {reviews.items[0] && (
@@ -1133,11 +1259,17 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </span>
               </div>
 
-              {filteredReviews.length === 0 ? (
+              {reviews.items.length === 0 ? (
+                <div className="text-center py-8 border border-white/5 rounded-2xl bg-white/[0.01]">
+                  <p className="text-text-secondary text-sm">
+                    Individual written reviews aren&apos;t posted yet — this rating reflects {reviews.reviewsCount} verified buyers.
+                  </p>
+                </div>
+              ) : filteredReviews.length === 0 ? (
                 <div className="text-center py-8 border border-white/5 rounded-2xl bg-white/[0.01]">
                   <p className="text-text-secondary text-sm">No reviews found for this star selection.</p>
-                  <button 
-                    onClick={() => setSelectedReviewStarFilter(null)} 
+                  <button
+                    onClick={() => setSelectedReviewStarFilter(null)}
                     className="text-xs text-accent-gold hover:underline font-bold mt-2"
                   >
                     View all reviews

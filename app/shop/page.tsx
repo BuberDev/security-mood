@@ -3,7 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Star, Check, Truck, ShieldCheck, RotateCcw } from "lucide-react";
 import { Container } from "@/components/container";
-import { shopProducts } from "@/lib/shop-data";
+import { getCatalogShopProducts } from "@/lib/shop-data";
+
+const shopProducts = getCatalogShopProducts();
 
 export const metadata: Metadata = {
   title: "Shop Preparedness Gear | Security Mood",

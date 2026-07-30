@@ -6,10 +6,12 @@ import { ShieldCheck } from "lucide-react";
 import { CTAButton } from "@/components/cta-button";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getBulkPricingTiers } from "@/lib/commerce";
-import type { Product } from "@/lib/site-data";
 
 type QuantityTierBuyBoxProps = {
-  product: Product;
+  // Structural shape only — satisfied by both lib/site-data.ts's Product and
+  // lib/shop-data.ts's ShopProduct, since getAffiliateRoute resolves the rest
+  // (including the real Shopify cart URL) by id via lib/site-data.ts.
+  product: { id: string; price?: number };
   placement: string;
 };
 

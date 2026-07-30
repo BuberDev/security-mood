@@ -10,11 +10,13 @@ import { ProductHero } from "@/components/product-page/product-hero";
 import { RelatedProducts } from "@/components/product-page/related-products";
 import { RoutineSection } from "@/components/product-page/routine-section";
 import { SocialProof } from "@/components/product-page/social-proof";
+import { ShopProductSales } from "@/components/shop/shop-product-sales";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel, isShopifyCommerceUrl } from "@/lib/commerce";
 import { getProductPageContent } from "@/lib/product-page-content";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { getProductById, getProductProof, products, siteMeta, type Product } from "@/lib/site-data";
+import { getCatalogShopProducts, getShopProductById } from "@/lib/shop-data";
 
 type ProductPageProps = {
   params: Promise<{ productId: string }>;
@@ -82,8 +84,12 @@ export default async function ProductPage({ params }: ProductPageProps) {
   }
 
   const proof = getProductProof(product.id);
-  const content = getProductPageContent(product, proof);
-  const relatedProducts = getRelatedProducts(product);
+
+  // Products fulfilled directly (real dropshipping, not Amazon affiliate) get the
+  // full reference-matched sales page instead of the generic category template.
+  const richProduct = getShopProductById(productId);
+
+  const relatedProducts = richProduct ? [] : getRelatedProducts(product);
   const commerceCtaLabel = getCommerceCtaLabel(product);
   const isShopifyDestination = isShopifyCommerceUrl(product.amazonUrl);
 
@@ -96,7 +102,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: content.faqs.map((faq) => ({
+    mainEntity: (richProduct ? richProduct.faq.map((f) => ({ question: f.q, answer: f.a })) : getProductPageContent(product, proof).faqs).map((faq) => ({
       "@type": "Question",
       name: faq.question,
       acceptedAnswer: {
@@ -155,7 +161,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ],
   };
 
-  return (
+  const jsonLdScripts = (
     <>
       <script
         type="application/ld+json"
@@ -169,6 +175,24 @@ export default async function ProductPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: toJsonLd(faqJsonLd) }}
       />
+    </>
+  );
+
+  if (richProduct) {
+    const relatedRichProducts = getCatalogShopProducts().slice(0, 2);
+    return (
+      <>
+        {jsonLdScripts}
+        <ShopProductSales product={richProduct} related={relatedRichProducts} />
+      </>
+    );
+  }
+
+  const content = getProductPageContent(product, proof);
+
+  return (
+    <>
+      {jsonLdScripts}
       <ProductHero
         product={product}
         proof={proof}

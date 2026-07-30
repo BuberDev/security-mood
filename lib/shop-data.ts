@@ -1,3 +1,5 @@
+import { getShopifyProductUrl } from "@/lib/commerce";
+
 export type ShopProduct = {
   id: string;
   name: string;
@@ -18,6 +20,11 @@ export type ShopProduct = {
   category: "gear" | "security" | "bundle";
   isNew?: boolean;
   isBestSeller?: boolean;
+  // True for products whose canonical page lives at /favorites/[id] (they're
+  // also listed in lib/site-data.ts for site-wide category browsing). Keeps
+  // them out of the /shop catalog listing and out of /shop/[productId] so
+  // there's exactly one indexable URL per product.
+  hideFromShopCatalog?: boolean;
   gallery?: {
     url: string;
     label: string;
@@ -229,8 +236,156 @@ export const shopProducts: ShopProduct[] = [
       },
     ],
   },
+  // Real dropshipping products (fulfilled directly, not Amazon affiliate links).
+  // Content below is translated/derived from the site's own existing published
+  // copy (lib/site-data.ts benefit/description + productProofById highlights) —
+  // no new specific numbers invented for facts we can't verify.
+  {
+    id: "biometric-smart-lock",
+    name: "Fortress™ Biometric Smart Lock",
+    tagline: "Fingertip security with military-grade precision.",
+    description:
+      "A biometric smart lock for your front door, combining a fast fingerprint reader, app-based lock control, and a zinc-alloy body built to military-grade standards.",
+    price: 49.99,
+    compareAtPrice: 0,
+    currency: "USD",
+    image: "/images/products/biometric_lock.png",
+    imageAlt: "Biometric Smart Lock installed on a premium wooden door",
+    badge: "Top Rated",
+    rating: 4.9,
+    reviews: "1,200+",
+    benefits: [
+      "3D fingerprint scanner with 0.2s response time",
+      "AES-128 encryption protecting your data",
+      "Simple 15-minute installation",
+      "App-based lock control from your phone",
+      "Zinc-alloy body built to military-grade standards",
+      "A practical upgrade for your home's front door",
+    ],
+    howToUse: [
+      "Mount the lock body and keypad following the included install guide",
+      "Enroll your fingerprints and set a backup PIN in the companion app",
+      "Test the app-based lock and unlock before relying on it daily",
+      "Add household members' fingerprints as needed",
+    ],
+    faq: [
+      {
+        q: "Do I need Wi-Fi for it to work?",
+        a: "The lock operates locally via fingerprint and PIN; app control uses your phone's Bluetooth or Wi-Fi connection.",
+      },
+      {
+        q: "What if the battery dies?",
+        a: "Keep a physical backup key or PIN code accessible in case the internal battery needs a recharge or replacement.",
+      },
+      {
+        q: "Is installation difficult?",
+        a: "Most standard door prep works with the included template and instructions in about 15 minutes.",
+      },
+    ],
+    shopifyUrl: getShopifyProductUrl("biometric-smart-lock", "53914655523155"),
+    category: "security",
+    hideFromShopCatalog: true,
+  },
+  {
+    id: "mini-spy-camera-4k",
+    name: "InvisiGuard™ 4K Mini Camera",
+    tagline: "See everything. Invisible protection, 24/7.",
+    description:
+      "An ultra-compact 4K camera with motion detection and night mode that streams live to your phone. Built for discreet monitoring of pets, deliveries, or a spare room.",
+    price: 39.99,
+    compareAtPrice: 0,
+    currency: "USD",
+    image: "/images/products/mini_camera.png",
+    imageAlt: "Tiny 4k mini security camera on a dark surface",
+    badge: "Popular",
+    rating: 4.8,
+    reviews: "8,500+",
+    benefits: [
+      "4K Ultra HD resolution",
+      "Invisible IR LEDs for night vision mode",
+      "AI-assisted motion detection",
+      "Live streaming straight to your phone",
+      "Ultra-compact, discreet form factor",
+      "Useful for pet, delivery, or room monitoring",
+    ],
+    howToUse: [
+      "Plug in the camera and connect it to your home Wi-Fi via the app",
+      "Position it to cover the area you want monitored",
+      "Enable motion alerts so you're notified of activity",
+      "Check the live feed anytime from your phone",
+    ],
+    faq: [
+      {
+        q: "Does it need a memory card?",
+        a: "Check the current listing for storage options before purchase — cloud and local storage availability can vary by version.",
+      },
+      {
+        q: "Can I access it remotely?",
+        a: "Yes, the companion app is designed for live viewing from your phone over Wi-Fi or mobile data.",
+      },
+      {
+        q: "Is it visible in the dark?",
+        a: "The built-in IR LEDs enable a night vision mode for low-light monitoring.",
+      },
+    ],
+    shopifyUrl: getShopifyProductUrl("mini-spy-camera-4k", "53914655555923"),
+    category: "security",
+    hideFromShopCatalog: true,
+  },
+  {
+    id: "anti-theft-smart-backpack",
+    name: "UrbanSafe™ Anti-Theft Smart Backpack",
+    tagline: "Your mobile safe for modern travel.",
+    description:
+      "Designed for modern nomads: hidden zippers, an RFID-blocking card pocket, a USB charging port, and cut-resistant material to protect your gear on every trip.",
+    price: 59.99,
+    compareAtPrice: 0,
+    currency: "USD",
+    image: "/images/products/anti_theft_backpack.png",
+    imageAlt: "Person wearing modern tactical black anti-theft smart backpack",
+    badge: "Editor Favorite",
+    rating: 5.0,
+    reviews: "10,000+ travelers",
+    benefits: [
+      "Patented hidden-zipper system",
+      "Cut-resistant Kevlar-blend fabric",
+      "RFID-blocking pocket for credit cards",
+      "Built-in USB charging port",
+      "Designed for modern travel and commuting",
+      "Keeps gear secure on every trip",
+    ],
+    howToUse: [
+      "Pack your essentials using the hidden-zipper compartments for valuables",
+      "Store cards in the RFID-blocking pocket when traveling",
+      "Connect a power bank to the USB port for on-the-go charging",
+      "Wear it with the hidden zippers facing your back in crowded areas",
+    ],
+    faq: [
+      {
+        q: "Is it big enough for a laptop?",
+        a: "Check the current listing for exact compartment dimensions before purchase.",
+      },
+      {
+        q: "Does the USB port include a power bank?",
+        a: "The port is a pass-through for your own power bank; a battery is not built in.",
+      },
+      {
+        q: "Is it truly cut-resistant?",
+        a: "The Kevlar-blend material is designed to resist slashing, adding a meaningful deterrent over standard fabric.",
+      },
+    ],
+    shopifyUrl: getShopifyProductUrl("anti-theft-smart-backpack", "53914655588691"),
+    category: "gear",
+    hideFromShopCatalog: true,
+  },
 ];
 
 export function getShopProductById(id: string): ShopProduct | undefined {
   return shopProducts.find((p) => p.id === id);
+}
+
+// Products with their own indexable page at /shop/[productId] — excludes
+// products whose canonical page is /favorites/[productId] instead.
+export function getCatalogShopProducts(): ShopProduct[] {
+  return shopProducts.filter((p) => !p.hideFromShopCatalog);
 }

@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getShopProductById, shopProducts } from "@/lib/shop-data";
+import { notFound, redirect } from "next/navigation";
+import { getCatalogShopProducts, getShopProductById } from "@/lib/shop-data";
 import { ShopProductSales } from "@/components/shop/shop-product-sales";
 
 type Props = { params: Promise<{ productId: string }> };
 
 export async function generateStaticParams() {
-  return shopProducts.map((p) => ({ productId: p.id }));
+  return getCatalogShopProducts().map((p) => ({ productId: p.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { productId } = await params;
   const product = getShopProductById(productId);
-  if (!product) return { title: "Product Not Found" };
+  if (!product || product.hideFromShopCatalog) return { title: "Product Not Found" };
 
   return {
     title: `${product.name} | Security Mood Shop`,
@@ -33,8 +33,12 @@ export default async function ShopProductPage({ params }: Props) {
   const product = getShopProductById(productId);
   if (!product) notFound();
 
-  const related = shopProducts.filter((p) => p.id !== product.id).slice(0, 2);
+  // Canonical page for these lives at /favorites/[productId] instead.
+  if (product.hideFromShopCatalog) {
+    redirect(`/favorites/${productId}`);
+  }
+
+  const related = getCatalogShopProducts().filter((p) => p.id !== product.id).slice(0, 2);
 
   return <ShopProductSales product={product} related={related} />;
 }
-
