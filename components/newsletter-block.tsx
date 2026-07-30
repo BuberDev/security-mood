@@ -1,11 +1,47 @@
-import { Sparkles } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { Check, Sparkles } from "lucide-react";
 
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
+type SubscribeStatus = "idle" | "loading" | "success" | "error";
+
 export function NewsletterBlock() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<SubscribeStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again.");
+    }
+  }
+
   return (
     <Section id="newsletter" className="[content-visibility:auto] [contain-intrinsic-size:1px_520px]">
       <Container>
@@ -24,23 +60,37 @@ export function NewsletterBlock() {
               </p>
             </div>
 
-            <form className="space-y-3" aria-label="Newsletter signup">
-              <label htmlFor="newsletter-email" className="sr-only">
-                Email address
-              </label>
-              <Input
-                id="newsletter-email"
-                name="email"
-                type="email"
-                required
-                placeholder="Enter your email"
-                className="border-background-primary/20 bg-white text-background-primary placeholder:text-background-primary/55"
-              />
-              <Button type="submit" className="w-full bg-background-primary text-text-primary hover:brightness-110">
-                Subscribe
-              </Button>
-              <p className="text-xs text-background-primary/65">No spam. Weekly only. Unsubscribe anytime.</p>
-            </form>
+            {status === "success" ? (
+              <p className="flex items-center gap-2 rounded-2xl border border-background-primary/20 bg-white/40 px-4 py-3 text-sm font-semibold text-background-primary">
+                <Check className="size-4 shrink-0" aria-hidden="true" />
+                You&apos;re subscribed — check your inbox.
+              </p>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-3" aria-label="Newsletter signup">
+                <label htmlFor="protocol-intel-email" className="sr-only">
+                  Email address
+                </label>
+                <Input
+                  id="protocol-intel-email"
+                  name="email"
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="Enter your email"
+                  className="border-background-primary/20 bg-white text-background-primary placeholder:text-background-primary/55"
+                />
+                <Button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="w-full bg-background-primary text-text-primary hover:brightness-110"
+                >
+                  {status === "loading" ? "Subscribing…" : "Subscribe"}
+                </Button>
+                {status === "error" && <p className="text-xs text-red-700">{errorMessage}</p>}
+                <p className="text-xs text-background-primary/65">No spam. Weekly only. Unsubscribe anytime.</p>
+              </form>
+            )}
           </div>
         </div>
       </Container>
