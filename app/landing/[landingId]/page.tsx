@@ -11,8 +11,12 @@ import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { LandingProductStep } from "@/components/landing-product-step";
 import { LandingValueLadder } from "@/components/landing-value-ladder";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, generateFaqJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import {
   getArticlesBySlugs,
@@ -35,6 +39,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: LandingPageProps): Promise<Metadata> {
   const { landingId } = await params;
   const page = getLandingPageBySlug(landingId);
+  const locale = await getRequestLocale();
 
   if (!page) {
     return {
@@ -42,24 +47,25 @@ export async function generateMetadata({ params }: LandingPageProps): Promise<Me
     };
   }
 
+  const title = translateText(locale, page.title);
+  const description = translateText(locale, page.description);
+
   return {
-    title: `${page.title} | Security Mood`,
-    description: page.description,
-    alternates: {
-      canonical: `/landing/${page.slug}`,
-    },
+    title: `${title} | Security Mood`,
+    description,
+    alternates: getLocalizedAlternates(`/landing/${page.slug}`, locale),
     keywords: [page.title, page.categoryId, "Amazon affiliate landing page", ...siteMeta.keywords],
     openGraph: {
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       url: `/landing/${page.slug}`,
       images: [{ url: page.heroImage, width: 1200, height: 630, alt: page.heroAlt }],
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
-      title: page.title,
-      description: page.description,
+      title,
+      description,
       images: [page.heroImage],
     },
   };
@@ -167,36 +173,36 @@ export default async function LandingPage({ params }: LandingPageProps) {
 
         <Container className="relative -mt-40 pb-14">
           <div className="max-w-4xl rounded-[2.5rem] border border-white/12 bg-black/70 p-8 backdrop-blur-sm md:p-10">
-            {category ? <Badge>{category.name}</Badge> : null}
+            {category ? <Badge><T text={category.name} /></Badge> : null}
             <Badge variant="subtle" className="ml-2">
-              {page.eyebrow}
+              <T text={page.eyebrow} />
             </Badge>
-            <h1 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl md:text-6xl">{page.title}</h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg">{page.intro}</p>
+            <h1 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl md:text-6xl"><T text={page.title} /></h1>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg"><T text={page.intro} /></p>
 
             <div className="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.16em] text-text-secondary">
-              <span>{page.readTime}</span>
+              <span><T text={page.readTime} /></span>
               <span>{page.publishedAt}</span>
-              <span>{page.pinHook}</span>
+              <span><T text={page.pinHook} /></span>
             </div>
 
             <div className="mt-7 rounded-2xl border border-white/15 bg-white/[0.03] p-5">
-              <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">Best for</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-accent-gold"><T text="Best for" /></p>
               <ul className="mt-3 space-y-2 text-sm text-text-secondary md:text-base">
                 {page.bestFor.map((item) => (
-                  <li key={item}>• {item}</li>
+                  <li key={item}>• <T text={item} /></li>
                 ))}
               </ul>
             </div>
 
             {page.priorityOrder?.length ? (
               <div className="mt-5 rounded-2xl border border-white/15 bg-black/30 p-5">
-                <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">Start here</p>
+                <p className="text-xs uppercase tracking-[0.16em] text-accent-gold"><T text="Start here" /></p>
                 <ol className="mt-3 space-y-2 text-sm text-text-secondary md:text-base">
                   {page.priorityOrder.map((item, index) => (
                     <li key={item} className="flex gap-3">
                       <span className="text-accent-gold">{index + 1}.</span>
-                      <span>{item}</span>
+                      <span><T text={item} /></span>
                     </li>
                   ))}
                 </ol>
@@ -231,26 +237,24 @@ export default async function LandingPage({ params }: LandingPageProps) {
       <Section className="border-b border-white/10">
         <Container>
           <div className="mb-10 max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">Quick Decision</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text="Quick Decision" /></p>
             <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-              Buy the first three essentials in order
+              <T text="Buy the first three essentials in order" />
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-secondary">
-              This is the shortest route from interest to purchase. If you only want the essentials, start here and
-              move down the list only if you need the rest of the kit.
+              <T text="This is the shortest route from interest to purchase. If you only want the essentials, start here and move down the list only if you need the rest of the kit." />
             </p>
           </div>
 
           <LandingDecisionStrip products={products} labels={priorityOrder} />
 
           <div className="mt-12 mb-10 max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">Value Ladder</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text="Value Ladder" /></p>
             <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-              Choose the path that matches your urgency
+              <T text="Choose the path that matches your urgency" />
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-secondary">
-              If you want the simplest start, pick the first item. If you want better balance, use the middle path.
-              If you want full coverage, complete the full kit.
+              <T text="If you want the simplest start, pick the first item. If you want better balance, use the middle path. If you want full coverage, complete the full kit." />
             </p>
           </div>
 
@@ -275,13 +279,12 @@ export default async function LandingPage({ params }: LandingPageProps) {
           {audiencePaths.length ? (
             <>
               <div className="mt-12 mb-10 max-w-3xl">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">Who this is for</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text="Who this is for" /></p>
                 <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-                  Pick the path that matches your household
+                  <T text="Pick the path that matches your household" />
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-text-secondary">
-                  Different buyers need different first moves. Choose the option that best fits your space, budget,
-                  and urgency.
+                  <T text="Different buyers need different first moves. Choose the option that best fits your space, budget, and urgency." />
                 </p>
               </div>
 
@@ -290,13 +293,12 @@ export default async function LandingPage({ params }: LandingPageProps) {
           ) : null}
 
           <div className="mt-12 mb-10 max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">Featured Products</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text="Featured Products" /></p>
             <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-              Curated picks for this exact intent
+              <T text="Curated picks for this exact intent" />
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-secondary">
-              These products are selected to reduce friction, answer the query fast, and keep the path to Amazon
-              simple.
+              <T text="These products are selected to reduce friction, answer the query fast, and keep the path to Amazon simple." />
             </p>
           </div>
 
@@ -316,12 +318,12 @@ export default async function LandingPage({ params }: LandingPageProps) {
       <Section className="atmosphere-surface border-b border-white/10">
         <Container>
           <div className="mb-10 max-w-3xl">
-            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">Supportive Guides</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text="Supportive Guides" /></p>
             <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-              Read the guides that reinforce the buying decision
+              <T text="Read the guides that reinforce the buying decision" />
             </h2>
             <p className="mt-4 text-base leading-relaxed text-text-secondary">
-              Supporting articles keep visitors engaged and help turn interest into a more confident click.
+              <T text="Supporting articles keep visitors engaged and help turn interest into a more confident click." />
             </p>
           </div>
 
@@ -338,15 +340,15 @@ export default async function LandingPage({ params }: LandingPageProps) {
           <div className="mb-10 max-w-3xl">
             <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">FAQ</p>
             <h2 className="mt-3 font-heading text-3xl text-text-primary md:text-4xl">
-              Questions buyers ask before they click
+              <T text="Questions buyers ask before they click" />
             </h2>
           </div>
 
           <div className="grid gap-4">
             {page.faqs.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-white/10 bg-white/[0.02] p-5">
-                <h3 className="font-heading text-xl text-text-primary">{faq.question}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary md:text-base">{faq.answer}</p>
+                <h3 className="font-heading text-xl text-text-primary"><T text={faq.question} /></h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary md:text-base"><T text={faq.answer} /></p>
               </div>
             ))}
           </div>

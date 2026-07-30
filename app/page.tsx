@@ -5,6 +5,7 @@ import { ArticleCard } from "@/components/article-card";
 import { CategoryCard } from "@/components/category-card";
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
+import { T } from "@/components/translated-text";
 import { Card } from "@/components/ui/card";
 import { Heading } from "@/components/heading";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
@@ -21,20 +22,27 @@ import { Radar, IconContainer } from "@/components/ui/radar-effect";
 import { HiShieldCheck, HiLockClosed } from "react-icons/hi";
 import { AiFillSafetyCertificate } from "react-icons/ai";
 import { BsShieldLockFill, BsFingerprint } from "react-icons/bs";
-import { RiServerFill, RiKey2Fill } from "react-icons/ri";
+import { RiServerFill } from "react-icons/ri";
 import RotatingEarth from "@/components/ui/wireframe-dotted-globe";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { categories, getAmazonFavorites, getFeaturedArticles, getLandingPages, siteMeta } from "@/lib/site-data";
 
-export const metadata: Metadata = {
-  title: "Home Security & Crisis Preparedness Products | Security Mood",
-  description:
-    "Discover home security products, crisis preparedness gear, blackout essentials, personal safety tools, cyber privacy equipment, and emergency readiness favorites.",
-  keywords: [...siteMeta.keywords, ...siteMeta.plKeywords],
-  alternates: {
-    canonical: "/",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+
+  return {
+    title: translateText(locale, "Home Security & Crisis Preparedness Products | Security Mood"),
+    description: translateText(
+      locale,
+      "Discover home security products, crisis preparedness gear, blackout essentials, personal safety tools, cyber privacy equipment, and emergency readiness favorites."
+    ),
+    keywords: [...siteMeta.keywords, ...siteMeta.plKeywords],
+    alternates: getLocalizedAlternates("/", locale),
+  };
+}
 
 const trustSignals = [
   {
@@ -54,7 +62,8 @@ const trustSignals = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getRequestLocale();
   const featuredArticles = getFeaturedArticles();
   const favorites = getAmazonFavorites();
   const landingPages = getLandingPages();
@@ -113,7 +122,7 @@ export default function HomePage() {
         url: toAbsoluteUrl("/"),
         description: siteMeta.description,
         publisher: { "@id": toAbsoluteUrl("/#organization") },
-        inLanguage: "en",
+        inLanguage: locale,
       },
       {
         "@type": "ItemList",
@@ -187,22 +196,22 @@ export default function HomePage() {
             
             <FadeIn className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-7 pointer-events-auto max-w-xl xl:max-w-2xl mx-auto lg:mx-0">
               <Badge className="bg-amber-500/10 border-amber-500/20 text-amber-500 px-4 py-1.5 backdrop-blur-md uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(0,0,0,0.8)]">
-                Crisis-Ready Affiliate Guides
+                <T text="Crisis-Ready Affiliate Guides" />
               </Badge>
-              
-              <h1 
+
+              <h1
                 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl leading-[1.05] text-white font-medium relative z-10"
                 style={{ textShadow: "0 0 40px rgba(0,0,0,1), 0 0 20px rgba(0,0,0,1), 0 4px 8px rgba(0,0,0,0.8)" }}
               >
-                Be Prepared <br className="hidden sm:block" />
-                <span className="text-slate-200">Be Safe.</span>
+                <T text="Be Prepared" /> <br className="hidden sm:block" />
+                <span className="text-slate-200"><T text="Be Safe." /></span>
               </h1>
-              
-              <p 
+
+              <p
                 className="max-w-xl text-lg md:text-xl text-white/95 leading-relaxed relative z-10 font-medium"
                 style={{ textShadow: "0 0 20px rgba(0,0,0,1), 0 2px 4px rgba(0,0,0,0.8)" }}
               >
-                Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials.
+                <T text="Layer your home security and prepare for the unexpected with battle-tested gear. No noise, just the absolute essentials." />
               </p>
               
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
@@ -230,7 +239,7 @@ export default function HomePage() {
               <li key={item.label} className="rounded-2xl border border-white/12 bg-white/[0.02] px-4 py-4">
                 <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-accent-gold">
                   <item.icon className="size-4" aria-hidden="true" />
-                  {item.label}
+                  <T text={item.label} />
                 </p>
                 <p className="mt-2 text-2xl font-semibold text-text-primary">{item.value}</p>
               </li>
@@ -250,9 +259,15 @@ export default function HomePage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {quickStartRoutes.map((route) => (
               <Card key={route.label} className="border-white/12 bg-white/[0.02] p-6">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">{route.label}</p>
-                <h3 className="mt-3 font-heading text-2xl text-text-primary">{route.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{route.description}</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">
+                  <T text={route.label} />
+                </p>
+                <h3 className="mt-3 font-heading text-2xl text-text-primary">
+                  <T text={route.title} />
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                  <T text={route.description} />
+                </p>
                 <div className="mt-5">
                   <CTAButton href={route.href} label="Open this path" />
                 </div>

@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { ArticleCard } from "@/components/article-card";
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { Heading } from "@/components/heading";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
+import { LocalizedLink } from "@/components/localized-link";
+import { T } from "@/components/translated-text";
 import { TopPicksSection } from "@/components/sections/top-picks-section";
 import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { ProductCard } from "@/components/product-card";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import {
   articles,
@@ -23,15 +27,19 @@ import {
 } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 
-export const metadata: Metadata = {
-  title: "Home Security, Crisis Readiness & Emergency Guides | Security Mood",
-  description:
-    "Explore high-intent guides for home security, crisis readiness, blackout prep, personal protection, cyber privacy, and emergency preparedness.",
-  alternates: {
-    canonical: "/blog",
-  },
-  keywords: ["security protocols", "preparedness guides", "home safety audit", "home security products", ...siteMeta.keywords],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+
+  return {
+    title: translateText(locale, "Home Security, Crisis Readiness & Emergency Guides | Security Mood"),
+    description: translateText(
+      locale,
+      "Explore high-intent guides for home security, crisis readiness, blackout prep, personal protection, cyber privacy, and emergency preparedness."
+    ),
+    alternates: getLocalizedAlternates("/blog", locale),
+    keywords: ["security protocols", "preparedness guides", "home safety audit", "home security products", ...siteMeta.keywords],
+  };
+}
 
 type BlogPageProps = {
   searchParams: Promise<{ category?: string | string[] }>;
@@ -151,7 +159,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           />
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link
+            <LocalizedLink
               href="/blog"
               className={cn(
                 "rounded-full border px-4 py-2 text-xs uppercase tracking-[0.16em] transition-colors",
@@ -160,14 +168,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                   : "border-white/20 text-text-secondary hover:text-text-primary"
               )}
             >
-              All Articles
-            </Link>
+              <T text="All Articles" />
+            </LocalizedLink>
 
             {categories.map((category) => {
               const isActive = selectedCategory?.id === category.id;
 
               return (
-                <Link
+                <LocalizedLink
                   key={category.id}
                   href={`/blog?category=${category.id}`}
                   className={cn(
@@ -177,16 +185,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                       : "border-white/20 text-text-secondary hover:text-text-primary"
                   )}
               >
-                {category.name}
-              </Link>
+                <T text={category.name} />
+              </LocalizedLink>
             );
           })}
           </div>
 
           {selectedCategory ? (
             <div className="mt-8 max-w-3xl rounded-3xl border border-white/10 bg-white/[0.02] p-6">
-              <Badge>{selectedCategory.name}</Badge>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">{selectedCategory.description}</p>
+              <Badge><T text={selectedCategory.name} /></Badge>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary"><T text={selectedCategory.description} /></p>
             </div>
           ) : null}
 
@@ -195,9 +203,9 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <div className="mt-10 grid gap-6 lg:grid-cols-3">
                 {quickStartRoutes.map((route) => (
                   <Card key={route.label} className="border-white/12 bg-white/[0.02] p-6">
-                    <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">{route.label}</p>
-                    <h3 className="mt-3 font-heading text-2xl text-text-primary">{route.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-text-secondary">{route.description}</p>
+                    <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text={route.label} /></p>
+                    <h3 className="mt-3 font-heading text-2xl text-text-primary"><T text={route.title} /></h3>
+                    <p className="mt-3 text-sm leading-relaxed text-text-secondary"><T text={route.description} /></p>
                     <div className="mt-5">
                       <CTAButton href={route.href} label="Open this path" />
                     </div>
@@ -223,10 +231,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
                 <div>
                   <h2 className="font-heading text-3xl text-text-primary">
-                    Essential {selectedCategory.name} Favorites
+                    <T text="Essential" /> <T text={selectedCategory.name} /> <T text="Favorites" />
                   </h2>
                   <p className="mt-2 text-text-secondary">
-                    Direct Amazon links to the highest-rated picks for this protocol.
+                    <T text="Direct Amazon links to the highest-rated picks for this protocol." />
                   </p>
                 </div>
               </div>
@@ -249,10 +257,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         <Container>
           <div className="mb-10">
             <h2 className="font-heading text-3xl text-text-primary">
-              {selectedCategory ? `${selectedCategory.name} Guides` : "Latest Security Guides"}
+              {selectedCategory ? (
+                <>
+                  <T text={selectedCategory.name} /> <T text="Guides" />
+                </>
+              ) : (
+                <T text="Latest Security Guides" />
+              )}
             </h2>
             <p className="mt-2 text-text-secondary">
-              Step-by-step preparedness instructions for your home, travel, and crisis planning.
+              <T text="Step-by-step preparedness instructions for your home, travel, and crisis planning." />
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

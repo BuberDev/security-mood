@@ -5,12 +5,14 @@ import { Check, Sparkles } from "lucide-react";
 
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
+import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 type SubscribeStatus = "idle" | "loading" | "success" | "error";
 
 export function NewsletterBlock() {
+  const { text } = useI18n();
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<SubscribeStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -30,7 +32,7 @@ export function NewsletterBlock() {
 
       if (!response.ok) {
         setStatus("error");
-        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        setErrorMessage(data.error || text("Something went wrong. Please try again."));
         return;
       }
 
@@ -38,7 +40,7 @@ export function NewsletterBlock() {
       setEmail("");
     } catch {
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage(text("Something went wrong. Please try again."));
     }
   }
 
@@ -50,25 +52,25 @@ export function NewsletterBlock() {
             <div className="space-y-4">
               <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-background-primary/70">
                 <Sparkles className="size-4" aria-hidden="true" />
-                Protocol Intel
+                {text("Protocol Intel")}
               </p>
               <h2 className="font-heading text-3xl leading-tight sm:text-4xl">
-                Join the list for one tactical protocol and three quality deployment picks every week.
+                {text("Join the list for one tactical protocol and three quality deployment picks every week.")}
               </h2>
               <p className="text-sm text-background-primary/70">
-                Built for preparedness enthusiasts who want hardened routines they will actually use.
+                {text("Built for preparedness enthusiasts who want hardened routines they will actually use.")}
               </p>
             </div>
 
             {status === "success" ? (
               <p className="flex items-center gap-2 rounded-2xl border border-background-primary/20 bg-white/40 px-4 py-3 text-sm font-semibold text-background-primary">
                 <Check className="size-4 shrink-0" aria-hidden="true" />
-                You&apos;re subscribed — check your inbox.
+                {text("You're subscribed — check your inbox.")}
               </p>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3" aria-label="Newsletter signup">
+              <form onSubmit={handleSubmit} className="space-y-3" aria-label={text("Newsletter signup")}>
                 <label htmlFor="protocol-intel-email" className="sr-only">
-                  Email address
+                  {text("Email address")}
                 </label>
                 <Input
                   id="protocol-intel-email"
@@ -77,7 +79,7 @@ export function NewsletterBlock() {
                   required
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  placeholder="Enter your email"
+                  placeholder={text("Enter your email")}
                   className="border-background-primary/20 bg-white text-background-primary placeholder:text-background-primary/55"
                 />
                 <Button
@@ -85,10 +87,10 @@ export function NewsletterBlock() {
                   disabled={status === "loading"}
                   className="w-full bg-background-primary text-text-primary hover:brightness-110"
                 >
-                  {status === "loading" ? "Subscribing…" : "Subscribe"}
+                  {status === "loading" ? text("Subscribing…") : text("Subscribe")}
                 </Button>
                 {status === "error" && <p className="text-xs text-red-700">{errorMessage}</p>}
-                <p className="text-xs text-background-primary/65">No spam. Weekly only. Unsubscribe anytime.</p>
+                <p className="text-xs text-background-primary/65">{text("No spam. Weekly only. Unsubscribe anytime.")}</p>
               </form>
             )}
           </div>

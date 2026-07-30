@@ -6,26 +6,34 @@ import { Heading } from "@/components/heading";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { LandingPageCard } from "@/components/landing-page-card";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Card } from "@/components/ui/card";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, toJsonLd } from "@/lib/seo";
 import { getLandingPages, siteMeta } from "@/lib/site-data";
 
-export const metadata: Metadata = {
-  title: "Crisis Preparedness Landing Pages | Security Mood",
-  description:
-    "Focused landing pages for crisis readiness, blackout prep, evacuation kits, renters, travelers, and high-intent Amazon shoppers.",
-  alternates: {
-    canonical: "/landing",
-  },
-  keywords: [
-    "crisis preparedness landing pages",
-    "amazon affiliate landing pages",
-    "blackout prep",
-    "evacuation kit",
-    "security buying guides",
-    ...siteMeta.keywords,
-  ],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+
+  return {
+    title: translateText(locale, "Crisis Preparedness Landing Pages | Security Mood"),
+    description: translateText(
+      locale,
+      "Focused landing pages for crisis readiness, blackout prep, evacuation kits, renters, travelers, and high-intent Amazon shoppers."
+    ),
+    alternates: getLocalizedAlternates("/landing", locale),
+    keywords: [
+      "crisis preparedness landing pages",
+      "amazon affiliate landing pages",
+      "blackout prep",
+      "evacuation kit",
+      "security buying guides",
+      ...siteMeta.keywords,
+    ],
+  };
+}
 
 export default function LandingIndexPage() {
   const landingPages = getLandingPages();
@@ -117,9 +125,9 @@ export default function LandingIndexPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {quickStartRoutes.map((route) => (
               <Card key={route.label} className="border-white/12 bg-white/[0.02] p-6">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">{route.label}</p>
-                <h3 className="mt-3 font-heading text-2xl text-text-primary">{route.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{route.description}</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold"><T text={route.label} /></p>
+                <h3 className="mt-3 font-heading text-2xl text-text-primary"><T text={route.title} /></h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary"><T text={route.description} /></p>
                 <div className="mt-5">
                   <CTAButton href={route.href} label="Open this path" />
                 </div>

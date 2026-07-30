@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ShieldCheck } from "lucide-react";
 
 import { CTAButton } from "@/components/cta-button";
+import { useI18n } from "@/components/i18n-provider";
+import { T } from "@/components/translated-text";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getBulkPricingTiers } from "@/lib/commerce";
 
@@ -20,6 +22,7 @@ function formatPrice(value: number) {
 }
 
 export function QuantityTierBuyBox({ product, placement }: QuantityTierBuyBoxProps) {
+  const { text } = useI18n();
   const tiers = getBulkPricingTiers(product.price ?? 0);
   const defaultTier = tiers.find((tier) => tier.mostPopular) ?? tiers[0];
   const [selectedQuantity, setSelectedQuantity] = useState(defaultTier.quantity);
@@ -28,7 +31,7 @@ export function QuantityTierBuyBox({ product, placement }: QuantityTierBuyBoxPro
 
   return (
     <div className="w-full space-y-4">
-      <div className="grid grid-cols-3 gap-3" role="radiogroup" aria-label="Choose quantity">
+      <div className="grid grid-cols-3 gap-3" role="radiogroup" aria-label={text("Choose quantity")}>
         {tiers.map((tier) => {
           const isSelected = tier.quantity === selectedQuantity;
 
@@ -47,20 +50,22 @@ export function QuantityTierBuyBox({ product, placement }: QuantityTierBuyBoxPro
             >
               {tier.mostPopular && (
                 <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent-gold px-2 py-0.5 text-[9px] font-extrabold uppercase tracking-wider text-black">
-                  Most Popular
+                  <T text="Most Popular" />
                 </span>
               )}
               <span className="text-xs font-bold uppercase tracking-wide text-text-primary">
-                Buy {tier.quantity}
+                <T text="Buy" /> {tier.quantity}
               </span>
               <span className="text-sm font-extrabold text-accent-gold">
                 {formatPrice(tier.unitPrice)}
-                <span className="text-[10px] font-medium text-text-secondary">/ea</span>
+                <span className="text-[10px] font-medium text-text-secondary">/<T text="ea" /></span>
               </span>
               {tier.savingsPct > 0 ? (
-                <span className="text-[10px] font-bold text-accent-gold/80">Save {tier.savingsPct}%</span>
+                <span className="text-[10px] font-bold text-accent-gold/80">
+                  <T text="Save" /> {tier.savingsPct}%
+                </span>
               ) : (
-                <span className="text-[10px] text-text-secondary">Standard price</span>
+                <span className="text-[10px] text-text-secondary"><T text="Standard price" /></span>
               )}
             </button>
           );
@@ -69,20 +74,20 @@ export function QuantityTierBuyBox({ product, placement }: QuantityTierBuyBoxPro
 
       <div className="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.01] px-4 py-2.5 text-xs text-text-secondary">
         <span>
-          Subtotal ({selectedTier.quantity} {selectedTier.quantity === 1 ? "piece" : "pieces"})
+          <T text="Subtotal" /> ({selectedTier.quantity} <T text={selectedTier.quantity === 1 ? "piece" : "pieces"} />)
         </span>
         <span className="text-sm font-extrabold text-text-primary">{formatPrice(selectedTier.totalPrice)}</span>
       </div>
 
       <CTAButton
         href={getAffiliateRoute(product.id, placement, selectedTier.quantity)}
-        label={`Go to checkout — ${formatPrice(selectedTier.totalPrice)}`}
+        label="Go to checkout"
         className="w-full"
       />
 
       <div className="flex items-center justify-center gap-2 text-[10px] font-semibold uppercase tracking-widest text-text-secondary">
         <ShieldCheck className="size-3.5 text-accent-gold" aria-hidden="true" />
-        <span>Secure checkout on our store</span>
+        <span><T text="Secure checkout on our store" /></span>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Clock3 } from "lucide-react";
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 
 type RoutineStep = {
   title: string;
@@ -20,10 +21,10 @@ export function RoutineSection({ title, steps, ctaHref }: RoutineSectionProps) {
     <Section className="[content-visibility:auto] [contain-intrinsic-size:1px_780px]">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">Ritual Flow</p>
-          <h2 className="mt-3 font-heading text-3xl leading-tight sm:text-4xl">{title}</h2>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold"><T text="Ritual Flow" /></p>
+          <h2 className="mt-3 font-heading text-3xl leading-tight sm:text-4xl"><T text={title} /></h2>
           <p className="mt-3 text-base leading-relaxed text-text-secondary">
-            Built for real evenings: low effort, calming pace, and clear moments that feel intentionally luxurious.
+            <T text="Built for real evenings: low effort, calming pace, and clear moments that feel intentionally luxurious." />
           </p>
         </div>
 
@@ -32,10 +33,12 @@ export function RoutineSection({ title, steps, ctaHref }: RoutineSectionProps) {
             <li key={step.title} className="rounded-3xl border border-white/12 bg-white/[0.02] p-6">
               <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-accent-gold">
                 <Clock3 className="size-4" aria-hidden="true" />
-                Step {index + 1}
+                <T text="Step" /> {index + 1}
               </p>
-              <h3 className="mt-3 font-heading text-2xl leading-tight">{step.title.replace(/^Step \d+: /, "")}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">{step.description}</p>
+              <h3 className="mt-3 font-heading text-2xl leading-tight">
+                <T text={step.title.replace(/^Step \d+: /, "")} />
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary"><T text={step.description} /></p>
             </li>
           ))}
         </ol>

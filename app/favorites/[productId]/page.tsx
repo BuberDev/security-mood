@@ -11,6 +11,7 @@ import { RelatedProducts } from "@/components/product-page/related-products";
 import { RoutineSection } from "@/components/product-page/routine-section";
 import { SocialProof } from "@/components/product-page/social-proof";
 import { ShopProductSales } from "@/components/shop/shop-product-sales";
+import { T } from "@/components/translated-text";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel, isShopifyCommerceUrl } from "@/lib/commerce";
 import { getProductPageContent } from "@/lib/product-page-content";
@@ -214,7 +215,14 @@ export default async function ProductPage({ params }: ProductPageProps) {
         steps={content.ritualSteps}
         ctaHref={getAffiliateRoute(product.id, "product-routine")}
       />
-      <FAQSection title={`Questions people ask before buying ${product.name}`} items={content.faqs} />
+      <FAQSection
+        title={
+          <>
+            <T text="Questions people ask before buying" /> <T text={product.name} />
+          </>
+        }
+        items={content.faqs}
+      />
       <SocialProof
         headline={content.socialHeadline}
         socialLine={content.socialProofLine}

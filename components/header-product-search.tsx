@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useId, useMemo, useState, type KeyboardEvent, type Ref } from "react";
 import { Search } from "lucide-react";
 
+import { useI18n } from "@/components/i18n-provider";
+import { LocalizedLink } from "@/components/localized-link";
 import { cn } from "@/lib/utils";
 
 type HeaderSearchProduct = {
@@ -28,6 +29,7 @@ export function HeaderProductSearch({
   maxResults = 6,
   inputRef,
 }: HeaderProductSearchProps) {
+  const { text } = useI18n();
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const inputId = useId();
@@ -64,7 +66,7 @@ export function HeaderProductSearch({
       aria-controls={listboxId}
     >
       <label htmlFor={inputId} className="sr-only">
-        Search products
+        {text("Search products")}
       </label>
 
       <div className="relative">
@@ -91,7 +93,7 @@ export function HeaderProductSearch({
           )}
           aria-autocomplete="list"
           aria-controls={listboxId}
-          aria-label="Search products"
+          aria-label={text("Search products")}
         />
       </div>
 
@@ -101,7 +103,7 @@ export function HeaderProductSearch({
             <ul id={listboxId} className="max-h-80 overflow-y-auto py-2" role="listbox" aria-label="Product suggestions">
               {suggestions.map((product) => (
                 <li key={product.id}>
-                  <Link
+                  <LocalizedLink
                     href={`/favorites/${product.id}`}
                     className="block px-4 py-2.5 text-sm text-text-primary transition-colors hover:bg-white/8 hover:text-accent-gold"
                     onClick={() => {
@@ -110,13 +112,14 @@ export function HeaderProductSearch({
                     }}
                   >
                     {product.name}
-                  </Link>
+                  </LocalizedLink>
                 </li>
               ))}
             </ul>
           ) : (
             <p className="px-4 py-3 text-sm text-text-secondary">
-              No products found for <span className="text-text-primary">&quot;{query.trim()}&quot;</span>.
+              {text("No products found for")}{" "}
+              <span className="text-text-primary">&quot;{query.trim()}&quot;</span>.
             </p>
           )}
         </div>

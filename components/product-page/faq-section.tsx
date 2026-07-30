@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
 import { HelpCircle } from "lucide-react";
 
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 
 type FAQItem = {
   question: string;
@@ -9,7 +11,7 @@ type FAQItem = {
 };
 
 type FAQSectionProps = {
-  title: string;
+  title: ReactNode;
   items: FAQItem[];
 };
 
@@ -31,10 +33,10 @@ export function FAQSection({ title, items }: FAQSectionProps) {
             <article key={item.question} className="rounded-3xl border border-white/12 bg-white/[0.02] p-6">
               <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-accent-gold">
                 <HelpCircle className="size-4" aria-hidden="true" />
-                Question
+                <T text="Question" />
               </p>
-              <h3 className="mt-3 font-heading text-2xl leading-tight">{item.question}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-text-secondary">{item.answer}</p>
+              <h3 className="mt-3 font-heading text-2xl leading-tight"><T text={item.question} /></h3>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary"><T text={item.answer} /></p>
             </article>
           ))}
         </div>

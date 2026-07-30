@@ -1,8 +1,8 @@
-import Link from "next/link";
-
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
+import { LocalizedLink } from "@/components/localized-link";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 
 export default function NotFound() {
   return (
@@ -10,18 +10,20 @@ export default function NotFound() {
       <Container>
         <div className="mx-auto max-w-3xl rounded-[2rem] border border-white/12 bg-white/[0.02] p-10 text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">404</p>
-          <h1 className="mt-3 font-heading text-5xl">The protocol you are looking for is unavailable</h1>
+          <h1 className="mt-3 font-heading text-5xl">
+            <T text="The protocol you are looking for is unavailable" />
+          </h1>
           <p className="mt-4 text-text-secondary">
-            Explore our latest field deployments and operational guides to keep building your defensive perimeter.
+            <T text="Explore our latest field deployments and operational guides to keep building your defensive perimeter." />
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <CTAButton href="/blog" label="Security Guides" />
-            <Link
+            <LocalizedLink
               href="/favorites"
               className="inline-flex h-12 items-center rounded-full border border-white/20 px-6 text-sm uppercase tracking-[0.12em] text-text-secondary transition-colors hover:text-text-primary"
             >
-              Field Deployments
-            </Link>
+              <T text="Field Deployments" />
+            </LocalizedLink>
           </div>
         </div>
       </Container>

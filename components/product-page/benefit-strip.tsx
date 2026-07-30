@@ -1,6 +1,7 @@
 import { Droplets, ShieldCheck, Sparkles, Wind } from "lucide-react";
 
 import { Container } from "@/components/container";
+import { T } from "@/components/translated-text";
 
 type BenefitStripProps = {
   items: string[];
@@ -24,7 +25,7 @@ export function BenefitStrip({ items }: BenefitStripProps) {
                 <span className="inline-flex size-8 shrink-0 items-center justify-center rounded-full bg-accent-gold/15 text-accent-gold">
                   <Icon className="size-4" aria-hidden="true" />
                 </span>
-                <span className="text-sm font-medium tracking-[0.01em] md:text-base">{item}</span>
+                <span className="text-sm font-medium tracking-[0.01em] md:text-base"><T text={item} /></span>
               </li>
             );
           })}

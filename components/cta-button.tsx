@@ -1,6 +1,9 @@
-import Link from "next/link";
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
 
+import { LocalizedLink } from "@/components/localized-link";
+import { useI18n } from "@/components/i18n-provider";
 import { Button } from "@/components/ui/button";
 
 type CTAButtonProps = {
@@ -11,13 +14,14 @@ type CTAButtonProps = {
 };
 
 export function CTAButton({ href, label, variant = "default", className }: CTAButtonProps) {
+  const { text } = useI18n();
   const isOutbound = href.startsWith("http") || href.startsWith("/go/");
 
   if (isOutbound) {
     return (
       <Button asChild size="lg" variant={variant} className={className}>
         <a href={href} target="_blank" rel="noopener noreferrer sponsored">
-          {label}
+          {text(label)}
           <ArrowUpRight className="ml-2 size-4" aria-hidden="true" />
         </a>
       </Button>
@@ -26,10 +30,10 @@ export function CTAButton({ href, label, variant = "default", className }: CTABu
 
   return (
     <Button asChild size="lg" variant={variant} className={className}>
-      <Link href={href}>
-        {label}
+      <LocalizedLink href={href}>
+        {text(label)}
         <ArrowUpRight className="ml-2 size-4" aria-hidden="true" />
-      </Link>
+      </LocalizedLink>
     </Button>
   );
 }

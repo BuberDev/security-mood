@@ -1,24 +1,36 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { Star, Check, Truck, ShieldCheck, RotateCcw } from "lucide-react";
 import { Container } from "@/components/container";
+import { LocalizedLink } from "@/components/localized-link";
+import { T } from "@/components/translated-text";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { getCatalogShopProducts } from "@/lib/shop-data";
 
 const shopProducts = getCatalogShopProducts();
 
-export const metadata: Metadata = {
-  title: "Shop Preparedness Gear | Security Mood",
-  description:
-    "High-end crisis preparedness gear, EMP shields, and tactical flashlights. Security essentials for your home. Free US delivery.",
-  alternates: { canonical: "/shop" },
-  openGraph: {
-    title: "Shop Preparedness Gear | Security Mood",
-    description: "Security essentials for your home. Free US delivery.",
-    url: "/shop",
-    type: "website",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const title = translateText(locale, "Shop Preparedness Gear | Security Mood");
+  const description = translateText(
+    locale,
+    "High-end crisis preparedness gear, EMP shields, and tactical flashlights. Security essentials for your home. Free US delivery."
+  );
+
+  return {
+    title,
+    description,
+    alternates: getLocalizedAlternates("/shop", locale),
+    openGraph: {
+      title,
+      description: translateText(locale, "Security essentials for your home. Free US delivery."),
+      url: "/shop",
+      type: "website",
+    },
+  };
+}
 
 const guarantees = [
   { icon: Truck, label: "Free US Delivery", sub: "3–5 business days" },
@@ -34,16 +46,16 @@ export default function ShopPage() {
       <section className="border-b border-white/10 py-20 text-center px-4">
         <Container>
           <p className="text-xs uppercase tracking-[0.2em] mb-4" style={{ color: "#c9a96e" }}>
-            Crisis Prep · Security
+            <T text="Crisis Prep · Security" />
           </p>
           <h1
             className="text-4xl md:text-6xl font-semibold text-white mb-6"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Your Essential Gear
+            <T text="Your Essential Gear" />
           </h1>
           <p className="text-base md:text-lg max-w-xl mx-auto" style={{ color: "#a8a8a8" }}>
-            Professional-grade security products for when you need them most.
+            <T text="Professional-grade security products for when you need them most." />
           </p>
         </Container>
       </section>
@@ -55,8 +67,12 @@ export default function ShopPage() {
             {guarantees.map(({ icon: Icon, label, sub }) => (
               <li key={label} className="flex flex-col items-center text-center gap-1">
                 <Icon className="size-5 mb-1" style={{ color: "#c9a96e" }} />
-                <span className="text-xs font-semibold text-white">{label}</span>
-                <span className="text-[11px]" style={{ color: "#a8a8a8" }}>{sub}</span>
+                <span className="text-xs font-semibold text-white">
+                  <T text={label} />
+                </span>
+                <span className="text-[11px]" style={{ color: "#a8a8a8" }}>
+                  <T text={sub} />
+                </span>
               </li>
             ))}
           </ul>
@@ -87,7 +103,7 @@ export default function ShopPage() {
                       className="absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full"
                       style={{ background: "#c9a96e", color: "#000" }}
                     >
-                      {product.badge}
+                      <T text={product.badge} />
                     </span>
                   </div>
 
@@ -95,9 +111,11 @@ export default function ShopPage() {
                   <div className="p-6 space-y-4">
                     <div>
                       <h2 className="text-xl font-semibold text-white mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-                        {product.name}
+                        <T text={product.name} />
                       </h2>
-                      <p className="text-sm" style={{ color: "#a8a8a8" }}>{product.tagline}</p>
+                      <p className="text-sm" style={{ color: "#a8a8a8" }}>
+                        <T text={product.tagline} />
+                      </p>
                     </div>
 
                     {/* Rating */}
@@ -115,7 +133,7 @@ export default function ShopPage() {
                         ))}
                       </div>
                       <span className="text-xs" style={{ color: "#a8a8a8" }}>
-                        {product.rating} ({product.reviews} reviews)
+                        {product.rating} ({product.reviews} <T text="reviews" />)
                       </span>
                     </div>
 
@@ -124,7 +142,7 @@ export default function ShopPage() {
                       {product.benefits.slice(0, 3).map((b) => (
                         <li key={b} className="flex items-start gap-2 text-xs" style={{ color: "#a8a8a8" }}>
                           <Check className="size-3.5 mt-0.5 shrink-0" style={{ color: "#c9a96e" }} />
-                          {b}
+                          <T text={b} />
                         </li>
                       ))}
                     </ul>
@@ -144,7 +162,7 @@ export default function ShopPage() {
                       </div>
                     ) : (
                       <div className="pt-1 text-sm font-semibold" style={{ color: "#c9a96e" }}>
-                        Curated buying guide
+                        <T text="Curated buying guide" />
                       </div>
                     )}
 
@@ -152,7 +170,7 @@ export default function ShopPage() {
                       className="w-full text-center py-3 rounded-xl text-sm font-semibold text-black transition-opacity group-hover:opacity-90"
                       style={{ background: "#c9a96e" }}
                     >
-                      {product.price > 0 ? "Buy Now →" : "Open Checklist →"}
+                      <T text={product.price > 0 ? "Buy Now →" : "Open Checklist →"} />
                     </div>
                   </div>
                 </>
@@ -174,14 +192,14 @@ export default function ShopPage() {
               }
 
               return (
-                <Link
+                <LocalizedLink
                   key={product.id}
                   href={product.shopifyUrl}
                   className={cardClassName}
                   style={cardStyle}
                 >
                   {cardContent}
-                </Link>
+                </LocalizedLink>
               );
             })}
           </div>
@@ -195,7 +213,7 @@ export default function ShopPage() {
             className="text-center text-lg font-medium mb-8"
             style={{ fontFamily: "'Playfair Display', Georgia, serif", color: "#fff" }}
           >
-            Why families trust our gear
+            <T text="Why families trust our gear" />
           </p>
           <div className="grid gap-6 md:grid-cols-3 text-center">
             {[
@@ -205,7 +223,9 @@ export default function ShopPage() {
             ].map(({ stat, label }) => (
               <div key={stat} className="space-y-1">
                 <p className="text-3xl font-bold" style={{ color: "#c9a96e" }}>{stat}</p>
-                <p className="text-sm" style={{ color: "#a8a8a8" }}>{label}</p>
+                <p className="text-sm" style={{ color: "#a8a8a8" }}>
+                  <T text={label} />
+                </p>
               </div>
             ))}
           </div>

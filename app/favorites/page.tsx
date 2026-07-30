@@ -6,20 +6,28 @@ import { Heading } from "@/components/heading";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { ProductCard } from "@/components/product-card";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import { getCategoryById, getFavoritesCollections, siteMeta } from "@/lib/site-data";
 
-export const metadata: Metadata = {
-  title: "Amazon Security Favorites & Safety Collections | Security Mood",
-  description:
-    "Explore curated Amazon security favorites, crisis readiness gear, blackout prep tools, privacy gear, and emergency preparedness products selected for high-intent shoppers.",
-  alternates: {
-    canonical: "/favorites",
-  },
-  keywords: ["preparedness favorites", "amazon security finds", "operational essentials", "travel safety gear", ...siteMeta.keywords],
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+
+  return {
+    title: translateText(locale, "Amazon Security Favorites & Safety Collections | Security Mood"),
+    description: translateText(
+      locale,
+      "Explore curated Amazon security favorites, crisis readiness gear, blackout prep tools, privacy gear, and emergency preparedness products selected for high-intent shoppers."
+    ),
+    alternates: getLocalizedAlternates("/favorites", locale),
+    keywords: ["preparedness favorites", "amazon security finds", "operational essentials", "travel safety gear", ...siteMeta.keywords],
+  };
+}
 
 export default function FavoritesPage() {
   const collections = getFavoritesCollections();
@@ -118,9 +126,15 @@ export default function FavoritesPage() {
           <div className="mt-12 grid gap-6 lg:grid-cols-3">
             {quickStartRoutes.map((route) => (
               <Card key={route.label} className="border-white/12 bg-white/[0.02] p-6">
-                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">{route.label}</p>
-                <h3 className="mt-3 font-heading text-2xl text-text-primary">{route.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-text-secondary">{route.description}</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent-gold">
+                  <T text={route.label} />
+                </p>
+                <h3 className="mt-3 font-heading text-2xl text-text-primary">
+                  <T text={route.title} />
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                  <T text={route.description} />
+                </p>
                 <div className="mt-5">
                   <CTAButton href={route.href} label="Open this path" />
                 </div>
@@ -140,9 +154,17 @@ export default function FavoritesPage() {
           >
             <Container>
               <div className="mb-8 max-w-3xl space-y-4">
-                {category ? <Badge>{category.name}</Badge> : null}
-                <h2 className="font-heading text-3xl leading-tight md:text-4xl">{collection.title}</h2>
-                <p className="leading-relaxed text-text-secondary">{collection.description}</p>
+                {category ? (
+                  <Badge>
+                    <T text={category.name} />
+                  </Badge>
+                ) : null}
+                <h2 className="font-heading text-3xl leading-tight md:text-4xl">
+                  <T text={collection.title} />
+                </h2>
+                <p className="leading-relaxed text-text-secondary">
+                  <T text={collection.description} />
+                </p>
               </div>
 
               <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">

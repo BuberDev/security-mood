@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowRight, CalendarDays, Clock3 } from "lucide-react";
 
+import { LocalizedLink } from "@/components/localized-link";
+import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { getCategoryById, type Article } from "@/lib/site-data";
@@ -15,7 +16,7 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
   return (
     <Card className="group overflow-hidden border-white/12 bg-white/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-accent-gold/60">
-      <Link href={`/blog/${article.slug}`} className="block">
+      <LocalizedLink href={`/blog/${article.slug}`} className="block">
         <div className="relative aspect-[2/3] overflow-hidden">
           <Image
             src={article.heroImage}
@@ -29,13 +30,25 @@ export function ArticleCard({ article }: ArticleCardProps) {
 
         <div className="space-y-5 p-6">
           <div className="flex flex-wrap items-center gap-2">
-            {category ? <Badge>{category.name}</Badge> : null}
-            <Badge variant="subtle">Trending on Pinterest</Badge>
+            {category ? (
+              <Badge>
+                <T text={category.name} />
+              </Badge>
+            ) : null}
+            <Badge variant="subtle">
+              <T text="Trending on Pinterest" />
+            </Badge>
           </div>
 
-          <h3 className="font-heading text-2xl leading-tight text-text-primary">{article.title}</h3>
-          <p className="text-sm leading-relaxed text-text-secondary">{article.excerpt}</p>
-          <p className="text-sm text-text-secondary/90">{article.pinHook}</p>
+          <h3 className="font-heading text-2xl leading-tight text-text-primary">
+            <T text={article.title} />
+          </h3>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            <T text={article.excerpt} />
+          </p>
+          <p className="text-sm text-text-secondary/90">
+            <T text={article.pinHook} />
+          </p>
 
           <div className="flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em] text-text-secondary">
             <span className="inline-flex items-center gap-2">
@@ -44,16 +57,16 @@ export function ArticleCard({ article }: ArticleCardProps) {
             </span>
             <span className="inline-flex items-center gap-2">
               <Clock3 className="size-3.5" aria-hidden="true" />
-              {article.readTime}
+              <T text={article.readTime} />
             </span>
           </div>
 
           <p className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.14em] text-accent-gold">
-            Read guide
+            <T text="Read guide" />
             <ArrowRight className="size-4" aria-hidden="true" />
           </p>
         </div>
-      </Link>
+      </LocalizedLink>
     </Card>
   );
 }

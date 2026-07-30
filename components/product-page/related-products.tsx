@@ -1,8 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { Container } from "@/components/container";
+import { LocalizedLink } from "@/components/localized-link";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Button } from "@/components/ui/button";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel } from "@/lib/commerce";
@@ -21,10 +22,10 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
     <Section className="[content-visibility:auto] [contain-intrinsic-size:1px_920px]">
       <Container>
         <div className="mb-10 max-w-3xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">You May Also Like</p>
-          <h2 className="mt-3 font-heading text-3xl leading-tight sm:text-4xl">Keep building your ritual shelf</h2>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold"><T text="You May Also Like" /></p>
+          <h2 className="mt-3 font-heading text-3xl leading-tight sm:text-4xl"><T text="Keep building your ritual shelf" /></h2>
           <p className="mt-3 text-base leading-relaxed text-text-secondary">
-            Curated alternatives designed to increase routine consistency and help you find your perfect fit.
+            <T text="Curated alternatives designed to increase routine consistency and help you find your perfect fit." />
           </p>
         </div>
 
@@ -45,12 +46,14 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
               </div>
 
               <div className="space-y-4 p-5">
-                <h3 className="font-heading text-2xl leading-tight">{product.name}</h3>
-                <p className="text-sm leading-relaxed text-text-secondary">{product.benefit}</p>
+                <h3 className="font-heading text-2xl leading-tight"><T text={product.name} /></h3>
+                <p className="text-sm leading-relaxed text-text-secondary"><T text={product.benefit} /></p>
 
                 <div className="space-y-2">
                   <Button asChild size="sm" variant="secondary" className="w-full">
-                    <Link href={`/favorites/${product.id}`}>View details</Link>
+                    <LocalizedLink href={`/favorites/${product.id}`}>
+                      <T text="View details" />
+                    </LocalizedLink>
                   </Button>
                   <a
                     href={getAffiliateRoute(product.id, "related-products")}

@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 
 type SocialProofProps = {
   headline: string;
@@ -25,8 +26,8 @@ export function SocialProof({
     <Section className="atmosphere-surface [content-visibility:auto] [contain-intrinsic-size:1px_520px]">
       <Container>
         <div className="rounded-[2rem] border border-white/12 bg-black/[0.04] p-7 text-text-primary md:p-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">Social Proof</p>
-          <h2 className="mt-3 max-w-3xl font-heading text-3xl leading-tight sm:text-4xl">{headline}</h2>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold"><T text="Social Proof" /></p>
+          <h2 className="mt-3 max-w-3xl font-heading text-3xl leading-tight sm:text-4xl"><T text={headline} /></h2>
 
           <div className="mt-5 flex flex-wrap items-center gap-3">
             <span className="inline-flex items-center gap-1 rounded-full border border-white/15 px-3 py-1 text-xs uppercase tracking-[0.14em] text-text-secondary">
@@ -34,11 +35,11 @@ export function SocialProof({
                 <Star key={index} className="size-3.5 fill-accent-gold text-accent-gold" aria-hidden="true" />
               ))}
             </span>
-            <span className="text-xs uppercase tracking-[0.14em] text-text-secondary">{ratingLabel}</span>
-            <span className="text-xs uppercase tracking-[0.14em] text-text-secondary">{reviews}</span>
+            <span className="text-xs uppercase tracking-[0.14em] text-text-secondary"><T text={ratingLabel} /></span>
+            <span className="text-xs uppercase tracking-[0.14em] text-text-secondary"><T text={reviews} /></span>
           </div>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-text-secondary">&ldquo;{socialLine}&rdquo;</p>
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-text-secondary">&ldquo;<T text={socialLine} />&rdquo;</p>
 
           <div className="mt-7">
             <CTAButton href={ctaHref} label={ctaLabel} />

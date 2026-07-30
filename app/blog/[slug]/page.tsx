@@ -9,9 +9,13 @@ import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel } from "@/lib/commerce";
+import { getLocalizedAlternates } from "@/lib/i18n/path";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { translateText } from "@/lib/i18n/messages";
 import { generateBreadcrumbsJsonLd, toAbsoluteUrl, toJsonLd } from "@/lib/seo";
 import {
   articles,
@@ -35,6 +39,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
+  const locale = await getRequestLocale();
 
   if (!article) {
     return {
@@ -42,16 +47,17 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     };
   }
 
+  const title = translateText(locale, article.title);
+  const description = translateText(locale, article.excerpt);
+
   return {
-    title: `${article.title} | Security Mood Guide`,
-    description: article.excerpt,
-    alternates: {
-      canonical: `/blog/${article.slug}`,
-    },
+    title: `${title} | Security Mood Guide`,
+    description,
+    alternates: getLocalizedAlternates(`/blog/${article.slug}`, locale),
     keywords: [article.categoryId, "buying guide", "security guide", ...siteMeta.keywords],
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title,
+      description,
       url: `/blog/${article.slug}`,
       images: [{ url: article.heroImage, width: 1200, height: 630, alt: article.heroAlt }],
       type: "article",
@@ -60,8 +66,8 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
     },
     twitter: {
       card: "summary_large_image",
-      title: article.title,
-      description: article.excerpt,
+      title,
+      description,
       images: [article.heroImage],
     },
   };
@@ -91,25 +97,25 @@ function ArticleProductBlock({ productId }: { productId: string }) {
 
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-2">
-            <Badge>{product.trustSignal}</Badge>
+            <Badge><T text={product.trustSignal} /></Badge>
             <span className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.14em] text-text-secondary">
               <Star className="size-3.5 fill-accent-gold text-accent-gold" aria-hidden="true" />
-              {proof.rating.toFixed(1)} · {proof.reviews}
+              {proof.rating.toFixed(1)} · <T text={proof.reviews} />
             </span>
           </div>
 
-          <h3 className="font-heading text-2xl leading-tight">{product.name}</h3>
-          <p className="text-sm leading-relaxed text-text-secondary">{product.benefit}</p>
+          <h3 className="font-heading text-2xl leading-tight"><T text={product.name} /></h3>
+          <p className="text-sm leading-relaxed text-text-secondary"><T text={product.benefit} /></p>
 
           <ul className="space-y-2">
             {proof.highlights.slice(0, 3).map((highlight) => (
               <li key={highlight} className="text-sm text-text-secondary">
-                • {highlight}
+                • <T text={highlight} />
               </li>
             ))}
           </ul>
 
-          <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">{proof.socialProof}</p>
+          <p className="text-xs uppercase tracking-[0.16em] text-accent-gold"><T text={proof.socialProof} /></p>
           <CTAButton
             href={getAffiliateRoute(product.id, "article-product-block")}
             label={getCommerceCtaLabel(product)}
@@ -275,21 +281,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
 
         <Container className="relative -mt-40 pb-14">
           <div className="max-w-4xl rounded-[2.5rem] border border-white/12 bg-black/70 p-8 backdrop-blur-sm md:p-10">
-            {category ? <Badge>{category.name}</Badge> : null}
-            <h1 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl md:text-6xl">{article.title}</h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg">{article.intro}</p>
+            {category ? <Badge><T text={category.name} /></Badge> : null}
+            <h1 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl md:text-6xl"><T text={article.title} /></h1>
+            <p className="mt-5 max-w-3xl text-base leading-relaxed text-text-secondary md:text-lg"><T text={article.intro} /></p>
 
             <div className="mt-6 flex flex-wrap gap-4 text-xs uppercase tracking-[0.16em] text-text-secondary">
-              <span>{article.readTime}</span>
+              <span><T text={article.readTime} /></span>
               <span>{article.publishedAt}</span>
-              <span>{article.pinHook}</span>
+              <span><T text={article.pinHook} /></span>
             </div>
 
             <div className="mt-7 rounded-2xl border border-white/15 bg-white/[0.03] p-5">
-              <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">What you will get from this guide</p>
+              <p className="text-xs uppercase tracking-[0.16em] text-accent-gold"><T text="What you will get from this guide" /></p>
               <ul className="mt-3 space-y-2 text-sm text-text-secondary md:text-base">
                 {hookPoints.map((point) => (
-                  <li key={point}>• {point}</li>
+                  <li key={point}>• <T text={point} /></li>
                 ))}
               </ul>
             </div>
@@ -328,9 +334,9 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <article className="max-w-4xl">
               {article.sections.map((section, index) => (
                 <div key={section.id} className="mb-8 scroll-mt-28 rounded-3xl border border-white/10 bg-white/[0.02] p-6 md:p-8" id={section.id}>
-                  <p className="text-xs uppercase tracking-[0.16em] text-accent-gold">Step {index + 1}</p>
-                  <h2 className="mt-2 font-heading text-3xl leading-tight">{section.title}</h2>
-                  <p className="mt-4 text-base leading-relaxed text-text-secondary">{section.copy}</p>
+                  <p className="text-xs uppercase tracking-[0.16em] text-accent-gold"><T text="Step" /> {index + 1}</p>
+                  <h2 className="mt-2 font-heading text-3xl leading-tight"><T text={section.title} /></h2>
+                  <p className="mt-4 text-base leading-relaxed text-text-secondary"><T text={section.copy} /></p>
 
                   {(index + 1) % 2 === 0 ? (
                     <>
@@ -358,7 +364,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
               <div className="space-y-5 rounded-3xl border border-white/12 bg-white/[0.02] p-6">
                 <p className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-accent-gold">
                   <Layers3 className="size-4" aria-hidden="true" />
-                  Quick Jump
+                  <T text="Quick Jump" />
                 </p>
 
                 <nav aria-label="Article sections" className="space-y-2">
@@ -368,7 +374,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                       href={`#${section.id}`}
                       className="group flex items-center justify-between rounded-xl border border-transparent px-3 py-2 text-sm text-text-secondary transition-colors hover:border-white/10 hover:text-text-primary"
                     >
-                      {section.title}
+                      <T text={section.title} />
                       <ArrowRight className="size-4 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
                     </Link>
                   ))}
@@ -377,7 +383,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                 <div className="rounded-2xl border border-white/12 bg-black/35 p-4">
                   <p className="mb-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.16em] text-accent-gold">
                     <Flame className="size-4" aria-hidden="true" />
-                    Popular This Week
+                    <T text="Popular This Week" />
                   </p>
                   <ul className="space-y-3">
                     {stickyProducts.slice(0, 3).map((product) => {
@@ -392,10 +398,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
                             className="group block rounded-lg border border-transparent px-2 py-2 text-sm text-text-secondary transition-colors hover:border-white/10 hover:text-text-primary"
                           >
                             <span className="flex items-center justify-between gap-2">
-                              {product.name}
+                              <T text={product.name} />
                               <ExternalLink className="size-3.5 opacity-70 transition-opacity group-hover:opacity-100" />
                             </span>
-                            <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-accent-gold">{proof.reviews}</span>
+                            <span className="mt-1 block text-xs uppercase tracking-[0.14em] text-accent-gold">
+                              <T text={proof.reviews} />
+                            </span>
                           </a>
                         </li>
                       );
@@ -415,8 +423,8 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <Container>
             <div className="mb-8 flex items-end justify-between gap-6">
               <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">Read Next</p>
-                <h2 className="mt-3 font-heading text-3xl md:text-4xl">Related operational protocols</h2>
+                <p className="text-xs uppercase tracking-[0.2em] text-accent-gold"><T text="Read Next" /></p>
+                <h2 className="mt-3 font-heading text-3xl md:text-4xl"><T text="Related operational protocols" /></h2>
               </div>
               <CTAButton href="/blog" label="View All Articles" variant="secondary" />
             </div>

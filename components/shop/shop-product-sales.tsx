@@ -23,7 +23,10 @@ import {
   ZoomIn
 } from "lucide-react";
 import { Container } from "@/components/container";
+import { LocalizedLink } from "@/components/localized-link";
 import { QuantityTierBuyBox } from "@/components/product-page/quantity-tier-buy-box";
+import { useI18n } from "@/components/i18n-provider";
+import { T } from "@/components/translated-text";
 import { isShopifyCommerceUrl } from "@/lib/commerce";
 import type { ShopProduct } from "@/lib/shop-data";
 
@@ -34,10 +37,6 @@ type ShopProductSalesProps = {
 
 function formatShopPrice(value: number) {
   return value > 0 ? `$${value.toFixed(2)}` : "Open guide";
-}
-
-function getPrimaryCta(product: ShopProduct) {
-  return product.price > 0 ? `Buy Now — ${formatShopPrice(product.price)}` : "Open The Checklist";
 }
 
 // Sourced Authentic Reviews customized by Product ID
@@ -422,6 +421,7 @@ const useCaseScenarios: Record<string, { title: string; description: string }[]>
 };
 
 export function ShopProductSales({ product, related }: ShopProductSalesProps) {
+  const { text } = useI18n();
   const discount = product.compareAtPrice > 0 ? Math.round((1 - product.price / product.compareAtPrice) * 100) : 0;
   const isShopifyDestination = isShopifyCommerceUrl(product.shopifyUrl);
   const reviews = reviewsData[product.id] || reviewsData["tactical-blackout-flashlight"];
@@ -558,11 +558,11 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       {/* 1. URGENCY TOP ANNOUNCEMENT BANNER */}
       <div className="bg-accent-gold py-2 px-4 text-center select-none text-[11px] md:text-xs font-bold text-black uppercase tracking-[0.2em] relative overflow-hidden z-30">
         <div className="flex items-center justify-center gap-6 animate-pulse">
-          <span>✨ FREE US SHIPPING ON ORDERS OVER $50</span>
+          <span>✨ <T text="FREE US SHIPPING ON ORDERS OVER $50" /></span>
           <span className="hidden md:inline">•</span>
-          <span className="hidden md:inline">🔒 SECURE CHECKOUT</span>
+          <span className="hidden md:inline">🔒 <T text="SECURE CHECKOUT" /></span>
           <span className="hidden md:inline">•</span>
-          <span>💎 30-DAY MISSION-READY GUARANTEE</span>
+          <span>💎 <T text="30-DAY MISSION-READY GUARANTEE" /></span>
         </div>
       </div>
 
@@ -570,11 +570,17 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <div className="border-b border-white/10 py-3 px-4 relative z-10 bg-black/50 backdrop-blur-md">
         <Container>
           <nav className="text-xs flex gap-2" style={{ color: "#a8a8a8" }}>
-            <a href="/" className="hover:text-white transition-colors">Home</a>
+            <LocalizedLink href="/" className="hover:text-white transition-colors">
+              <T text="Home" />
+            </LocalizedLink>
             <span>/</span>
-            <a href="/shop" className="hover:text-white transition-colors">Shop</a>
+            <LocalizedLink href="/shop" className="hover:text-white transition-colors">
+              <T text="Shop" />
+            </LocalizedLink>
             <span>/</span>
-            <span className="text-white">{product.name}</span>
+            <span className="text-white">
+              <T text={product.name} />
+            </span>
           </nav>
         </Container>
       </div>
@@ -617,7 +623,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   className="absolute top-4 left-4 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full border border-black/10 shadow-lg tracking-wider pointer-events-none"
                   style={{ background: "#c9a96e", color: "#000" }}
                 >
-                  {galleryImages[activeGalleryIndex].badge}
+                  <T text={galleryImages[activeGalleryIndex].badge} />
                 </span>
 
                 {/* Amazon-style "Click to expand" floating indicator */}
@@ -627,7 +633,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
                 <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md rounded-xl p-3 border border-white/10 pointer-events-none">
                   <p className="text-xs text-white/90 font-medium">
-                    {galleryImages[activeGalleryIndex].desc}
+                    <T text={galleryImages[activeGalleryIndex].desc} />
                   </p>
                 </div>
               </div>
@@ -653,7 +659,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     />
                     <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors" />
                     <div className="absolute bottom-1 left-1 right-1 text-[8px] md:text-[9px] bg-black/80 text-white/80 py-0.5 rounded text-center truncate">
-                      {img.label}
+                      <T text={img.label} />
                     </div>
                   </button>
                 ))}
@@ -664,21 +670,21 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             <div className="lg:col-span-5 space-y-6 bg-white/[0.01] border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-md shadow-2xl relative">
               <div className="absolute top-4 right-4 flex items-center gap-1.5 bg-red-950/40 text-red-400 border border-red-900/30 px-3 py-1 rounded-full text-xs font-semibold animate-pulse">
                 <Flame className="size-3.5 fill-red-400" />
-                <span>Trending Pick</span>
+                <span><T text="Trending Pick" /></span>
               </div>
 
               <div>
                 <p className="text-xs uppercase tracking-[0.2em] mb-2 font-bold" style={{ color: "#c9a96e" }}>
-                  {product.category === "bundle" ? "⭐ Best Value Bundle" : "✨ Essential Prep Gear"}
+                  <T text={product.category === "bundle" ? "⭐ Best Value Bundle" : "✨ Essential Prep Gear"} />
                 </p>
                 <h1
                   className="text-3xl md:text-4xl font-semibold text-white mb-3"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
                 >
-                  {product.name}
+                  <T text={product.name} />
                 </h1>
                 <p className="text-sm md:text-base leading-relaxed text-text-secondary">
-                  {product.description}
+                  <T text={product.description} />
                 </p>
               </div>
 
@@ -693,7 +699,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     >
                       <Icon className="size-4 shrink-0 text-accent-gold" aria-hidden="true" />
                       <span className="text-[11px] md:text-xs font-medium leading-tight text-white/90 line-clamp-2">
-                        {benefit}
+                        <T text={benefit} />
                       </span>
                     </div>
                   );
@@ -719,7 +725,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </div>
                 <span className="text-sm font-semibold text-white">{product.rating}</span>
                 <span className="text-xs border-b border-text-secondary group-hover:text-white group-hover:border-white transition-colors" style={{ color: "#a8a8a8" }}>
-                  ({reviews.reviewsCount} verified reviews)
+                  ({reviews.reviewsCount} <T text="verified reviews" />)
                 </span>
               </div>
 
@@ -728,7 +734,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 <div className="border-t border-b border-white/10 py-4 flex items-center justify-between gap-4">
                   <div className="space-y-1">
                     <p className="text-[10px] text-text-secondary uppercase tracking-widest font-semibold">
-                      {product.price > 0 ? "Current Buying Price" : "Curated Readiness Guide"}
+                      <T text={product.price > 0 ? "Current Buying Price" : "Curated Readiness Guide"} />
                     </p>
                     <div className="flex items-baseline gap-3">
                       <span className="text-4xl font-extrabold text-white">{formatShopPrice(product.price)}</span>
@@ -743,9 +749,11 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                       className="text-xs md:text-sm font-extrabold px-3.5 py-1.5 rounded-full inline-block shadow-lg"
                       style={{ background: "rgb(201 169 110 / 0.18)", color: "#c9a96e", border: "1px solid rgb(201 169 110 / 0.3)" }}
                     >
-                      Save {discount}%
+                      <T text="Save" /> {discount}%
                     </span>
-                    <p className="text-[10px] text-accent-gold/80 mt-1.5 font-bold">${(product.compareAtPrice - product.price).toFixed(2)} kept in your pocket</p>
+                    <p className="text-[10px] text-accent-gold/80 mt-1.5 font-bold">
+                      ${(product.compareAtPrice - product.price).toFixed(2)} <T text="kept in your pocket" />
+                    </p>
                   </div>
                   )}
                 </div>
@@ -756,25 +764,27 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 <div className="flex items-center justify-between text-white/95">
                   <div className="flex items-center gap-2">
                     <ShieldCheck className="size-4 text-accent-gold" />
-                    <span className="font-medium text-text-secondary">Purchase path</span>
+                    <span className="font-medium text-text-secondary"><T text="Purchase path" /></span>
                   </div>
-                  <span className="font-bold text-accent-gold">{product.price > 0 ? "Verified product link" : "Guided checklist"}</span>
+                  <span className="font-bold text-accent-gold">
+                    <T text={product.price > 0 ? "Verified product link" : "Guided checklist"} />
+                  </span>
                 </div>
 
                 <div className="flex items-center justify-between text-text-secondary border-t border-white/5 pt-3">
                   <div className="flex items-center gap-1.5">
                     <Truck className="size-3.5 text-accent-gold" />
-                    <span>Shipping and returns</span>
+                    <span><T text="Shipping and returns" /></span>
                   </div>
-                  <span className="font-semibold text-white/80">Shown before checkout</span>
+                  <span className="font-semibold text-white/80"><T text="Shown before checkout" /></span>
                 </div>
 
                 <div className="flex items-center justify-between text-text-secondary border-t border-white/5 pt-2">
                   <div className="flex items-center gap-1.5">
                     <RotateCcw className="size-3.5 text-accent-gold" />
-                    <span>Return policy</span>
+                    <span><T text="Return policy" /></span>
                   </div>
-                  <span className="font-semibold text-white/80">Review on destination page</span>
+                  <span className="font-semibold text-white/80"><T text="Review on destination page" /></span>
                 </div>
               </div>
 
@@ -791,7 +801,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     style={{ background: "#c9a96e" }}
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
-                      {product.price > 0 ? "SECURE YOUR GEAR NOW" : "OPEN THE CHECKLIST"}
+                      <T text={product.price > 0 ? "SECURE YOUR GEAR NOW" : "OPEN THE CHECKLIST"} />
                       <ChevronRight className="size-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                     {/* Glowing hover light */}
@@ -800,7 +810,9 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
                   {/* Secure payments strip */}
                   <div className="flex items-center justify-center gap-2 pt-1">
-                    <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-widest">Guaranteed Safe Checkout</span>
+                    <span className="text-[10px] text-text-secondary font-semibold uppercase tracking-widest">
+                      <T text="Guaranteed Safe Checkout" />
+                    </span>
                     <div className="h-px bg-white/10 flex-1" />
                     <span className="text-[10px] text-white/40 font-bold">VISA • MC • AMEX • APPLE PAY</span>
                   </div>
@@ -828,11 +840,11 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                       ))}
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-accent-gold">
-                      {reviews.items[0].author} • Verified Buyer
+                      {reviews.items[0].author} • <T text="Verified Buyer" />
                     </span>
                   </div>
                   <p className="line-clamp-2 text-xs italic leading-relaxed text-white/85 md:text-sm">
-                    &quot;{reviews.items[0].content}&quot;
+                    &quot;<T text={reviews.items[0].content} />&quot;
                   </p>
                 </button>
               )}
@@ -842,7 +854,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 {product.benefits.map((benefit) => (
                   <li key={benefit} className="flex items-start gap-3" style={{ color: "#a8a8a8" }}>
                     <Check className="size-4.5 mt-0.5 shrink-0" style={{ color: "#c9a96e" }} />
-                    <span>{benefit}</span>
+                    <span><T text={benefit} /></span>
                   </li>
                 ))}
               </ul>
@@ -850,21 +862,21 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               {/* Delivery and Guarantee Strip */}
               <div className="grid grid-cols-3 gap-3 border-t border-white/10 pt-4">
                 {[
-                  { icon: Truck, text: "US Delivery", sub: "Details at checkout" },
-                  { icon: ShieldCheck, text: "30-Day Guarantee", sub: "100% Risk-Free" },
-                  { icon: RotateCcw, text: "Hassle-Free Returns", sub: "Easy refund support" },
-                ].map(({ icon: Icon, text, sub }) => (
-                  <div key={text} className="flex flex-col items-center gap-1 text-center rounded-xl border border-white/5 bg-white/[0.01] p-3">
+                  { icon: Truck, label: "US Delivery", sub: "Details at checkout" },
+                  { icon: ShieldCheck, label: "30-Day Guarantee", sub: "100% Risk-Free" },
+                  { icon: RotateCcw, label: "Hassle-Free Returns", sub: "Easy refund support" },
+                ].map(({ icon: Icon, label, sub }) => (
+                  <div key={label} className="flex flex-col items-center gap-1 text-center rounded-xl border border-white/5 bg-white/[0.01] p-3">
                     <Icon className="size-4" style={{ color: "#c9a96e" }} />
-                    <span className="text-[10px] font-bold text-white leading-tight">{text}</span>
-                    <span className="text-[9px]" style={{ color: "#a8a8a8" }}>{sub}</span>
+                    <span className="text-[10px] font-bold text-white leading-tight"><T text={label} /></span>
+                    <span className="text-[9px]" style={{ color: "#a8a8a8" }}><T text={sub} /></span>
                   </div>
                 ))}
               </div>
 
               {/* Frequently paired with */}
               {related[0] && (
-                <a
+                <LocalizedLink
                   href={`/shop/${related[0].id}`}
                   className="group flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.02] p-3 transition-all hover:border-accent-gold/30 hover:bg-white/[0.04]"
                 >
@@ -873,15 +885,15 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="text-[10px] font-bold uppercase tracking-wider text-accent-gold">
-                      Frequently Paired With
+                      <T text="Frequently Paired With" />
                     </p>
                     <p className="truncate text-xs font-semibold text-white transition-colors group-hover:text-accent-gold md:text-sm">
-                      {related[0].name}
+                      <T text={related[0].name} />
                     </p>
                     <p className="text-[11px] text-text-secondary">{formatShopPrice(related[0].price)}</p>
                   </div>
                   <ChevronRight className="size-4 shrink-0 text-text-secondary transition-colors group-hover:text-accent-gold" />
-                </a>
+                </LocalizedLink>
               )}
 
             </div>
@@ -896,32 +908,35 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
           <div className="flex flex-col items-center gap-6 text-center">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-accent-gold">
-                {product.badge}
+                <T text={product.badge} />
               </p>
               <h2
                 className="mt-2 text-2xl font-semibold text-white md:text-4xl"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
               >
-                {product.name}
+                <T text={product.name} />
               </h2>
-              <p className="mx-auto mt-2 max-w-xl text-sm text-white/70 md:text-base">{product.tagline}</p>
+              <p className="mx-auto mt-2 max-w-xl text-sm text-white/70 md:text-base">
+                <T text={product.tagline} />
+              </p>
             </div>
 
             <div className="grid w-full max-w-2xl grid-cols-3 gap-3 md:gap-6">
               <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
                 <p className="text-lg font-extrabold text-accent-gold md:text-2xl">{reviews.rating}★</p>
-                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">Customer Rating</p>
+                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs"><T text="Customer Rating" /></p>
               </div>
               <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
                 <p className="text-lg font-extrabold text-accent-gold md:text-2xl">{reviews.reviewsCount}</p>
-                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">Verified Reviews</p>
+                <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs"><T text="Verified Reviews" /></p>
               </div>
               <div className="rounded-xl border border-white/10 bg-black/30 px-3 py-4">
                 <p className="text-lg font-extrabold text-accent-gold md:text-2xl">
-                  {discount > 0 ? `${discount}% OFF` : "Curated"}
+                  {discount > 0 ? `${discount}% ` : ""}
+                  <T text={discount > 0 ? "OFF" : "Curated"} />
                 </p>
                 <p className="text-[10px] uppercase tracking-wider text-text-secondary md:text-xs">
-                  {discount > 0 ? "Current Savings" : "Editorial Pick"}
+                  <T text={discount > 0 ? "Current Savings" : "Editorial Pick"} />
                 </p>
               </div>
             </div>
@@ -940,8 +955,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               { label: "30-DAY CONFIDENCE", value: "Review terms before checkout" }
             ].map(({ label, value }) => (
               <div key={label} className="space-y-1">
-                <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#c9a96e" }}>{label}</p>
-                <p className="text-xs text-white font-medium">{value}</p>
+                <p className="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em]" style={{ color: "#c9a96e" }}>
+                  <T text={label} />
+                </p>
+                <p className="text-xs text-white font-medium">
+                  <T text={value} />
+                </p>
               </div>
             ))}
           </div>
@@ -954,12 +973,14 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>BEFORE AND AFTER READINESS</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>
+              <T text="BEFORE AND AFTER READINESS" />
+            </span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              See What This Upgrade Solves
+              <T text="See What This Upgrade Solves" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              A good preparedness purchase should remove a specific point of failure, not just look impressive on a shelf.
+              <T text="A good preparedness purchase should remove a specific point of failure, not just look impressive on a shelf." />
             </p>
           </div>
 
@@ -967,14 +988,16 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             {/* Before Box */}
             <div className="border border-red-950/20 bg-red-950/[0.03] rounded-2xl p-6 md:p-8 space-y-4">
               <div className="flex items-center justify-between border-b border-red-900/10 pb-3">
-                <span className="text-sm font-bold uppercase tracking-wider text-red-400">Before Upgrade</span>
-                <span className="bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Weak point</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-red-400"><T text="Before Upgrade" /></span>
+                <span className="bg-red-500/10 text-red-400 border border-red-500/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  <T text="Weak point" />
+                </span>
               </div>
               <ul className="space-y-3.5">
                 {beforeAfter.before.map(step => (
                   <li key={step} className="flex items-start gap-3 text-xs md:text-sm text-white/70">
                     <X className="size-4 text-red-500 shrink-0 mt-0.5" />
-                    <span>{step}</span>
+                    <span><T text={step} /></span>
                   </li>
                 ))}
               </ul>
@@ -984,18 +1007,20 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             <div className="border border-accent-gold/20 bg-accent-gold/[0.03] rounded-2xl p-6 md:p-8 space-y-4 shadow-[0_0_30px_rgba(201,169,110,0.05)] relative overflow-hidden">
               <div className="absolute top-0 right-0 bg-accent-gold/10 text-accent-gold border-b border-l border-accent-gold/20 px-3 py-1 rounded-bl-xl text-[10px] font-bold tracking-widest flex items-center gap-1 uppercase">
                 <Sparkles className="size-3" />
-                <span>Prepared State</span>
+                <span><T text="Prepared State" /></span>
               </div>
-              
+
               <div className="flex items-center justify-between border-b border-accent-gold/10 pb-3">
-                <span className="text-sm font-bold uppercase tracking-wider text-accent-gold">After Upgrade</span>
-                <span className="bg-accent-gold/15 text-accent-gold border border-accent-gold/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">Controlled</span>
+                <span className="text-sm font-bold uppercase tracking-wider text-accent-gold"><T text="After Upgrade" /></span>
+                <span className="bg-accent-gold/15 text-accent-gold border border-accent-gold/20 px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest">
+                  <T text="Controlled" />
+                </span>
               </div>
               <ul className="space-y-3.5">
                 {beforeAfter.after.map(step => (
                   <li key={step} className="flex items-start gap-3 text-xs md:text-sm text-white font-semibold">
                     <Check className="size-4 text-accent-gold shrink-0 mt-0.5" />
-                    <span>{step}</span>
+                    <span><T text={step} /></span>
                   </li>
                 ))}
               </ul>
@@ -1008,12 +1033,14 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10 relative bg-white/[0.005]">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>AWARENESS OF EXCELLENCE</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>
+              <T text="AWARENESS OF EXCELLENCE" />
+            </span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              How We Benchmark Against Generics
+              <T text="How We Benchmark Against Generics" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Not every cheap alternative performs when conditions are bad. Prioritize durable, simple, field-ready gear.
+              <T text="Not every cheap alternative performs when conditions are bad. Prioritize durable, simple, field-ready gear." />
             </p>
           </div>
 
@@ -1022,9 +1049,9 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               <table className="w-full text-left border-collapse">
                 <thead>
                   <tr className="bg-white/[0.02] border-b border-white/10 text-xs md:text-sm uppercase tracking-wider font-semibold text-white">
-                    <th className="p-4 md:p-5">Decision Point</th>
-                    <th className="p-4 md:p-5 text-accent-gold bg-accent-gold/5 font-extrabold text-center">Security Mood Pick</th>
-                    <th className="p-4 md:p-5 text-text-secondary text-center">Cheap Alternative</th>
+                    <th className="p-4 md:p-5"><T text="Decision Point" /></th>
+                    <th className="p-4 md:p-5 text-accent-gold bg-accent-gold/5 font-extrabold text-center"><T text="Security Mood Pick" /></th>
+                    <th className="p-4 md:p-5 text-text-secondary text-center"><T text="Cheap Alternative" /></th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/5 text-xs md:text-sm text-white/80">
@@ -1032,18 +1059,18 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     <tr key={feature} className="hover:bg-white/[0.01] transition-colors">
                       <td className="p-4 md:p-5 font-semibold text-white flex items-center gap-2">
                         <Icon className="size-4 text-accent-gold shrink-0" />
-                        <span>{feature}</span>
+                        <span><T text={feature} /></span>
                       </td>
                       <td className="p-4 md:p-5 bg-accent-gold/[0.02] font-semibold border-l border-r border-white/5 text-center">
                         <div className="flex flex-col items-center gap-1 text-white">
                           <Check className="size-5 text-accent-gold" />
-                          <span className="text-[10px] md:text-xs text-accent-gold/90 font-medium leading-tight">{premium}</span>
+                          <span className="text-[10px] md:text-xs text-accent-gold/90 font-medium leading-tight"><T text={premium} /></span>
                         </div>
                       </td>
                       <td className="p-4 md:p-5 text-center text-text-secondary">
                         <div className="flex flex-col items-center gap-1">
                           <X className="size-4 text-white/30" />
-                          <span className="text-[10px] md:text-xs leading-tight">{cheap}</span>
+                          <span className="text-[10px] md:text-xs leading-tight"><T text={cheap} /></span>
                         </div>
                       </td>
                     </tr>
@@ -1059,30 +1086,30 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>ENGINEERED FOR READINESS</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}><T text="ENGINEERED FOR READINESS" /></span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              The Practical Details That Matter
+              <T text="The Practical Details That Matter" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              These are the features that determine whether a product is useful during everyday problems and real emergencies.
+              <T text="These are the features that determine whether a product is useful during everyday problems and real emergencies." />
             </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
             {scienceBenefits.map((science, idx) => (
-              <div 
-                key={science.title} 
+              <div
+                key={science.title}
                 className="border border-white/10 bg-white/[0.01] rounded-2xl p-6 md:p-8 space-y-4 hover:border-accent-gold/30 hover:bg-white/[0.02] hover:shadow-[0_10px_30px_rgba(201,169,110,0.05)] transition-all duration-500"
               >
                 <div className="flex justify-between items-center">
                   <span className="text-[10px] font-extrabold tracking-widest text-accent-gold uppercase bg-accent-gold/10 px-3 py-1 rounded-full border border-accent-gold/20">
-                    {science.badge}
+                    <T text={science.badge} />
                   </span>
                   <span className="text-2xl font-bold text-white/20 font-serif">0{idx + 1}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white font-serif">{science.title}</h3>
+                <h3 className="text-xl font-bold text-white font-serif"><T text={science.title} /></h3>
                 <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
-                  {science.desc}
+                  <T text={science.desc} />
                 </p>
               </div>
             ))}
@@ -1098,8 +1125,8 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.01] p-4 text-center"
                 >
                   <Icon className="size-4 text-accent-gold" aria-hidden="true" />
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary">{label}</p>
-                  <p className="text-xs font-semibold text-white md:text-sm">{value}</p>
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-text-secondary"><T text={label} /></p>
+                  <p className="text-xs font-semibold text-white md:text-sm"><T text={value} /></p>
                 </div>
               );
             })}
@@ -1112,16 +1139,16 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
         <Container>
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>
-              REAL-WORLD FIT
+              <T text="REAL-WORLD FIT" />
             </span>
             <h2
               className="mb-4 mt-2 text-3xl font-semibold text-white md:text-4xl"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Built for Every Situation
+              <T text="Built for Every Situation" />
             </h2>
             <p className="text-sm text-text-secondary md:text-base">
-              The same pick works across the everyday moments where readiness actually matters.
+              <T text="The same pick works across the everyday moments where readiness actually matters." />
             </p>
           </div>
 
@@ -1131,8 +1158,8 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 key={useCase.title}
                 className="rounded-2xl border border-white/10 bg-white/[0.01] p-6 hover:border-accent-gold/30 transition-all duration-300"
               >
-                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-accent-gold">{useCase.title}</h3>
-                <p className="text-xs leading-relaxed text-text-secondary md:text-sm">{useCase.description}</p>
+                <h3 className="mb-2 text-sm font-bold uppercase tracking-wide text-accent-gold"><T text={useCase.title} /></h3>
+                <p className="text-xs leading-relaxed text-text-secondary md:text-sm"><T text={useCase.description} /></p>
               </div>
             ))}
           </div>
@@ -1143,12 +1170,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10 bg-white/[0.005]">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>DEPLOYMENT STEPS</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}><T text="DEPLOYMENT STEPS" /></span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              How To Put It Into Use
+              <T text="How To Put It Into Use" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Clear steps make gear easier to use when time, light, or attention is limited.
+              <T text="Clear steps make gear easier to use when time, light, or attention is limited." />
             </p>
           </div>
 
@@ -1166,10 +1193,10 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-1.5">
-                    Phase 0{i + 1}
+                    <T text="Phase" /> 0{i + 1}
                   </h4>
                   <p className="text-xs md:text-sm leading-relaxed" style={{ color: "#a8a8a8" }}>
-                    {step}
+                    <T text={step} />
                   </p>
                 </div>
               </li>
@@ -1184,12 +1211,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>AUTHENTIC PROOF</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}><T text="AUTHENTIC PROOF" /></span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              Real Customer Verified Experiences
+              <T text="Real Customer Verified Experiences" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Review signals summarize why customers choose this type of gear and what they value after using it.
+              <T text="Review signals summarize why customers choose this type of gear and what they value after using it." />
             </p>
           </div>
 
@@ -1211,7 +1238,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     />
                   ))}
                 </div>
-                <p className="text-xs text-text-secondary">{reviews.reviewsCount} Global Verified Ratings</p>
+                <p className="text-xs text-text-secondary">{reviews.reviewsCount} <T text="Global Verified Ratings" /></p>
               </div>
 
               {/* Star Distribution Breakdown */}
@@ -1226,9 +1253,9 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                       selectedReviewStarFilter === stars ? "text-white font-bold" : ""
                     }`}
                   >
-                    <span className="w-10 text-right group-hover:underline">{stars} star</span>
+                    <span className="w-10 text-right group-hover:underline">{stars} <T text="star" /></span>
                     <div className="h-2.5 flex-1 bg-white/10 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full rounded-full transition-all duration-500 ${
                           selectedReviewStarFilter === stars ? "bg-accent-gold" : "bg-accent-gold/60 group-hover:bg-accent-gold"
                         }`}
@@ -1245,7 +1272,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   onClick={() => setSelectedReviewStarFilter(null)}
                   className="w-full text-center text-xs text-accent-gold hover:underline font-bold mt-2"
                 >
-                  Clear Star Filter
+                  <T text="Clear Star Filter" />
                 </button>
               )}
             </div>
@@ -1253,26 +1280,26 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             {/* Individual Reviews list (Right - 8 columns) */}
             <div className="lg:col-span-8 space-y-5">
               <div className="flex justify-between items-center text-xs text-text-secondary border-b border-white/5 pb-3">
-                <span>Showing {filteredReviews.length} of {reviews.items.length} featured comments</span>
+                <span><T text="Showing" /> {filteredReviews.length} <T text="of" /> {reviews.items.length} <T text="featured comments" /></span>
                 <span className="flex items-center gap-1 font-bold text-accent-gold">
-                  <ShieldCheck className="size-3.5" /> 100% Authentic Verified Buyers
+                  <ShieldCheck className="size-3.5" /> <T text="100% Authentic Verified Buyers" />
                 </span>
               </div>
 
               {reviews.items.length === 0 ? (
                 <div className="text-center py-8 border border-white/5 rounded-2xl bg-white/[0.01]">
                   <p className="text-text-secondary text-sm">
-                    Individual written reviews aren&apos;t posted yet — this rating reflects {reviews.reviewsCount} verified buyers.
+                    <T text="Individual written reviews aren't posted yet — this rating reflects" /> {reviews.reviewsCount} <T text="verified buyers." />
                   </p>
                 </div>
               ) : filteredReviews.length === 0 ? (
                 <div className="text-center py-8 border border-white/5 rounded-2xl bg-white/[0.01]">
-                  <p className="text-text-secondary text-sm">No reviews found for this star selection.</p>
+                  <p className="text-text-secondary text-sm"><T text="No reviews found for this star selection." /></p>
                   <button
                     onClick={() => setSelectedReviewStarFilter(null)}
                     className="text-xs text-accent-gold hover:underline font-bold mt-2"
                   >
-                    View all reviews
+                    <T text="View all reviews" />
                   </button>
                 </div>
               ) : (
@@ -1283,10 +1310,10 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                         <div className="flex items-center gap-2">
                           <span className="text-sm font-bold text-white">{item.author}</span>
                           <span className="text-[10px] text-accent-gold/90 font-extrabold uppercase bg-accent-gold/10 px-2 py-0.5 rounded border border-accent-gold/20 flex items-center gap-1">
-                            <ShieldCheck className="size-3" /> Verified Buyer
+                            <ShieldCheck className="size-3" /> <T text="Verified Buyer" />
                           </span>
                         </div>
-                        <p className="text-[10px] text-text-secondary">{item.location} • Reviewed on {item.date}</p>
+                        <p className="text-[10px] text-text-secondary">{item.location} • <T text="Reviewed on" /> {item.date}</p>
                       </div>
                       <div className="flex">
                         {[...Array(5)].map((_, i) => (
@@ -1303,14 +1330,14 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     </div>
 
                     <div className="space-y-1.5">
-                      <p className="text-sm md:text-base font-bold text-white">{item.title}</p>
+                      <p className="text-sm md:text-base font-bold text-white"><T text={item.title} /></p>
                       <p className="text-xs md:text-sm leading-relaxed text-text-secondary">
-                        "{item.content}"
+                        "<T text={item.content} />"
                       </p>
                     </div>
 
                     <div className="flex items-center gap-4 text-[10px] md:text-xs text-text-secondary border-t border-white/5 pt-3">
-                      <span>Was this review helpful?</span>
+                      <span><T text="Was this review helpful?" /></span>
                       <button
                         type="button"
                         onClick={() =>
@@ -1328,7 +1355,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                       >
                         <ThumbsUp className="size-3" />
                         <span>
-                          {helpfulReviewKeys[item.author] ? "Marked helpful" : "Helpful"} (
+                          <T text={helpfulReviewKeys[item.author] ? "Marked helpful" : "Helpful"} /> (
                           {item.helpfulCount + (helpfulReviewKeys[item.author] ? 1 : 0)})
                         </span>
                       </button>
@@ -1346,12 +1373,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 border-b border-white/10">
         <Container>
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}>CONFIDENCE IN MIND</span>
+            <span className="text-xs font-bold tracking-[0.2em]" style={{ color: "#c9a96e" }}><T text="CONFIDENCE IN MIND" /></span>
             <h2 className="text-3xl md:text-4xl font-semibold text-white mt-2 mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
-              Frequently Asked Questions
+              <T text="Frequently Asked Questions" />
             </h2>
             <p className="text-sm md:text-base text-text-secondary">
-              Clear answers before checkout, so the purchase decision does not feel vague or risky.
+              <T text="Clear answers before checkout, so the purchase decision does not feel vague or risky." />
             </p>
           </div>
 
@@ -1376,7 +1403,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   }`}
                 >
                   <p className="p-5 text-xs md:text-sm leading-relaxed" style={{ color: "#a8a8a8" }}>
-                    {a}
+                    <T text={a} />
                   </p>
                 </div>
               </div>
@@ -1389,22 +1416,22 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       <section className="py-16 px-4 bg-white/[0.005]">
         <Container>
           <div className="max-w-4xl mx-auto rounded-3xl border border-accent-gold/20 bg-accent-gold/[0.02] p-8 md:p-12 shadow-[0_0_50px_rgba(201,169,110,0.05)] relative overflow-hidden flex flex-col md:flex-row items-center gap-8">
-            
+
             {/* Guarantee Circular Gold Badge Graphic */}
             <div className="relative shrink-0 size-32 md:size-40 border-4 border-double border-accent-gold rounded-full flex flex-col items-center justify-center text-center p-3 rotate-[-5deg] select-none bg-black/60 shadow-2xl">
               <span className="text-[9px] font-extrabold tracking-widest text-accent-gold uppercase">SECURITY MOOD</span>
-              <span className="text-lg md:text-xl font-black text-white font-serif leading-none py-1">30-DAY</span>
-              <span className="text-[10px] font-extrabold tracking-widest text-accent-gold uppercase leading-none">RISK FREE</span>
-              <span className="text-[8px] text-white/50 pt-1">GUARANTEE</span>
+              <span className="text-lg md:text-xl font-black text-white font-serif leading-none py-1"><T text="30-DAY" /></span>
+              <span className="text-[10px] font-extrabold tracking-widest text-accent-gold uppercase leading-none"><T text="RISK FREE" /></span>
+              <span className="text-[8px] text-white/50 pt-1"><T text="GUARANTEE" /></span>
             </div>
 
             <div className="space-y-4 text-center md:text-left flex-1">
-              <span className="text-xs font-extrabold tracking-[0.25em]" style={{ color: "#c9a96e" }}>ZERO HASSLE • ZERO ANXIETY</span>
+              <span className="text-xs font-extrabold tracking-[0.25em]" style={{ color: "#c9a96e" }}><T text="ZERO HASSLE • ZERO ANXIETY" /></span>
               <h2 className="text-2xl md:text-3xl font-bold text-white font-serif">
-                Try It Out Risk-Free For 30 Days
+                <T text="Try It Out Risk-Free For 30 Days" />
               </h2>
               <p className="text-xs md:text-sm leading-relaxed text-text-secondary">
-                Buy through the linked checkout or curated product destination and review shipping, return, and seller terms before payment. Security Mood keeps the buying path focused: useful gear first, clear next step, and no dead-end buttons.
+                <T text="Buy through the linked checkout or curated product destination and review shipping, return, and seller terms before payment. Security Mood keeps the buying path focused: useful gear first, clear next step, and no dead-end buttons." />
               </p>
             </div>
           </div>
@@ -1417,17 +1444,17 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
         <div className="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] size-96 rounded-full bg-accent-gold/5 blur-[120px] pointer-events-none" />
 
         <Container className="relative z-10 space-y-6">
-          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#c9a96e" }}>FINISH YOUR READINESS UPGRADE</span>
+          <span className="text-xs font-bold tracking-[0.2em] uppercase" style={{ color: "#c9a96e" }}><T text="FINISH YOUR READINESS UPGRADE" /></span>
           <h2
             className="text-3xl md:text-5xl font-semibold text-white max-w-xl mx-auto"
             style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
           >
-            Ready to make your setup stronger?
+            <T text="Ready to make your setup stronger?" />
           </h2>
           <p className="text-sm md:text-base max-w-md mx-auto" style={{ color: "#a8a8a8" }}>
-            Add the item to your kit now, or open the checklist and fill the gaps in the right order.
+            <T text="Add the item to your kit now, or open the checklist and fill the gaps in the right order." />
           </p>
-          
+
           <div className="pt-4 max-w-sm mx-auto">
             <a
               href={product.shopifyUrl}
@@ -1436,10 +1463,16 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="block w-full py-4.5 rounded-xl text-base font-extrabold text-black transition-all duration-300 hover:opacity-90 hover:scale-[1.02] shadow-[0_0_20px_rgba(201,169,110,0.2)]"
               style={{ background: "#c9a96e" }}
             >
-              {getPrimaryCta(product)}
+              {product.price > 0 ? (
+                <>
+                  <T text="Buy Now" /> — {formatShopPrice(product.price)}
+                </>
+              ) : (
+                <T text="Open The Checklist" />
+              )}
             </a>
             <p className="text-[10px] text-text-secondary mt-3">
-              Secure destination checkout · Review final terms before payment
+              <T text="Secure destination checkout · Review final terms before payment" />
             </p>
           </div>
         </Container>
@@ -1453,13 +1486,13 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="text-2xl md:text-3xl font-semibold text-white text-center mb-10"
               style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             >
-              Complete Your Preparedness Layer
+              <T text="Complete Your Preparedness Layer" />
             </h2>
             <div className="grid gap-6 md:grid-cols-2 max-w-3xl mx-auto">
               {related.map((rel) => {
                 const relDiscount = Math.round((1 - rel.price / rel.compareAtPrice) * 100);
                 return (
-                  <a
+                  <LocalizedLink
                     key={rel.id}
                     href={`/shop/${rel.id}`}
                     className="group flex gap-4 p-4 rounded-xl border border-white/10 hover:border-accent-gold/40 hover:bg-white/[0.02] hover:shadow-[0_0_15px_rgba(201,169,110,0.05)] transition-all duration-300"
@@ -1470,8 +1503,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     </div>
                     <div className="min-w-0 flex-1 flex flex-col justify-between">
                       <div>
-                        <p className="text-sm font-bold text-white truncate group-hover:text-accent-gold transition-colors">{rel.name}</p>
-                        <p className="text-[11px] mt-0.5 text-text-secondary line-clamp-1">{rel.tagline}</p>
+                        <p className="text-sm font-bold text-white truncate group-hover:text-accent-gold transition-colors">
+                          <T text={rel.name} />
+                        </p>
+                        <p className="text-[11px] mt-0.5 text-text-secondary line-clamp-1">
+                          <T text={rel.tagline} />
+                        </p>
                       </div>
                       <div className="flex items-center justify-between pt-1">
                         <div className="flex items-baseline gap-2">
@@ -1482,12 +1519,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                         </div>
                         {rel.compareAtPrice > 0 && (
                           <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded-full bg-accent-gold/10 text-accent-gold border border-accent-gold/20">
-                            -{relDiscount}% Off
+                            -{relDiscount}% <T text="Off" />
                           </span>
                         )}
                       </div>
                     </div>
-                  </a>
+                  </LocalizedLink>
                 );
               })}
             </div>
@@ -1507,7 +1544,9 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               <Image src={product.image} alt={product.name} fill className="object-cover" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs md:text-sm font-bold text-white truncate max-w-[150px] md:max-w-xs">{product.name}</p>
+              <p className="text-xs md:text-sm font-bold text-white truncate max-w-[150px] md:max-w-xs">
+                <T text={product.name} />
+              </p>
               <div className="flex items-center gap-2">
                 <span className="text-xs md:text-sm font-extrabold text-accent-gold">{formatShopPrice(product.price)}</span>
                 {product.compareAtPrice > 0 && (
@@ -1516,13 +1555,13 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               </div>
             </div>
           </div>
-          
+
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-1 bg-accent-gold/10 text-accent-gold border border-accent-gold/20 px-3 py-1.5 rounded-lg text-[10px] font-bold tracking-wider">
               <ShieldCheck className="size-3" />
-              <span>Verified destination</span>
+              <span><T text="Verified destination" /></span>
             </div>
-            
+
             <a
               href={product.shopifyUrl}
               target="_blank"
@@ -1530,7 +1569,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               className="py-2.5 px-6 rounded-lg text-xs md:text-sm font-extrabold text-black transition-all hover:opacity-90 active:scale-[0.98] shadow-lg flex items-center gap-1.5 uppercase tracking-wider"
               style={{ background: "#c9a96e" }}
             >
-              <span>{product.price > 0 ? "Buy Now" : "Open Guide"}</span>
+              <span><T text={product.price > 0 ? "Buy Now" : "Open Guide"} /></span>
               <ChevronRight className="size-4" />
             </a>
           </div>
@@ -1540,21 +1579,21 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
       {/* AMAZON-STYLE HIGH-END PORTAL/LIGHTBOX OVERLAY */}
       {isLightboxOpen && (
         <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex flex-col justify-between p-4 md:p-6 animate-in fade-in zoom-in duration-300">
-          
+
           {/* Top Bar */}
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div>
               <h3 className="text-sm md:text-base font-bold text-white tracking-wide">
-                {product.name}
+                <T text={product.name} />
               </h3>
               <p className="text-[10px] md:text-xs text-accent-gold font-semibold tracking-wider uppercase mt-0.5">
-                Image {lightboxIndex + 1} of {galleryImages.length}
+                <T text="Image" /> {lightboxIndex + 1} <T text="of" /> {galleryImages.length}
               </p>
             </div>
-            <button 
+            <button
               onClick={() => setIsLightboxOpen(false)}
               className="p-2 rounded-full bg-white/5 hover:bg-white/15 text-white/80 hover:text-white transition-all border border-white/10 flex items-center justify-center shadow-lg"
-              title="Close overlay (Esc)"
+              title={text("Close overlay (Esc)")}
             >
               <X className="size-5" />
             </button>
@@ -1584,7 +1623,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   />
                   <div className="absolute inset-0 bg-black/10 hover:bg-transparent" />
                   <div className="absolute bottom-1 left-1 right-1 text-[9px] bg-black/85 text-white/90 py-0.5 rounded text-center truncate">
-                    {img.label}
+                    <T text={img.label} />
                   </div>
                 </button>
               ))}
@@ -1592,12 +1631,12 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
 
             {/* Center Column: Large Interactive Image with Arrow Navigations */}
             <div className="col-span-1 lg:col-span-8 flex items-center justify-center relative h-[50vh] sm:h-[60vh] lg:h-[70vh] w-full">
-              
+
               {/* Left Navigation Arrow */}
               <button
                 onClick={() => setLightboxIndex(prev => (prev - 1 + galleryImages.length) % galleryImages.length)}
                 className="absolute left-2 md:left-4 z-10 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 hover:border-white/30 hover:scale-105 transition-all shadow-xl"
-                title="Previous image (Left Arrow)"
+                title={text("Previous image (Left Arrow)")}
               >
                 <ChevronLeft className="size-5 md:size-6" />
               </button>
@@ -1612,13 +1651,13 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   priority
                   className={`object-contain transition-all duration-500 p-2 md:p-6 ${galleryImages[lightboxIndex].filter || ""}`}
                 />
-                
+
                 {/* Badge Overlay */}
                 <span
                   className="absolute top-4 left-4 text-xs font-bold px-4 py-1.5 rounded-full border border-black/10 shadow-lg tracking-wider"
                   style={{ background: "#c9a96e", color: "#000" }}
                 >
-                  {galleryImages[lightboxIndex].badge}
+                  <T text={galleryImages[lightboxIndex].badge} />
                 </span>
               </div>
 
@@ -1626,7 +1665,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
               <button
                 onClick={() => setLightboxIndex(prev => (prev + 1) % galleryImages.length)}
                 className="absolute right-2 md:right-4 z-10 p-3 rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 hover:border-white/30 hover:scale-105 transition-all shadow-xl"
-                title="Next image (Right Arrow)"
+                title={text("Next image (Right Arrow)")}
               >
                 <ChevronRight className="size-5 md:size-6" />
               </button>
@@ -1635,13 +1674,13 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
             {/* Right Column: Educational Description */}
             <div className="col-span-1 lg:col-span-2 flex flex-col gap-4 text-center lg:text-left justify-center lg:h-full lg:max-h-[70vh] bg-white/[0.02] border border-white/5 rounded-2xl p-4 lg:p-5">
               <span className="text-[10px] md:text-xs font-extrabold uppercase tracking-wider text-accent-gold">
-                Highlight feature
+                <T text="Highlight feature" />
               </span>
               <h4 className="text-sm md:text-base font-bold text-white leading-tight">
-                {galleryImages[lightboxIndex].label}
+                <T text={galleryImages[lightboxIndex].label} />
               </h4>
               <p className="text-xs text-white/80 leading-relaxed">
-                {galleryImages[lightboxIndex].desc}
+                <T text={galleryImages[lightboxIndex].desc} />
               </p>
               <div className="border-t border-white/10 pt-4 mt-2 hidden lg:block">
                 <a
@@ -1650,7 +1689,13 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                   rel="noopener noreferrer"
                   className="block w-full py-2.5 rounded-lg text-xs font-extrabold text-black bg-accent-gold text-center hover:opacity-90 active:scale-[0.98] transition-all"
                 >
-                  {getPrimaryCta(product)}
+                  {product.price > 0 ? (
+                    <>
+                      <T text="Buy Now" /> — {formatShopPrice(product.price)}
+                    </>
+                  ) : (
+                    <T text="Open The Checklist" />
+                  )}
                 </a>
               </div>
             </div>
@@ -1666,7 +1711,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 className={`size-2.5 rounded-full transition-all duration-300 ${
                   lightboxIndex === idx ? "bg-accent-gold w-6" : "bg-white/20 hover:bg-white/40"
                 }`}
-                title={`Go to image ${idx + 1}`}
+                title={`${text("Go to image")} ${idx + 1}`}
               />
             ))}
           </div>

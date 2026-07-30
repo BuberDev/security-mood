@@ -5,6 +5,7 @@ import { Container } from "@/components/container";
 import { CTAButton } from "@/components/cta-button";
 import { Heading } from "@/components/heading";
 import { Section } from "@/components/section";
+import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel } from "@/lib/commerce";
@@ -41,19 +42,29 @@ export function RoutineSection() {
 
                   <div className="space-y-3">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <Badge>Step {step.step}</Badge>
+                      <Badge>
+                        <T text="Step" /> {step.step}
+                      </Badge>
                       <span className="inline-flex items-center gap-1 text-xs uppercase tracking-[0.14em] text-text-secondary">
                         <Clock3 className="size-3.5" aria-hidden="true" />
-                        {step.timing}
+                        <T text={step.timing} />
                       </span>
                     </div>
 
-                    <h3 className="font-heading text-2xl leading-tight">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-text-secondary">{step.description}</p>
-                    <p className="text-xs uppercase tracking-[0.14em] text-accent-gold">{proof.socialProof}</p>
+                    <h3 className="font-heading text-2xl leading-tight">
+                      <T text={step.title} />
+                    </h3>
+                    <p className="text-sm leading-relaxed text-text-secondary">
+                      <T text={step.description} />
+                    </p>
+                    <p className="text-xs uppercase tracking-[0.14em] text-accent-gold">
+                      <T text={proof.socialProof} />
+                    </p>
 
                     <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 pt-3">
-                      <p className="text-sm text-text-secondary">{step.product.name}</p>
+                      <p className="text-sm text-text-secondary">
+                        <T text={step.product.name} />
+                      </p>
                       <CTAButton
                         href={getAffiliateRoute(step.product.id, "routine-step")}
                         label={getCommerceCtaLabel(step.product)}

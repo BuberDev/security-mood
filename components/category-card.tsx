@@ -1,6 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 
+import { LocalizedLink } from "@/components/localized-link";
+import { T } from "@/components/translated-text";
 import { Card } from "@/components/ui/card";
 import type { Category } from "@/lib/site-data";
 
@@ -11,7 +12,7 @@ type CategoryCardProps = {
 export function CategoryCard({ category }: CategoryCardProps) {
   return (
     <Card className="group overflow-hidden border-white/12 bg-white/[0.02] transition-all duration-300 hover:-translate-y-1 hover:border-accent-gold/60 hover:bg-white/[0.04]">
-      <Link href={`/blog?category=${category.id}`} className="block">
+      <LocalizedLink href={`/blog?category=${category.id}`} className="block">
         <div className="relative h-52 overflow-hidden">
           <Image
             src={category.image}
@@ -23,12 +24,20 @@ export function CategoryCard({ category }: CategoryCardProps) {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         <div className="space-y-3 p-6">
-          <h3 className="font-heading text-2xl text-text-primary">{category.name}</h3>
-          <p className="text-sm text-text-secondary">{category.description}</p>
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">{category.heroLine}</p>
-          <p className="pt-1 text-xs uppercase tracking-[0.16em] text-text-secondary">Explore top routines</p>
+          <h3 className="font-heading text-2xl text-text-primary">
+            <T text={category.name} />
+          </h3>
+          <p className="text-sm text-text-secondary">
+            <T text={category.description} />
+          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-gold">
+            <T text={category.heroLine} />
+          </p>
+          <p className="pt-1 text-xs uppercase tracking-[0.16em] text-text-secondary">
+            <T text="Explore top routines" />
+          </p>
         </div>
-      </Link>
+      </LocalizedLink>
     </Card>
   );
 }
