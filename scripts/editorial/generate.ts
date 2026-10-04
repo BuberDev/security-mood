@@ -77,10 +77,35 @@ function toStructuredOutputSchema(value: unknown): unknown {
   if (Array.isArray(value)) return value.map(toStructuredOutputSchema);
   if (!value || typeof value !== "object") return value;
 
-  return Object.fromEntries(
+  const result = Object.fromEntries(
     Object.entries(value as Record<string, unknown>)
       .filter(([key]) => !unsupportedStructuredOutputKeywords.has(key))
       .map(([key, nestedValue]) => [key, toStructuredOutputSchema(nestedValue)])
+  );
+
+  if (result.properties && typeof result.properties === "object") {
+    const properties = result.properties as Record<string, unknown>;
+    const originallyRequired = new Set(Array.isArray(result.required) ? result.required as string[] : []);
+    for (const [key, propertySchema] of Object.entries(properties)) {
+      if (!originallyRequired.has(key)) {
+        properties[key] = { anyOf: [propertySchema, { type: "null" }] };
+      }
+    }
+    result.required = Object.keys(properties);
+    result.additionalProperties = false;
+  }
+
+  return result;
+}
+
+function removeNullProperties(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(removeNullProperties);
+  if (!value || typeof value !== "object") return value;
+
+  return Object.fromEntries(
+    Object.entries(value as Record<string, unknown>)
+      .filter(([, nestedValue]) => nestedValue !== null)
+      .map(([key, nestedValue]) => [key, removeNullProperties(nestedValue)])
   );
 }
 
@@ -119,7 +144,8 @@ function main() {
   try {
     if (result.status !== 0) throw new Error(result.stderr || result.stdout || `Codex exited with ${result.status}`);
     if (!fs.existsSync(outputPath)) throw new Error(`Codex did not create structured output.\n${result.stderr}\n${result.stdout}`);
-    const article = editorialArticleSchema.parse(JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown);
+    const generatedOutput = JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown;
+    const article = editorialArticleSchema.parse(removeNullProperties(generatedOutput));
     if (article.topicKey !== topic.topicKey || article.slug !== topic.topicKey || article.categoryId !== topic.categoryId) throw new Error("Generated article does not match the selected editorial topic.");
 
     const destination = path.join(contentDirectory, `${article.slug}.json`);
