@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   if (editorialArticle) {
     const content = editorialArticle.locales[locale];
     return {
-      title: `${content.title} | Security Mood`,
+      title: { absolute: `${content.title} | Security Mood` },
       description: content.excerpt,
       alternates: getLocalizedAlternates(`/blog/${editorialArticle.slug}`, locale),
       keywords: [editorialArticle.categoryId, "FIDO", "passkeys", "phishing-resistant MFA", ...siteMeta.keywords],
@@ -83,7 +83,7 @@ export async function generateMetadata({ params }: ArticlePageProps): Promise<Me
   const description = translateText(locale, article.excerpt);
 
   return {
-    title: `${title} | Security Mood Guide`,
+    title: { absolute: `${title} | Security Mood Guide` },
     description,
     alternates: getLocalizedAlternates(`/blog/${article.slug}`, locale),
     keywords: [article.categoryId, "buying guide", "security guide", ...siteMeta.keywords],
