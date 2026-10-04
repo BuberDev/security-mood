@@ -14,6 +14,17 @@ const approvedPrimaryHosts = new Set([
   "fidoalliance.org", "www.fidoalliance.org", "owasp.org", "www.owasp.org",
 ]);
 
+function isApprovedPrimarySource(url: string) {
+  const hostname = new URL(url).hostname.toLowerCase();
+  return (
+    approvedPrimaryHosts.has(hostname) ||
+    hostname.endsWith(".gov") ||
+    hostname.endsWith(".gov.uk") ||
+    hostname.endsWith(".police.uk") ||
+    hostname.endsWith(".europa.eu")
+  );
+}
+
 function wordCount(value: string) {
   return value.trim().split(/\s+/).filter(Boolean).length;
 }
@@ -31,7 +42,10 @@ function validateEditorialRules(article: EditorialArticle) {
     const prose = [content.quickAnswer, content.methodology, ...content.sections.flatMap((section) => [section.answer, ...section.paragraphs, ...(section.bullets ?? [])]), ...content.faq.flatMap((item) => [item.question, item.answer])].join(" ");
     if (wordCount(prose) < 700) failures.push(`${locale} has fewer than 700 words`);
     if (new Set(content.sources.map((source) => source.url)).size < 3) failures.push(`${locale} has fewer than 3 unique sources`);
-    if (!content.sources.every((source) => approvedPrimaryHosts.has(new URL(source.url).hostname))) failures.push(`${locale} contains a source outside the primary-source allowlist`);
+    const rejectedHosts = content.sources
+      .filter((source) => !isApprovedPrimarySource(source.url))
+      .map((source) => new URL(source.url).hostname);
+    if (rejectedHosts.length) failures.push(`${locale} contains sources outside the primary-source allowlist: ${[...new Set(rejectedHosts)].join(", ")}`);
     for (const section of content.sections) {
       if (!section.sourceIds.every((id) => sourceIds.has(id))) failures.push(`${locale}/${section.id} references an unknown source`);
     }
