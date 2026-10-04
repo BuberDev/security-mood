@@ -1,0 +1,504 @@
+{
+  "version": 1,
+  "topicKey": "home-security-audit-checklist",
+  "slug": "home-security-audit-checklist",
+  "status": "published",
+  "categoryId": "home-security",
+  "publishedAt": "2026-10-04",
+  "updatedAt": "2026-10-04",
+  "heroImage": "/images/blog/home_security_audit.svg",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed guidance based on public-agency publications; no professional certification, property inspection or laboratory testing is claimed.",
+      "pl": "Wskazówki zweryfikowane na podstawie publikacji instytucji publicznych; nie deklarujemy certyfikacji zawodowej, oględzin nieruchomości ani badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore security and preparedness research",
+        "pl": "Przeczytaj analizy bezpieczeństwa i przygotowania"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review saved security products",
+        "pl": "Przejrzyj zapisane produkty związane z bezpieczeństwem"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood guides",
+        "pl": "Poznaj poradniki Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "window-alarm-kit",
+    "outdoor-security-camera"
+  ],
+  "locales": {
+    "en": {
+      "title": "Evidence-based home security audit checklist: inspect, prioritize and verify",
+      "excerpt": "Audit doors, accessible windows, alarms, connected cameras and escape routes. Turn observations into a practical repair plan without mistaking a shopping list for a security assessment.",
+      "heroAlt": "Illustration of a home security audit covering entrances, windows and household safety",
+      "quickAnswer": "Start with safe escape, then inspect every entrance and reachable window, check key control, test alarms, and review connected-device access. Record each weakness, its consequence, an owner and a verification step. Fix blocked exits and failed locks first. Add equipment only when it addresses a documented gap, and repeat the audit after repairs or household changes.",
+      "keyTakeaways": [
+        "Inspect the complete entrance, including its frame, hinges and locking routine.",
+        "Treat reachable upstairs windows as potential entry points too.",
+        "Keep escape routes usable when security measures are engaged.",
+        "Verify alerts and account permissions instead of relying on installation alone.",
+        "Close each finding with evidence that the corrective action worked."
+      ],
+      "methodology": "We searched for and fetched primary guidance from Police.uk, the Police Service of Northern Ireland, the U.S. Fire Administration and the U.S. Federal Trade Commission on 2026-10-04. The checklist combines their physical-security, fire-escape and camera-security guidance with an original editorial workflow for recording and prioritizing findings. It is not a validated risk score or an inspection certificate. British and American recommendations provide useful reference points but do not establish Polish legal requirements. Source publication dates are left null where a precise publication day was not established. Product references identify relevant categories only; we did not test products or verify individual capabilities.",
+      "sections": [
+        {
+          "id": "audit-record",
+          "heading": "1. Build an audit record that leads to action",
+          "answer": "A useful home security audit records observable weaknesses and assigns a corrective action to each one. Start with a sketch of entrances, reachable windows and escape routes, then mark each check as passed, failed or unverified. Prioritize findings by their consequences and confirm repairs through a repeat inspection rather than a general feeling of safety.",
+          "paragraphs": [
+            "Police guidance recommends checking doors and windows for weaknesses; USFA recommends mapping doors and windows for escape planning. Use the same sketch for both purposes. Include the garage connection, basement entrance, balcony door and any shared corridor. Inspect only areas you are authorized to access. In an apartment, record a defective communal entrance as an issue for the building manager rather than attempting to modify it yourself.",
+            "Our suggested worksheet has seven fields: location, observation, status, consequence, action, responsible person and closure evidence. Write concrete observations such as 'rear window does not latch' instead of 'window security poor'. An unverified setting deserves a follow-up task: 'camera access list not checked' is different from evidence that an unauthorized person has access.",
+            "Use three editorial priorities: immediate attention for an escape obstruction or an entrance that cannot secure; scheduled repair for damaged fittings or an unreliable alert; planned review for convenience improvements. These labels organize work and do not predict burglary probability. Do not add points across unrelated hazards: a functioning camera should never cancel out a failed door lock in your record.",
+            "Walk the property with another resident where possible. Ask each person to demonstrate the normal leaving-home routine and the way they would get out at night. Record disagreements as tasks to resolve. Keep the worksheet private because it describes weaknesses and household routines. A concise version for a landlord should contain the defect and requested repair, without unnecessary details about absences."
+          ],
+          "bullets": [
+            "Create a numbered entry for every exterior door and reachable window.",
+            "Record what you observed and how you checked it.",
+            "Assign an owner and a target date to every failed or unverified item.",
+            "Keep photographs of defects and repairs in a private audit folder."
+          ],
+          "sourceIds": [
+            "psni-house",
+            "usfa-escape"
+          ]
+        },
+        {
+          "id": "doors-keys",
+          "heading": "2. Check doors, frames and control of keys",
+          "answer": "Check an entrance as a complete assembly: door, frame, hinges, lock and the way residents operate it. Confirm that the normal locking sequence actually secures the door. Review who holds keys and keep them away from openings. Refer damaged assemblies or uncertain lock compatibility to a qualified locksmith, while preserving safe escape.",
+          "paragraphs": [
+            "Police.uk distinguishes closing a door from engaging its locks and describes the handle-lift and key-turn sequence used by some multipoint doors. Apply the instructions for your own mechanism rather than assuming every door works alike. During the audit, have one resident operate the lock and another check closure gently. Do not conduct forced-entry experiments or use tools to challenge the lock.",
+            "Give each entrance a separate record. Note visible frame damage, loose hardware, difficulty turning the key and whether the door aligns normally. Ask a locksmith to assess defects you cannot explain. Police.uk also discusses patio-door anti-lift protection and protruding cylinders; these are prompts for a professional compatibility check, not instructions to improvise modifications.",
+            "Create a private key register covering residents, relatives, former occupants and service access. If you cannot account for copies, discuss changing or rekeying the relevant lock. Store house and vehicle keys where they cannot be reached through a letterbox or an open window. Agree who is responsible for returning borrowed keys and how temporary access ends.",
+            "British standards mentioned in police guidance are jurisdiction-specific reference points. Ask the installer and insurer what evidence is appropriate for your property and location. For an apartment entrance, confirm fire-door requirements before changing hardware. Close the audit item only after normal locking and safe exit have both been demonstrated by the people who use the door."
+          ],
+          "bullets": [
+            "Check the front, rear, balcony, basement and garage-to-house doors separately.",
+            "Verify the manufacturer's normal locking sequence.",
+            "Record damage or sticking without trying to force the mechanism.",
+            "Resolve missing keys and unexplained copies.",
+            "Confirm that residents can operate the exit with security engaged."
+          ],
+          "sourceIds": [
+            "police-locks",
+            "police-doors",
+            "psni-house"
+          ]
+        },
+        {
+          "id": "windows-detection",
+          "heading": "3. Inspect reachable windows and verify detection",
+          "answer": "Assess windows by accessibility, not simply by floor number. Look for nearby objects that make a window reachable, confirm closure and locking, and record damaged fittings. If an alarm addresses a remaining detection gap, test its actual trigger and response. A sensor's presence does not establish that anyone will receive or act on an alert.",
+          "paragraphs": [
+            "Police.uk asks residents to consider walls, bins and garden furniture that could provide access to windows. Inspect from safe ground and note what you can actually see. Include windows above a low roof or beside a balcony. Do not climb onto roofs or lean out to complete the checklist; mark inaccessible details as unverified and arrange an appropriate inspection.",
+            "Separate the physical defect from the detection question. A window that will not secure needs repair even if it has a sensor. Conversely, a sound window might still warrant an alert if the household has identified a practical monitoring need. Record why an additional device is being considered, which opening it would cover and who would respond.",
+            "For an existing alarm, follow its instructions and perform an authorized test. Record the trigger, the result, the receiving person and any delay you observed. If a service provider monitors the system, arrange testing through its process before activating it. Use manufacturer-approved methods; do not assume a local sounder, phone notification and monitored response are interchangeable.",
+            "The window-alarm-kit product reference is a category to compare when a detection gap remains. Its inclusion makes no claim about battery life, sound level, networking or compatibility. Before buying, request documentation for those properties and establish a maintenance routine. Recheck the underlying window repair and the chosen alert separately so that both findings have clear closure evidence."
+          ],
+          "bullets": [
+            "List reachable windows, including those accessed from nearby structures.",
+            "Check each opening's closure and locking during normal use.",
+            "Move portable access aids where practical and authorized.",
+            "Test existing alerts using the documented procedure.",
+            "Name the person who will respond and define the next action."
+          ],
+          "table": {
+            "headers": [
+              "Finding",
+              "First action",
+              "Verification"
+            ],
+            "rows": [
+              [
+                "Window will not secure",
+                "Arrange repair of the opening or hardware",
+                "Repeat normal closure and locking"
+              ],
+              [
+                "Nearby bin provides access",
+                "Review its position",
+                "Inspect the revised arrangement from outside"
+              ],
+              [
+                "Alarm response is unknown",
+                "Arrange an authorized test",
+                "Record the received alert and responsible person"
+              ],
+              [
+                "Coverage gap remains",
+                "Compare suitable detection options",
+                "Test the chosen setup at the intended opening"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "police-windows",
+            "psni-house"
+          ],
+          "productId": "window-alarm-kit"
+        },
+        {
+          "id": "camera-access",
+          "heading": "4. Audit camera access before expanding coverage",
+          "answer": "For connected cameras, review who can view recordings or change settings, then verify updates, account protection and available encryption. Limit coverage to a defined household purpose and document dependencies such as connectivity and storage. Select a camera only after confirming its security features in manufacturer documentation and testing the intended installation.",
+          "paragraphs": [
+            "FTC guidance supports unique passwords, available two-factor authentication, software updates and secured home networking. Apply those checks to the camera account and the router. Review the current user list and remove access that no longer has a purpose. Record an unavailable feature as a limitation rather than assuming the app provides it.",
+            "Our camera worksheet asks for the exact model, installation position, account owner, support information, recording location and permissions. Add a practical acceptance test: with a consenting resident, check the view at the intended entrance in normal daytime and evening conditions, then locate and export a sample recording if that function is required.",
+            "Make the test match the decision. If you need to know whether a delivery arrived, inspect that scenario; if you need a record of an entrance event, check that it is captured and retrievable. Write down what the result cannot establish. A successful sample does not prove performance in every weather condition, lighting situation or connectivity failure.",
+            "The outdoor-security-camera reference is a relevant category, not an endorsement of a specific model. Compare documented access controls, update support and storage arrangements before considering visual specifications. Discuss the intended view with household members and minimize unnecessary recording. Police.uk explicitly reminds users to respect other people's privacy; obtain location-specific guidance when the planned view includes shared or public areas."
+          ],
+          "bullets": [
+            "Inventory camera models and current authorized users.",
+            "Verify updates and available account protection.",
+            "Confirm documented encryption rather than relying on a security label.",
+            "Record the practical limitations of the installation.",
+            "Test the required recording and retrieval workflow."
+          ],
+          "sourceIds": [
+            "ftc-cameras",
+            "police-doors"
+          ],
+          "productId": "outdoor-security-camera"
+        },
+        {
+          "id": "escape-recovery",
+          "heading": "5. Preserve escape, rehearse response and close findings",
+          "answer": "A home security audit is incomplete until residents can leave safely and know what to do after an incident. Check escape routes with security measures engaged, maintain smoke alarms according to instructions, and rehearse the household plan. After suspected intrusion, prioritize personal safety, contact local police and avoid disturbing potential evidence.",
+          "paragraphs": [
+            "USFA recommends smoke alarms in bedrooms, outside sleeping areas and on each level, with monthly testing and maintenance according to instructions. Its escape guidance calls for identifying two ways out of each room, keeping openings clear and choosing an outside meeting place. Treat these as U.S. reference guidance and check local requirements for your building.",
+            "Use a safe walkthrough to identify who needs help, which route each resident can use and whether locks or stored belongings obstruct it. Do not practice hazardous window exits. In an apartment building, obtain the building's fire instructions and identify the designated routes. Ask the relevant manager or fire-safety professional to resolve contradictions between security changes and the escape plan.",
+            "Write two short response cards: one for a fire alarm and one for suspected intrusion. The intrusion card should begin with getting to a safe place and contacting police; do not make entering the property or confronting someone part of the audit exercise. PSNI advises minimizing contact with objects after burglary to preserve forensic evidence. Use emergency contact information appropriate to your country.",
+            "Finish by reviewing every open item with its owner. Our suggested cadence is a brief monthly check of pending repairs and device maintenance, plus a fuller review after moving, changing occupants, losing keys or altering equipment. This is an editorial schedule, not a standard. A finding closes when the relevant check passes; an invoice or a delivered device alone is insufficient."
+          ],
+          "bullets": [
+            "Check escape routes without creating a hazardous drill.",
+            "Record smoke-alarm test results and maintenance dates.",
+            "Assign assistance responsibilities and an outside meeting point.",
+            "Keep local emergency contacts accessible.",
+            "Reinspect repairs and record remaining limitations."
+          ],
+          "sourceIds": [
+            "usfa-smoke",
+            "usfa-escape",
+            "psni-house"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "What should I fix before buying equipment?",
+          "answer": "Address an obstructed escape route or an entrance that cannot secure first. Then repair damaged fittings and verify existing alarms. Use equipment purchases to address specific findings that remain after those checks."
+        },
+        {
+          "question": "Can a tenant carry out this audit?",
+          "answer": "Yes. Record observations, perform normal operating checks and report defects. Agree structural or hardware changes with the landlord or manager, especially where a shared entrance or fire door is involved."
+        },
+        {
+          "question": "Does a camera replace a lock or alarm?",
+          "answer": "Give each measure a separate audit task. Check the entrance's physical security, the alert workflow and the recording workflow independently; a successful camera test does not close a failed lock finding."
+        },
+        {
+          "question": "Is this a certified security assessment?",
+          "answer": "No. It is a source-reviewed household checklist with an editorial prioritization method. It does not certify compliance, predict burglary probability or replace a professional inspection."
+        }
+      ],
+      "sources": [
+        {
+          "id": "police-locks",
+          "title": "Door and window lock advice",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/door-window-lock-advice/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "police-doors",
+          "title": "Door security",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/door-security-advice/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "police-windows",
+          "title": "Window security",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/window-security/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "psni-house",
+          "title": "House Security",
+          "publisher": "Police Service of Northern Ireland",
+          "url": "https://www.psni.police.uk/safety-and-support/keeping-safe/protecting-your-home/house-security",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "usfa-smoke",
+          "title": "Smoke Alarms",
+          "publisher": "U.S. Fire Administration",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "usfa-escape",
+          "title": "Home Fire Escape Plans",
+          "publisher": "U.S. Fire Administration",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "ftc-cameras",
+          "title": "How To Secure Your Home Security Cameras",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-secure-your-home-security-cameras",
+          "accessedAt": "2026-10-04"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Lista audytu bezpieczeństwa domu oparta na dowodach: sprawdź, ustal priorytety i zweryfikuj",
+      "excerpt": "Sprawdź drzwi, dostępne okna, alarmy, kamery sieciowe i drogi ewakuacji. Zamień obserwacje w konkretny plan napraw, zamiast traktować listę zakupów jako ocenę bezpieczeństwa.",
+      "heroAlt": "Ilustracja audytu bezpieczeństwa domu obejmującego wejścia, okna i bezpieczeństwo domowników",
+      "quickAnswer": "Zacznij od bezpiecznej ewakuacji, następnie sprawdź wszystkie wejścia i dostępne okna, kontrolę kluczy, działanie alarmów oraz dostęp do urządzeń sieciowych. Każdej usterce przypisz skutek, osobę odpowiedzialną i sposób weryfikacji naprawy. Najpierw usuń przeszkody na drodze wyjścia i napraw niesprawne zamki. Dobieraj sprzęt do udokumentowanych potrzeb, a audyt powtarzaj po naprawach i zmianach w gospodarstwie domowym.",
+      "keyTakeaways": [
+        "Sprawdzaj całe wejście: skrzydło drzwi, ościeżnicę, zawiasy i sposób zamykania.",
+        "Uwzględnij również okna na piętrze, do których można się dostać.",
+        "Zabezpieczenia muszą pozwalać domownikom bezpiecznie opuścić budynek.",
+        "Zweryfikuj powiadomienia i uprawnienia użytkowników, zamiast poprzestawać na montażu.",
+        "Zamykaj zadania dopiero po ponownym sprawdzeniu efektu naprawy."
+      ],
+      "methodology": "2026-10-04 wyszukaliśmy i odczytaliśmy źródła pierwotne Police.uk, Policji Irlandii Północnej, amerykańskiej administracji przeciwpożarowej USFA oraz Federalnej Komisji Handlu FTC. Lista łączy ich zalecenia dotyczące zabezpieczeń fizycznych, ewakuacji i kamer z autorskim redakcyjnym sposobem dokumentowania usterek oraz ustalania kolejności działań. Nie jest zwalidowanym modelem punktowej oceny ryzyka ani certyfikatem inspekcji. Zalecenia brytyjskie i amerykańskie stanowią punkty odniesienia, a nie wykładnię polskich przepisów. Daty publikacji pozostawiono jako null, jeśli nie ustalono dokładnego dnia. Odwołania do produktów wskazują wyłącznie odpowiednie kategorie; nie przeprowadziliśmy testów ani weryfikacji możliwości konkretnych modeli.",
+      "sections": [
+        {
+          "id": "audit-record",
+          "heading": "1. Przygotuj dokumentację, która prowadzi do działania",
+          "answer": "Praktyczny audyt bezpieczeństwa domu opisuje zaobserwowane słabości i przypisuje każdej z nich konkretne działanie. Zacznij od szkicu wejść, dostępnych okien oraz dróg ewakuacji. Oznacz kontrole jako zaliczone, niezaliczone lub niewykonane. Ustal kolejność prac na podstawie skutków problemów i potwierdzaj naprawy ponownym sprawdzeniem.",
+          "paragraphs": [
+            "Policja zaleca kontrolę słabych punktów drzwi i okien, a USFA przygotowanie planu pokazującego otwory istotne dla ewakuacji. Wykorzystaj jeden szkic do obu celów. Zaznacz przejście z garażu, wejście do piwnicy, drzwi balkonowe oraz wspólny korytarz. Oglądaj wyłącznie miejsca, do których masz uprawniony dostęp. W mieszkaniu niesprawne wejście do budynku wpisz jako zadanie dla zarządcy, zamiast samodzielnie zmieniać wspólne wyposażenie.",
+            "Proponowany przez redakcję arkusz zawiera siedem pól: miejsce, obserwację, status, możliwy skutek, działanie, osobę odpowiedzialną i dowód zakończenia. Zapisuj konkretne fakty, na przykład „tylne okno nie zatrzaskuje się”, zamiast ogólnego „słabe zabezpieczenie okna”. Brak sprawdzenia ustawienia wymaga osobnego zadania. Informacja, że nie przejrzano użytkowników kamery, nie oznacza jeszcze wykrycia nieuprawnionego dostępu.",
+            "Stosuj trzy robocze priorytety: natychmiastowe zajęcie się przeszkodą w ewakuacji lub wejściem, którego nie można zabezpieczyć; zaplanowaną naprawę uszkodzonych elementów lub zawodnego powiadomienia; późniejszy przegląd usprawnień wygody. To redakcyjny sposób organizacji pracy, nie prognoza włamania. Nie sumuj punktów za niezwiązane zagrożenia. Działająca kamera nie powinna usuwać z dokumentacji problemu niesprawnego zamka.",
+            "Jeśli to możliwe, przejdź przez dom z innym mieszkańcem. Poproś każdą osobę o pokazanie zwykłego sposobu zamykania mieszkania oraz wyjścia nocą. Rozbieżności zapisz jako kwestie do uzgodnienia. Przechowuj arkusz prywatnie, ponieważ opisuje słabości i zwyczaje domowników. Wersja dla właściciela lokalu powinna wskazywać usterkę oraz oczekiwaną naprawę, bez zbędnych informacji o terminach nieobecności."
+          ],
+          "bullets": [
+            "Nadaj numer każdemu wejściu i każdemu dostępnemu oknu.",
+            "Zapisz obserwację oraz sposób jej sprawdzenia.",
+            "Przypisz wykonawcę i termin każdemu problemowi lub niewykonanej kontroli.",
+            "Przechowuj zdjęcia usterek i napraw w prywatnym folderze audytu."
+          ],
+          "sourceIds": [
+            "psni-house",
+            "usfa-escape"
+          ]
+        },
+        {
+          "id": "doors-keys",
+          "heading": "2. Sprawdź drzwi, ościeżnice i kontrolę kluczy",
+          "answer": "Oceniaj wejście jako całość: skrzydło drzwi, ościeżnicę, zawiasy, zamek i sposób obsługi przez mieszkańców. Potwierdź, że normalna sekwencja zamykania rzeczywiście zabezpiecza drzwi. Ustal, kto ma klucze, i przechowuj je poza zasięgiem otworów. Uszkodzenia oraz wątpliwości dotyczące zgodności elementów omów z fachowcem, zachowując możliwość bezpiecznej ewakuacji.",
+          "paragraphs": [
+            "Police.uk rozróżnia przymknięcie drzwi od uruchomienia ich zamków i opisuje podniesienie klamki oraz przekręcenie klucza w niektórych mechanizmach wielopunktowych. Stosuj instrukcję swojego mechanizmu, zamiast zakładać, że każde drzwi działają identycznie. Podczas kontroli jedna osoba może zamknąć drzwi, a druga delikatnie sprawdzić zamknięcie. Nie przeprowadzaj prób siłowego wejścia ani eksperymentów z narzędziami.",
+            "Dla każdego wejścia utwórz osobny wpis. Zanotuj widoczne uszkodzenia ościeżnicy, luźne elementy, trudności z przekręceniem klucza oraz nieprawidłowe ustawienie skrzydła. Poproś fachowca o ocenę przyczyn, których nie potrafisz ustalić. Police.uk omawia także zabezpieczenie drzwi przesuwnych przed uniesieniem i wystające wkładki. Potraktuj te kwestie jako tematy profesjonalnej kontroli, nie zachętę do prowizorycznych przeróbek.",
+            "Przygotuj prywatny rejestr kluczy obejmujący mieszkańców, krewnych, byłych lokatorów oraz dostęp serwisowy. Jeśli nie umiesz ustalić, kto ma kopie, omów zmianę odpowiedniej wkładki lub zamka. Klucze do domu i samochodu przechowuj tam, gdzie nie można sięgnąć przez otwór na listy albo otwarte okno. Uzgodnij odpowiedzialność za zwrot pożyczonych kluczy i zakończenie dostępu czasowego.",
+            "Brytyjskie standardy wskazane przez policję odnoszą się do konkretnej jurysdykcji. Zapytaj instalatora i ubezpieczyciela, jakie dokumenty są właściwe dla twojego budynku oraz lokalizacji. Przed zmianą wyposażenia drzwi wejściowych do mieszkania sprawdź wymagania przeciwpożarowe. Zakończ zadanie dopiero wtedy, gdy użytkownicy pokażą zarówno prawidłowe zamknięcie, jak i bezpieczne otwarcie od strony wyjścia."
+          ],
+          "bullets": [
+            "Osobno sprawdź wejście główne, tylne, balkonowe, piwniczne i przejście z garażu.",
+            "Zweryfikuj normalną sekwencję zamykania opisaną przez producenta.",
+            "Zapisz uszkodzenia i zacinanie bez forsowania mechanizmu.",
+            "Wyjaśnij brakujące klucze oraz nieznaną liczbę kopii.",
+            "Potwierdź możliwość wyjścia przy uruchomionych zabezpieczeniach."
+          ],
+          "sourceIds": [
+            "police-locks",
+            "police-doors",
+            "psni-house"
+          ]
+        },
+        {
+          "id": "windows-detection",
+          "heading": "3. Oceń dostępne okna i sprawdź wykrywanie zdarzeń",
+          "answer": "Oceniaj okna według możliwości dostępu, a nie wyłącznie numeru piętra. Zwróć uwagę na przedmioty ułatwiające dotarcie do otworu, sprawdź zamykanie i zanotuj uszkodzenia okuć. Jeśli alarm odpowiada na pozostałą potrzebę wykrywania, przetestuj jego uruchomienie oraz reakcję. Sama obecność czujnika nie potwierdza odbioru ani obsługi powiadomienia.",
+          "paragraphs": [
+            "Police.uk zaleca uwzględnienie murów, pojemników na odpady i mebli ogrodowych, które mogą ułatwiać dotarcie do okna. Oglądaj otoczenie z bezpiecznego miejsca i zapisuj to, co rzeczywiście widzisz. Uwzględnij okna nad niskim dachem lub przy balkonie. Nie wchodź na dach i nie wychylaj się, aby uzupełnić arkusz. Niedostępne szczegóły oznacz jako niesprawdzone i zorganizuj odpowiednią kontrolę.",
+            "Oddziel usterkę fizyczną od pytania o wykrywanie zdarzeń. Okno, którego nie można zabezpieczyć, wymaga naprawy również wtedy, gdy ma czujnik. Sprawne okno może natomiast wymagać powiadomienia, jeśli mieszkańcy wskazali konkretną potrzebę nadzoru. Zapisz powód rozważania urządzenia, otwór objęty jego działaniem oraz osobę, która miałaby zareagować. Pozwala to porównywać rozwiązania według zadania, a nie samej liczby funkcji.",
+            "Istniejący alarm sprawdzaj zgodnie z instrukcją, w ramach uzgodnionego testu. Zanotuj sposób uruchomienia, wynik, odbiorcę oraz zaobserwowane opóźnienie. Jeśli system obsługuje firma monitorująca, najpierw uzgodnij procedurę z jej przedstawicielem. Korzystaj z metod dopuszczonych przez producenta. Nie zakładaj, że miejscowy sygnał dźwiękowy, powiadomienie telefonu i interwencja usługi monitoringu oznaczają taki sam sposób reakcji.",
+            "Odwołanie do window-alarm-kit wskazuje kategorię do porównania, gdy pozostaje konkretna potrzeba wykrywania. Nie potwierdza czasu pracy baterii, głośności, łączności ani zgodności z oknem. Przed zakupem poproś o dokumentację tych właściwości i zaplanuj utrzymanie urządzenia. Oddzielnie sprawdź efekt naprawy okna oraz działanie wybranego powiadomienia. Każde z tych zadań powinno mieć własny dowód zakończenia."
+          ],
+          "bullets": [
+            "Wypisz dostępne okna, również przy sąsiednich konstrukcjach.",
+            "Sprawdź zamykanie każdego otworu podczas zwykłego użytkowania.",
+            "Przestaw przenośne przedmioty ułatwiające dostęp, jeśli możesz to zrobić.",
+            "Przetestuj istniejące alarmy zgodnie z ich procedurą.",
+            "Wskaż odbiorcę powiadomienia i ustal następne działanie."
+          ],
+          "table": {
+            "headers": [
+              "Obserwacja",
+              "Pierwsze działanie",
+              "Weryfikacja"
+            ],
+            "rows": [
+              [
+                "Okna nie można zabezpieczyć",
+                "Zorganizuj naprawę okna lub okuć",
+                "Powtórz zwykłe zamknięcie i ryglowanie"
+              ],
+              [
+                "Pojemnik ułatwia dostęp",
+                "Sprawdź możliwość zmiany ustawienia",
+                "Oceń nowe ustawienie od zewnątrz"
+              ],
+              [
+                "Reakcja na alarm jest nieznana",
+                "Uzgodnij test",
+                "Zapisz odbiór sygnału i osobę odpowiedzialną"
+              ],
+              [
+                "Pozostaje luka w wykrywaniu",
+                "Porównaj odpowiednie rozwiązania",
+                "Przetestuj wybrane urządzenie przy właściwym otworze"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "police-windows",
+            "psni-house"
+          ],
+          "productId": "window-alarm-kit"
+        },
+        {
+          "id": "camera-access",
+          "heading": "4. Skontroluj dostęp do kamer przed rozszerzeniem zasięgu",
+          "answer": "W przypadku kamer sieciowych sprawdź, kto może oglądać nagrania i zmieniać ustawienia, a następnie zweryfikuj aktualizacje, ochronę konta oraz dostępne szyfrowanie. Określ cel obserwacji i zapisz zależności, takie jak łączność oraz przechowywanie nagrań. Wybieraj kamerę po sprawdzeniu dokumentacji zabezpieczeń i przetestowaniu planowanego miejsca montażu.",
+          "paragraphs": [
+            "FTC zaleca unikalne hasła, dostępne uwierzytelnianie dwuskładnikowe, aktualizacje oprogramowania i zabezpieczenie domowej sieci. Zastosuj te kontrole do konta kamery oraz routera. Przejrzyj listę użytkowników i usuń dostęp, który nie ma już uzasadnienia. Brak funkcji zapisz jako ograniczenie. Nie przyjmuj, że aplikacja oferuje daną ochronę tylko dlatego, że urządzenie jest reklamowane jako związane z bezpieczeństwem.",
+            "W proponowanym arkuszu kamery zapisz dokładny model, położenie, właściciela konta, informacje o wsparciu, miejsce przechowywania nagrań oraz uprawnienia. Dodaj praktyczną próbę odbioru instalacji. Za zgodą uczestniczącego mieszkańca sprawdź widok wybranego wejścia w zwykłych warunkach dziennych i wieczornych. Następnie odszukaj próbne nagranie i sprawdź możliwość jego eksportu, jeśli potrzebujesz takiej funkcji.",
+            "Dopasuj próbę do decyzji. Jeśli chcesz sprawdzać dostarczenie paczki, obejrzyj taki scenariusz. Jeśli potrzebujesz zapisu zdarzenia przy wejściu, upewnij się, że zostało zarejestrowane i można je odnaleźć. Zapisz również, czego wynik nie potwierdza. Udana próba nie dowodzi skuteczności w każdej pogodzie, przy innym oświetleniu ani podczas awarii połączenia. Dzięki temu ograniczenia pozostają widoczne w dokumentacji.",
+            "Odwołanie do outdoor-security-camera wskazuje odpowiednią kategorię, a nie rekomendację konkretnego modelu. Najpierw porównaj udokumentowane uprawnienia, wsparcie aktualizacji i sposób przechowywania materiału. Omów planowany kadr z domownikami i ogranicz zbędne nagrywanie. Police.uk przypomina o poszanowaniu prywatności innych osób. Gdy planowany widok obejmuje przestrzeń wspólną lub publiczną, uzyskaj wskazówki właściwe dla swojej lokalizacji."
+          ],
+          "bullets": [
+            "Zapisz modele kamer i aktualnych uprawnionych użytkowników.",
+            "Sprawdź aktualizacje oraz dostępne zabezpieczenia konta.",
+            "Potwierdź szyfrowanie w dokumentacji.",
+            "Zanotuj praktyczne ograniczenia instalacji.",
+            "Przetestuj potrzebny sposób zapisu i odszukiwania nagrań."
+          ],
+          "sourceIds": [
+            "ftc-cameras",
+            "police-doors"
+          ],
+          "productId": "outdoor-security-camera"
+        },
+        {
+          "id": "escape-recovery",
+          "heading": "5. Zachowaj możliwość ewakuacji i zamknij zadania po kontroli",
+          "answer": "Audyt bezpieczeństwa domu jest niepełny, dopóki mieszkańcy nie mogą bezpiecznie wyjść i nie wiedzą, jak reagować na zdarzenie. Sprawdź drogi ewakuacji przy uruchomionych zabezpieczeniach, utrzymuj czujki dymu zgodnie z instrukcją i przećwicz plan domowników. Przy podejrzeniu włamania zadbaj o bezpieczeństwo, skontaktuj się z lokalną policją i nie naruszaj możliwych śladów.",
+          "paragraphs": [
+            "USFA zaleca czujki dymu w sypialniach, poza strefami spania oraz na każdej kondygnacji, a także comiesięczne testy i konserwację według instrukcji. Jej wskazówki ewakuacyjne obejmują wskazanie dwóch dróg wyjścia z każdego pomieszczenia, pozostawienie otworów wolnych od przeszkód i ustalenie miejsca zbiórki na zewnątrz. To amerykański punkt odniesienia; wymagania dla swojego budynku sprawdź lokalnie.",
+            "Podczas bezpiecznego przejścia ustal, kto potrzebuje pomocy, którędy może wyjść każdy mieszkaniec i czy zamki lub przechowywane przedmioty utrudniają drogę. Nie ćwicz niebezpiecznego wychodzenia przez okna. W budynku wielorodzinnym uzyskaj instrukcję przeciwpożarową i poznaj wyznaczone trasy. Sprzeczności pomiędzy zmianami zabezpieczeń a planem ewakuacji wyjaśnij z zarządcą lub odpowiednim specjalistą.",
+            "Przygotuj dwie krótkie karty reakcji: na alarm pożarowy i na podejrzenie włamania. Druga powinna zaczynać się od znalezienia bezpiecznego miejsca oraz kontaktu z policją. Nie wpisuj w ćwiczenie wejścia do zagrożonego lokalu ani konfrontacji. Policja Irlandii Północnej zaleca ograniczenie dotykania przedmiotów po włamaniu, aby nie naruszyć śladów. Stosuj numery i procedury kontaktowe właściwe dla swojego kraju.",
+            "Na koniec omów każde niezakończone zadanie z osobą odpowiedzialną. Proponujemy krótki comiesięczny przegląd napraw i utrzymania urządzeń oraz pełniejszą kontrolę po przeprowadzce, zmianie mieszkańców, utracie kluczy lub modyfikacji sprzętu. To harmonogram redakcyjny, nie norma. Zadanie kończy się pozytywnym wynikiem odpowiedniej kontroli. Sama faktura, dostawa urządzenia albo deklaracja wykonawcy nie zastępuje sprawdzenia efektu."
+          ],
+          "bullets": [
+            "Sprawdź drogi wyjścia bez organizowania niebezpiecznej próby.",
+            "Zapisz wyniki testów czujek dymu i terminy konserwacji.",
+            "Ustal pomoc dla potrzebujących osób i miejsce zbiórki.",
+            "Przechowuj lokalne kontakty alarmowe w dostępnym miejscu.",
+            "Ponownie sprawdź naprawy i zanotuj pozostałe ograniczenia."
+          ],
+          "sourceIds": [
+            "usfa-smoke",
+            "usfa-escape",
+            "psni-house"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Co naprawić przed zakupem sprzętu?",
+          "answer": "Najpierw zajmij się zablokowaną drogą ewakuacji lub wejściem, którego nie można zabezpieczyć. Następnie napraw uszkodzone elementy i sprawdź istniejące alarmy. Zakupy dobieraj do konkretnych problemów pozostałych po tych kontrolach."
+        },
+        {
+          "question": "Czy najemca może wykonać taki audyt?",
+          "answer": "Tak. Możesz dokumentować obserwacje, sprawdzać zwykłe działanie wyposażenia i zgłaszać usterki. Zmiany konstrukcji lub okuć uzgodnij z właścicielem albo zarządcą, zwłaszcza przy wspólnym wejściu lub drzwiach przeciwpożarowych."
+        },
+        {
+          "question": "Czy kamera zastępuje zamek lub alarm?",
+          "answer": "Przypisz każdemu rozwiązaniu osobne zadanie kontrolne. Niezależnie sprawdź zabezpieczenie wejścia, obsługę powiadomień i zapis nagrań. Pozytywny test kamery nie zamyka problemu niesprawnego zamka."
+        },
+        {
+          "question": "Czy jest to certyfikowana ocena bezpieczeństwa?",
+          "answer": "Nie. To domowa lista kontrolna zweryfikowana na podstawie źródeł, z redakcyjną metodą ustalania priorytetów. Nie potwierdza zgodności z przepisami, nie przewiduje prawdopodobieństwa włamania i nie zastępuje profesjonalnych oględzin."
+        }
+      ],
+      "sources": [
+        {
+          "id": "police-locks",
+          "title": "Door and window lock advice",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/door-window-lock-advice/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "police-doors",
+          "title": "Door security",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/door-security-advice/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "police-windows",
+          "title": "Window security",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/protect-home-crime/window-security/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "psni-house",
+          "title": "House Security",
+          "publisher": "Police Service of Northern Ireland",
+          "url": "https://www.psni.police.uk/safety-and-support/keeping-safe/protecting-your-home/house-security",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "usfa-smoke",
+          "title": "Smoke Alarms",
+          "publisher": "U.S. Fire Administration",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/smoke-alarms/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "usfa-escape",
+          "title": "Home Fire Escape Plans",
+          "publisher": "U.S. Fire Administration",
+          "url": "https://www.usfa.fema.gov/prevention/home-fires/prepare-for-fire/home-fire-escape-plans/",
+          "accessedAt": "2026-10-04"
+        },
+        {
+          "id": "ftc-cameras",
+          "title": "How To Secure Your Home Security Cameras",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-secure-your-home-security-cameras",
+          "accessedAt": "2026-10-04"
+        }
+      ]
+    }
+  }
+}
