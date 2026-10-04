@@ -63,10 +63,33 @@ Add at least three relevant internal links selected from /blog, /favorites, /lan
 Return data conforming exactly to the supplied JSON schema. All URLs must be HTTPS, all dates YYYY-MM-DD, version must be 1, status must be published.`;
 }
 
+const unsupportedStructuredOutputKeywords = new Set([
+  "format",
+  "starts_with",
+  "minLength",
+  "maxLength",
+  "minItems",
+  "maxItems",
+  "pattern",
+]);
+
+function toStructuredOutputSchema(value: unknown): unknown {
+  if (Array.isArray(value)) return value.map(toStructuredOutputSchema);
+  if (!value || typeof value !== "object") return value;
+
+  return Object.fromEntries(
+    Object.entries(value as Record<string, unknown>)
+      .filter(([key]) => !unsupportedStructuredOutputKeywords.has(key))
+      .map(([key, nestedValue]) => [key, toStructuredOutputSchema(nestedValue)])
+  );
+}
+
 function main() {
   assertCleanMainBranch();
   const topic = selectTopic();
-  const schemaObject = z.toJSONSchema(editorialArticleSchema) as Record<string, unknown>;
+  const schemaObject = toStructuredOutputSchema(
+    z.toJSONSchema(editorialArticleSchema)
+  ) as Record<string, unknown>;
   delete schemaObject.$schema;
   const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "security-mood-publisher-"));
   const schemaPath = path.join(temporaryDirectory, "article-schema.json");
