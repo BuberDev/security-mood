@@ -58,6 +58,10 @@ async function verifySources(article: EditorialArticle) {
   const urls = [...new Set(Object.values(article.locales).flatMap((locale) => locale.sources.map((source) => source.url)))];
   for (const url of urls) {
     const response = await fetch(url, { redirect: "follow", signal: AbortSignal.timeout(15_000), headers: { "User-Agent": "SecurityMoodEditorialValidator/1.0" } });
+    if ([401, 403, 429].includes(response.status) && isApprovedPrimarySource(url)) {
+      console.warn(`! Source is present but blocks automated validation (${response.status}): ${url}`);
+      continue;
+    }
     if (!response.ok) throw new Error(`Source check failed (${response.status}): ${url}`);
   }
 }
