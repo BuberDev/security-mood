@@ -1,16 +1,20 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const FROM_EMAIL = "Security Mood <hello@securitymood.com>";
-const AUDIENCE_ID = process.env.RESEND_AUDIENCE_ID;
 
 export async function subscribeToNewsletter(email: string) {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error("RESEND_API_KEY is not configured");
+  }
+
+  const resend = new Resend(apiKey);
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
   let subscribed = false;
 
-  if (AUDIENCE_ID) {
+  if (audienceId) {
     try {
-      await resend.contacts.create({ email, audienceId: AUDIENCE_ID });
+      await resend.contacts.create({ email, audienceId });
       subscribed = true;
     } catch (error) {
       console.error("[RESEND] Failed to add contact to audience:", error);
