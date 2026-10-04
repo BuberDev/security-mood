@@ -72,7 +72,9 @@ function parseClaudeResult(output: string): unknown {
 function main() {
   assertCleanMainBranch();
   const topic = selectTopic();
-  const schema = JSON.stringify(z.toJSONSchema(editorialArticleSchema));
+  const schemaObject = z.toJSONSchema(editorialArticleSchema) as Record<string, unknown>;
+  delete schemaObject.$schema;
+  const schema = JSON.stringify(schemaObject);
   const args = ["--print", "--output-format", "json", "--json-schema", schema, "--allowedTools", "WebSearch,WebFetch", "--permission-mode", "dontAsk", "--no-session-persistence"];
   if (process.env.CLAUDE_MODEL) args.push("--model", process.env.CLAUDE_MODEL);
   args.push(buildPrompt(topic));
