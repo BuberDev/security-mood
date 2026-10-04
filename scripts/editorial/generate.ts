@@ -44,6 +44,12 @@ function selectTopic(): PlanItem {
 
 function buildPrompt(topic: PlanItem) {
   const today = new Date().toISOString().slice(0, 10);
+  const productIdsByCategory: Record<EditorialArticle["categoryId"], string[]> = {
+    "home-security": ["biometric-smart-lock", "mini-spy-camera-4k", "outdoor-security-camera", "smart-door-lock", "door-security-bar", "portable-safe", "outdoor-motion-alarm", "solar-motion-light", "window-alarm-kit", "door-wedge-alarm"],
+    "personal-safety": ["anti-theft-smart-backpack", "personal-safety-alarm", "tactical-pen", "pepper-spray-gel", "rfid-wallet", "tactical-flashlight"],
+    "cyber-shield": ["hardware-security-key", "faraday-bag", "webcam-covers", "privacy-screen", "hidden-camera-detector", "rfid-passport-wallet"],
+    "emergency-prep": ["solar-emergency-radio", "water-filtration-straw", "emergency-food-supply", "first-aid-kit", "fire-starter-set", "emergency-blanket-set", "portable-power-station", "emergency-car-kit"],
+  };
   return `Create one publication-ready Security Mood research article as JSON only.
 
 Topic: ${topic.titleEn} / ${topic.titlePl}
@@ -58,7 +64,7 @@ Write complete, natural English and Polish versions. Each language must contain 
 
 Use Security Mood Research Desk as author name. The role is Security and resilience editorial team / Redakcja bezpieczeństwa i odporności. Credentials must state that guidance is source-reviewed, not imply certifications or lab tests. Use /images/blog/cyber_shield_guide.svg for cyber topics, /images/blog/home_security_audit.svg for home security when available, and otherwise an existing /images/blog SVG path.
 
-Add at least three relevant internal links selected from /blog, /favorites, /landing and existing Security Mood article or product paths. Include only genuinely relevant product IDs. For digital account protection, hardware-security-key is allowed. Avoid fear-based selling and do not turn the article into an advert.
+Add at least three relevant internal links selected from /blog, /favorites, /landing and existing Security Mood article or product paths. Select 1–3 genuinely relevant productIds from this exact category allowlist: ${productIdsByCategory[topic.categoryId].join(", ")}. The productIds array must never be empty, and every section-level productId must come from the same allowlist. Avoid fear-based selling and do not turn the article into an advert.
 
 Return data conforming exactly to the supplied JSON schema. All URLs must be HTTPS, all dates YYYY-MM-DD, version must be 1, status must be published.`;
 }
