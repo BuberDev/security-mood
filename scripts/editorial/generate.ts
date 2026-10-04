@@ -1,4 +1,4 @@
-import { execFileSync, spawnSync } from "node:child_process";
+import { execFileSync, spawn } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -139,7 +139,50 @@ function normalizeInternalLinkPaths(value: unknown): unknown {
   return article;
 }
 
-function main() {
+function runCodex(args: string[]) {
+  return new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
+    const child = spawn("codex", args, {
+      cwd: projectRoot,
+      detached: true,
+      stdio: ["ignore", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    let timedOut = false;
+
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+    child.stdout.on("data", (chunk: string) => { stdout += chunk; });
+    child.stderr.on("data", (chunk: string) => { stderr += chunk; });
+
+    const timeout = setTimeout(() => {
+      timedOut = true;
+      if (child.pid) process.kill(-child.pid, "SIGTERM");
+      setTimeout(() => {
+        if (child.pid) {
+          try { process.kill(-child.pid, "SIGKILL"); } catch { /* process already exited */ }
+        }
+      }, 5_000).unref();
+    }, 15 * 60 * 1000);
+
+    child.on("error", (error) => {
+      clearTimeout(timeout);
+      reject(error);
+    });
+    child.on("close", (code) => {
+      clearTimeout(timeout);
+      if (timedOut) {
+        reject(new Error(`Codex exceeded the 15-minute research limit.\n${stderr}`));
+      } else if (code !== 0) {
+        reject(new Error(stderr || stdout || `Codex exited with ${code}`));
+      } else {
+        resolve({ stdout, stderr });
+      }
+    });
+  });
+}
+
+async function main() {
   assertCleanMainBranch();
   const topic = selectTopic();
   const schemaObject = toStructuredOutputSchema(
@@ -170,9 +213,8 @@ function main() {
   args.push(buildPrompt(topic));
 
   console.log(`Researching and drafting: ${topic.titlePl}`);
-  const result = spawnSync("codex", args, { cwd: projectRoot, encoding: "utf8", maxBuffer: 20 * 1024 * 1024, timeout: 20 * 60 * 1000 });
+  const result = await runCodex(args);
   try {
-    if (result.status !== 0) throw new Error(result.stderr || result.stdout || `Codex exited with ${result.status}`);
     if (!fs.existsSync(outputPath)) throw new Error(`Codex did not create structured output.\n${result.stderr}\n${result.stdout}`);
     const generatedOutput = JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown;
     const article = editorialArticleSchema.parse(
@@ -208,9 +250,7 @@ function main() {
   }
 }
 
-try {
-  main();
-} catch (error: unknown) {
+main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.message : error);
   process.exit(1);
-}
+});
