@@ -9,10 +9,23 @@ fi
 
 lock_directory="$publisher_repo/.publisher-lock"
 if ! mkdir "$lock_directory" 2>/dev/null; then
-  print "Publisher already running; skipping duplicate invocation."
-  exit 0
+  lock_pid=""
+  [[ -f "$lock_directory/pid" ]] && read -r lock_pid < "$lock_directory/pid"
+  if [[ -n "$lock_pid" ]] && kill -0 "$lock_pid" 2>/dev/null; then
+    print "Publisher already running with PID $lock_pid; skipping duplicate invocation."
+    exit 0
+  fi
+  rm -f "$lock_directory/pid"
+  rmdir "$lock_directory"
+  mkdir "$lock_directory"
 fi
-trap 'rmdir "$lock_directory" 2>/dev/null || true' EXIT
+print -r -- "$$" > "$lock_directory/pid"
+
+cleanup_lock() {
+  rm -f "$lock_directory/pid"
+  rmdir "$lock_directory" 2>/dev/null || true
+}
+trap cleanup_lock EXIT INT TERM
 
 cd "$publisher_repo"
 
