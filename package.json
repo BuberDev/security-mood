@@ -10,7 +10,7 @@
     "articles:validate": "tsx scripts/editorial/validate.ts",
     "article:draft": "tsx scripts/editorial/generate.ts",
     "article:publish": "PUBLISH=true tsx scripts/editorial/generate.ts",
-    "publisher:install": "bash automation/install-article-publisher.sh"
+    "publisher:install": "zsh automation/install-article-publisher.sh"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
