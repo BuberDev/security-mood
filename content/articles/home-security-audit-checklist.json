@@ -6,7 +6,7 @@
   "categoryId": "home-security",
   "publishedAt": "2026-10-04",
   "updatedAt": "2026-10-04",
-  "heroImage": "/images/blog/home_security_audit.svg",
+  "heroImage": "/images/blog/editorial/home-security-audit-hero.webp",
   "author": {
     "name": "Security Mood Research Desk",
     "role": {
@@ -84,6 +84,11 @@
         {
           "id": "doors-keys",
           "heading": "2. Check doors, frames and control of keys",
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-door-inspection.webp",
+            "alt": "Homeowner checking the lock, strike plate and frame of a modern front door with a flashlight",
+            "caption": "Inspect the entrance as one system: door leaf, frame, hinges, lock and the way the household operates it."
+          },
           "answer": "Check an entrance as a complete assembly: door, frame, hinges, lock and the way residents operate it. Confirm that the normal locking sequence actually secures the door. Review who holds keys and keep them away from openings. Refer damaged assemblies or uncertain lock compatibility to a qualified locksmith, while preserving safe escape.",
           "paragraphs": [
             "Police.uk distinguishes closing a door from engaging its locks and describes the handle-lift and key-turn sequence used by some multipoint doors. Apply the instructions for your own mechanism rather than assuming every door works alike. During the audit, have one resident operate the lock and another check closure gently. Do not conduct forced-entry experiments or use tools to challenge the lock.",
@@ -107,6 +112,11 @@
         {
           "id": "windows-detection",
           "heading": "3. Inspect reachable windows and verify detection",
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-window-camera.webp",
+            "alt": "Homeowner verifying a window sensor and indoor security camera from a phone",
+            "caption": "A device only closes a detection gap when its trigger, notification path and household response have all been tested."
+          },
           "answer": "Assess windows by accessibility, not simply by floor number. Look for nearby objects that make a window reachable, confirm closure and locking, and record damaged fittings. If an alarm addresses a remaining detection gap, test its actual trigger and response. A sensor's presence does not establish that anyone will receive or act on an alert.",
           "paragraphs": [
             "Police.uk asks residents to consider walls, bins and garden furniture that could provide access to windows. Inspect from safe ground and note what you can actually see. Include windows above a low roof or beside a balcony. Do not climb onto roofs or lean out to complete the checklist; mark inaccessible details as unverified and arrange an appropriate inspection.",
@@ -311,6 +321,11 @@
         {
           "id": "doors-keys",
           "heading": "2. Sprawdź drzwi, ościeżnice i kontrolę kluczy",
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-door-inspection.webp",
+            "alt": "Właściciel domu sprawdza latarką zamek, zaczep i ościeżnicę nowoczesnych drzwi wejściowych",
+            "caption": "Wejście należy kontrolować jako jeden system: skrzydło drzwi, ościeżnicę, zawiasy, zamek i sposób obsługi przez domowników."
+          },
           "answer": "Oceniaj wejście jako całość: skrzydło drzwi, ościeżnicę, zawiasy, zamek i sposób obsługi przez mieszkańców. Potwierdź, że normalna sekwencja zamykania rzeczywiście zabezpiecza drzwi. Ustal, kto ma klucze, i przechowuj je poza zasięgiem otworów. Uszkodzenia oraz wątpliwości dotyczące zgodności elementów omów z fachowcem, zachowując możliwość bezpiecznej ewakuacji.",
           "paragraphs": [
             "Police.uk rozróżnia przymknięcie drzwi od uruchomienia ich zamków i opisuje podniesienie klamki oraz przekręcenie klucza w niektórych mechanizmach wielopunktowych. Stosuj instrukcję swojego mechanizmu, zamiast zakładać, że każde drzwi działają identycznie. Podczas kontroli jedna osoba może zamknąć drzwi, a druga delikatnie sprawdzić zamknięcie. Nie przeprowadzaj prób siłowego wejścia ani eksperymentów z narzędziami.",
@@ -334,6 +349,11 @@
         {
           "id": "windows-detection",
           "heading": "3. Oceń dostępne okna i sprawdź wykrywanie zdarzeń",
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-window-camera.webp",
+            "alt": "Właścicielka domu sprawdza przez telefon czujnik okna i wewnętrzną kamerę bezpieczeństwa",
+            "caption": "Urządzenie zamyka lukę w wykrywaniu dopiero po sprawdzeniu wyzwalacza, ścieżki powiadomienia i reakcji domowników."
+          },
           "answer": "Oceniaj okna według możliwości dostępu, a nie wyłącznie numeru piętra. Zwróć uwagę na przedmioty ułatwiające dotarcie do otworu, sprawdź zamykanie i zanotuj uszkodzenia okuć. Jeśli alarm odpowiada na pozostałą potrzebę wykrywania, przetestuj jego uruchomienie oraz reakcję. Sama obecność czujnika nie potwierdza odbioru ani obsługi powiadomienia.",
           "paragraphs": [
             "Police.uk zaleca uwzględnienie murów, pojemników na odpady i mebli ogrodowych, które mogą ułatwiać dotarcie do okna. Oglądaj otoczenie z bezpiecznego miejsca i zapisuj to, co rzeczywiście widzisz. Uwzględnij okna nad niskim dachem lub przy balkonie. Nie wchodź na dach i nie wychylaj się, aby uzupełnić arkusz. Niedostępne szczegóły oznacz jako niesprawdzone i zorganizuj odpowiednią kontrolę.",

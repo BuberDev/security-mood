@@ -6,7 +6,7 @@
   "categoryId": "cyber-shield",
   "publishedAt": "2026-10-04",
   "updatedAt": "2026-10-04",
-  "heroImage": "/images/blog/cyber_shield_guide.svg",
+  "heroImage": "/images/blog/editorial/passkeys-hardware-keys-hero.webp",
   "author": {
     "name": "Security Mood Research Desk",
     "role": {
@@ -69,6 +69,11 @@
         {
           "id": "phishing-resistance",
           "heading": "Are passkeys and security keys really phishing-resistant?",
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Person using biometric verification on a phone while connecting an unbranded hardware security key to a laptop",
+            "caption": "Passkeys and FIDO security keys bind authentication to the legitimate service instead of asking the user to transfer a reusable code."
+          },
           "answer": "They can be. NIST explains that WebAuthn provides verifier-name binding: the credential is cryptographically bound to the legitimate domain, so a look-alike site cannot use it for authentication. CISA identifies FIDO/WebAuthn as the widely available phishing-resistant approach and ranks security keys above weaker MFA methods.",
           "paragraphs": [
             "A convincing phishing page can capture a password and a manually entered SMS or app code, then relay both to the real service. NIST explicitly states that authentication methods relying on manual entry of an authenticator output, including OTP, are not phishing-resistant because the output is not bound to a specific session or domain.",
@@ -105,6 +110,11 @@
         {
           "id": "setup-plan",
           "heading": "A safe five-step rollout and recovery plan",
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Two hardware security keys stored separately with a sealed recovery envelope, phone and protective pouch",
+            "caption": "A resilient setup includes a separately stored backup authenticator and protected recovery material that has been tested before an emergency."
+          },
           "answer": "Start with the account that controls your other accounts—usually primary email—then enroll two independent phishing-resistant authenticators. Verify both in a private browser session, store the backup separately, protect recovery codes offline, and repeat for the password manager, finance, cloud storage, and administrator accounts.",
           "paragraphs": [
             "Do not remove an existing recovery route until the new authenticators have been tested. Sign out, use a private browser window, and confirm that each key or passkey works on the devices and browsers you actually use. Then review the provider’s recovery process; recovery that falls back to weak email or SMS can undermine the stronger sign-in method.",
@@ -178,6 +188,11 @@
         {
           "id": "odpornosc-na-phishing",
           "heading": "Czy passkeys i klucze sprzętowe naprawdę są odporne na phishing?",
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Osoba używa weryfikacji biometrycznej w telefonie i podłącza nieoznaczony klucz bezpieczeństwa do laptopa",
+            "caption": "Passkeys i klucze FIDO wiążą uwierzytelnienie z prawidłową usługą zamiast wymagać od użytkownika przepisywania kodu wielokrotnego użytku."
+          },
           "answer": "Mogą być. NIST wyjaśnia, że WebAuthn zapewnia powiązanie z nazwą weryfikatora: poświadczenie jest kryptograficznie związane z prawidłową domeną, więc podobna domena nie użyje go do logowania. CISA wskazuje FIDO/WebAuthn jako powszechnie dostępne podejście odporne na phishing i stawia klucze bezpieczeństwa ponad słabszym MFA.",
           "paragraphs": [
             "Przekonująca strona phishingowa może przechwycić hasło i ręcznie wpisany kod SMS lub kod z aplikacji, a następnie przekazać je do prawdziwej usługi. NIST wprost stwierdza, że metody oparte na ręcznym wprowadzaniu wyniku uwierzytelniacza, w tym OTP, nie są odporne na phishing, bo wynik nie jest związany z konkretną sesją lub domeną.",
@@ -214,6 +229,11 @@
         {
           "id": "plan-wdrozenia",
           "heading": "Bezpieczny plan wdrożenia i odzyskiwania w pięciu krokach",
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Dwa klucze bezpieczeństwa przechowywane oddzielnie z zamkniętą kopertą odzyskiwania, telefonem i ochronnym etui",
+            "caption": "Odporna konfiguracja obejmuje zapasowy uwierzytelniacz przechowywany osobno oraz zabezpieczone materiały odzyskiwania sprawdzone przed awarią."
+          },
           "answer": "Zacznij od konta kontrolującego pozostałe konta — zwykle głównej poczty — i zarejestruj dwa niezależne uwierzytelniacze odporne na phishing. Sprawdź oba w prywatnym oknie przeglądarki, przechowuj zapasowy oddzielnie, zabezpiecz kody odzyskiwania offline, a następnie powtórz proces dla menedżera haseł, finansów, chmury i kont administratora.",
           "paragraphs": [
             "Nie usuwaj dotychczasowej metody odzyskiwania, zanim nowe uwierzytelniacze nie zostaną sprawdzone. Wyloguj się, otwórz prywatne okno i potwierdź, że każdy klucz lub passkey działa na faktycznie używanych urządzeniach i przeglądarkach. Potem oceń proces odzyskiwania dostawcy, ponieważ powrót do słabego SMS-a lub e-maila może podważyć mocniejszą metodę logowania.",

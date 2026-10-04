@@ -29,12 +29,17 @@ function wordCount(value: string) {
   return value.trim().split(/\s+/).filter(Boolean).length;
 }
 
+function publicAssetExists(assetPath: string) {
+  return assetPath.startsWith("/") && fs.existsSync(path.join(projectRoot, "public", assetPath.slice(1)));
+}
+
 function validateEditorialRules(article: EditorialArticle) {
   const failures: string[] = [];
   const productIds = new Set(products.map((product) => product.id));
 
   if (!article.productIds.every((id) => productIds.has(id))) failures.push("contains an unknown productId");
   if (new Date(article.updatedAt) < new Date(article.publishedAt)) failures.push("updatedAt precedes publishedAt");
+  if (!publicAssetExists(article.heroImage)) failures.push(`hero image does not exist: ${article.heroImage}`);
 
   for (const locale of ["en", "pl"] as const) {
     const content = article.locales[locale];
@@ -46,8 +51,12 @@ function validateEditorialRules(article: EditorialArticle) {
       .filter((source) => !isApprovedPrimarySource(source.url))
       .map((source) => new URL(source.url).hostname);
     if (rejectedHosts.length) failures.push(`${locale} contains sources outside the primary-source allowlist: ${[...new Set(rejectedHosts)].join(", ")}`);
+    const sectionImages = content.sections.flatMap((section) => (section.image ? [section.image.src] : []));
+    if (sectionImages.length < 2) failures.push(`${locale} has fewer than 2 section images`);
+    if (new Set(sectionImages).size < 2) failures.push(`${locale} must use at least 2 distinct section images`);
     for (const section of content.sections) {
       if (!section.sourceIds.every((id) => sourceIds.has(id))) failures.push(`${locale}/${section.id} references an unknown source`);
+      if (section.image && !publicAssetExists(section.image.src)) failures.push(`${locale}/${section.id} image does not exist: ${section.image.src}`);
     }
   }
 

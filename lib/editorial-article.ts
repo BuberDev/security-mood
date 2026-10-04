@@ -22,6 +22,12 @@ const tableSchema = z.object({
   rows: z.array(z.array(z.string().min(1)).min(2).max(5)).min(1),
 });
 
+const sectionImageSchema = z.object({
+  src: z.string().startsWith("/images/blog/"),
+  alt: z.string().min(15).max(180),
+  caption: z.string().min(20).max(240),
+});
+
 const sectionSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   heading: z.string().min(8),
@@ -29,6 +35,7 @@ const sectionSchema = z.object({
   paragraphs: z.array(z.string().min(60)).min(1),
   bullets: z.array(z.string().min(20)).optional(),
   table: tableSchema.optional(),
+  image: sectionImageSchema.optional(),
   sourceIds: z.array(z.string()).min(1),
   productId: z.string().optional(),
 });

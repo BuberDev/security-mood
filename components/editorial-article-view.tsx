@@ -48,6 +48,10 @@ export function EditorialArticleView({ article, locale }: EditorialArticleViewPr
   const category = getCategoryById(article.categoryId);
   const sourceById = new Map(content.sources.map((source) => [source.id, source]));
   const pagePath = localizePathname(`/blog/${article.slug}`, locale);
+  const articleImages = [
+    article.heroImage,
+    ...content.sections.flatMap((section) => (section.image ? [section.image.src] : [])),
+  ];
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -56,7 +60,7 @@ export function EditorialArticleView({ article, locale }: EditorialArticleViewPr
         "@id": `${toAbsoluteUrl(pagePath)}#article`,
         headline: content.title,
         description: content.excerpt,
-        image: [toAbsoluteUrl(article.heroImage)],
+        image: articleImages.map(toAbsoluteUrl),
         datePublished: article.publishedAt,
         dateModified: article.updatedAt,
         inLanguage: locale,
@@ -101,7 +105,7 @@ export function EditorialArticleView({ article, locale }: EditorialArticleViewPr
         <header className="relative isolate overflow-hidden border-b border-white/10">
           <div className="relative h-[58vh] min-h-[440px]">
             <Image src={article.heroImage} alt={content.heroAlt} fill priority sizes="100vw" className="object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/65 to-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/55 to-black/10" />
           </div>
           <Container className="relative -mt-56 pb-14">
             <div className="max-w-4xl rounded-[2.5rem] border border-white/12 bg-black/80 p-8 backdrop-blur-md md:p-10">
@@ -157,6 +161,22 @@ export function EditorialArticleView({ article, locale }: EditorialArticleViewPr
                     <div className="mt-6 space-y-5 text-base leading-8 text-text-secondary">
                       {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                     </div>
+                    {section.image ? (
+                      <figure className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
+                        <div className="relative aspect-[3/2]">
+                          <Image
+                            src={section.image.src}
+                            alt={section.image.alt}
+                            fill
+                            sizes="(min-width: 1024px) 896px, 100vw"
+                            className="object-cover"
+                          />
+                        </div>
+                        <figcaption className="border-t border-white/10 px-5 py-4 text-sm leading-6 text-text-secondary">
+                          {section.image.caption}
+                        </figcaption>
+                      </figure>
+                    ) : null}
                     {section.bullets ? (
                       <ul className="mt-6 space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-text-secondary">
                         {section.bullets.map((bullet) => <li key={bullet}>• {bullet}</li>)}

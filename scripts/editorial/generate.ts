@@ -50,6 +50,35 @@ function buildPrompt(topic: PlanItem) {
     "cyber-shield": ["hardware-security-key", "faraday-bag", "webcam-covers", "privacy-screen", "hidden-camera-detector", "rfid-passport-wallet"],
     "emergency-prep": ["solar-emergency-radio", "water-filtration-straw", "emergency-food-supply", "first-aid-kit", "fire-starter-set", "emergency-blanket-set", "portable-power-station", "emergency-car-kit"],
   };
+  const imagePathsByCategory: Record<EditorialArticle["categoryId"], string[]> = {
+    "home-security": [
+      "/images/blog/editorial/home-security-audit-hero.webp",
+      "/images/blog/editorial/home-security-audit-door-inspection.webp",
+      "/images/blog/editorial/home-security-audit-window-camera.webp",
+      "/images/blog/renter_security_upgrades.png",
+      "/images/blog/smart_home_security.svg",
+      "/images/blog/apartment_window_alarm.svg",
+    ],
+    "personal-safety": [
+      "/images/blog/solo_travelers_edc.svg",
+      "/images/blog/travel_privacy_kit.svg",
+      "/images/blog/rfid_passport_wallet_guide.png",
+    ],
+    "cyber-shield": [
+      "/images/blog/editorial/passkeys-hardware-keys-hero.webp",
+      "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+      "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+      "/images/blog/cyber_shield_guide.svg",
+      "/images/blog/hidden_camera_detector_guide.png",
+      "/images/blog/rfid_passport_wallet_guide.png",
+    ],
+    "emergency-prep": [
+      "/images/blog/bug_out_bag.svg",
+      "/images/blog/emergency_vehicle_kit.svg",
+      "/images/blog/portable_power_station_guide.png",
+      "/images/blog/survival_kit_checklist.svg",
+    ],
+  };
   return `Create one publication-ready Security Mood research article as JSON only.
 
 Topic: ${topic.titleEn} / ${topic.titlePl}
@@ -62,7 +91,9 @@ Research current primary sources with WebSearch and WebFetch before writing. Use
 
 Write complete, natural English and Polish versions. Each language must contain at least 900 substantive words, a 40–70 word direct quick answer, 4–6 clear sections whose answer paragraph can stand alone in AI search results, 3–6 key takeaways, 3–6 FAQs, a comparison table where useful, and a transparent methodology note. Prefer concrete checklists, decision criteria, limitations and recovery steps over generic advice.
 
-Use Security Mood Research Desk as author name. The role is Security and resilience editorial team / Redakcja bezpieczeństwa i odporności. Credentials must state that guidance is source-reviewed, not imply certifications or lab tests. Use /images/blog/cyber_shield_guide.svg for cyber topics, /images/blog/home_security_audit.svg for home security when available, and otherwise an existing /images/blog SVG path.
+Use Security Mood Research Desk as author name. The role is Security and resilience editorial team / Redakcja bezpieczeństwa i odporności. Credentials must state that guidance is source-reviewed, not imply certifications or lab tests.
+
+Visual editorial requirements are mandatory. Choose one landscape heroImage and add a localized image object to 2–4 relevant sections in each language. Each image object needs src, a factual localized alt, and a useful localized caption. Reuse the same visual paths between corresponding English and Polish sections, but translate alt and caption naturally. Never place language-specific text inside the image. Use only these existing image paths for this category: ${imagePathsByCategory[topic.categoryId].join(", ")}. Do not invent a file path. Prefer photographic WebP or PNG assets where relevant; use distinct images for hero and section media.
 
 Add at least three relevant internal links selected from /blog, /favorites, /landing and existing Security Mood article or product paths. Every internalLinks.href must be root-relative, begin with /, and never include a domain. Select 1–3 genuinely relevant productIds from this exact category allowlist: ${productIdsByCategory[topic.categoryId].join(", ")}. The productIds array must never be empty, and every section-level productId must come from the same allowlist. Avoid fear-based selling and do not turn the article into an advert.
 
