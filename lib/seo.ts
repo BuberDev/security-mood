@@ -1,4 +1,4 @@
-import { SITE_URL, absoluteUrl } from "./site";
+import { absoluteUrl } from "./site";
 
 export function toAbsoluteUrl(path: string) {
   return absoluteUrl(path);

@@ -12,6 +12,7 @@ import { Section } from "@/components/section";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { ProductCard } from "@/components/product-card";
+import { getEditorialArticleCards } from "@/lib/editorial-articles";
 import { getLocalizedAlternates } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { translateText } from "@/lib/i18n/messages";
@@ -55,6 +56,7 @@ function getSelectedCategory(value?: string | string[]) {
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   const filters = await searchParams;
+  const locale = await getRequestLocale();
   const selectedCategoryId = getSelectedCategory(filters.category);
   const selectedCategory =
     selectedCategoryId && isCategoryId(selectedCategoryId)
@@ -81,9 +83,10 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     },
   ];
 
+  const allArticles = [...getEditorialArticleCards(locale), ...articles];
   const visibleArticles = selectedCategory
-    ? sortArticlesByPriority(articles.filter((article) => article.categoryId === selectedCategory.id))
-    : sortArticlesByPriority(articles);
+    ? sortArticlesByPriority(allArticles.filter((article) => article.categoryId === selectedCategory.id))
+    : sortArticlesByPriority(allArticles);
 
   const breadcrumbsJsonLd = generateBreadcrumbsJsonLd([
     { name: "Home", item: "/" },

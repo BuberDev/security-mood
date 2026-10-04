@@ -1,0 +1,260 @@
+{
+  "version": 1,
+  "topicKey": "passkeys-vs-hardware-security-keys",
+  "slug": "passkeys-vs-hardware-security-keys",
+  "status": "published",
+  "categoryId": "cyber-shield",
+  "publishedAt": "2026-10-04",
+  "updatedAt": "2026-10-04",
+  "heroImage": "/images/blog/cyber_shield_guide.svg",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed guidance based on current standards and public-agency publications",
+      "pl": "Poradniki weryfikowane na podstawie aktualnych standardów i publikacji instytucji publicznych"
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/favorites/hardware-security-key",
+      "label": { "en": "Hardware security key: use cases and product details", "pl": "Klucz sprzętowy: zastosowania i szczegóły produktu" }
+    },
+    {
+      "href": "/blog/digital-privacy-cyber-shield-guide",
+      "label": { "en": "Build a practical digital privacy shield", "pl": "Zbuduj praktyczną tarczę prywatności cyfrowej" }
+    },
+    {
+      "href": "/blog/secure-your-smart-home-guide",
+      "label": { "en": "Secure your smart home step by step", "pl": "Zabezpiecz smart home krok po kroku" }
+    },
+    {
+      "href": "/favorites/privacy-screen",
+      "label": { "en": "Reduce visual data exposure with a privacy screen", "pl": "Ogranicz podglądanie danych dzięki filtrowi prywatyzującemu" }
+    }
+  ],
+  "productIds": ["hardware-security-key"],
+  "locales": {
+    "en": {
+      "title": "Passkeys vs hardware security keys: which protects your accounts better?",
+      "excerpt": "A source-based comparison of synced passkeys, device-bound passkeys, and FIDO hardware keys, with a practical setup for email, banking, work, and recovery.",
+      "heroAlt": "A hardware security key beside a phone displaying a passkey sign-in screen",
+      "quickAnswer": "Both passkeys and hardware security keys can provide phishing-resistant sign-in when implemented with FIDO/WebAuthn. Synced passkeys are usually the easiest everyday option; a separate hardware key gives stronger physical separation and predictable recovery. For high-value accounts, use passkeys for convenience, register two hardware keys for resilience, and keep one backup offline.",
+      "keyTakeaways": [
+        "SMS codes and manually entered one-time passwords are not phishing-resistant, while properly implemented WebAuthn credentials bind authentication to the real service domain.",
+        "Synced passkeys prioritize convenience and multi-device recovery; device-bound credentials and roaming hardware keys prioritize control over where the private key resides.",
+        "For a primary email, password manager, finance, or administrator account, register at least two independent authenticators and test recovery before an emergency.",
+        "A security key is not a universal replacement for account recovery: provider-specific policies, backup codes, and identity checks still need a deliberate plan."
+      ],
+      "methodology": "This guide compares the final NIST SP 800-63B-4 authentication requirements with current CISA implementation guidance and FIDO Alliance descriptions of passkeys. We prioritized primary standards and public-agency publications, mapped each factual section to its sources, and checked the cited pages on 2026-10-04. We did not perform a laboratory attack test or rank individual key brands.",
+      "sections": [
+        {
+          "id": "what-they-are",
+          "heading": "What is the difference between a passkey and a hardware security key?",
+          "answer": "A passkey is a FIDO credential that may be synced between your devices or kept on one device. A hardware security key is a separate roaming authenticator, normally connected by USB or NFC. Both can use public-key cryptography and protect the private key from being shared with the website.",
+          "paragraphs": [
+            "With FIDO authentication, the service stores a public key and the authenticator keeps the private key. Sign-in proves possession of that private key without sending it to the service. This changes the attack surface: there is no reusable password secret for a fake login page to collect and replay.",
+            "The important distinction is not simply “passkey versus key.” FIDO describes both synced and device-bound passkeys. A phone or laptop may hold a device-bound credential, while a dedicated hardware key is a portable physical authenticator. The best choice depends on recovery, device management, and the value of the account."
+          ],
+          "bullets": [
+            "Synced passkey: convenient across an account ecosystem and usually easier to recover on a replacement device.",
+            "Device-bound passkey: the credential remains tied to one device and must be enrolled separately elsewhere.",
+            "Hardware security key: a separate roaming authenticator that can be registered with multiple compatible services."
+          ],
+          "sourceIds": ["nist-800-63b", "fido-passkeys", "fido-enterprise"]
+        },
+        {
+          "id": "phishing-resistance",
+          "heading": "Are passkeys and security keys really phishing-resistant?",
+          "answer": "They can be. NIST explains that WebAuthn provides verifier-name binding: the credential is cryptographically bound to the legitimate domain, so a look-alike site cannot use it for authentication. CISA identifies FIDO/WebAuthn as the widely available phishing-resistant approach and ranks security keys above weaker MFA methods.",
+          "paragraphs": [
+            "A convincing phishing page can capture a password and a manually entered SMS or app code, then relay both to the real service. NIST explicitly states that authentication methods relying on manual entry of an authenticator output, including OTP, are not phishing-resistant because the output is not bound to a specific session or domain.",
+            "WebAuthn changes that relationship. The browser and authenticator evaluate the relying party domain before approving the cryptographic challenge. This does not make an account immune to malware, malicious recovery flows, session theft, or user-approved account changes, but it removes a common path based on stealing reusable credentials."
+          ],
+          "table": {
+            "headers": ["Method", "Phishing resistance", "Main operational risk"],
+            "rows": [
+              ["SMS or email code", "No", "Code interception, relay, SIM or mailbox compromise"],
+              ["Authenticator-app OTP", "No", "Real-time phishing relay and recovery mistakes"],
+              ["Synced passkey", "Yes, with WebAuthn", "Ecosystem account recovery and device-account compromise"],
+              ["Hardware FIDO key", "Yes, with WebAuthn", "Loss without a second authenticator or recovery plan"]
+            ]
+          },
+          "sourceIds": ["nist-800-63b", "cisa-mfa", "cisa-phishing-resistant"],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "which-to-choose",
+          "heading": "Which option should you use for email, banking, and work accounts?",
+          "answer": "Use the strongest option each service supports, but avoid a single point of failure. A synced passkey is a strong default for frequent personal sign-in. For the email account that resets everything else, a password manager, financial access, and privileged work accounts, add two separately stored hardware keys when the provider permits it.",
+          "paragraphs": [
+            "CISA places security keys at the top of its MFA hierarchy and describes security keys or FIDO credentials as the preferred phishing-resistant choice. Its mobile communications guidance calls hardware FIDO keys the most effective option and treats passkeys as an acceptable alternative. That supports a layered decision rather than a false winner-takes-all choice.",
+            "For a low-friction household setup, enable passkeys on supported devices, protect the platform account with its own strong recovery controls, and record where each credential is enrolled. For a business, combine authenticator policy with managed devices, offboarding, inventory, and an administrator-controlled recovery path."
+          ],
+          "bullets": [
+            "Primary email and password manager: two hardware keys plus a tested, protected recovery method.",
+            "Daily consumer accounts: synced passkeys where supported, with strong protection on the sync ecosystem account.",
+            "Privileged work access: organization-approved phishing-resistant authenticators, managed enrollment, and documented offboarding.",
+            "Shared household resilience: never share one credential; enroll separate authenticators for each authorized person."
+          ],
+          "sourceIds": ["cisa-mfa", "cisa-mobile", "nist-800-63b"]
+        },
+        {
+          "id": "setup-plan",
+          "heading": "A safe five-step rollout and recovery plan",
+          "answer": "Start with the account that controls your other accounts—usually primary email—then enroll two independent phishing-resistant authenticators. Verify both in a private browser session, store the backup separately, protect recovery codes offline, and repeat for the password manager, finance, cloud storage, and administrator accounts.",
+          "paragraphs": [
+            "Do not remove an existing recovery route until the new authenticators have been tested. Sign out, use a private browser window, and confirm that each key or passkey works on the devices and browsers you actually use. Then review the provider’s recovery process; recovery that falls back to weak email or SMS can undermine the stronger sign-in method.",
+            "Keep an inventory containing only what you need: service name, authenticator label, enrollment date, backup location, and last recovery test. Do not record PINs or recovery secrets beside the device. Recheck important accounts after replacing a phone, changing staff, losing a key, or receiving an unexpected recovery notification."
+          ],
+          "bullets": [
+            "Harden primary email first because it commonly controls password resets for other services.",
+            "Register two authenticators before relying on the first one; store the backup in a separate secure place.",
+            "Generate and protect provider recovery codes, then verify that you can identify and revoke a lost authenticator.",
+            "Repeat the process for your password manager, financial accounts, cloud storage, and administrative access.",
+            "Review enrollment and recovery twice a year and immediately after a lost device or personnel change."
+          ],
+          "sourceIds": ["cisa-phishing-resistant", "nist-800-63b", "fido-enterprise"]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Can a passkey be phished?",
+          "answer": "A correctly implemented WebAuthn passkey is resistant to conventional credential phishing because authentication is cryptographically bound to the legitimate service domain. That does not prevent malware, session theft, abusive recovery workflows, or a user authorizing a harmful account change, so endpoint and recovery security still matter."
+        },
+        {
+          "question": "What happens if I lose my hardware security key?",
+          "answer": "Use a second authenticator or the provider’s recovery process, then revoke the lost key in account settings. This is why a high-value account should have two separately stored authenticators and protected recovery codes before the primary key becomes the only convenient sign-in route."
+        },
+        {
+          "question": "Should I disable passwords after adding a passkey?",
+          "answer": "Only if the service supports a well-designed passwordless mode and you have tested every recovery path. If a password remains enabled, keep it unique and strong because attackers may still target that fallback even when your normal sign-in uses a phishing-resistant passkey."
+        },
+        {
+          "question": "Are SMS codes better than no MFA?",
+          "answer": "Yes, an additional factor can reduce some account-takeover risk, but NIST does not treat manually entered OTP methods as phishing-resistant and CISA ranks SMS or email codes below app-based and FIDO methods. Move important accounts to FIDO/WebAuthn when the provider offers it."
+        }
+      ],
+      "sources": [
+        { "id": "nist-800-63b", "title": "Digital Identity Guidelines: Authentication and Authenticator Management", "publisher": "NIST", "url": "https://pages.nist.gov/800-63-4/sp800-63b.html", "publishedAt": "2025-08-01", "accessedAt": "2026-10-04" },
+        { "id": "cisa-mfa", "title": "Require Multifactor Authentication", "publisher": "CISA", "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication", "accessedAt": "2026-10-04" },
+        { "id": "cisa-phishing-resistant", "title": "Implementing Phishing-Resistant MFA", "publisher": "CISA", "url": "https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf", "accessedAt": "2026-10-04" },
+        { "id": "cisa-mobile", "title": "Mobile Communications Best Practice Guidance", "publisher": "CISA", "url": "https://www.cisa.gov/sites/default/files/2024-12/guidance-mobile-communications-best-practices.pdf", "accessedAt": "2026-10-04" },
+        { "id": "fido-passkeys", "title": "Passkeys", "publisher": "FIDO Alliance", "url": "https://fidoalliance.org/passkeys/", "accessedAt": "2026-10-04" },
+        { "id": "fido-enterprise", "title": "Deploying Passkeys in the Enterprise: Introduction", "publisher": "FIDO Alliance", "url": "https://fidoalliance.org/white-paper-fido-deploying-passkeys-in-the-enterprise-introduction/", "accessedAt": "2026-10-04" }
+      ]
+    },
+    "pl": {
+      "title": "Passkeys czy sprzętowy klucz bezpieczeństwa: co lepiej chroni konta?",
+      "excerpt": "Oparte na źródłach porównanie synchronizowanych passkeys, kluczy przypisanych do urządzenia i sprzętowych kluczy FIDO — z planem dla poczty, bankowości, pracy i odzyskiwania dostępu.",
+      "heroAlt": "Sprzętowy klucz bezpieczeństwa obok telefonu z ekranem logowania za pomocą passkey",
+      "quickAnswer": "Passkeys i sprzętowe klucze bezpieczeństwa mogą zapewniać odporne na phishing logowanie, jeśli korzystają z FIDO/WebAuthn. Synchronizowane passkeys są zwykle wygodniejsze na co dzień, a osobny klucz sprzętowy daje większą separację fizyczną. Dla najważniejszych kont używaj passkeys dla wygody, zarejestruj dwa klucze sprzętowe i przechowuj zapasowy offline.",
+      "keyTakeaways": [
+        "Kody SMS i ręcznie wpisywane kody jednorazowe nie są odporne na phishing, natomiast prawidłowo wdrożony WebAuthn wiąże uwierzytelnienie z prawdziwą domeną usługi.",
+        "Synchronizowane passkeys stawiają na wygodę i odzyskiwanie na wielu urządzeniach; klucze związane z urządzeniem i klucze sprzętowe dają większą kontrolę nad położeniem klucza prywatnego.",
+        "Dla głównej poczty, menedżera haseł, finansów lub kont administratora zarejestruj co najmniej dwa niezależne uwierzytelniacze i przetestuj odzyskiwanie dostępu.",
+        "Klucz bezpieczeństwa nie zastępuje całego procesu odzyskiwania konta: nadal potrzebujesz świadomie zabezpieczonych kodów awaryjnych i procedur dostawcy."
+      ],
+      "methodology": "Poradnik porównuje finalne wymagania uwierzytelniania NIST SP 800-63B-4 z aktualnymi zaleceniami wdrożeniowymi CISA i opisami passkeys publikowanymi przez FIDO Alliance. Priorytet otrzymały standardy pierwotne i publikacje instytucji publicznych. Każda sekcja ma przypisane źródła, sprawdzone 2026-10-04. Nie wykonywaliśmy laboratoryjnych testów ataków ani rankingu marek kluczy.",
+      "sections": [
+        {
+          "id": "czym-sie-roznia",
+          "heading": "Czym różni się passkey od sprzętowego klucza bezpieczeństwa?",
+          "answer": "Passkey to poświadczenie FIDO, które może być synchronizowane między urządzeniami albo pozostać na jednym urządzeniu. Sprzętowy klucz bezpieczeństwa jest osobnym, przenośnym uwierzytelniaczem podłączanym zwykle przez USB lub NFC. Oba rozwiązania mogą używać kryptografii klucza publicznego bez ujawniania klucza prywatnego stronie internetowej.",
+          "paragraphs": [
+            "W uwierzytelnianiu FIDO usługa przechowuje klucz publiczny, a uwierzytelniacz zachowuje klucz prywatny. Logowanie potwierdza posiadanie klucza prywatnego bez przesyłania go do usługi. To zmienia powierzchnię ataku, ponieważ fałszywa strona nie może zebrać sekretu hasła, który później da się ponownie wykorzystać.",
+            "Najważniejsze rozróżnienie nie sprowadza się do hasła „passkey kontra klucz”. FIDO opisuje passkeys synchronizowane i przypisane do urządzenia. Telefon może przechowywać poświadczenie urządzeniowe, a dedykowany klucz jest przenośnym fizycznym uwierzytelniaczem. Wybór zależy od odzyskiwania, zarządzania urządzeniami i wartości konta."
+          ],
+          "bullets": [
+            "Synchronizowany passkey: wygodny w obrębie ekosystemu konta i zwykle prostszy do odzyskania na nowym urządzeniu.",
+            "Passkey przypisany do urządzenia: pozostaje związany z jednym urządzeniem i trzeba go osobno rejestrować gdzie indziej.",
+            "Klucz sprzętowy: osobny, przenośny uwierzytelniacz, który można zarejestrować w wielu zgodnych usługach."
+          ],
+          "sourceIds": ["nist-800-63b", "fido-passkeys", "fido-enterprise"]
+        },
+        {
+          "id": "odpornosc-na-phishing",
+          "heading": "Czy passkeys i klucze sprzętowe naprawdę są odporne na phishing?",
+          "answer": "Mogą być. NIST wyjaśnia, że WebAuthn zapewnia powiązanie z nazwą weryfikatora: poświadczenie jest kryptograficznie związane z prawidłową domeną, więc podobna domena nie użyje go do logowania. CISA wskazuje FIDO/WebAuthn jako powszechnie dostępne podejście odporne na phishing i stawia klucze bezpieczeństwa ponad słabszym MFA.",
+          "paragraphs": [
+            "Przekonująca strona phishingowa może przechwycić hasło i ręcznie wpisany kod SMS lub kod z aplikacji, a następnie przekazać je do prawdziwej usługi. NIST wprost stwierdza, że metody oparte na ręcznym wprowadzaniu wyniku uwierzytelniacza, w tym OTP, nie są odporne na phishing, bo wynik nie jest związany z konkretną sesją lub domeną.",
+            "WebAuthn zmienia tę relację. Przeglądarka i uwierzytelniacz sprawdzają domenę strony polegającej przed zatwierdzeniem wyzwania kryptograficznego. Nie chroni to przed każdym malware, kradzieżą sesji, słabym odzyskiwaniem lub szkodliwą zmianą zatwierdzoną przez użytkownika, ale usuwa popularną ścieżkę kradzieży danych logowania."
+          ],
+          "table": {
+            "headers": ["Metoda", "Odporność na phishing", "Główne ryzyko operacyjne"],
+            "rows": [
+              ["Kod SMS lub e-mail", "Nie", "Przechwycenie, przekazanie kodu, utrata numeru lub skrzynki"],
+              ["OTP z aplikacji", "Nie", "Phishing w czasie rzeczywistym i błędy odzyskiwania"],
+              ["Synchronizowany passkey", "Tak, z WebAuthn", "Odzyskiwanie konta ekosystemu i przejęcie konta urządzenia"],
+              ["Sprzętowy klucz FIDO", "Tak, z WebAuthn", "Utrata bez drugiego uwierzytelniacza lub planu odzyskania"]
+            ]
+          },
+          "sourceIds": ["nist-800-63b", "cisa-mfa", "cisa-phishing-resistant"],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "co-wybrac",
+          "heading": "Co wybrać do poczty, bankowości i kont służbowych?",
+          "answer": "Użyj najsilniejszej metody obsługiwanej przez usługę, ale nie twórz pojedynczego punktu awarii. Synchronizowany passkey jest dobrym wyborem do częstego logowania. Do poczty resetującej inne konta, menedżera haseł, finansów i uprzywilejowanych kont służbowych dodaj dwa osobno przechowywane klucze sprzętowe, jeśli dostawca je obsługuje.",
+          "paragraphs": [
+            "CISA umieszcza klucze bezpieczeństwa na szczycie swojej hierarchii MFA i opisuje klucze lub poświadczenia FIDO jako preferowany wybór odporny na phishing. W zaleceniach dla komunikacji mobilnej sprzętowe klucze FIDO określa jako najskuteczniejsze, a passkeys jako akceptowalną alternatywę. W praktyce prowadzi to do modelu warstwowego, nie do wyboru jednego zwycięzcy.",
+            "W domu włącz passkeys na zgodnych urządzeniach, mocno zabezpiecz konto ekosystemu synchronizacji i zapisz, gdzie zarejestrowano każde poświadczenie. W firmie połącz zasady uwierzytelniania z zarządzaniem urządzeniami, odebraniem dostępu po zakończeniu współpracy, ewidencją kluczy i kontrolowanym odzyskiwaniem administracyjnym."
+          ],
+          "bullets": [
+            "Główna poczta i menedżer haseł: dwa klucze sprzętowe oraz przetestowana i chroniona metoda odzyskiwania.",
+            "Codzienne konta konsumenckie: synchronizowane passkeys i mocna ochrona konta odpowiedzialnego za synchronizację.",
+            "Uprzywilejowany dostęp służbowy: zatwierdzone przez organizację uwierzytelnianie odporne na phishing i kontrola rejestracji.",
+            "Odporność rodziny: nie udostępniaj jednego poświadczenia; zarejestruj osobny uwierzytelniacz dla każdej uprawnionej osoby."
+          ],
+          "sourceIds": ["cisa-mfa", "cisa-mobile", "nist-800-63b"]
+        },
+        {
+          "id": "plan-wdrozenia",
+          "heading": "Bezpieczny plan wdrożenia i odzyskiwania w pięciu krokach",
+          "answer": "Zacznij od konta kontrolującego pozostałe konta — zwykle głównej poczty — i zarejestruj dwa niezależne uwierzytelniacze odporne na phishing. Sprawdź oba w prywatnym oknie przeglądarki, przechowuj zapasowy oddzielnie, zabezpiecz kody odzyskiwania offline, a następnie powtórz proces dla menedżera haseł, finansów, chmury i kont administratora.",
+          "paragraphs": [
+            "Nie usuwaj dotychczasowej metody odzyskiwania, zanim nowe uwierzytelniacze nie zostaną sprawdzone. Wyloguj się, otwórz prywatne okno i potwierdź, że każdy klucz lub passkey działa na faktycznie używanych urządzeniach i przeglądarkach. Potem oceń proces odzyskiwania dostawcy, ponieważ powrót do słabego SMS-a lub e-maila może podważyć mocniejszą metodę logowania.",
+            "Prowadź minimalną ewidencję: nazwa usługi, etykieta uwierzytelniacza, data rejestracji, miejsce kopii i data ostatniego testu. Nie zapisuj kodów PIN ani sekretów odzyskiwania obok urządzenia. Sprawdź ważne konta po wymianie telefonu, zmianie personelu, zgubieniu klucza lub niespodziewanym powiadomieniu o odzyskiwaniu."
+          ],
+          "bullets": [
+            "Najpierw zabezpiecz główną pocztę, ponieważ zwykle kontroluje reset haseł do innych usług.",
+            "Zarejestruj dwa uwierzytelniacze, zanim zaczniesz polegać na pierwszym; zapasowy przechowuj w innym bezpiecznym miejscu.",
+            "Wygeneruj i zabezpiecz kody odzyskiwania oraz sprawdź, jak rozpoznać i unieważnić zgubiony uwierzytelniacz.",
+            "Powtórz proces dla menedżera haseł, kont finansowych, chmury i dostępu administracyjnego.",
+            "Przeglądaj rejestrację i odzyskiwanie dwa razy w roku oraz zawsze po utracie urządzenia lub zmianie personelu."
+          ],
+          "sourceIds": ["cisa-phishing-resistant", "nist-800-63b", "fido-enterprise"]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy passkey można wyłudzić przez phishing?",
+          "answer": "Prawidłowo wdrożony passkey WebAuthn jest odporny na klasyczny phishing danych logowania, ponieważ uwierzytelnienie zostaje kryptograficznie związane z domeną prawdziwej usługi. Nadal możliwe są malware, kradzież sesji, słabe odzyskiwanie lub zatwierdzenie szkodliwej zmiany, dlatego ochrona urządzenia i procedur pozostaje ważna."
+        },
+        {
+          "question": "Co zrobić po zgubieniu sprzętowego klucza bezpieczeństwa?",
+          "answer": "Użyj drugiego uwierzytelniacza lub procesu odzyskiwania dostawcy, a następnie unieważnij zgubiony klucz w ustawieniach. Dlatego przed uzależnieniem logowania od jednego klucza warto zarejestrować dwa osobno przechowywane uwierzytelniacze i bezpiecznie zachować kody awaryjne."
+        },
+        {
+          "question": "Czy po dodaniu passkey należy wyłączyć hasło?",
+          "answer": "Tylko gdy usługa oferuje dobrze zaprojektowany tryb bezhasłowy i przetestowałeś każdą ścieżkę odzyskiwania. Jeśli hasło pozostaje aktywne, powinno być unikalne i silne, bo atakujący mogą nadal celować w tę metodę awaryjną mimo codziennego logowania za pomocą passkey."
+        },
+        {
+          "question": "Czy kody SMS są lepsze niż brak MFA?",
+          "answer": "Tak, dodatkowy czynnik może ograniczyć część ryzyka przejęcia konta, ale NIST nie uznaje ręcznie wpisywanych OTP za odporne na phishing, a CISA stawia SMS i e-mail poniżej aplikacji i metod FIDO. Dla ważnych kont przejdź na FIDO/WebAuthn, gdy dostawca je obsługuje."
+        }
+      ],
+      "sources": [
+        { "id": "nist-800-63b", "title": "Digital Identity Guidelines: Authentication and Authenticator Management", "publisher": "NIST", "url": "https://pages.nist.gov/800-63-4/sp800-63b.html", "publishedAt": "2025-08-01", "accessedAt": "2026-10-04" },
+        { "id": "cisa-mfa", "title": "Require Multifactor Authentication", "publisher": "CISA", "url": "https://www.cisa.gov/audiences/small-and-medium-businesses/secure-your-business/require-multifactor-authentication", "accessedAt": "2026-10-04" },
+        { "id": "cisa-phishing-resistant", "title": "Implementing Phishing-Resistant MFA", "publisher": "CISA", "url": "https://www.cisa.gov/sites/default/files/2023-01/fact-sheet-implementing-phishing-resistant-mfa-508c.pdf", "accessedAt": "2026-10-04" },
+        { "id": "cisa-mobile", "title": "Mobile Communications Best Practice Guidance", "publisher": "CISA", "url": "https://www.cisa.gov/sites/default/files/2024-12/guidance-mobile-communications-best-practices.pdf", "accessedAt": "2026-10-04" },
+        { "id": "fido-passkeys", "title": "Passkeys", "publisher": "FIDO Alliance", "url": "https://fidoalliance.org/passkeys/", "accessedAt": "2026-10-04" },
+        { "id": "fido-enterprise", "title": "Deploying Passkeys in the Enterprise: Introduction", "publisher": "FIDO Alliance", "url": "https://fidoalliance.org/white-paper-fido-deploying-passkeys-in-the-enterprise-introduction/", "accessedAt": "2026-10-04" }
+      ]
+    }
+  }
+}

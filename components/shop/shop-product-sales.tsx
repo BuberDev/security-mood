@@ -15,7 +15,6 @@ import {
   Clock, 
   Award, 
   Sparkles, 
-  ShieldAlert, 
   ThumbsUp, 
   Heart,
   ChevronRight,
@@ -464,11 +463,6 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
-  // Sync lightbox active index with gallery active index
-  useEffect(() => {
-    setLightboxIndex(activeGalleryIndex);
-  }, [activeGalleryIndex]);
-
   // Lock body scroll when Lightbox is active
   useEffect(() => {
     if (isLightboxOpen) {
@@ -544,10 +538,6 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
     reviewsSectionRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToHero = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const filteredReviews = selectedReviewStarFilter 
     ? reviews.items.filter(item => item.rating === selectedReviewStarFilter)
     : reviews.items;
@@ -600,7 +590,10 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                 className="relative aspect-square overflow-hidden rounded-2xl border border-white/12 bg-white/[0.01] group shadow-2xl cursor-zoom-in"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => setIsLightboxOpen(true)}
+                onClick={() => {
+                  setLightboxIndex(activeGalleryIndex);
+                  setIsLightboxOpen(true);
+                }}
               >
                 <div 
                   className="w-full h-full relative transition-transform duration-200 ease-out"
@@ -1332,7 +1325,7 @@ export function ShopProductSales({ product, related }: ShopProductSalesProps) {
                     <div className="space-y-1.5">
                       <p className="text-sm md:text-base font-bold text-white"><T text={item.title} /></p>
                       <p className="text-xs md:text-sm leading-relaxed text-text-secondary">
-                        "<T text={item.content} />"
+                        <span aria-hidden="true">&ldquo;</span><T text={item.content} /><span aria-hidden="true">&rdquo;</span>
                       </p>
                     </div>
 

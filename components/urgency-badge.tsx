@@ -1,4 +1,4 @@
-import { AlertCircle, TrendingUp, Zap } from "lucide-react";
+import { TrendingUp, Zap } from "lucide-react";
 
 type UrgencyBadgeProps = {
   readonly label: string;

@@ -2,6 +2,10 @@
 
 import { useEffect, useRef, useState } from "react"
 import * as d3 from "d3"
+import type { Feature, FeatureCollection, MultiPolygon, Polygon } from "geojson"
+
+type LandGeometry = Polygon | MultiPolygon
+type LandFeature = Feature<LandGeometry>
 
 interface RotatingEarthProps {
   width?: number
@@ -55,7 +59,7 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
       return inside
     }
 
-    const pointInFeature = (point: [number, number], feature: any): boolean => {
+    const pointInFeature = (point: [number, number], feature: LandFeature): boolean => {
       const geometry = feature.geometry
       if (geometry.type === "Polygon") {
         const coordinates = geometry.coordinates
@@ -82,7 +86,7 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
       return false
     }
 
-    const generateDotsInPolygon = (feature: any, dotSpacing = 16) => {
+    const generateDotsInPolygon = (feature: LandFeature, dotSpacing = 16) => {
       const dots: [number, number][] = []
       const bounds = d3.geoBounds(feature)
       const [[minLng, minLat], [maxLng, maxLat]] = bounds
@@ -105,7 +109,7 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
     }
 
     const allDots: DotData[] = []
-    let landFeatures: any
+    let landFeatures: FeatureCollection<LandGeometry> | null = null
 
     const render = () => {
       context.clearRect(0, 0, containerWidth, containerHeight)
@@ -133,7 +137,7 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
 
         // Land outlines in strong amber
         context.beginPath()
-        landFeatures.features.forEach((feature: any) => {
+        landFeatures.features.forEach((feature) => {
           path(feature)
         })
         context.strokeStyle = "rgba(201, 169, 110, 0.8)"
@@ -166,9 +170,9 @@ export default function RotatingEarth({ width = 600, height = 600, className = "
         )
         if (!response.ok) throw new Error("Failed to load land data")
 
-        landFeatures = await response.json()
+        landFeatures = (await response.json()) as FeatureCollection<LandGeometry>
 
-        landFeatures.features.forEach((feature: any) => {
+        landFeatures.features.forEach((feature) => {
           const dots = generateDotsInPolygon(feature, 16)
           dots.forEach(([lng, lat]) => {
             allDots.push({ lng, lat })

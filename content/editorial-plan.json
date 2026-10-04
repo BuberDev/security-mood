@@ -1,0 +1,14 @@
+[
+  { "topicKey": "passkeys-vs-hardware-security-keys", "categoryId": "cyber-shield", "titleEn": "Passkeys vs hardware security keys", "titlePl": "Passkeys kontra sprzętowe klucze bezpieczeństwa", "intent": "comparison and secure account setup" },
+  { "topicKey": "home-security-audit-checklist", "categoryId": "home-security", "titleEn": "Evidence-based home security audit checklist", "titlePl": "Lista audytu bezpieczeństwa domu oparta na dowodach", "intent": "practical home risk assessment" },
+  { "topicKey": "protect-home-wifi-router", "categoryId": "cyber-shield", "titleEn": "How to secure a home Wi-Fi router", "titlePl": "Jak zabezpieczyć domowy router Wi-Fi", "intent": "step-by-step hardening" },
+  { "topicKey": "apartment-door-security-renters", "categoryId": "home-security", "titleEn": "Apartment door security for renters", "titlePl": "Bezpieczeństwo drzwi w wynajmowanym mieszkaniu", "intent": "non-destructive security upgrades" },
+  { "topicKey": "phone-theft-response-plan", "categoryId": "personal-safety", "titleEn": "What to do before and after phone theft", "titlePl": "Co zrobić przed kradzieżą telefonu i po niej", "intent": "prevention and incident response" },
+  { "topicKey": "backup-power-home-emergency", "categoryId": "emergency-prep", "titleEn": "Safe backup power for a home emergency", "titlePl": "Bezpieczne zasilanie awaryjne domu", "intent": "comparison and safety checklist" },
+  { "topicKey": "phishing-resistant-mfa-small-business", "categoryId": "cyber-shield", "titleEn": "Phishing-resistant MFA for a small business", "titlePl": "MFA odporne na phishing w małej firmie", "intent": "implementation guide" },
+  { "topicKey": "hotel-room-security-checklist", "categoryId": "personal-safety", "titleEn": "Hotel room security checklist", "titlePl": "Lista bezpieczeństwa pokoju hotelowego", "intent": "travel safety checklist" },
+  { "topicKey": "smart-camera-privacy-security", "categoryId": "home-security", "titleEn": "How to choose a privacy-respecting security camera", "titlePl": "Jak wybrać kamerę bezpieczeństwa dbającą o prywatność", "intent": "buyer comparison" },
+  { "topicKey": "data-breach-personal-response", "categoryId": "cyber-shield", "titleEn": "Personal response plan after a data breach", "titlePl": "Osobisty plan działania po wycieku danych", "intent": "incident response checklist" },
+  { "topicKey": "emergency-water-storage-home", "categoryId": "emergency-prep", "titleEn": "Emergency water storage at home", "titlePl": "Awaryjne przechowywanie wody w domu", "intent": "evidence-based preparedness" },
+  { "topicKey": "location-sharing-family-safety", "categoryId": "personal-safety", "titleEn": "Location sharing without giving up privacy", "titlePl": "Udostępnianie lokalizacji bez rezygnacji z prywatności", "intent": "privacy and family safety" }
+]

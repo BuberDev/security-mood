@@ -11,8 +11,10 @@ import { InlineCtaPanel } from "@/components/inline-cta-panel";
 import { Section } from "@/components/section";
 import { T } from "@/components/translated-text";
 import { Badge } from "@/components/ui/badge";
+import { EditorialArticleView } from "@/components/editorial-article-view";
 import { getAffiliateRoute } from "@/lib/affiliate";
 import { getCommerceCtaLabel } from "@/lib/commerce";
+import { getEditorialArticle, getEditorialArticles } from "@/lib/editorial-articles";
 import { getLocalizedAlternates } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { translateText } from "@/lib/i18n/messages";
@@ -33,13 +35,43 @@ type ArticlePageProps = {
 };
 
 export async function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return [
+    ...getEditorialArticles().map((article) => ({ slug: article.slug })),
+    ...articles.map((article) => ({ slug: article.slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
   const { slug } = await params;
+  const editorialArticle = getEditorialArticle(slug);
   const article = getArticleBySlug(slug);
   const locale = await getRequestLocale();
+
+  if (editorialArticle) {
+    const content = editorialArticle.locales[locale];
+    return {
+      title: `${content.title} | Security Mood`,
+      description: content.excerpt,
+      alternates: getLocalizedAlternates(`/blog/${editorialArticle.slug}`, locale),
+      keywords: [editorialArticle.categoryId, "FIDO", "passkeys", "phishing-resistant MFA", ...siteMeta.keywords],
+      openGraph: {
+        title: content.title,
+        description: content.excerpt,
+        url: `/blog/${editorialArticle.slug}`,
+        images: [{ url: editorialArticle.heroImage, width: 1200, height: 630, alt: content.heroAlt }],
+        type: "article",
+        publishedTime: editorialArticle.publishedAt,
+        modifiedTime: editorialArticle.updatedAt,
+        authors: [editorialArticle.author.name],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: content.title,
+        description: content.excerpt,
+        images: [editorialArticle.heroImage],
+      },
+    };
+  }
 
   if (!article) {
     return {
@@ -173,6 +205,13 @@ function getRecommendedLanding(articleSlug: string, categoryId: string) {
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
+  const editorialArticle = getEditorialArticle(slug);
+  const locale = await getRequestLocale();
+
+  if (editorialArticle) {
+    return <EditorialArticleView article={editorialArticle} locale={locale} />;
+  }
+
   const article = getArticleBySlug(slug);
 
   if (!article) {
