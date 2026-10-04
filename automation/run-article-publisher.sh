@@ -7,7 +7,7 @@ if [[ -z "$publisher_repo" || ! -d "$publisher_repo/.git" ]]; then
   exit 1
 fi
 
-lock_directory="$publisher_repo/.publisher-lock"
+lock_directory="$(dirname "$publisher_repo")/.publisher-lock"
 if ! mkdir "$lock_directory" 2>/dev/null; then
   lock_pid=""
   [[ -f "$lock_directory/pid" ]] && read -r lock_pid < "$lock_directory/pid"
