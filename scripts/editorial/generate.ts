@@ -64,7 +64,7 @@ Write complete, natural English and Polish versions. Each language must contain 
 
 Use Security Mood Research Desk as author name. The role is Security and resilience editorial team / Redakcja bezpieczeństwa i odporności. Credentials must state that guidance is source-reviewed, not imply certifications or lab tests. Use /images/blog/cyber_shield_guide.svg for cyber topics, /images/blog/home_security_audit.svg for home security when available, and otherwise an existing /images/blog SVG path.
 
-Add at least three relevant internal links selected from /blog, /favorites, /landing and existing Security Mood article or product paths. Select 1–3 genuinely relevant productIds from this exact category allowlist: ${productIdsByCategory[topic.categoryId].join(", ")}. The productIds array must never be empty, and every section-level productId must come from the same allowlist. Avoid fear-based selling and do not turn the article into an advert.
+Add at least three relevant internal links selected from /blog, /favorites, /landing and existing Security Mood article or product paths. Every internalLinks.href must be root-relative, begin with /, and never include a domain. Select 1–3 genuinely relevant productIds from this exact category allowlist: ${productIdsByCategory[topic.categoryId].join(", ")}. The productIds array must never be empty, and every section-level productId must come from the same allowlist. Avoid fear-based selling and do not turn the article into an advert.
 
 Return data conforming exactly to the supplied JSON schema. All URLs must be HTTPS, all dates YYYY-MM-DD, version must be 1, status must be published.`;
 }
@@ -115,6 +115,30 @@ function removeNullProperties(value: unknown): unknown {
   );
 }
 
+function normalizeInternalLinkPaths(value: unknown): unknown {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const article = { ...(value as Record<string, unknown>) };
+  if (!Array.isArray(article.internalLinks)) return article;
+
+  article.internalLinks = article.internalLinks.map((link) => {
+    if (!link || typeof link !== "object" || Array.isArray(link)) return link;
+    const normalizedLink = { ...(link as Record<string, unknown>) };
+    if (typeof normalizedLink.href !== "string" || normalizedLink.href.startsWith("/")) return normalizedLink;
+
+    try {
+      const url = new URL(normalizedLink.href);
+      if (["securitymood.com", "www.securitymood.com", "securitymood.pl", "www.securitymood.pl"].includes(url.hostname)) {
+        normalizedLink.href = `${url.pathname}${url.search}${url.hash}`;
+      }
+    } catch {
+      // Zod reports malformed or non-internal links with the precise field path.
+    }
+    return normalizedLink;
+  });
+
+  return article;
+}
+
 function main() {
   assertCleanMainBranch();
   const topic = selectTopic();
@@ -151,7 +175,9 @@ function main() {
     if (result.status !== 0) throw new Error(result.stderr || result.stdout || `Codex exited with ${result.status}`);
     if (!fs.existsSync(outputPath)) throw new Error(`Codex did not create structured output.\n${result.stderr}\n${result.stdout}`);
     const generatedOutput = JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown;
-    const article = editorialArticleSchema.parse(removeNullProperties(generatedOutput));
+    const article = editorialArticleSchema.parse(
+      normalizeInternalLinkPaths(removeNullProperties(generatedOutput))
+    );
     if (article.topicKey !== topic.topicKey || article.slug !== topic.topicKey || article.categoryId !== topic.categoryId) throw new Error("Generated article does not match the selected editorial topic.");
 
     const destination = path.join(contentDirectory, `${article.slug}.json`);
