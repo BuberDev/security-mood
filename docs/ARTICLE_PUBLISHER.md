@@ -23,9 +23,9 @@ npm run article:draft
 npm run article:publish
 ```
 
-`article:draft` researches the next unused topic with the locally authenticated Claude CLI, validates the result, runs lint and the production build, and leaves the JSON file for editorial review. It does not commit or push.
+`article:draft` researches the next unused topic with the locally authenticated Codex CLI and live web search, validates the result, runs lint and the production build, and leaves the JSON file for editorial review. Codex runs in a read-only sandbox and can only return schema-constrained JSON. The command does not commit or push.
 
-`article:publish` performs the same gates and then commits only the new article file and pushes `main`. Set `ARTICLE_TOPIC_KEY` to choose an unused item from `content/editorial-plan.json`. Set `CLAUDE_MODEL` only when a specific locally available model is required.
+`article:publish` performs the same gates and then commits only the new article file and pushes `main`. Set `ARTICLE_TOPIC_KEY` to choose an unused item from `content/editorial-plan.json`. Set `CODEX_MODEL` only when a specific locally available model is required.
 
 ## Optional macOS schedule
 
@@ -37,7 +37,7 @@ npm run publisher:install
 
 The installer creates a separate checkout under `~/Library/Application Support/SecurityMoodPublisher`. It does not operate in the developer checkout, so local work cannot be accidentally committed. Launchd runs it on Monday and Thursday at 09:15 local time. A lock prevents duplicate runs. A dirty isolated checkout stops publication and requires review instead of overwriting data.
 
-The scheduler assumes the machine can authenticate to the Git remote and that the `claude` CLI is already authenticated. Logs are written beside the isolated checkout.
+The scheduler assumes the machine can authenticate to the Git remote and that the `codex` CLI is already authenticated. Logs are written beside the isolated checkout.
 
 ## Discoverability endpoints
 

@@ -12,7 +12,7 @@
   <key>EnvironmentVariables</key>
   <dict>
     <key>PATH</key>
-    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/dawidbubernak/.local/bin:/Users/dawidbubernak/.nvm/versions/node/v22.22.1/bin</string>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/Users/dawidbubernak/.local/bin:/Users/dawidbubernak/.nvm/versions/node/v20.19.2/bin:/Users/dawidbubernak/.nvm/versions/node/v22.22.1/bin</string>
     <key>SECURITY_MOOD_PUBLISHER_REPO</key>
     <string>__REPO_PATH__</string>
   </dict>

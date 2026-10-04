@@ -1,5 +1,6 @@
 import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
 import { z } from "zod";
 
@@ -62,51 +63,67 @@ Add at least three relevant internal links selected from /blog, /favorites, /lan
 Return data conforming exactly to the supplied JSON schema. All URLs must be HTTPS, all dates YYYY-MM-DD, version must be 1, status must be published.`;
 }
 
-function parseClaudeResult(output: string): unknown {
-  const envelope = JSON.parse(output) as { structured_output?: unknown; result?: string };
-  if (envelope.structured_output) return envelope.structured_output;
-  if (envelope.result) return JSON.parse(envelope.result);
-  return envelope;
-}
-
 function main() {
   assertCleanMainBranch();
   const topic = selectTopic();
   const schemaObject = z.toJSONSchema(editorialArticleSchema) as Record<string, unknown>;
   delete schemaObject.$schema;
-  const schema = JSON.stringify(schemaObject);
-  const args = ["--print", "--output-format", "json", "--json-schema", schema, "--allowedTools", "WebSearch,WebFetch", "--permission-mode", "dontAsk", "--no-session-persistence"];
-  if (process.env.CLAUDE_MODEL) args.push("--model", process.env.CLAUDE_MODEL);
+  const temporaryDirectory = fs.mkdtempSync(path.join(os.tmpdir(), "security-mood-publisher-"));
+  const schemaPath = path.join(temporaryDirectory, "article-schema.json");
+  const outputPath = path.join(temporaryDirectory, "article.json");
+  fs.writeFileSync(schemaPath, JSON.stringify(schemaObject));
+
+  const args = [
+    "--search",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--ignore-user-config",
+    "--ignore-rules",
+    "--output-schema",
+    schemaPath,
+    "--output-last-message",
+    outputPath,
+    "--color",
+    "never",
+  ];
+  if (process.env.CODEX_MODEL) args.push("--model", process.env.CODEX_MODEL);
   args.push(buildPrompt(topic));
 
   console.log(`Researching and drafting: ${topic.titlePl}`);
-  const result = spawnSync("claude", args, { cwd: projectRoot, encoding: "utf8", maxBuffer: 20 * 1024 * 1024, timeout: 12 * 60 * 1000 });
-  if (result.status !== 0) throw new Error(result.stderr || `Claude exited with ${result.status}`);
-  const article = editorialArticleSchema.parse(parseClaudeResult(result.stdout));
-  if (article.topicKey !== topic.topicKey || article.slug !== topic.topicKey || article.categoryId !== topic.categoryId) throw new Error("Generated article does not match the selected editorial topic.");
-
-  const destination = path.join(contentDirectory, `${article.slug}.json`);
-  if (fs.existsSync(destination)) throw new Error(`Refusing to overwrite ${destination}`);
-  fs.writeFileSync(destination, `${JSON.stringify(article, null, 2)}\n`, { flag: "wx" });
-
-  let committed = false;
-
+  const result = spawnSync("codex", args, { cwd: projectRoot, encoding: "utf8", maxBuffer: 20 * 1024 * 1024, timeout: 20 * 60 * 1000 });
   try {
-    run("npm", ["run", "articles:validate", "--", "--network"], { stdio: "inherit" });
-    run("npm", ["run", "lint"], { stdio: "inherit" });
-    run("npm", ["run", "build"], { stdio: "inherit" });
-    if (process.env.PUBLISH !== "true") {
-      console.log(`Draft validated at content/articles/${article.slug}.json. Review it, then commit it or run with PUBLISH=true.`);
-      return;
+    if (result.status !== 0) throw new Error(result.stderr || result.stdout || `Codex exited with ${result.status}`);
+    if (!fs.existsSync(outputPath)) throw new Error(`Codex did not create structured output.\n${result.stderr}\n${result.stdout}`);
+    const article = editorialArticleSchema.parse(JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown);
+    if (article.topicKey !== topic.topicKey || article.slug !== topic.topicKey || article.categoryId !== topic.categoryId) throw new Error("Generated article does not match the selected editorial topic.");
+
+    const destination = path.join(contentDirectory, `${article.slug}.json`);
+    if (fs.existsSync(destination)) throw new Error(`Refusing to overwrite ${destination}`);
+    fs.writeFileSync(destination, `${JSON.stringify(article, null, 2)}\n`, { flag: "wx" });
+
+    let committed = false;
+
+    try {
+      run("npm", ["run", "articles:validate", "--", "--network"], { stdio: "inherit" });
+      run("npm", ["run", "lint"], { stdio: "inherit" });
+      run("npm", ["run", "build"], { stdio: "inherit" });
+      if (process.env.PUBLISH !== "true") {
+        console.log(`Draft validated at content/articles/${article.slug}.json. Review it, then commit it or run with PUBLISH=true.`);
+        return;
+      }
+      run("git", ["add", `content/articles/${article.slug}.json`]);
+      run("git", ["commit", "-m", `content: publish ${article.slug}`], { stdio: "inherit" });
+      committed = true;
+      run("git", ["push", "origin", "main"], { stdio: "inherit" });
+      console.log(`Published ${article.slug} through the Git/Vercel pipeline.`);
+    } catch (error) {
+      if (!committed) fs.rmSync(destination, { force: true });
+      throw error;
     }
-    run("git", ["add", `content/articles/${article.slug}.json`]);
-    run("git", ["commit", "-m", `content: publish ${article.slug}`], { stdio: "inherit" });
-    committed = true;
-    run("git", ["push", "origin", "main"], { stdio: "inherit" });
-    console.log(`Published ${article.slug} through the Git/Vercel pipeline.`);
-  } catch (error) {
-    if (!committed) fs.rmSync(destination, { force: true });
-    throw error;
+  } finally {
+    fs.rmSync(temporaryDirectory, { recursive: true, force: true });
   }
 }
 
