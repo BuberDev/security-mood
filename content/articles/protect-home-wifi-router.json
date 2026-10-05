@@ -1,0 +1,519 @@
+{
+  "version": 1,
+  "topicKey": "protect-home-wifi-router",
+  "slug": "protect-home-wifi-router",
+  "status": "published",
+  "categoryId": "cyber-shield",
+  "publishedAt": "2026-10-05",
+  "updatedAt": "2026-10-05",
+  "heroImage": "/images/blog/editorial/passkeys-hardware-keys-hero.webp",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on standards and public-agency publications; no certification or laboratory testing is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie standardów i publikacji instytucji publicznych; bez deklarowania certyfikacji lub badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog/passkeys-vs-hardware-security-keys",
+      "label": {
+        "en": "Protect supporting accounts with passkeys and security keys",
+        "pl": "Zabezpiecz powiązane konta za pomocą passkeys i kluczy sprzętowych"
+      }
+    },
+    {
+      "href": "/favorites/hardware-security-key",
+      "label": {
+        "en": "Hardware security keys for compatible accounts",
+        "pl": "Klucze sprzętowe do zgodnych kont"
+      }
+    },
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore Security Mood research guides",
+        "pl": "Przeglądaj poradniki badawcze Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "hardware-security-key"
+  ],
+  "locales": {
+    "en": {
+      "title": "How to secure a home Wi-Fi router: a practical hardening checklist",
+      "excerpt": "Secure your router in a sensible order: confirm update support, protect administration, choose modern Wi-Fi encryption, separate guests, and prepare a recovery plan.",
+      "heroAlt": "A phone displaying a fingerprint symbol beside a laptop and a hardware security key on a desk",
+      "quickAnswer": "Update your router, replace default administrator credentials, and use WPA3 Personal where your devices support it, or WPA2 Personal for compatibility. Set a separate strong Wi-Fi password, disable internet-facing administration and unnecessary connection features, enable the firewall, and isolate guests. Verify the settings after restarting, and replace equipment that no longer receives security updates.",
+      "keyTakeaways": [
+        "Router administration and Wi-Fi access are separate security boundaries: give each a different password.",
+        "Check firmware support before spending time configuring an obsolete router.",
+        "Prefer WPA3 Personal; use WPA2 Personal when compatibility requires it, and retire WEP or original WPA.",
+        "A guest network needs verified isolation, not merely a different network name.",
+        "Keep a recovery record and investigate unexplained configuration changes without assuming every connection problem is an attack."
+      ],
+      "methodology": "We searched for primary guidance and opened publications from the FTC, FBI/IC3, NSA, NIST and FIDO Alliance on 2026-10-05. The FTC supplies household configuration advice; the FBI supplies newer end-of-life and incident guidance. NIST SP 800-153 is a 2012 lifecycle reference, not a source for WPA3 recommendations. The reachable NSA announcement supports network segmentation; its linked report could not be fetched and was not treated as reviewed. The checklists, ordering and verification examples are our editorial synthesis. We inspected the supplied visual assets: these illustrate account protection and recovery, rather than a particular router interface. We performed no router tests, penetration tests or product comparisons. Manufacturer and ISP instructions determine the exact controls available.",
+      "sections": [
+        {
+          "id": "prepare-and-update",
+          "heading": "1. Identify your router and confirm that it still receives updates",
+          "answer": "Start router hardening by checking the exact model, hardware revision, installed firmware and manufacturer support status. Install the appropriate supported update before changing other settings. If security support has ended, plan a replacement: a stronger password cannot repair an unpatched software vulnerability.",
+          "paragraphs": [
+            "The FBI recommends replacing end-of-life routers where possible and applying available firmware patches. Its warning concerns vulnerable devices used as criminal traffic relays; it does not mean every older router is infected. Use the support status of your exact model as the decision criterion. [FBI router advisory](https://www.ic3.gov/PSA/2025/PSA250507).",
+            "Prepare a short maintenance record before starting. Write down the model and hardware revision from the label, the installed firmware version from the administration page, and whether the router belongs to your internet provider. Find the official manual and support page yourself. Avoid choosing a firmware download simply because its filename resembles your router name.",
+            "For provider-supplied equipment, ask who installs security updates and whether customers can check their completion. Also ask what settings a reset would erase and whether telephone or television service depends on the device. Schedule changes when nobody needs an uninterrupted call, upload or medical appointment.",
+            "Our suggested working order is preparation, update, administrator protection, wireless settings, then isolation and verification. Keep the manufacturer's reset instructions available separately. If you cannot confirm support, record that uncertainty and ask the manufacturer or provider; do not interpret an empty update screen as proof that support continues."
+          ],
+          "bullets": [
+            "Record the model, hardware revision, firmware version and support contact.",
+            "Follow the official update procedure and avoid interrupting its power supply.",
+            "After updating, sign in again and confirm the installed version.",
+            "Enable automatic updates if offered; otherwise set a recurring reminder to check.",
+            "Replace equipment when security support ends or modern encryption remains unavailable."
+          ],
+          "sourceIds": [
+            "fbi-router",
+            "ftc-wifi",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "protect-administration",
+          "heading": "2. Protect the administrator account and supporting accounts",
+          "answer": "Give the router administrator account a unique password that differs from the Wi-Fi password, and change the default username where supported. Manage the router through the documented local interface and disable administration from the internet. Protect any associated provider or cloud account using its strongest supported authentication.",
+          "paragraphs": [
+            "The administrator password controls configuration; the Wi-Fi password admits devices to the wireless network. The FTC explicitly distinguishes them. Share the guest Wi-Fi credential with visitors rather than giving them administrative access. Find the management address in the official instructions or your device's network settings instead of assuming that every router uses the same address. [FTC home Wi-Fi guidance](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network).",
+            "Save the administrator credential in your password manager and test it by signing out and signing back in. Before changing a username, check whether the interface actually permits it. If the username is fixed, concentrate on the password and access restrictions. Do not reuse the credential for email, shopping or the provider's customer portal.",
+            "Review local administration, internet-facing remote administration and cloud management separately. Their names and relationships differ across products. Read the explanation beside each setting, record the previous state, apply the change, and verify that you can still manage the router locally. Ask the ISP before disabling a provider-specific service whose purpose is unclear.",
+            "FIDO passkeys offer phishing-resistant authentication and can reside on phones, computers or hardware security keys. If the associated account supports these methods, consider them and test its recovery route. This is an optional account-protection layer, not a claim that your router accepts a security key. Our linked passkey guide explains the choices. [FIDO passkeys](https://fidoalliance.org/passkeys/)."
+          ],
+          "bullets": [
+            "Use different passwords for administration, primary Wi-Fi and guest Wi-Fi.",
+            "Disable remote administration from the internet and save the change.",
+            "Test local access again before closing your maintenance session.",
+            "Protect recovery email and compatible provider accounts; keep recovery instructions accessible.",
+            "Sign out of the administrator interface when finished."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "A person holding a phone with a fingerprint symbol and a hardware security key beside a laptop",
+            "caption": "Illustration of account authentication. Passkeys or a security key can protect a compatible supporting account; router support must be checked separately."
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "fbi-router",
+            "fido-passkeys"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "wireless-encryption",
+          "heading": "3. Choose Wi-Fi encryption and reconnect devices deliberately",
+          "answer": "Use WPA3 Personal when the router and household devices support it. WPA2 Personal is the compatibility alternative identified by the FTC. Avoid WEP and original WPA. Give the wireless network a unique strong password, then reconnect and test devices individually so that compatibility problems are easy to identify.",
+          "paragraphs": [
+            "The FTC recommends WPA3 Personal or WPA2 Personal and advises updating or replacing routers that offer only obsolete alternatives. Use the comparison below as a selection guide, then check the manufacturer's documentation for the exact option names. A menu label alone does not tell you whether every older appliance will connect. [FTC encryption advice](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network).",
+            "Inventory the devices that matter before applying the change: work laptops, phones, printers, televisions, cameras and household controllers. Our suggested migration method is to update their software where supported, change the router setting, then reconnect one category at a time. Record any device that fails and the manufacturer's stated encryption support.",
+            "Choose a network name that does not reveal your surname, address or router brand. Keep the Wi-Fi password separate from administration credentials and enter it only on devices you intend to admit. Store the credential securely rather than leaving an administrator screenshot in a shared photo album. When giving access to visitors, use the guest credential.",
+            "If an essential device cannot use your preferred mode, document the exception and review whether a separate supported network is possible. Do not immediately weaken every household device's connection to accommodate one accessory. After reconnecting, test actual tasks such as printing and camera viewing; successful internet browsing alone does not establish that the whole household setup still works."
+          ],
+          "bullets": [
+            "Prefer WPA3 Personal when all necessary devices are compatible.",
+            "Use WPA2 Personal when required by supported equipment.",
+            "Treat mixed or transition modes as manufacturer-specific compatibility choices.",
+            "If only WEP or original WPA remains after updating, replace the router.",
+            "Retest important household functions after changing encryption or passwords."
+          ],
+          "table": {
+            "headers": [
+              "Option",
+              "When to choose it",
+              "Decision check"
+            ],
+            "rows": [
+              [
+                "WPA3 Personal",
+                "Preferred for compatible household equipment",
+                "Check router and client support; test essential devices"
+              ],
+              [
+                "WPA2 Personal",
+                "Compatibility alternative",
+                "Keep firmware current and use a unique strong password"
+              ],
+              [
+                "WPA2/WPA3 transition mode",
+                "Only when a documented compatibility need exists",
+                "Consult the model's instructions; reassess the exception later"
+              ],
+              [
+                "WEP or original WPA",
+                "Do not use for the household network",
+                "Update firmware or replace equipment"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "reduce-exposure",
+          "heading": "4. Separate guests and remove unnecessary access",
+          "answer": "Create a guest network with its own password, verify that guests cannot reach private devices or router administration, and keep the router firewall enabled. Disable WPS and unnecessary UPnP. Review existing port-forwarding rules individually, retaining only entries with a known purpose and a responsible owner.",
+          "paragraphs": [
+            "The FTC recommends guest networking, disabling WPS and UPnP, and enabling the router firewall. The NSA's home-network announcement also identifies wireless segmentation as a protective measure. Translate those recommendations into checks on your own model rather than assuming that a second network name automatically provides separation. [FTC checklist](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network), [NSA home-network announcement](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/).",
+            "Look for controls described as guest isolation, local-network access or intranet access. Read the manual's explanation and choose settings that prevent guest access to the private network. Our suggested verification is to connect your own phone as a guest and attempt to open the router administration page and a known private resource. Test only equipment you own.",
+            "A failed test is useful evidence but does not prove comprehensive isolation. Check the documented scope, including wireless and wired private devices. For smart-home equipment, decide what must communicate locally before moving it. A controller that needs a local printer, speaker or hub may require a different arrangement; write down the exception rather than opening broad access without a reason.",
+            "Apply exposure-reducing changes one at a time. After disabling UPnP, test the household applications that previously depended on automatic connectivity. If something fails, consult its official instructions before restoring the feature or adding a forwarding rule. Record every retained exception with its purpose and a review date. Avoid disabling the entire firewall as a troubleshooting shortcut."
+          ],
+          "bullets": [
+            "Give guests a separate credential and disable guest access to the private LAN.",
+            "Check whether guest clients can reach router administration.",
+            "Disable WPS and unnecessary UPnP; verify the saved state.",
+            "Review forwarding rules and delete obsolete entries.",
+            "Keep the firewall enabled and document necessary exceptions."
+          ],
+          "sourceIds": [
+            "ftc-wifi",
+            "nsa-home",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "verify-and-recover",
+          "heading": "5. Verify the result and prepare for recovery",
+          "answer": "After restarting, verify firmware, administrator access, encryption, guest isolation and disabled services. Keep a dated record of the intended configuration. Investigate unexplained setting changes, update and change credentials when suspicious activity occurs, and follow manufacturer or ISP recovery instructions if normal control cannot be restored.",
+          "paragraphs": [
+            "NIST treats wireless security as ongoing configuration, maintenance and monitoring. The FBI identifies unfamiliar setting changes and connectivity problems among possible warning signs and recommends updates, password changes and a reboot when activity is suspicious. A symptom is a reason to investigate, not a diagnosis of compromise. [NIST WLAN lifecycle guidance](https://csrc.nist.gov/pubs/sp/800/153/final), [FBI response advice](https://www.ic3.gov/PSA/2025/PSA250507).",
+            "Our suggested acceptance check is practical: reconnect a trusted device, confirm normal internet use, test an important local service, and repeat the guest-access check. Reopen the settings after restarting and compare them with your notes. Review the connected-device list with household members before treating an unfamiliar label as unauthorized access.",
+            "Keep a recovery record containing the model, official support route, update responsibility and reset procedure. Store credentials securely and retain any provider details needed to restore service. If you export a configuration backup, check the manual for its contents and storage requirements. A backup can be useful for accidental changes; do not blindly restore a configuration you suspect has been altered.",
+            "For suspected compromise, use a separate trusted connection to contact support and recover affected accounts. Record unexpected settings and relevant times before destructive recovery steps. Ask whether the model requires a reset, firmware recovery or replacement; a reboot alone is not evidence that the underlying issue is resolved. Rebuild only known settings and reconnect trusted devices first.",
+            "Make a short review appointment after installation and after major provider changes. Confirm that updates still arrive, remove retired devices and obsolete exceptions, and refresh recovery contacts. Router hardening remains useful only while its settings and supporting devices stay maintained."
+          ],
+          "bullets": [
+            "Check the saved settings again after restarting.",
+            "Confirm household devices and investigate unexplained changes.",
+            "Keep recovery instructions separate from the router.",
+            "Use official support for resets or firmware recovery.",
+            "Replace unsupported equipment and recover affected accounts through their providers."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Two hardware security keys and a sealed envelope in a drawer beside a phone",
+            "caption": "Recovery planning includes secure access to supporting accounts and separately stored instructions. The image illustrates preparation, not a tested router recovery method."
+          },
+          "sourceIds": [
+            "nist-wlan",
+            "fbi-router",
+            "fido-passkeys"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Should I replace a router that still works?",
+          "answer": "Replace it when security support has ended or it cannot provide WPA2 or WPA3 after an appropriate update. Working internet access does not establish that vulnerabilities are being fixed. Check the exact model and hardware revision with the manufacturer or ISP."
+        },
+        {
+          "question": "Why do I need two different passwords?",
+          "answer": "The Wi-Fi password permits network access; the administrator password permits configuration changes. Keeping them different lets you share appropriate network access without sharing control of the router."
+        },
+        {
+          "question": "What if WPA3 stops my printer connecting?",
+          "answer": "Check the printer's official compatibility and update instructions. WPA2 Personal is the FTC's compatibility alternative. Document the exception, consider a separately configured network if supported, and test printing before deciding the migration is complete."
+        },
+        {
+          "question": "Is rebooting enough after suspicious activity?",
+          "answer": "Do not treat a reboot as proof of recovery. The FBI also recommends applying updates and changing passwords. If unexplained changes persist, contact the manufacturer or ISP for model-specific recovery and check whether the router remains supported."
+        },
+        {
+          "question": "Do I need a hardware security key to secure Wi-Fi?",
+          "answer": "A hardware key is optional for compatible supporting accounts. It does not replace router updates, wireless encryption or administrator password protection. Check account support and recovery options before relying on one."
+        }
+      ],
+      "sources": [
+        {
+          "id": "ftc-wifi",
+          "title": "How To Secure Your Home Wi-Fi Network",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "fbi-router",
+          "title": "Cyber Criminal Proxy Services Exploiting End of Life Routers",
+          "publisher": "FBI Internet Crime Complaint Center",
+          "url": "https://www.ic3.gov/PSA/2025/PSA250507",
+          "publishedAt": "2025-05-07",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "nist-wlan",
+          "title": "SP 800-153: Guidelines for Securing Wireless Local Area Networks (WLANs)",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://csrc.nist.gov/pubs/sp/800/153/final",
+          "publishedAt": "2012-02-21",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "nsa-home",
+          "title": "NSA Releases Best Practices For Securing Your Home Network",
+          "publisher": "National Security Agency",
+          "url": "https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/",
+          "publishedAt": "2023-02-22",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "fido-passkeys",
+          "title": "Passkeys",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/passkeys/",
+          "accessedAt": "2026-10-05"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Jak zabezpieczyć domowy router Wi-Fi: praktyczna instrukcja krok po kroku",
+      "excerpt": "Zabezpiecz router w rozsądnej kolejności: sprawdź wsparcie, chroń panel administracyjny, wybierz szyfrowanie, oddziel gości i przygotuj odzyskiwanie dostępu.",
+      "heroAlt": "Telefon z symbolem odcisku palca obok laptopa i sprzętowego klucza bezpieczeństwa na biurku",
+      "quickAnswer": "Zaktualizuj router, zmień domyślne dane administratora i wybierz WPA3 Personal, jeśli obsługują je domowe urządzenia, albo WPA2 Personal dla zgodności. Ustaw osobne, silne hasło Wi-Fi, wyłącz administrację przez internet oraz zbędne funkcje łączenia, włącz zaporę i odizoluj gości. Po restarcie sprawdź ustawienia. Wymień sprzęt, który nie otrzymuje już poprawek bezpieczeństwa.",
+      "keyTakeaways": [
+        "Hasło administratora i hasło Wi-Fi chronią różne uprawnienia; powinny być odrębne.",
+        "Sprawdź wsparcie oprogramowania, zanim poświęcisz czas na konfigurację przestarzałego routera.",
+        "Preferuj WPA3 Personal, korzystaj z WPA2 Personal przy wymaganej zgodności i zrezygnuj z WEP oraz pierwotnego WPA.",
+        "Sieć gościnna wymaga sprawdzenia izolacji; inna nazwa sieci nie wystarcza.",
+        "Przygotuj instrukcję odzyskiwania i wyjaśniaj nieznane zmiany ustawień, bez uznawania każdej awarii za atak."
+      ],
+      "methodology": "Wyszukaliśmy źródła pierwotne i otworzyliśmy publikacje FTC, FBI/IC3, NSA, NIST oraz FIDO Alliance 2026-10-05. FTC dostarcza wskazówek dla gospodarstw domowych, a FBI nowszych zaleceń dotyczących końca wsparcia i reagowania. NIST SP 800-153 z 2012 roku wykorzystujemy jako źródło zasad utrzymania sieci, nie zaleceń dotyczących WPA3. Dostępny komunikat NSA potwierdza znaczenie segmentacji; powiązanego raportu nie udało się pobrać i nie przedstawiamy go jako przeanalizowanego. Kolejność działań, listy kontrolne i przykłady weryfikacji są syntezą redakcyjną. Obejrzeliśmy udostępnione ilustracje: pokazują ochronę kont i przygotowanie odzyskiwania, a nie interfejs konkretnego routera. Nie wykonywaliśmy testów routerów, testów penetracyjnych ani porównań produktów. Dostępność i nazwy ustawień należy potwierdzić w dokumentacji producenta lub operatora.",
+      "sections": [
+        {
+          "id": "prepare-and-update",
+          "heading": "1. Rozpoznaj router i sprawdź, czy nadal otrzymuje aktualizacje",
+          "answer": "Zacznij zabezpieczanie routera od ustalenia dokładnego modelu, rewizji sprzętowej, wersji oprogramowania i statusu wsparcia producenta. Zainstaluj właściwą, wspieraną aktualizację przed zmianą pozostałych ustawień. Jeśli wsparcie bezpieczeństwa się skończyło, zaplanuj wymianę: mocniejsze hasło nie usuwa niezałatanej podatności oprogramowania.",
+          "paragraphs": [
+            "FBI zaleca wymianę routerów po zakończeniu ich wsparcia, gdy jest to możliwe, oraz instalowanie dostępnych poprawek. Ostrzeżenie dotyczy podatnych urządzeń wykorzystywanych do przekazywania ruchu przestępców; nie oznacza, że każdy starszy router jest zainfekowany. Kryterium decyzji powinien być status konkretnego modelu. [Ostrzeżenie FBI dotyczące routerów](https://www.ic3.gov/PSA/2025/PSA250507).",
+            "Przed rozpoczęciem przygotuj krótką kartę urządzenia. Z etykiety przepisz model i rewizję sprzętową, z panelu administracyjnego odczytaj wersję firmware, a następnie ustal, czy sprzęt należy do operatora. Samodzielnie znajdź oficjalną instrukcję i stronę wsparcia. Nie wybieraj pliku aktualizacji tylko dlatego, że jego nazwa przypomina nazwę routera.",
+            "W przypadku sprzętu operatora zapytaj, kto instaluje poprawki bezpieczeństwa i jak sprawdzić ich wdrożenie. Ustal również, które ustawienia znikną po resecie oraz czy telefon lub telewizja korzystają z tego urządzenia. Wybierz termin, w którym nikt nie potrzebuje nieprzerwanego połączenia do rozmowy, wysyłania plików lub konsultacji medycznej.",
+            "Proponowana przez redakcję kolejność to przygotowanie, aktualizacja, ochrona administratora, ustawienia Wi-Fi, a następnie izolacja i sprawdzenie rezultatu. Instrukcję resetowania zachowaj osobno. Jeśli nie potrafisz potwierdzić wsparcia, zapisz tę niewiadomą i skontaktuj się z producentem lub operatorem. Brak aktualizacji widocznych w panelu nie dowodzi, że wsparcie nadal trwa.",
+            "Nie musisz od razu wybierać nowego sprzętu na podstawie reklamowanych prędkości. Najpierw ustal wymagania wynikające z tego poradnika: utrzymywane oprogramowanie, odpowiednie szyfrowanie, kontrola administracji i możliwość oddzielenia gości. Potwierdź je w oficjalnej dokumentacji rozważanego modelu."
+          ],
+          "bullets": [
+            "Zapisz model, rewizję sprzętową, wersję firmware i kontakt do wsparcia.",
+            "Postępuj zgodnie z oficjalną procedurą aktualizacji i nie przerywaj zasilania.",
+            "Po aktualizacji zaloguj się ponownie i sprawdź numer wersji.",
+            "Włącz automatyczne aktualizacje, jeśli są dostępne; w przeciwnym razie ustaw przypomnienie.",
+            "Wymień sprzęt po zakończeniu wsparcia bezpieczeństwa lub gdy nadal nie oferuje współczesnego szyfrowania."
+          ],
+          "sourceIds": [
+            "fbi-router",
+            "ftc-wifi",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "protect-administration",
+          "heading": "2. Zabezpiecz administratora i powiązane konta",
+          "answer": "Ustaw unikalne hasło administratora, inne niż hasło Wi-Fi, oraz zmień domyślną nazwę użytkownika, jeśli router na to pozwala. Zarządzaj urządzeniem przez udokumentowany interfejs lokalny i wyłącz administrację z internetu. Powiązane konto operatora lub usługi chmurowej zabezpiecz najmocniejszą obsługiwaną metodą logowania.",
+          "paragraphs": [
+            "Hasło administratora umożliwia zmianę konfiguracji, natomiast hasło Wi-Fi dopuszcza urządzenia do sieci bezprzewodowej. FTC wyraźnie rozróżnia te dwa zastosowania. Gościom przekazuj dane sieci gościnnej zamiast dostępu administracyjnego. Adres panelu znajdź w oficjalnej instrukcji lub ustawieniach sieci swojego urządzenia; nie zakładaj, że wszystkie routery mają ten sam adres. [Poradnik FTC](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network).",
+            "Zapisz hasło administratora w menedżerze haseł i sprawdź je przez wylogowanie oraz ponowne logowanie. Przed zmianą nazwy użytkownika ustal, czy interfejs rzeczywiście udostępnia taką możliwość. Jeżeli nazwa jest stała, skup się na haśle i ograniczeniu dostępu. Nie używaj tego samego hasła do poczty, zakupów ani panelu klienta operatora.",
+            "Osobno przejrzyj administrację lokalną, administrację dostępną z internetu i zarządzanie przez chmurę. Ich nazwy oraz powiązania zależą od produktu. Przeczytaj opis ustawienia, zanotuj wcześniejszy stan, zapisz zmianę i sprawdź, czy nadal możesz zarządzać routerem lokalnie. Przed wyłączeniem niejasnej usługi operatora zapytaj o jej przeznaczenie.",
+            "Passkeys oparte na standardach FIDO zapewniają logowanie odporne na phishing i mogą być przechowywane na telefonach, komputerach lub kluczach sprzętowych. Jeśli powiązane konto obsługuje taką metodę, rozważ jej użycie i sprawdź odzyskiwanie. To opcjonalna ochrona konta, bez deklaracji, że dany router obsługuje klucz. Powiązany poradnik Security Mood wyjaśnia dostępne warianty. [FIDO: passkeys](https://fidoalliance.org/passkeys/).",
+            "Przygotuj także plan dla osoby, która będzie zarządzać siecią podczas twojej nieobecności. Ustal bezpieczny sposób udostępnienia potrzebnych danych oraz zakres uprawnień. Nie rozwiązuj tej kwestii przez pozostawienie wszystkich haseł w ogólnodostępnej notatce."
+          ],
+          "bullets": [
+            "Używaj osobnych haseł do administracji, głównej sieci i sieci gościnnej.",
+            "Wyłącz administrację z internetu i zapisz ustawienie.",
+            "Sprawdź ponownie dostęp lokalny przed zakończeniem prac.",
+            "Zabezpiecz pocztę odzyskiwania i zgodne konta operatora.",
+            "Po zakończeniu wyloguj się z panelu administratora."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Osoba trzyma telefon z symbolem odcisku palca i klucz sprzętowy obok laptopa",
+            "caption": "Ilustracja uwierzytelniania konta. Passkey lub klucz sprzętowy może chronić zgodne konto powiązane; obsługę przez router trzeba sprawdzić osobno."
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "fbi-router",
+            "fido-passkeys"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "wireless-encryption",
+          "heading": "3. Wybierz szyfrowanie Wi-Fi i podłączaj urządzenia pojedynczo",
+          "answer": "Wybierz WPA3 Personal, jeśli obsługują je router i potrzebne urządzenia domowe. WPA2 Personal jest wskazywaną przez FTC alternatywą dla zgodności. Unikaj WEP i pierwotnego WPA. Ustaw unikalne, silne hasło sieci, a następnie podłączaj i sprawdzaj urządzenia pojedynczo, żeby łatwo rozpoznać problemy.",
+          "paragraphs": [
+            "FTC zaleca WPA3 Personal lub WPA2 Personal oraz aktualizację albo wymianę routerów oferujących wyłącznie przestarzałe rozwiązania. Poniższa tabela pomaga podjąć decyzję, ale dokładne nazwy opcji sprawdź w dokumentacji producenta. Sama etykieta w menu nie potwierdza, że każde starsze urządzenie będzie mogło się połączyć. [Zalecenia FTC dotyczące szyfrowania](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network).",
+            "Przed zmianą sporządź listę potrzebnego sprzętu: laptopów służbowych, telefonów, drukarek, telewizorów, kamer i sterowników domowych. Proponujemy najpierw zaktualizować ich oprogramowanie, jeśli jest wspierane, następnie zmienić ustawienie routera i podłączać kolejne grupy. Przy każdym problemie zapisz urządzenie oraz deklarowaną przez producenta obsługę szyfrowania.",
+            "Wybierz nazwę sieci, która nie ujawnia nazwiska, adresu ani marki routera. Hasło Wi-Fi przechowuj oddzielnie od danych administratora i wpisuj wyłącznie na urządzeniach, które chcesz dopuścić. Nie zostawiaj zrzutu panelu z danymi dostępu we wspólnym albumie zdjęć. Osobom odwiedzającym dom przekazuj hasło sieci gościnnej.",
+            "Jeśli niezbędne urządzenie nie obsługuje preferowanego trybu, zapisz wyjątek i sprawdź możliwość utworzenia osobnej, wspieranej sieci. Nie zmieniaj od razu konfiguracji wszystkich domowych urządzeń tylko dla jednego akcesorium. Po ponownym podłączeniu sprawdź rzeczywiste zadania, takie jak drukowanie i podgląd kamery; działająca przeglądarka nie potwierdza poprawności całego zestawu.",
+            "Na koniec uzupełnij kartę konfiguracji o wybrany tryb oraz urządzenia wymagające odstępstwa. Przy ich przyszłej wymianie wróć do tej decyzji. Dzięki temu tymczasowe rozwiązanie zgodności nie pozostanie bez przeglądu przez kolejne lata."
+          ],
+          "bullets": [
+            "Preferuj WPA3 Personal przy zgodnych urządzeniach.",
+            "Wybierz WPA2 Personal, gdy wymaga tego wspierany sprzęt.",
+            "Tryby mieszane oceniaj według instrukcji konkretnego modelu.",
+            "Jeśli po aktualizacji pozostają wyłącznie WEP lub pierwotne WPA, wymień router.",
+            "Po zmianie szyfrowania lub hasła sprawdź najważniejsze funkcje domowe."
+          ],
+          "table": {
+            "headers": [
+              "Opcja",
+              "Kiedy ją wybrać",
+              "Co sprawdzić"
+            ],
+            "rows": [
+              [
+                "WPA3 Personal",
+                "Preferowana dla zgodnego sprzętu",
+                "Obsługę przez router i urządzenia oraz działanie potrzebnych funkcji"
+              ],
+              [
+                "WPA2 Personal",
+                "Alternatywa zapewniająca zgodność",
+                "Aktualne firmware i unikalne, silne hasło"
+              ],
+              [
+                "Tryb przejściowy WPA2/WPA3",
+                "Przy udokumentowanej potrzebie zgodności",
+                "Instrukcję modelu i termin ponownego przeglądu wyjątku"
+              ],
+              [
+                "WEP lub pierwotne WPA",
+                "Nie używaj w domowej sieci",
+                "Możliwość aktualizacji albo konieczność wymiany"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "reduce-exposure",
+          "heading": "4. Oddziel gości i ogranicz zbędny dostęp",
+          "answer": "Utwórz sieć gościnną z osobnym hasłem, sprawdź brak dostępu gości do prywatnych urządzeń i administracji oraz pozostaw włączoną zaporę routera. Wyłącz WPS i zbędne UPnP. Przejrzyj przekierowania portów pojedynczo, zachowując tylko reguły o znanym przeznaczeniu i wskazanej osobie odpowiedzialnej.",
+          "paragraphs": [
+            "FTC zaleca sieć gościnną, wyłączenie WPS i UPnP oraz włączenie zapory. Komunikat NSA o ochronie sieci domowej wskazuje również segmentację bezprzewodową. Przełóż te zalecenia na sprawdzenie własnego modelu: druga nazwa sieci sama w sobie nie potwierdza oddzielenia urządzeń. [Lista FTC](https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network), [Komunikat NSA](https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/).",
+            "Znajdź opcje opisane jako izolacja gości, dostęp do sieci lokalnej lub dostęp do intranetu. Przeczytaj ich znaczenie w instrukcji i wybierz ustawienia blokujące gościom prywatną sieć. Proponowany test polega na podłączeniu własnego telefonu jako gościa i próbie otwarcia panelu routera oraz znanego prywatnego zasobu. Sprawdzaj wyłącznie własny sprzęt.",
+            "Nieudana próba dostępu jest przydatnym wynikiem, ale nie dowodzi kompletnej izolacji. Sprawdź w dokumentacji zakres ochrony, także względem prywatnych urządzeń przewodowych. Przed przeniesieniem sprzętu smart home ustal, co musi komunikować się lokalnie. Kontroler potrzebujący drukarki, głośnika lub centralki może wymagać innego układu; zapisz wyjątek zamiast otwierać szeroki dostęp bez uzasadnienia.",
+            "Wprowadzaj zmiany pojedynczo. Po wyłączeniu UPnP przetestuj aplikacje domowe, które wcześniej korzystały z automatycznej konfiguracji połączeń. Jeśli coś przestanie działać, sprawdź oficjalne instrukcje przed ponownym włączeniem funkcji lub dodaniem przekierowania. Każdemu zachowanemu wyjątkowi przypisz cel i termin przeglądu. Nie wyłączaj całej zapory jako sposobu rozwiązywania problemów.",
+            "Podczas porządkowania reguł poproś domowników o wskazanie usług, z których rzeczywiście korzystają. Nieznany wpis najpierw wyjaśnij. Po usunięciu niepotrzebnej reguły zanotuj zmianę, aby późniejszy problem można było powiązać z konkretnym działaniem."
+          ],
+          "bullets": [
+            "Ustaw osobne hasło gości i zablokuj dostęp do prywatnej sieci LAN.",
+            "Sprawdź, czy goście mogą otworzyć panel routera.",
+            "Wyłącz WPS i zbędne UPnP; potwierdź zapisanie zmian.",
+            "Usuń nieaktualne przekierowania portów.",
+            "Pozostaw zaporę włączoną i dokumentuj potrzebne wyjątki."
+          ],
+          "sourceIds": [
+            "ftc-wifi",
+            "nsa-home",
+            "nist-wlan"
+          ]
+        },
+        {
+          "id": "verify-and-recover",
+          "heading": "5. Sprawdź rezultat i przygotuj odzyskiwanie",
+          "answer": "Po restarcie sprawdź firmware, dostęp administratora, szyfrowanie, izolację gości i wyłączone usługi. Zachowaj datowany zapis docelowej konfiguracji. Wyjaśniaj nieoczekiwane zmiany, a przy podejrzanej aktywności aktualizuj oprogramowanie i zmieniaj hasła. Jeśli nie odzyskasz normalnej kontroli, zastosuj instrukcję producenta lub operatora.",
+          "paragraphs": [
+            "NIST opisuje bezpieczeństwo Wi-Fi jako ciągłą konfigurację, utrzymanie i monitorowanie. FBI wymienia nieznane zmiany ustawień i problemy z łącznością wśród możliwych sygnałów ostrzegawczych oraz zaleca aktualizacje, zmianę haseł i restart przy podejrzanej aktywności. Objaw uzasadnia sprawdzenie sytuacji, ale nie jest diagnozą włamania. [NIST o utrzymaniu WLAN](https://csrc.nist.gov/pubs/sp/800/153/final), [Zalecenia reagowania FBI](https://www.ic3.gov/PSA/2025/PSA250507).",
+            "Proponowana weryfikacja jest praktyczna: podłącz zaufane urządzenie, sprawdź internet, przetestuj ważną usługę lokalną i powtórz kontrolę dostępu gościa. Po restarcie ponownie otwórz ustawienia i porównaj je z notatkami. Listę podłączonych urządzeń przejrzyj razem z domownikami, zanim uznasz nieznaną nazwę za dowód nieuprawnionego dostępu.",
+            "Przygotuj kartę odzyskiwania zawierającą model, oficjalny kontakt do wsparcia, odpowiedzialność za aktualizacje i procedurę resetu. Dane logowania przechowuj bezpiecznie, a informacje operatora potrzebne do odtworzenia usługi zachowaj osobno. Przy eksporcie konfiguracji sprawdź w instrukcji zawartość pliku i wymagania przechowywania. Kopia pomaga po przypadkowych zmianach, lecz nie odtwarzaj bez sprawdzenia konfiguracji podejrzanej o modyfikację.",
+            "Przy podejrzeniu przejęcia użyj osobnego, zaufanego połączenia do kontaktu ze wsparciem i odzyskania kont. Przed czynnościami usuwającymi dane zapisz nieoczekiwane ustawienia oraz istotne godziny. Zapytaj, czy model wymaga resetu, odtworzenia firmware czy wymiany. Sam restart nie potwierdza usunięcia przyczyny problemu. Odtwarzaj tylko znane ustawienia i najpierw podłączaj zaufane urządzenia.",
+            "Zaplanuj krótki przegląd po instalacji oraz po większych zmianach po stronie operatora. Potwierdź dalsze dostarczanie aktualizacji, usuń wycofane urządzenia i niepotrzebne wyjątki oraz odśwież kontakty odzyskiwania. Skuteczność zabezpieczeń zależy od dalszego utrzymania routera i korzystającego z niego sprzętu."
+          ],
+          "bullets": [
+            "Po restarcie ponownie sprawdź zapisane ustawienia.",
+            "Rozpoznaj domowe urządzenia i wyjaśnij nieoczekiwane zmiany.",
+            "Instrukcje odzyskiwania przechowuj niezależnie od routera.",
+            "Reset i odtwarzanie firmware konsultuj z oficjalnym wsparciem.",
+            "Wymień niewspierany sprzęt i odzyskuj powiązane konta przez ich dostawców."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Dwa sprzętowe klucze bezpieczeństwa i zamknięta koperta w szufladzie obok telefonu",
+            "caption": "Plan odzyskiwania obejmuje bezpieczny dostęp do powiązanych kont i osobno przechowywane instrukcje. Ilustracja pokazuje przygotowanie, a nie przetestowaną procedurę naprawy routera."
+          },
+          "sourceIds": [
+            "nist-wlan",
+            "fbi-router",
+            "fido-passkeys"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy wymieniać router, który nadal działa?",
+          "answer": "Wymień go, gdy skończyło się wsparcie bezpieczeństwa lub po właściwej aktualizacji nadal nie oferuje WPA2 albo WPA3. Działający internet nie potwierdza usuwania podatności. Sprawdź dokładny model i rewizję sprzętową u producenta lub operatora."
+        },
+        {
+          "question": "Dlaczego potrzebuję dwóch różnych haseł?",
+          "answer": "Hasło Wi-Fi pozwala korzystać z sieci, a hasło administratora zmieniać konfigurację. Rozdzielenie haseł umożliwia przekazanie odpowiedniego dostępu do internetu bez udostępniania kontroli nad routerem."
+        },
+        {
+          "question": "Co zrobić, jeśli po włączeniu WPA3 drukarka nie działa?",
+          "answer": "Sprawdź oficjalne informacje o zgodności i aktualizacjach drukarki. WPA2 Personal jest alternatywą wskazaną przez FTC. Zapisz wyjątek, rozważ osobną konfigurację sieci, jeśli sprzęt ją obsługuje, i sprawdź drukowanie przed zakończeniem zmian."
+        },
+        {
+          "question": "Czy restart wystarczy po podejrzanej aktywności?",
+          "answer": "Restart nie jest dowodem odzyskania bezpieczeństwa. FBI zaleca również aktualizacje i zmianę haseł. Jeśli nieoczekiwane zmiany powracają, skontaktuj się z producentem lub operatorem i sprawdź, czy router nadal otrzymuje wsparcie."
+        },
+        {
+          "question": "Czy do zabezpieczenia Wi-Fi potrzebuję klucza sprzętowego?",
+          "answer": "Klucz sprzętowy jest opcjonalnym zabezpieczeniem zgodnych kont powiązanych. Nie zastępuje aktualizacji routera, szyfrowania Wi-Fi ani hasła administratora. Przed użyciem sprawdź obsługę przez konto i możliwości odzyskiwania."
+        }
+      ],
+      "sources": [
+        {
+          "id": "ftc-wifi",
+          "title": "How To Secure Your Home Wi-Fi Network",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-secure-your-home-wi-fi-network",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "fbi-router",
+          "title": "Cyber Criminal Proxy Services Exploiting End of Life Routers",
+          "publisher": "FBI Internet Crime Complaint Center",
+          "url": "https://www.ic3.gov/PSA/2025/PSA250507",
+          "publishedAt": "2025-05-07",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "nist-wlan",
+          "title": "SP 800-153: Guidelines for Securing Wireless Local Area Networks (WLANs)",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://csrc.nist.gov/pubs/sp/800/153/final",
+          "publishedAt": "2012-02-21",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "nsa-home",
+          "title": "NSA Releases Best Practices For Securing Your Home Network",
+          "publisher": "National Security Agency",
+          "url": "https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/3304674/nsa-releases-best-practices-for-securing-your-home-network/",
+          "publishedAt": "2023-02-22",
+          "accessedAt": "2026-10-05"
+        },
+        {
+          "id": "fido-passkeys",
+          "title": "Passkeys",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/passkeys/",
+          "accessedAt": "2026-10-05"
+        }
+      ]
+    }
+  }
+}
