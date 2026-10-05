@@ -37,4 +37,4 @@ fi
 git checkout main
 git pull --ff-only origin main
 npm ci
-npm run article:publish
+SCHEDULED_PUBLISHER=true npm run article:publish

@@ -20,12 +20,42 @@
   <array>
     <dict>
       <key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>1</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>2</integer>
       <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>13</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>2</integer>
+      <key>Hour</key><integer>17</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>1</integer>
       <key>Minute</key><integer>15</integer>
     </dict>
     <dict>
       <key>Weekday</key><integer>5</integer>
       <key>Hour</key><integer>9</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>13</integer>
+      <key>Minute</key><integer>15</integer>
+    </dict>
+    <dict>
+      <key>Weekday</key><integer>5</integer>
+      <key>Hour</key><integer>17</integer>
       <key>Minute</key><integer>15</integer>
     </dict>
   </array>

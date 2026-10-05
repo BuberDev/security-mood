@@ -18,6 +18,18 @@ const projectRoot = path.resolve(import.meta.dirname, "../..");
 const contentDirectory = path.join(projectRoot, "content", "articles");
 const planPath = path.join(projectRoot, "content", "editorial-plan.json");
 
+function alreadyPublishedOn(date: string) {
+  return fs.readdirSync(contentDirectory).some((file) => {
+    if (!file.endsWith(".json")) return false;
+    try {
+      const article = JSON.parse(fs.readFileSync(path.join(contentDirectory, file), "utf8")) as { publishedAt?: string };
+      return article.publishedAt === date;
+    } catch {
+      return false;
+    }
+  });
+}
+
 function run(command: string, args: string[], options: { stdio?: "inherit" | "pipe" } = {}) {
   return execFileSync(command, args, { cwd: projectRoot, encoding: "utf8", stdio: options.stdio ?? "pipe" });
 }
@@ -215,6 +227,11 @@ function runCodex(args: string[]) {
 
 async function main() {
   assertCleanMainBranch();
+  const today = new Date().toISOString().slice(0, 10);
+  if (process.env.SCHEDULED_PUBLISHER === "true" && alreadyPublishedOn(today)) {
+    console.log(`An article for ${today} is already published; skipping the duplicate scheduled run.`);
+    return;
+  }
   const topic = selectTopic();
   const schemaObject = toStructuredOutputSchema(
     z.toJSONSchema(editorialArticleSchema)

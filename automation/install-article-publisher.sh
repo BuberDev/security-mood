@@ -33,5 +33,5 @@ launchctl bootout "gui/$(id -u)/com.securitymood.article-publisher" 2>/dev/null 
 launchctl bootstrap "gui/$(id -u)" "$plist_path"
 
 print "Installed com.securitymood.article-publisher."
-print "Schedule: Monday and Thursday at 09:15 local time."
+print "Schedule: Monday and Thursday at 01:15, 09:15, 13:15 and 17:15 local time, with same-day deduplication."
 print "Logs: $log_path and $error_log_path"
