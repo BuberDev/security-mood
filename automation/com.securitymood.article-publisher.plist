@@ -30,7 +30,7 @@
     </dict>
   </array>
   <key>RunAtLoad</key>
-  <false/>
+  <true/>
   <key>StandardOutPath</key>
   <string>__LOG_PATH__</string>
   <key>StandardErrorPath</key>
