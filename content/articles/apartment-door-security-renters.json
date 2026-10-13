@@ -1,0 +1,607 @@
+{
+  "version": 1,
+  "topicKey": "apartment-door-security-renters",
+  "slug": "apartment-door-security-renters",
+  "status": "published",
+  "categoryId": "home-security",
+  "publishedAt": "2026-10-13",
+  "updatedAt": "2026-10-13",
+  "heroImage": "/images/blog/editorial/home-security-audit-hero.webp",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance; no certification, product testing, or laboratory testing is claimed.",
+      "pl": "Poradnik redakcyjny zweryfikowany na podstawie źródeł; nie deklarujemy certyfikacji ani testów produktów czy badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Browse home security guides",
+        "pl": "Zobacz poradniki o bezpieczeństwie domu"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Save this guide to your favorites",
+        "pl": "Zapisz poradnik w ulubionych"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood safety tools",
+        "pl": "Poznaj narzędzia bezpieczeństwa Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "door-wedge-alarm",
+    "door-security-bar",
+    "smart-door-lock"
+  ],
+  "locales": {
+    "en": {
+      "title": "Apartment Door Security for Renters: Reversible Upgrades That Respect Your Lease",
+      "excerpt": "A practical, renter-friendly guide to checking an apartment entry door, choosing removable security measures, discussing hardware with a landlord, and protecting smart-lock accounts without compromising emergency exit.",
+      "heroAlt": "Apartment entry door with a renter inspecting its lock and frame",
+      "quickAnswer": "Start by checking that the door closes and locks fully, the strike plate and frame are sound, and you can see who is outside before opening. Ask the landlord in writing before changing installed hardware. Use removable measures only when they do not block emergency exit, violate building fire rules, or interfere with other residents. For connected locks, secure the account, updates, and recovery access.",
+      "keyTakeaways": [
+        "Inspect the whole door assembly: door, frame, hinges, strike, lock, and viewer; a new gadget cannot compensate for a damaged frame.",
+        "Get written landlord approval before drilling, replacing a lock, changing cylinders, or altering a fire door or shared building system.",
+        "Choose removable layers that do not obstruct required egress, self-closing doors, smoke seals, or the common corridor.",
+        "If using a smart lock, confirm who controls the administrator account, how access is revoked, what happens during battery or network failure, and how to exit manually.",
+        "Record the condition at move-in and report faults promptly; keep a reliable, lawful route to regain entry."
+      ],
+      "methodology": "We reviewed public guidance from NIST, the U.S. Federal Trade Commission, Leeds City Council, and Greater Manchester Police, accessed 2026-10-13. The cited documents address consumer IoT security, connected-device account and update practices, fire and escape-route considerations in a UK local-authority context, and a police home-security checklist. They do not establish one universal lock specification or settle local tenancy law. Recommendations below distinguish those sourced principles from practical editorial advice. We did not test products, inspect any property, or assess a particular lease. Verify building rules, local fire requirements, and landlord obligations in your jurisdiction before modifying installed hardware.",
+      "sections": [
+        {
+          "id": "inspect-entry",
+          "heading": "Inspect the complete entry door before buying anything",
+          "answer": "A useful renter door check starts with the installed door assembly, not a shopping list. Confirm that the door closes into the frame without lifting, rubbing, or being held shut; the existing lock engages reliably; the frame and strike area show no looseness or visible damage; and hinges, glazing, and the letter slot are intact. Photograph defects and report them to the landlord before attempting a repair.",
+          "paragraphs": [
+            "Check the door from inside and outside where permitted. Try the normal handle and lock with the door open, then closed: operation should feel consistent, and the latch or bolt should engage without forcing the door. Do not dismantle the lock or test it with improvised tools. Note gaps, a loose handle, a misaligned strike, cracked wood, damaged seals, or a door that will not latch. These are maintenance issues to document and report, not a cue to modify the building door yourself.",
+            "Look at the frame around the lock and hinges, not only the cylinder. A replacement cylinder, alarm, or wedge does not repair a loose frame or badly fitting door. Greater Manchester Police’s checklist prompts residents to consider the door’s locking points, a viewer, a chain or restrictor, and letterbox protection. Treat these as inspection prompts rather than a guarantee of resistance or a universal standard: building design and local requirements differ.",
+            "At move-in, photograph the door, frame, lock, keys or fobs supplied, and any existing marks. Send a dated maintenance request if anything is unreliable. Ask the property manager who to contact for an urgent lockout, whether the building has a master-key or managed-entry system, and how lost keys or fobs are handled. Keep the response with your lease records."
+          ],
+          "bullets": [
+            "Does the door close and latch without lifting, slamming, or being pushed hard?",
+            "Does the existing lock work consistently with the door both open and closed?",
+            "Are the frame, strike plate area, hinges, and any glass or letter slot visibly sound?",
+            "Have you photographed existing defects and reported them in writing?"
+          ],
+          "table": {
+            "headers": [
+              "Observation",
+              "Renter action",
+              "Avoid"
+            ],
+            "rows": [
+              [
+                "Door drags, fails to latch, or lock binds",
+                "Document and report; ask for repair",
+                "Planing, drilling, or adjusting a fire door yourself"
+              ],
+              [
+                "Loose frame, strike, handle, or hinge",
+                "Request landlord or qualified maintenance",
+                "Assuming an add-on alarm fixes the underlying defect"
+              ],
+              [
+                "Unknown keys, fobs, or access history",
+                "Ask the manager about rekeying and access policy",
+                "Changing a shared or master-keyed cylinder without approval"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-door-inspection.webp",
+            "alt": "A renter checks the apartment door frame, lock, and strike area for visible damage",
+            "caption": "Check the door, frame, and locking points together, then record defects for the landlord."
+          },
+          "sourceIds": [
+            "gm-police",
+            "leeds-fire"
+          ]
+        },
+        {
+          "id": "permission-and-reversible",
+          "heading": "Choose reversible upgrades and get approval for fixed changes",
+          "answer": "For renters, the safest starting point is a security layer that installs without permanent alteration and can be removed without damaging the door. Before changing a cylinder, adding screws, fitting a chain, or attaching anything to a fire-rated entrance, obtain written permission from the landlord or building manager. Check that any device leaves the door usable for emergency escape and does not obstruct a corridor or shared door.",
+          "paragraphs": [
+            "A removable door wedge alarm can alert occupants when a door moves, but it is not a substitute for a sound lock, a repaired frame, or a working smoke alarm. A portable door security bar may resist opening in some door configurations, but fit, floor surface, door swing, and the device’s instructions matter. Treat either as an optional layer, not a rated barrier. Do not use one if it can jam the exit, prevent someone from leaving quickly, or make the door unsafe for another occupant.",
+            "Fixed changes need more care. Replacing a lock, changing a cylinder, fitting a viewer or chain, or adding screws can affect the landlord’s property, fire-door performance, warranties, and emergency access. Ask in writing what change is allowed, who will do the work, whether the original hardware must be retained, and how keys or codes will be returned at move-out. Do not assume that a product marketed as renter-friendly is automatically allowed by the lease or building policy.",
+            "Fire guidance is local and situation-specific. Leeds City Council’s residential guidance says certain flat and shared-building exit doors must open from the inside without a key and describes fire doors and self-closing devices. That is UK local-authority guidance, not a rule for every country or building. The practical lesson is to preserve free, dependable egress and never defeat a closer, smoke seal, fire door, or communal access-control system. If uncertain, ask the responsible manager or fire-safety contact before installation."
+          ],
+          "bullets": [
+            "Ask permission before drilling, replacing, rekeying, or attaching permanent hardware.",
+            "Prefer removable products only where their placement and use preserve quick exit.",
+            "Keep original parts and written approval; agree in advance who restores the door at move-out.",
+            "Never disable a self-closing device or alter a fire door without qualified authorization."
+          ],
+          "table": {
+            "headers": [
+              "Upgrade type",
+              "Why a renter might consider it",
+              "Check first"
+            ],
+            "rows": [
+              [
+                "Door wedge alarm",
+                "Portable alert at the entry",
+                "Does not block exit; works on the floor and door type; alarm can be silenced safely"
+              ],
+              [
+                "Portable door bar",
+                "Removable resistance layer for compatible doors",
+                "Fit, floor contact, door swing, instructions, and fast release from inside"
+              ],
+              [
+                "Cylinder or lock replacement",
+                "Could address lost keys or a maintenance concern",
+                "Written approval, shared-key system, emergency egress, key handover, qualified fitting"
+              ],
+              [
+                "Viewer, chain, or restrictor",
+                "Lets a resident screen a caller while keeping the door closed",
+                "Permission, material and fire-door compatibility, and local rules"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/renter_security_upgrades.png",
+            "alt": "Portable renter security devices arranged beside an apartment door",
+            "caption": "Removable devices are optional layers; check fit, permission, and the exit path before use."
+          },
+          "sourceIds": [
+            "gm-police",
+            "leeds-fire"
+          ],
+          "productId": "door-wedge-alarm"
+        },
+        {
+          "id": "screen-visitors",
+          "heading": "Screen visitors without opening the door",
+          "answer": "A door viewer, an existing glazed panel, or an approved camera can help a resident identify a caller while the door stays locked. Use the method already installed when possible, and do not open the door just because someone claims to represent building staff, a delivery company, or an emergency service. Verify unexpected visits through a known building contact or official number.",
+          "paragraphs": [
+            "Greater Manchester Police’s public checklist includes a door viewer or glass pane and a door chain as features to consider. For a renter, that supports a simple routine: look first, keep the lock engaged, and speak through the closed door. If you do not recognize the caller, ask for a name and purpose, then independently contact the landlord, concierge, or organization using a number you already trust. A caller’s uniform or urgency is not proof of identity.",
+            "If the apartment has a viewer, check that it is not obscured and that you can use it comfortably. Do not install a peephole, chain, or door camera by drilling without permission. A camera may capture neighbors, visitors, or shared areas; before using one, review building policy and applicable privacy rules. Where an existing doorbell or building intercom is available, ask management how it is intended to be used and whether access logs or recordings are retained.",
+            "A chain or door restrictor is useful only if it is approved, correctly fitted, and compatible with the door. Do not treat it as a lock while leaving the main lock disengaged. Do not rely on a chain to stop forced entry. If a caller pressures you, says they need immediate access, or asks you to hand over keys or a code, keep the door closed and verify through an independent channel. For an immediate threat, move to a safer place and contact local emergency services."
+          ],
+          "bullets": [
+            "Keep the main lock engaged while identifying a caller.",
+            "Verify unexpected maintenance visits using a known landlord or building contact.",
+            "Do not share keys, fobs, or access codes with an unverified caller.",
+            "Check building and privacy rules before adding a camera that views shared space."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-window-camera.webp",
+            "alt": "An apartment resident checks a visitor using a camera positioned near the entry",
+            "caption": "Use a viewer or approved camera to check the caller while the door remains locked."
+          },
+          "sourceIds": [
+            "gm-police"
+          ]
+        },
+        {
+          "id": "smart-locks",
+          "heading": "If you use a smart lock, secure the account and plan for failure",
+          "answer": "A smart lock is a connected access device, so evaluate both physical fit and account security. Before adopting one, confirm landlord approval, who controls administrator access, how old codes are removed, whether updates and support continue, and how you can unlock and exit if a phone, battery, Wi-Fi, or cloud service fails. Keep an approved mechanical or other documented recovery route.",
+          "paragraphs": [
+            "NIST’s consumer IoT profile describes cybersecurity capabilities for products used at home or personally. NIST’s practical smart-home guidance recommends researching a device, enabling stronger authentication where available, avoiding password reuse, disabling unused features, reviewing privacy settings, applying updates, and considering a separate network for connected devices. The FTC similarly advises changing default credentials, using two-factor authentication when offered, updating devices and apps, and disabling remote management that is not needed. Apply these steps to the lock’s app and account, while remembering that the exact controls depend on the manufacturer and model.",
+            "Before purchase or installation, ask whether the lock replaces existing hardware or fits over it, whether a key remains usable, what happens when batteries run low, how to add and remove users, what data the app collects, and how long software support is expected. Check the manufacturer’s setup and recovery documentation rather than relying on a sales listing. If the owner or building manager retains administrator access, ask exactly what that access permits and how your own access will be removed at move-out.",
+            "Set a unique account password and turn on multi-factor authentication if available. Use an individual code for each household member if the product supports it, remove codes for former occupants, and avoid placing a code where it can be seen by visitors. Keep the app and device updated; turn off remote functions you do not use. Store the recovery instructions somewhere accessible if your phone is lost, and do not make a smart lock the only way to get in or out unless the responsible building authority confirms that arrangement is safe and lawful."
+          ],
+          "bullets": [
+            "Confirm written permission and compatibility with the existing door and building access system.",
+            "Change default credentials, use a unique password, and enable multi-factor authentication when available.",
+            "Check update support, privacy settings, battery warnings, local unlock options, and user-removal steps.",
+            "Maintain a recovery plan that does not depend on a single phone, network, or cloud service."
+          ],
+          "table": {
+            "headers": [
+              "Question",
+              "What to verify",
+              "Reason"
+            ],
+            "rows": [
+              [
+                "Who can administer it?",
+                "Owner, tenant, manager, and installer access; how accounts are removed",
+                "Avoid uncertainty over who can change access"
+              ],
+              [
+                "What works offline?",
+                "Key, keypad, inside thumb turn, battery backup, or documented recovery path",
+                "Plan for phone, network, or service outage"
+              ],
+              [
+                "How is it maintained?",
+                "Update process, support period, battery warnings, and privacy settings",
+                "Connected devices need ongoing attention"
+              ],
+              [
+                "What happens at move-out?",
+                "Code deletion, account transfer or reset, and return of original hardware",
+                "Close out access cleanly"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "nist-iot",
+            "nist-smart-home",
+            "ftc-iot"
+          ],
+          "productId": "smart-door-lock"
+        },
+        {
+          "id": "response-and-moveout",
+          "heading": "Keep access reliable, document changes, and close out safely",
+          "answer": "Good door security includes a practical recovery plan. Keep an authorized spare key or fob as the lease and building policy allow, know the approved lockout contact, and report a lost key, fob, or suspected copied code promptly. At move-out, return keys, remove your app access and personal codes, and confirm who resets any installed device or restores the original hardware.",
+          "paragraphs": [
+            "Make a short household plan. Each resident should know how the door unlocks from inside, where the approved spare is held, who to call after hours, and what to do if the smart lock battery or app fails. Do not hide a key in a predictable shared area or give a building credential to an unverified person. If you lose a key or suspect someone has copied it, contact the landlord or building manager promptly and ask whether the cylinder or credential should be changed under the building’s process.",
+            "Keep copies of written approvals, maintenance requests, receipts, and before-and-after photographs. If the landlord arranges a repair or lock change, ask what keys or codes will remain active and who will receive them. If you are uncomfortable about a person who has legitimate access, do not alter the lock secretly; raise the issue with the responsible manager and use appropriate local tenant, housing, or emergency resources.",
+            "At move-out, remove your user profile, revoke guest codes, and transfer or factory-reset a connected device only as the owner or manufacturer instructs. Do not leave an account tied to your email or phone. Return keys and fobs using a documented handover. If the lease requires restoring the original hardware, arrange this with the landlord rather than leaving an unapproved modification. These steps reduce access confusion for both the departing renter and the next resident."
+          ],
+          "bullets": [
+            "Save the building’s authorized lockout and maintenance contact details.",
+            "Report lost keys, fobs, codes, or malfunctioning hardware quickly.",
+            "At move-out, revoke your access, return credentials, and document the handover.",
+            "If immediate danger exists, leave by a safe route and call local emergency services."
+          ],
+          "sourceIds": [
+            "ftc-iot",
+            "nist-smart-home"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Can I change the lock in a rented apartment?",
+          "answer": "That depends on your lease, local law, and any building master-key or fire-safety system. Ask the landlord or manager in writing before changing a cylinder or lock, and agree who holds keys and who restores the original hardware."
+        },
+        {
+          "question": "Are door wedges or security bars suitable for renters?",
+          "answer": "They can be removable layers for compatible doors, but they are not substitutes for a sound installed lock or a repair. Follow the product instructions and do not use any device that delays emergency exit or conflicts with building rules."
+        },
+        {
+          "question": "Should I install a door camera?",
+          "answer": "Check permission, building policy, and local privacy rules first, especially if the camera records shared corridors or neighbors. An existing viewer or intercom may allow caller screening without adding a camera."
+        },
+        {
+          "question": "What should I do if my apartment smart lock loses power or internet?",
+          "answer": "Follow the manufacturer’s documented recovery method and your building’s lockout procedure. Before relying on a smart lock, verify whether it supports a key or another local method and keep emergency contact details available."
+        },
+        {
+          "question": "Does a chain make the apartment door secure?",
+          "answer": "A chain can let you speak with a caller while the door remains partly restricted, but it is not a replacement for the main lock and is not a guarantee against forced entry. Fixed chains also require landlord approval and must not interfere with the door’s safety function."
+        }
+      ],
+      "sources": [
+        {
+          "id": "nist-iot",
+          "title": "Profile of the IoT Core Baseline for Consumer IoT Products",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://www.nist.gov/publications/profile-iot-core-baseline-consumer-iot-products",
+          "publishedAt": "2022-09-20",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "nist-smart-home",
+          "title": "7 Tips to Keep Your Smart Home Safer and More Private, From a NIST Cybersecurity Researcher",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://www.nist.gov/blogs/taking-measure/7-tips-keep-your-smart-home-safer-and-more-private-nist-cybersecurity",
+          "publishedAt": "2025-04-02",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "ftc-iot",
+          "title": "Securing Your Internet-Connected Devices at Home",
+          "publisher": "U.S. Federal Trade Commission, Consumer Advice",
+          "url": "https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home",
+          "publishedAt": "2022-08-01",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "leeds-fire",
+          "title": "Fire safety principles for residential accommodation",
+          "publisher": "Leeds City Council",
+          "url": "https://www.leeds.gov.uk/housing/information-for-landlords/fire-safety-principles",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "gm-police",
+          "title": "Burglary Prevention Pack: Home Security Checklist",
+          "publisher": "Greater Manchester Police",
+          "url": "https://www.gmp.police.uk/SysSiteAssets/media/images/greater-manchester/campaigns/local-advice/dfs-burglary-information-pack.pdf",
+          "publishedAt": "2024-06-01",
+          "accessedAt": "2026-10-13"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Bezpieczeństwo drzwi w wynajmowanym mieszkaniu: ulepszenia bez trwałych przeróbek",
+      "excerpt": "Praktyczny poradnik dla najemców: jak sprawdzić drzwi wejściowe, wybrać zdejmowane zabezpieczenia, uzgodnić zmiany z właścicielem i chronić konto inteligentnego zamka bez utrudniania ewakuacji.",
+      "heroAlt": "Drzwi wejściowe do mieszkania i najemca sprawdzający zamek oraz ościeżnicę",
+      "quickAnswer": "Najpierw sprawdź, czy drzwi domykają się i zamykają bez problemu, a zamek, ościeżnica i zaczep są w dobrym stanie. Przed zmianą zamontowanych elementów uzyskaj pisemną zgodę właściciela. Używaj zdejmowanych zabezpieczeń tylko wtedy, gdy nie blokują wyjścia awaryjnego ani nie naruszają zasad przeciwpożarowych budynku. W inteligentnym zamku zabezpiecz konto, aktualizacje i sposób odzyskania dostępu.",
+      "keyTakeaways": [
+        "Sprawdź cały zestaw drzwiowy: skrzydło, ościeżnicę, zawiasy, zaczep, zamek i wizjer; nowy gadżet nie naprawi uszkodzonej ościeżnicy.",
+        "Przed wierceniem, wymianą zamka, zmianą wkładki lub modyfikacją drzwi przeciwpożarowych albo wspólnego systemu uzyskaj pisemną zgodę właściciela.",
+        "Wybieraj zdejmowane rozwiązania, które nie utrudniają wymaganej ewakuacji, działania samozamykacza, uszczelnień dymowych ani przejścia na klatce.",
+        "Przy inteligentnym zamku ustal, kto zarządza kontem, jak odebrać dostęp poprzednim użytkownikom, jak działają aktualizacje i co zrobić przy awarii baterii lub sieci.",
+        "Udokumentuj stan drzwi przy wprowadzeniu się i szybko zgłaszaj usterki; zachowaj zgodny z zasadami sposób odzyskania dostępu."
+      ],
+      "methodology": "Przejrzeliśmy publiczne materiały NIST, amerykańskiej Federalnej Komisji Handlu (FTC), Leeds City Council oraz Greater Manchester Police; dostęp 2026-10-13. Źródła dotyczą cyberbezpieczeństwa konsumenckich urządzeń IoT, ochrony kont i aktualizacji urządzeń, lokalnych brytyjskich wytycznych przeciwpożarowych i ewakuacyjnych oraz policyjnej listy kontrolnej bezpieczeństwa domu. Nie określają jednego uniwersalnego standardu zamka ani nie rozstrzygają lokalnego prawa najmu. Poniższe zalecenia odróżniają te zasady od praktycznych wskazówek redakcyjnych. Nie testowaliśmy produktów, nie oglądaliśmy nieruchomości ani konkretnej umowy najmu. Przed zmianą zamontowanych elementów sprawdź zasady budynku, lokalne wymogi przeciwpożarowe i obowiązki stron umowy.",
+      "sections": [
+        {
+          "id": "inspect-entry",
+          "heading": "Zacznij od sprawdzenia całych drzwi wejściowych",
+          "answer": "Przegląd drzwi najemcy warto zacząć od zamontowanego zestawu, a nie od listy zakupów. Sprawdź, czy drzwi wchodzą w ościeżnicę bez podnoszenia, ocierania i przytrzymywania, zamek działa pewnie, okolica zaczepu i ościeżnica nie są widocznie uszkodzone, a zawiasy, przeszklenie i wrzutnia na listy są całe. Udokumentuj usterki i zgłoś je właścicielowi, zanim podejmiesz próbę naprawy.",
+          "paragraphs": [
+            "Obejrzyj drzwi od wewnątrz i z zewnątrz, o ile masz do tego dostęp. Sprawdź zwykłą klamkę i zamek przy otwartym, a następnie zamkniętym skrzydle: powinny działać podobnie, a rygiel powinien trafiać w zaczep bez użycia siły. Nie rozbieraj zamka ani nie sprawdzaj go improwizowanymi narzędziami. Zwróć uwagę na luzy, oporną klamkę, źle ustawiony zaczep, pęknięte drewno, uszkodzone uszczelki lub drzwi, które nie łapią. To kwestie do zgłoszenia w ramach konserwacji, a nie powód do samodzielnej ingerencji w drzwi budynku.",
+            "Sprawdź ościeżnicę przy zamku i zawiasach, a nie tylko samą wkładkę. Nowa wkładka, alarm lub klin nie naprawi luźnej ościeżnicy ani źle dopasowanych drzwi. Lista kontrolna Greater Manchester Police zachęca do oceny punktów ryglowania, wizjera, łańcucha lub ogranicznika oraz zabezpieczenia wrzutni. Potraktuj to jako wskazówki do przeglądu, a nie gwarancję odporności czy uniwersalny standard: konstrukcja budynku i lokalne wymagania są różne.",
+            "Przy wprowadzeniu się zrób zdjęcia drzwi, ościeżnicy, zamka, przekazanych kluczy lub breloków oraz istniejących śladów. Jeśli coś działa niepewnie, wyślij właścicielowi datowane zgłoszenie. Zachowaj odpowiedź razem z dokumentami najmu. Zapytaj zarządcę, z kim kontaktować się w razie awaryjnego zatrzaśnięcia, czy budynek korzysta z systemu klucza centralnego lub kontroli dostępu oraz jak postępuje się po zgubieniu klucza albo breloka."
+          ],
+          "bullets": [
+            "Czy drzwi zamykają się bez podnoszenia, trzaskania i mocnego dociskania?",
+            "Czy zamek działa pewnie przy otwartych i zamkniętych drzwiach?",
+            "Czy ościeżnica, zaczep, zawiasy, przeszklenie i wrzutnia są w widocznie dobrym stanie?",
+            "Czy udokumentowano istniejące usterki i zgłoszono je na piśmie?"
+          ],
+          "table": {
+            "headers": [
+              "Zaobserwowany problem",
+              "Działanie najemcy",
+              "Czego unikać"
+            ],
+            "rows": [
+              [
+                "Drzwi ocierają, nie łapią lub zamek się zacina",
+                "Udokumentuj i zgłoś; poproś o naprawę",
+                "Samodzielne podcinanie lub wiercenie w drzwiach przeciwpożarowych"
+              ],
+              [
+                "Luźna ościeżnica, zaczep, klamka lub zawias",
+                "Poproś o naprawę właściciela lub serwis",
+                "Zakładania, że alarm nakładany naprawi usterkę konstrukcji"
+              ],
+              [
+                "Nieznane klucze, breloki lub historia dostępu",
+                "Zapytaj zarządcę o wymianę i zasady dostępu",
+                "Zmiany wkładki centralnego systemu bez zgody"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-door-inspection.webp",
+            "alt": "Najemca sprawdza ościeżnicę, zamek i okolice zaczepu drzwi mieszkania pod kątem widocznych uszkodzeń",
+            "caption": "Oceniaj skrzydło, ościeżnicę i punkty ryglowania razem, a usterki zgłaszaj właścicielowi."
+          },
+          "sourceIds": [
+            "gm-police",
+            "leeds-fire"
+          ]
+        },
+        {
+          "id": "permission-and-reversible",
+          "heading": "Wybierz zdejmowane zabezpieczenia i uzyskaj zgodę na stałe zmiany",
+          "answer": "Dla najemcy najbezpieczniejszym punktem wyjścia jest zabezpieczenie, które można zamontować bez trwałej ingerencji i zdjąć bez uszkodzenia drzwi. Zanim wymienisz wkładkę, dodasz wkręty, zamontujesz łańcuch lub cokolwiek przymocujesz do drzwi przeciwpożarowych, poproś właściciela albo zarządcę budynku o pisemną zgodę. Upewnij się, że urządzenie nie utrudni ewakuacji i nie zablokuje wspólnego przejścia ani drzwi.",
+          "paragraphs": [
+            "Zdejmowany alarm-kлин do drzwi może ostrzegać mieszkańców, gdy drzwi się poruszą, ale nie zastępuje sprawnego zamka, naprawionej ościeżnicy ani czujnika dymu. Przenośna blokada drzwi może utrudniać ich otwarcie w niektórych konfiguracjach, ale znaczenie mają dopasowanie, powierzchnia podłogi, kierunek otwierania i instrukcja producenta. Traktuj te rozwiązania jako dodatkową warstwę, a nie certyfikowaną barierę. Nie używaj ich, jeśli mogą zaklinować wyjście, opóźnić opuszczenie mieszkania lub zagrozić innemu mieszkańcowi.",
+            "Stałe zmiany wymagają większej ostrożności. Wymiana zamka, wkładki, montaż wizjera, łańcucha czy wkrętów mogą wpłynąć na mienie właściciela, parametry drzwi przeciwpożarowych, gwarancje i dostęp awaryjny. Zapytaj na piśmie, jaka zmiana jest dozwolona, kto wykona montaż, czy trzeba zachować oryginalne części i jak przekazać klucze lub kody przy wyprowadzce. Nie zakładaj, że produkt reklamowany jako odpowiedni dla najemców jest automatycznie dozwolony przez umowę lub regulamin budynku.",
+            "Wytyczne przeciwpożarowe zależą od miejsca i konkretnego budynku. Leeds City Council podaje, że określone drzwi wyjściowe w budynkach mieszkalnych i współdzielonych powinny otwierać się od środka bez klucza, a także opisuje drzwi przeciwpożarowe i samozamykacze. To lokalne wytyczne z Wielkiej Brytanii, a nie zasada obowiązująca w każdym kraju i budynku. Praktyczny wniosek: zachowaj swobodne, niezawodne wyjście i nie blokuj samozamykacza, uszczelnień dymowych, drzwi przeciwpożarowych ani wspólnego systemu dostępu. W razie wątpliwości zapytaj zarządcę lub osobę odpowiedzialną za bezpieczeństwo pożarowe."
+          ],
+          "bullets": [
+            "Przed wierceniem, wymianą lub trwałym mocowaniem uzyskaj pisemną zgodę.",
+            "Używaj zdejmowanych rozwiązań tylko wtedy, gdy pozwalają szybko wyjść.",
+            "Zachowaj oryginalne elementy i zgodę; ustal wcześniej, kto przywróci stan drzwi przy wyprowadzce.",
+            "Nie wyłączaj samozamykacza ani nie zmieniaj drzwi przeciwpożarowych bez odpowiedniego upoważnienia."
+          ],
+          "table": {
+            "headers": [
+              "Rodzaj zabezpieczenia",
+              "Dlaczego najemca może je rozważyć",
+              "Co sprawdzić"
+            ],
+            "rows": [
+              [
+                "Alarm klinowy do drzwi",
+                "Przenośne ostrzeżenie przy wejściu",
+                "Nie blokuje wyjścia; pasuje do drzwi i podłogi; można go bezpiecznie wyłączyć"
+              ],
+              [
+                "Przenośna blokada drzwi",
+                "Zdejmowana dodatkowa przeszkoda w kompatybilnych drzwiach",
+                "Dopasowanie, kontakt z podłogą, kierunek otwierania, instrukcja i szybkie zwolnienie od środka"
+              ],
+              [
+                "Wymiana wkładki lub zamka",
+                "Może pomóc po zgubieniu kluczy lub przy usterce",
+                "Pisemna zgoda, system klucza centralnego, ewakuacja, przekazanie kluczy i fachowy montaż"
+              ],
+              [
+                "Wizjer, łańcuch lub ogranicznik",
+                "Pozwala sprawdzić rozmówcę przy zamkniętych drzwiach",
+                "Zgoda, zgodność z materiałem i drzwiami pożarowymi oraz lokalne przepisy"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/renter_security_upgrades.png",
+            "alt": "Przenośne zabezpieczenia dla najemcy ułożone obok drzwi mieszkania",
+            "caption": "Zdejmowane urządzenia to dodatkowa warstwa; przed użyciem sprawdź dopasowanie, zgodę i drogę wyjścia."
+          },
+          "sourceIds": [
+            "gm-police",
+            "leeds-fire"
+          ],
+          "productId": "door-wedge-alarm"
+        },
+        {
+          "id": "screen-visitors",
+          "heading": "Sprawdzaj gości bez otwierania drzwi",
+          "answer": "Wizjer, zamontowane przeszklenie lub zatwierdzona kamera mogą pomóc rozpoznać rozmówcę, gdy drzwi pozostają zamknięte na zamek. Jeśli to możliwe, korzystaj z istniejących rozwiązań i nie otwieraj drzwi tylko dlatego, że ktoś podaje się za administrację, kuriera lub służby. Nieoczekiwaną wizytę zweryfikuj przez znany kontakt do zarządcy albo oficjalny numer.",
+          "paragraphs": [
+            "Lista kontrolna Greater Manchester Police wymienia wizjer lub szybę oraz łańcuch jako elementy do rozważenia. Dla najemcy oznacza to prostą rutynę: najpierw sprawdź, pozostaw zamek zamknięty i rozmawiaj przez drzwi. Jeśli nie rozpoznajesz osoby, poproś o imię i cel wizyty, a następnie skontaktuj się samodzielnie z właścicielem, portiernią lub instytucją, korzystając z numeru, który już znasz. Mundur ani pośpiech nie potwierdzają tożsamości.",
+            "Jeśli masz wizjer, upewnij się, że nie jest zasłonięty i możesz z niego wygodnie korzystać. Nie montuj wizjera, łańcucha ani kamery przy drzwiach przez wiercenie bez zgody. Kamera może obejmować sąsiadów, gości lub wspólny korytarz; przed jej użyciem sprawdź regulamin budynku i przepisy o prywatności. Gdy dostępny jest dzwonek z kamerą lub domofon, zapytaj zarządcę, jak należy z niego korzystać i czy zapisuje historię wejść lub nagrania.",
+            "Łańcuch lub ogranicznik ma sens tylko wtedy, gdy jest zatwierdzony, prawidłowo zamontowany i pasuje do drzwi. Nie traktuj go jako zamka, gdy główny zamek pozostaje otwarty. Łańcuch nie daje gwarancji ochrony przed siłowym wejściem. Jeśli rozmówca wywiera presję, twierdzi, że musi natychmiast wejść, lub prosi o klucze albo kod, pozostaw drzwi zamknięte i potwierdź jego tożsamość innym kanałem. W razie bezpośredniego zagrożenia przejdź w bezpieczne miejsce i skontaktuj się z lokalnymi służbami ratunkowymi."
+          ],
+          "bullets": [
+            "Pozostaw główny zamek zamknięty podczas sprawdzania rozmówcy.",
+            "Nieoczekiwaną wizytę serwisową potwierdź przez znany kontakt do właściciela lub zarządcy.",
+            "Nie przekazuj kluczy, breloków ani kodów niezweryfikowanej osobie.",
+            "Przed dodaniem kamery obejmującej wspólną przestrzeń sprawdź regulamin i zasady prywatności."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/home-security-audit-window-camera.webp",
+            "alt": "Mieszkaniec sprawdza gościa za pomocą kamery umieszczonej przy wejściu do mieszkania",
+            "caption": "Wizjer lub zatwierdzona kamera pozwalają sprawdzić rozmówcę przy zamkniętych drzwiach."
+          },
+          "sourceIds": [
+            "gm-police"
+          ]
+        },
+        {
+          "id": "smart-locks",
+          "heading": "Przy inteligentnym zamku zabezpiecz konto i zaplanuj awarię",
+          "answer": "Inteligentny zamek to urządzenie połączone z siecią, dlatego trzeba sprawdzić zarówno dopasowanie fizyczne, jak i bezpieczeństwo konta. Przed zakupem lub montażem potwierdź zgodę właściciela, ustal administratora, sposób usuwania starych kodów, dostępność aktualizacji i wsparcia oraz sposób otwarcia i wyjścia przy awarii telefonu, baterii, Wi-Fi lub usługi chmurowej. Zachowaj zatwierdzony klucz mechaniczny lub inny opisany sposób odzyskania dostępu.",
+          "paragraphs": [
+            "Profil konsumenckiego IoT NIST opisuje możliwości cyberbezpieczeństwa potrzebne w urządzeniach domowych i osobistych. Praktyczne porady NIST dotyczące inteligentnego domu zalecają sprawdzenie urządzenia przed zakupem, włączenie silniejszego uwierzytelniania, jeśli jest dostępne, nieużywanie tych samych haseł, wyłączenie zbędnych funkcji, kontrolę ustawień prywatności, instalowanie aktualizacji i rozważenie osobnej sieci dla urządzeń. FTC podobnie radzi zmieniać domyślne dane logowania, korzystać z uwierzytelniania dwuskładnikowego, gdy jest oferowane, aktualizować urządzenia i aplikacje oraz wyłączyć niepotrzebne zdalne zarządzanie. Zastosuj te wskazówki do aplikacji i konta zamka, pamiętając, że dostępne opcje zależą od producenta i modelu.",
+            "Przed zakupem lub montażem zapytaj, czy zamek zastępuje dotychczasowe okucia, czy nakłada się na nie, czy nadal działa klucz, co się dzieje przy niskim poziomie baterii, jak dodaje się i usuwa użytkowników, jakie dane zbiera aplikacja i jak długo producent zapewnia wsparcie. Zamiast polegać na opisie sprzedażowym, sprawdź instrukcję konfiguracji i odzyskiwania dostępu producenta. Jeśli właściciel lub zarządca zachowuje uprawnienia administratora, ustal dokładnie, co może zmieniać i jak Twoje uprawnienia zostaną usunięte przy wyprowadzce.",
+            "Ustaw unikalne hasło do konta i włącz uwierzytelnianie wieloskładnikowe, jeśli jest dostępne. Jeśli produkt na to pozwala, przypisz osobny kod każdemu domownikowi, usuń kody byłych lokatorów i nie zapisuj kodu w miejscu widocznym dla gości. Aktualizuj aplikację i urządzenie; wyłącz zdalne funkcje, z których nie korzystasz. Instrukcję odzyskania dostępu przechowuj w miejscu dostępnym na wypadek zgubienia telefonu. Nie polegaj wyłącznie na inteligentnym zamku jako sposobie wejścia lub wyjścia, chyba że odpowiedzialny zarządca potwierdzi, że takie rozwiązanie jest bezpieczne i zgodne z zasadami."
+          ],
+          "bullets": [
+            "Potwierdź pisemną zgodę oraz zgodność z drzwiami i systemem dostępu w budynku.",
+            "Zmień domyślne dane logowania, użyj unikalnego hasła i włącz MFA, jeśli jest dostępne.",
+            "Sprawdź wsparcie aktualizacji, ustawienia prywatności, ostrzeżenia o baterii i lokalny sposób otwarcia.",
+            "Przygotuj odzyskanie dostępu niezależne od jednego telefonu, sieci lub usługi chmurowej."
+          ],
+          "table": {
+            "headers": [
+              "Pytanie",
+              "Co ustalić",
+              "Dlaczego"
+            ],
+            "rows": [
+              [
+                "Kto zarządza zamkiem?",
+                "Dostęp właściciela, najemcy, zarządcy i instalatora; sposób usuwania kont",
+                "Aby uniknąć niejasności, kto może zmieniać dostęp"
+              ],
+              [
+                "Co działa bez sieci?",
+                "Klucz, klawiatura, pokrętło od środka, zasilanie awaryjne lub inna metoda",
+                "Aby przygotować się na awarię telefonu, sieci lub usługi"
+              ],
+              [
+                "Jak wygląda utrzymanie?",
+                "Aktualizacje, okres wsparcia, ostrzeżenia o baterii i prywatność",
+                "Urządzenia połączone z siecią wymagają bieżącej opieki"
+              ],
+              [
+                "Co dzieje się przy wyprowadzce?",
+                "Usunięcie kodów, przeniesienie lub reset konta i zwrot oryginalnych okuć",
+                "Aby prawidłowo zamknąć dostęp"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "nist-iot",
+            "nist-smart-home",
+            "ftc-iot"
+          ],
+          "productId": "smart-door-lock"
+        },
+        {
+          "id": "response-and-moveout",
+          "heading": "Zaplanuj odzyskanie dostępu, dokumentuj zmiany i zamknij dostęp przy wyprowadzce",
+          "answer": "Dobre zabezpieczenie drzwi obejmuje praktyczny plan odzyskania dostępu. Przechowuj zatwierdzony zapasowy klucz lub brelok zgodnie z umową i regulaminem budynku, zapisz kontakt do pomocy w razie zatrzaśnięcia i szybko zgłaszaj zgubienie klucza, breloka lub podejrzenie ujawnienia kodu. Przy wyprowadzce oddaj klucze, usuń dostęp z aplikacji i własne kody oraz potwierdź, kto resetuje urządzenie albo przywraca oryginalne okucia.",
+          "paragraphs": [
+            "Przygotuj krótki plan dla domowników. Każdy powinien wiedzieć, jak otworzyć drzwi od środka, gdzie znajduje się zatwierdzony zapasowy klucz, do kogo zadzwonić po godzinach i co zrobić, gdy rozładuje się bateria inteligentnego zamka lub aplikacja przestanie działać. Nie chowaj klucza w przewidywalnym wspólnym miejscu i nie przekazuj breloka do budynku niezweryfikowanej osobie. Jeśli zgubisz klucz lub podejrzewasz, że ktoś go skopiował, szybko skontaktuj się z właścicielem albo zarządcą i zapytaj o zmianę wkładki lub uprawnienia zgodnie z procedurą budynku.",
+            "Zachowuj kopie pisemnych zgód, zgłoszeń usterek, rachunków i zdjęcia przed oraz po pracach. Jeśli właściciel organizuje naprawę lub wymianę zamka, ustal, które klucze lub kody pozostaną aktywne i kto je otrzyma. Jeśli niepokoi Cię osoba, która ma legalny dostęp, nie zmieniaj zamka po kryjomu; porusz sprawę z odpowiedzialnym zarządcą i skorzystaj z właściwych lokalnych źródeł pomocy dla najemców lub służb ratunkowych.",
+            "Przy wyprowadzce usuń swój profil użytkownika, unieważnij kody gości i przenieś lub przywróć ustawienia fabryczne urządzenia zgodnie z instrukcją właściciela albo producenta. Nie zostawiaj konta połączonego z własnym adresem e-mail ani numerem telefonu. Oddaj klucze i breloki, dokumentując przekazanie. Jeśli umowa wymaga przywrócenia oryginalnych okuć, uzgodnij to z właścicielem zamiast pozostawiać niezatwierdzoną modyfikację. Te czynności ograniczają niejasności dotyczące dostępu zarówno dla wyprowadzającego się najemcy, jak i kolejnej osoby."
+          ],
+          "bullets": [
+            "Zapisz kontakt do uprawnionej pomocy przy zatrzaśnięciu i konserwacji.",
+            "Szybko zgłaszaj zgubione klucze, breloki, kody lub niesprawne okucia.",
+            "Przy wyprowadzce odbierz sobie dostęp, oddaj poświadczenia i udokumentuj przekazanie.",
+            "W bezpośrednim zagrożeniu wyjdź bezpieczną drogą i zadzwoń pod lokalny numer alarmowy."
+          ],
+          "sourceIds": [
+            "ftc-iot",
+            "nist-smart-home"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy mogę wymienić zamek w wynajmowanym mieszkaniu?",
+          "answer": "Zależy to od umowy, lokalnego prawa oraz systemu klucza centralnego lub ochrony przeciwpożarowej w budynku. Przed wymianą wkładki lub zamka poproś właściciela albo zarządcę o pisemną zgodę i ustal, kto będzie mieć klucze oraz kto przywróci oryginalne okucia."
+        },
+        {
+          "question": "Czy klin lub blokada drzwi nadaje się dla najemcy?",
+          "answer": "Może być zdejmowanym dodatkiem do kompatybilnych drzwi, ale nie zastępuje sprawnego zamka ani naprawy. Postępuj zgodnie z instrukcją i nie używaj urządzenia, które utrudnia ewakuację lub narusza zasady budynku."
+        },
+        {
+          "question": "Czy warto montować kamerę przy drzwiach?",
+          "answer": "Najpierw sprawdź zgodę, regulamin budynku i lokalne zasady prywatności, szczególnie jeśli kamera obejmuje korytarz lub sąsiadów. Istniejący wizjer albo domofon może wystarczyć do sprawdzenia rozmówcy bez montażu kamery."
+        },
+        {
+          "question": "Co zrobić, gdy inteligentny zamek straci zasilanie lub internet?",
+          "answer": "Skorzystaj z opisanej przez producenta metody awaryjnej i procedury zarządcy budynku. Zanim zaczniesz polegać na zamku, sprawdź, czy pozostaje klucz lub inny lokalny sposób otwarcia, i zapisz kontakt awaryjny."
+        },
+        {
+          "question": "Czy łańcuch sprawia, że drzwi są bezpieczne?",
+          "answer": "Łańcuch może pozwolić porozmawiać z gościem przy częściowo ograniczonym otwarciu, ale nie zastępuje głównego zamka i nie gwarantuje ochrony przed siłowym wejściem. Wymaga zgody właściciela i nie może zakłócać funkcji bezpieczeństwa drzwi."
+        }
+      ],
+      "sources": [
+        {
+          "id": "nist-iot",
+          "title": "Profile of the IoT Core Baseline for Consumer IoT Products",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://www.nist.gov/publications/profile-iot-core-baseline-consumer-iot-products",
+          "publishedAt": "2022-09-20",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "nist-smart-home",
+          "title": "7 Tips to Keep Your Smart Home Safer and More Private, From a NIST Cybersecurity Researcher",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://www.nist.gov/blogs/taking-measure/7-tips-keep-your-smart-home-safer-and-more-private-nist-cybersecurity",
+          "publishedAt": "2025-04-02",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "ftc-iot",
+          "title": "Securing Your Internet-Connected Devices at Home",
+          "publisher": "U.S. Federal Trade Commission, Consumer Advice",
+          "url": "https://consumer.ftc.gov/articles/securing-your-internet-connected-devices-home",
+          "publishedAt": "2022-08-01",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "leeds-fire",
+          "title": "Fire safety principles for residential accommodation",
+          "publisher": "Leeds City Council",
+          "url": "https://www.leeds.gov.uk/housing/information-for-landlords/fire-safety-principles",
+          "accessedAt": "2026-10-13"
+        },
+        {
+          "id": "gm-police",
+          "title": "Burglary Prevention Pack: Home Security Checklist",
+          "publisher": "Greater Manchester Police",
+          "url": "https://www.gmp.police.uk/SysSiteAssets/media/images/greater-manchester/campaigns/local-advice/dfs-burglary-information-pack.pdf",
+          "publishedAt": "2024-06-01",
+          "accessedAt": "2026-10-13"
+        }
+      ]
+    }
+  }
+}
