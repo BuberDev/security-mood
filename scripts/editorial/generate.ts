@@ -1,10 +1,11 @@
-import { execFileSync, spawn } from "node:child_process";
+import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { z } from "zod";
 
 import { editorialArticleSchema, type EditorialArticle } from "../../lib/editorial-article";
+import { generateArticleJson } from "./providers";
 
 type PlanItem = {
   topicKey: string;
@@ -182,49 +183,6 @@ function normalizeInternalLinkPaths(value: unknown): unknown {
   return article;
 }
 
-function runCodex(args: string[]) {
-  return new Promise<{ stdout: string; stderr: string }>((resolve, reject) => {
-    const child = spawn("codex", args, {
-      cwd: projectRoot,
-      detached: true,
-      stdio: ["ignore", "pipe", "pipe"],
-    });
-    let stdout = "";
-    let stderr = "";
-    let timedOut = false;
-
-    child.stdout.setEncoding("utf8");
-    child.stderr.setEncoding("utf8");
-    child.stdout.on("data", (chunk: string) => { stdout += chunk; });
-    child.stderr.on("data", (chunk: string) => { stderr += chunk; });
-
-    const timeout = setTimeout(() => {
-      timedOut = true;
-      if (child.pid) process.kill(-child.pid, "SIGTERM");
-      setTimeout(() => {
-        if (child.pid) {
-          try { process.kill(-child.pid, "SIGKILL"); } catch { /* process already exited */ }
-        }
-      }, 5_000).unref();
-    }, 15 * 60 * 1000);
-
-    child.on("error", (error) => {
-      clearTimeout(timeout);
-      reject(error);
-    });
-    child.on("close", (code) => {
-      clearTimeout(timeout);
-      if (timedOut) {
-        reject(new Error(`Codex exceeded the 15-minute research limit.\n${stderr}`));
-      } else if (code !== 0) {
-        reject(new Error(stderr || stdout || `Codex exited with ${code}`));
-      } else {
-        resolve({ stdout, stderr });
-      }
-    });
-  });
-}
-
 async function main() {
   assertCleanMainBranch();
   const today = new Date().toISOString().slice(0, 10);
@@ -261,10 +219,15 @@ async function main() {
   args.push(buildPrompt(topic));
 
   console.log(`Researching and drafting: ${topic.titlePl}`);
-  const result = await runCodex(args);
   try {
-    if (!fs.existsSync(outputPath)) throw new Error(`Codex did not create structured output.\n${result.stderr}\n${result.stdout}`);
-    const generatedOutput = JSON.parse(fs.readFileSync(outputPath, "utf8")) as unknown;
+    const generatedOutput = await generateArticleJson({
+      codexArgs: args,
+      cwd: projectRoot,
+      outputPath,
+      prompt: buildPrompt(topic),
+      schema: schemaObject,
+      slot: today,
+    });
     const article = editorialArticleSchema.parse(
       normalizeInternalLinkPaths(removeNullProperties(generatedOutput))
     );

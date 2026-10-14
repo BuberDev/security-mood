@@ -36,5 +36,12 @@ fi
 
 git checkout main
 git pull --ff-only origin main
+publisher_env="$(dirname "$publisher_repo")/.env"
+if [[ -f "$publisher_env" ]]; then
+  set -a
+  source "$publisher_env"
+  set +a
+fi
+export ALLOW_PAID_LLM_FALLBACK=true
 npm ci
 SCHEDULED_PUBLISHER=true npm run article:publish
