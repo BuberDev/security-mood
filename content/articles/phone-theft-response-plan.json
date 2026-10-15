@@ -1,0 +1,629 @@
+{
+  "version": 1,
+  "topicKey": "phone-theft-response-plan",
+  "slug": "phone-theft-response-plan",
+  "status": "published",
+  "categoryId": "personal-safety",
+  "publishedAt": "2026-10-15",
+  "updatedAt": "2026-10-15",
+  "heroImage": "/images/blog/rfid_passport_wallet_guide.png",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public-agency and official platform documentation; no professional certifications or laboratory testing claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie źródeł instytucji publicznych i oficjalnej dokumentacji platform; bez deklarowania certyfikatów zawodowych ani badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore the Security Mood safety guides",
+        "pl": "Przejrzyj poradniki bezpieczeństwa Security Mood"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review your saved safety products",
+        "pl": "Przejrzyj zapisane produkty związane z bezpieczeństwem"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood",
+        "pl": "Poznaj Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "anti-theft-smart-backpack"
+  ],
+  "locales": {
+    "en": {
+      "title": "Before and after phone theft: a practical response plan",
+      "excerpt": "Prepare recovery access before your phone disappears. After theft, protect yourself, lock the device, contact your carrier and bank, secure accounts, and make an informed decision about remote erasure.",
+      "heroAlt": "Travel wallet with cards and a passport on a wooden table, beneath an existing English travel-security headline.",
+      "quickAnswer": "Before theft, enable a strong screen lock, device finding, backups and a recovery method kept separately from your phone. After theft, get somewhere safe, remotely mark the phone as lost, contact your carrier and bank, secure important accounts and report the crime. Consider remote erasure when protecting exposed data outweighs keeping recovery options open.",
+      "keyTakeaways": [
+        "Prepare a way to access important accounts without the missing phone.",
+        "Treat an unlocked phone or an observed passcode as a reason to accelerate account and financial protection.",
+        "Remote locking, suspending mobile service and securing online accounts solve different problems.",
+        "Use location information for a police report; do not confront a suspected thief.",
+        "Understand platform-specific consequences before erasing the device or removing it from an account."
+      ],
+      "methodology": "Reviewed on 2026-10-15 using web search and direct retrieval of primary sources from the FTC, NIST, CERT Polska, Police.uk, Apple and Google. Public-agency material supplies the prevention and incident-response principles; vendor documentation supplies platform-specific procedures and limitations. The sequence, worksheets and decision criteria are editorial synthesis, not a timed or experimentally validated response protocol. No theft statistics, recovery rates or product performance claims are used. Undated sources have null publication dates. Reporting procedures depend on country, while menus depend on device and software version. Visual limitation: the three permitted existing assets were inspected; the PNG is square, both SVGs are portrait, and all contain English text. The supplied paths are retained without alteration, so the requested landscape, language-neutral visual specification cannot be fulfilled with this asset set. Captions identify these images as contextual illustrations.",
+      "sections": [
+        {
+          "id": "prepare-recovery",
+          "heading": "1. Build a recovery route that does not depend on your phone",
+          "answer": "Before theft, make sure you can sign in, find your device and retrieve essential information without using the phone you carry. Enable device finding, maintain backups and keep recovery codes or another supported verification method separately. A recovery plan is useful only if you can access it while the phone is unavailable.",
+          "paragraphs": [
+            "Start with a small recovery worksheet: your Apple or Google account identifier, carrier contact route, bank contact route, device model, serial number and IMEI. Store it somewhere accessible independently, such as a protected home record. Do not put passwords and recovery codes together on a card inside the phone case.",
+            "Google supports backup codes for two-step verification. Treat each code as a secret, keep it outside the missing device and follow the provider's instructions when using or replacing it. Review the equivalent recovery options for your other important services rather than assuming every account works like Google.",
+            "Run a simple rehearsal on a trusted computer: locate the official device-finding service, confirm which account owns the handset and check that you can reach your backup. Stop before issuing a lock or erase command. Record anything that still requires approval from the phone; that dependency needs a separate recovery route.",
+            "Decide what you would need on the first evening without a handset: a contact number, transport information, access to accommodation or essential documents. Our suggested worksheet should contain references to these resources, not a complete unprotected copy of your digital life."
+          ],
+          "bullets": [
+            "Confirm that a recent backup exists and inspect its date and scope.",
+            "Keep recovery secrets separate from the phone and its everyday bag.",
+            "Write down one trusted person's number rather than relying entirely on contacts stored on the handset."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Black-and-gold travel privacy graphic with a shield motif and existing English lettering.",
+            "caption": "Contextual travel illustration: keep a recovery route available outside your everyday phone. The graphic does not show device settings."
+          },
+          "sourceIds": [
+            "ftc-phone",
+            "google-backup-codes",
+            "google-find"
+          ]
+        },
+        {
+          "id": "reduce-exposure",
+          "heading": "2. Reduce theft opportunities and protect the locked screen",
+          "answer": "Use a strong screen lock, a short automatic-lock interval and discreet handling in public. Hide sensitive notification previews, keep software updated and review the theft-protection features supported by your device. These measures reduce opportunities and exposure; they cannot guarantee that a phone will remain safe or that stolen data will be inaccessible.",
+          "paragraphs": [
+            "NIST treats physical possession of a lost or stolen device as a security threat. Its countermeasures include attending to the device and using appropriate remote protection. Translate that into a repeatable habit: put the phone away after checking it, rather than leaving it visible while eating, paying or sorting luggage.",
+            "Police advice highlights snatching near roads and distraction while walking. If you need directions, stop in a suitable place away from the roadside, look around and put the handset away before moving. Avoid making an expensive device the centre of your attention in a crowded transition area.",
+            "CERT Polska recommends regular system and application updates. Check whether your phone still receives updates and review its available protection settings using the manufacturer's current guidance. A feature name in an article is not proof that the feature exists or is enabled on your particular model.",
+            "An anti-theft backpack is an optional organisational aid, not the core of this plan. If considering one, examine pocket placement, closure access and whether you can reach the phone without exposing other belongings. This article has not tested the listed product and makes no claim that it prevents theft."
+          ],
+          "bullets": [
+            "Shield passcode entry from observation and avoid reusing an obvious code.",
+            "Check what messages and account information appear while the screen is locked.",
+            "Choose a consistent storage place and check it before leaving a seat or vehicle."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Black-and-gold everyday travel safety graphic with a shield motif and existing English lettering.",
+            "caption": "Contextual everyday-carry illustration: plan where the phone goes between uses. No bag or accessory guarantees protection."
+          },
+          "sourceIds": [
+            "nist-theft",
+            "police-snatching",
+            "cert-phone",
+            "police-phone"
+          ],
+          "productId": "anti-theft-smart-backpack"
+        },
+        {
+          "id": "immediate-response",
+          "heading": "3. After theft, get safe and issue a remote lock",
+          "answer": "After phone theft, move to safety and use a trusted device to open the official device-finding service. Mark the handset as lost or issue the available remote lock. Preserve useful location information for police, but do not travel to confront a suspected thief. A displayed location is a lead, not a safe recovery arrangement.",
+          "paragraphs": [
+            "Use Apple's Find My service at https://www.icloud.com/find or Google's Find Hub at https://www.google.com/android/find. Type the address yourself or follow the official support documentation. Avoid links delivered by an unexpected message claiming that the phone has been found.",
+            "Apple says Find My must have been enabled before theft to mark the device as lost or erase it remotely. Google lists prerequisites for remote securing and erasure, including power, connectivity and an enabled Find Hub service. If a command cannot execute, continue protecting accounts rather than repeatedly refreshing the map.",
+            "Write down when you noticed the loss, where you last used the handset and whether it was unlocked or its passcode might have been observed. Save screenshots with their displayed times. Separate what you witnessed from what you infer; this makes a later report easier to understand.",
+            "Our practical division of work is simple: if a trusted person is helping, one person can record the incident while you handle account access. Do not disclose account secrets merely to speed things up. On a borrowed device, finish by signing out of your own accounts."
+          ],
+          "bullets": [
+            "Do not chase, negotiate with or confront a suspected thief.",
+            "Check whether the lock command is completed or still awaiting delivery.",
+            "Avoid posting live device locations or personal recovery details publicly."
+          ],
+          "sourceIds": [
+            "apple-stolen",
+            "google-find",
+            "police-snatching",
+            "ftc-information"
+          ]
+        },
+        {
+          "id": "contain-accounts",
+          "heading": "4. Protect mobile service, money and important accounts",
+          "answer": "Contact your carrier to suspend the stolen phone's mobile service and contact financial providers about linked accounts or payment access. From a trusted device, secure email and other important accounts, review recovery details and revoke unwanted sessions where supported. Give these actions particular urgency if the handset was unlocked or someone may know its passcode.",
+          "paragraphs": [
+            "Tell the carrier that the device was stolen and ask what it can suspend, what it needs to issue a replacement SIM or eSIM, and whether IMEI blocking is available. Record the reference number. Service suspension is a different action from remotely locking the handset or changing an account password.",
+            "Contact your bank through an independently verified channel. Explain whether the thief may have had an unlocked device, banking access or payment credentials, and identify any transactions you do not recognise. Ask the bank which mobile access, cards or payment services need restriction; do not assume one action covers everything.",
+            "For account recovery, begin with email and the main platform account because they are important recovery channels. Google's compromised-account guidance includes checking security events, devices and recovery information. For Gmail, also inspect unfamiliar forwarding rules or filters. Continue with other accounts according to the information and access they expose.",
+            "Keep a short action log with the service, time, action requested and confirmation received. Our suggested log helps distinguish a request from a completed restriction. If work information was accessible, notify your organisation promptly and follow its response process rather than improvising changes to managed services."
+          ],
+          "bullets": [
+            "Change exposed or reused passwords and use a different password for each important account.",
+            "Review signed-in devices and terminate unwanted sessions where the service permits.",
+            "Check recovery email addresses, phone numbers and verification methods for unfamiliar changes."
+          ],
+          "sourceIds": [
+            "police-phone",
+            "google-compromised",
+            "ftc-information",
+            "nist-enterprise"
+          ]
+        },
+        {
+          "id": "erase-decision",
+          "heading": "5. Decide whether to erase, using the correct platform rules",
+          "answer": "Consider remote erasure when a stolen phone cannot be recovered and protecting its local data becomes the priority. Read the platform warning before confirming: Android factory reset ends Find Hub availability, while supported Apple devices can remain locatable after erasure. Erasure does not replace account recovery, and a pending command does not establish that data has been deleted.",
+          "paragraphs": [
+            "There is no universal waiting period that fits every theft. Our decision criteria are the sensitivity of local information, the likely access available to the thief, the status of your backup and the realistic recovery situation. Missing photographs matter, but they should be weighed alongside exposed work records or identity documents.",
+            "Google warns that remote factory reset permanently deletes device data, may not delete SD cards and makes the device unavailable in Find Hub. Apple states that devices running iOS 15 or later can still be located after erasure; an offline erase begins when the device next comes online.",
+            "On an Apple device, do not remove the stolen handset from Find My, including after erasing it: that removes Activation Lock. Distinguish this from reviewing account sessions or devices. Follow Apple's exact instructions instead of treating every button labelled 'remove' as equivalent."
+          ],
+          "table": {
+            "headers": [
+              "Action",
+              "Main purpose",
+              "Important limitation"
+            ],
+            "rows": [
+              [
+                "Remote lock or lost mode",
+                "Restrict access to the handset",
+                "Availability and execution depend on setup and platform conditions."
+              ],
+              [
+                "Carrier suspension",
+                "Restrict the stolen mobile subscription",
+                "It does not perform the separate tasks of account recovery or device erasure."
+              ],
+              [
+                "Password and session review",
+                "Regain control of online services",
+                "Check each important service and its recovery settings."
+              ],
+              [
+                "Remote erasure",
+                "Delete local device data",
+                "Consequences differ between Apple and Android; confirm the warning first."
+              ]
+            ]
+          },
+          "sourceIds": [
+            "apple-stolen",
+            "google-find",
+            "nist-theft",
+            "google-compromised"
+          ]
+        },
+        {
+          "id": "report-rebuild",
+          "heading": "6. Report the theft, watch for scams and rebuild access",
+          "answer": "Report phone theft to the local police with device identifiers and a factual incident record. Preserve suspicious messages and financial evidence, then restore a replacement device from a verified backup. Treat messages about a recovered phone cautiously: never disclose a passcode or verification code, and never remove a stolen device from Find My because a stranger requests it.",
+          "paragraphs": [
+            "Prepare the model, colour, serial number or IMEI, approximate time and place, and any relevant transaction references. Keep the police report reference for follow-up and any insurance enquiry. Check your own policy for evidence requirements and deadlines; this article does not promise coverage or reimbursement.",
+            "CERT Polska accepts incident reports through https://incydent.cert.pl and suspicious SMS messages containing malicious links forwarded to 8080. These channels address cyber incidents and phishing; they do not replace reporting the physical theft to police. Elsewhere, use the appropriate local reporting service.",
+            "On a replacement handset, update the system, restore the backup you have checked and re-establish financial and authentication access through each provider. Review which recovery methods still depend on the missing device. Revisit the incident log until outstanding requests have an outcome, then improve the preparation worksheet using what actually caused difficulty."
+          ],
+          "bullets": [
+            "Verify recovery claims through official services you open independently.",
+            "Preserve evidence before deleting a suspicious message.",
+            "Review account alerts and transactions after initial recovery, especially anything you cannot explain."
+          ],
+          "sourceIds": [
+            "police-phone",
+            "apple-stolen",
+            "cert-contact",
+            "ftc-phone",
+            "ftc-information"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Should I go to the location shown on the map?",
+          "answer": "Do not confront a suspected thief. Save the location information and its time for police. Device-location services provide information for a report, not a guarantee that a particular person or address has your phone."
+        },
+        {
+          "question": "Does suspending the SIM lock the whole phone?",
+          "answer": "No. Carrier suspension, remote locking and online-account protection are separate actions. Ask the carrier what has been restricted, and continue with the platform's device protection and account recovery steps."
+        },
+        {
+          "question": "Should I erase the phone immediately?",
+          "answer": "Base the decision on likely access, sensitive information, recovery prospects and your backup. Read the platform warning: Android factory reset ends Find Hub availability, while Apple describes continued location support for iOS 15 and later. A pending erase is not confirmation of deletion."
+        },
+        {
+          "question": "What if verification codes go to the stolen phone?",
+          "answer": "Use a previously configured alternative, such as Google backup codes, another trusted device or the provider's recovery process. Contact the carrier about replacement service. Never pay an unsolicited caller who promises to bypass account recovery."
+        },
+        {
+          "question": "Can a backpack replace security settings?",
+          "answer": "No. Carrying equipment may help organise belongings, but this article provides no tested theft-prevention claim for a product. Screen locking, independent recovery access, backups and an incident plan remain necessary."
+        }
+      ],
+      "sources": [
+        {
+          "id": "ftc-phone",
+          "title": "How To Protect Your Phone From Hackers",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-protect-your-phone-hackers",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "nist-theft",
+          "title": "Mobile Threat Catalogue: Device Loss or Theft",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/mobile-threat-catalogue/physical-threats/PHY-0.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cert-phone",
+          "title": "Bezpieczeństwo telefonu",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://wiedza.cert.pl/bezpieczenstwo-osobiste/bezpieczny-telefon/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "police-phone",
+          "title": "Protect your mobile phone",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/personal-safety-how-to-stay-safe/mobile-phone-advice/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "police-snatching",
+          "title": "Protect your mobile phone against criminals on bikes and mopeds",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/personal-safety-how-to-stay-safe/protect-your-mobile-phone-against-criminals-on-bikes-and-mopeds/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "apple-stolen",
+          "title": "If your iPhone or iPad has been stolen",
+          "publisher": "Apple Support",
+          "url": "https://support.apple.com/en-ie/120837",
+          "publishedAt": "2026-06-30",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-find",
+          "title": "Find, secure, or erase a lost Android device",
+          "publisher": "Google Android Help",
+          "url": "https://support.google.com/android/answer/6160491?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-backup-codes",
+          "title": "Sign in with backup codes",
+          "publisher": "Google Account Help",
+          "url": "https://support.google.com/accounts/answer/1187538?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-compromised",
+          "title": "Secure a hacked or compromised Google Account",
+          "publisher": "Google Account Help",
+          "url": "https://support.google.com/accounts/answer/6294825?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "ftc-information",
+          "title": "Protect Your Personal Information From Hackers and Scammers",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/protect-your-personal-information-hackers-and-scammers",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "nist-enterprise",
+          "title": "SP 800-124 Rev. 2: Guidelines for Managing the Security of Mobile Devices in the Enterprise",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://csrc.nist.gov/pubs/sp/800/124/r2/final",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cert-contact",
+          "title": "Kontakt i zgłaszanie incydentów",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://cert.pl/kontakt/",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Przed kradzieżą telefonu i po niej: praktyczny plan działania",
+      "excerpt": "Przygotuj dostęp awaryjny, zanim stracisz telefon. Po kradzieży zadbaj o bezpieczeństwo, zablokuj urządzenie, skontaktuj się z operatorem i bankiem, zabezpiecz konta i świadomie zdecyduj o usunięciu danych.",
+      "heroAlt": "Portfel podróżny z kartami i paszportem na drewnianym stole, przykryty istniejącym angielskim nagłówkiem dotyczącym bezpieczeństwa w podróży.",
+      "quickAnswer": "Przed kradzieżą ustaw silną blokadę ekranu, włącz lokalizowanie urządzenia, wykonuj kopie zapasowe i przygotuj dostęp awaryjny niezależny od telefonu. Po kradzieży przejdź w bezpieczne miejsce, zdalnie oznacz telefon jako utracony, skontaktuj się z operatorem i bankiem, zabezpiecz ważne konta oraz zgłoś przestępstwo. Rozważ zdalne wymazanie, gdy ochrona danych staje się ważniejsza niż dalsze możliwości odzyskania urządzenia.",
+      "keyTakeaways": [
+        "Przygotuj sposób logowania do ważnych kont bez telefonu, który nosisz przy sobie.",
+        "Odblokowany ekran lub możliwość podejrzenia kodu zwiększają pilność zabezpieczenia kont i finansów.",
+        "Zdalna blokada, zawieszenie usług operatora i zabezpieczenie kont to różne działania.",
+        "Informacje o lokalizacji przekaż policji; nie konfrontuj się z podejrzewanym sprawcą.",
+        "Przed wymazaniem telefonu lub usunięciem go z konta sprawdź konsekwencje właściwe dla danej platformy."
+      ],
+      "methodology": "Przegląd wykonano 2026-10-15 przy użyciu wyszukiwania internetowego i bezpośredniego odczytu źródeł pierwotnych FTC, NIST, CERT Polska, Police.uk, Apple i Google. Materiały instytucji publicznych stanowią podstawę zasad zapobiegania i reagowania, a dokumentacja producentów opisuje procedury oraz ograniczenia konkretnych platform. Kolejność czynności, proponowane notatki i kryteria decyzji są syntezą redakcyjną, a nie protokołem sprawdzonym eksperymentalnie lub w pomiarach czasu. Nie wykorzystujemy statystyk kradzieży, wskaźników odzyskania urządzeń ani twierdzeń o skuteczności produktów. Przy źródłach bez ustalonej daty publikacji zastosowano null. Procedury zgłoszeń zależą od kraju, a nazwy ustawień od urządzenia i wersji systemu. Ograniczenie wizualne: sprawdzono trzy dozwolone pliki; PNG jest kwadratowy, oba SVG są pionowe, a wszystkie zawierają angielskie napisy. Zachowano wskazane ścieżki bez zmian, dlatego dostępny zestaw nie pozwala spełnić wymogu poziomych ilustracji bez tekstu zależnego od języka. Podpisy wyjaśniają kontekstowy charakter grafik.",
+      "sections": [
+        {
+          "id": "prepare-recovery",
+          "heading": "1. Przygotuj dostęp awaryjny niezależny od telefonu",
+          "answer": "Przed kradzieżą sprawdź, czy potrafisz zalogować się na konta, uruchomić lokalizowanie urządzenia i odzyskać potrzebne informacje bez używania noszonego telefonu. Włącz odpowiednie usługi, wykonuj kopie zapasowe i przechowuj kody zapasowe lub inną obsługiwaną metodę weryfikacji osobno. Plan odzyskania dostępu musi działać także wtedy, gdy telefon jest niedostępny.",
+          "paragraphs": [
+            "Zacznij od krótkiej notatki awaryjnej: identyfikatora konta Apple lub Google, sposobu kontaktu z operatorem i bankiem, modelu urządzenia, numeru seryjnego oraz IMEI. Przechowuj ją w miejscu dostępnym niezależnie od telefonu, na przykład w zabezpieczonej dokumentacji domowej. Nie wkładaj haseł i kodów odzyskiwania pod etui.",
+            "Google udostępnia kody zapasowe do weryfikacji dwuetapowej. Traktuj każdy kod jak sekret, przechowuj go poza telefonem i korzystaj z niego zgodnie z instrukcją dostawcy. Sprawdź również metody odzyskiwania dostępu do innych ważnych usług. Nie zakładaj, że wszystkie działają tak samo jak konto Google.",
+            "Wykonaj próbę na zaufanym komputerze: otwórz oficjalną usługę lokalizowania, ustal, z którym kontem powiązany jest telefon, i sprawdź dostęp do kopii zapasowej. Zatrzymaj się przed wysłaniem polecenia blokady lub wymazania. Zanotuj każdy etap wymagający zatwierdzenia na telefonie; taka zależność potrzebuje osobnego rozwiązania awaryjnego.",
+            "Pomyśl, czego potrzebujesz pierwszego wieczoru bez urządzenia: numeru bliskiej osoby, informacji o przejeździe, dostępu do noclegu albo niezbędnych dokumentów. Proponowana notatka powinna wskazywać, gdzie je znaleźć. Nie twórz w jednym niezabezpieczonym miejscu pełnej kopii swojego cyfrowego życia."
+          ],
+          "bullets": [
+            "Sprawdź datę ostatniej kopii zapasowej oraz zakres zapisanych danych.",
+            "Przechowuj sekrety odzyskiwania osobno od telefonu i codziennej torby.",
+            "Zapisz numer jednej zaufanej osoby, zamiast polegać wyłącznie na kontaktach w urządzeniu."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Czarno-złota grafika dotycząca prywatności w podróży, z motywem tarczy i istniejącymi angielskimi napisami.",
+            "caption": "Ilustracja kontekstowa: przygotuj dostęp awaryjny poza telefonem używanym na co dzień. Grafika nie przedstawia ustawień urządzenia."
+          },
+          "sourceIds": [
+            "ftc-phone",
+            "google-backup-codes",
+            "google-find"
+          ]
+        },
+        {
+          "id": "reduce-exposure",
+          "heading": "2. Ogranicz okazje do kradzieży i zabezpiecz ekran",
+          "answer": "Ustaw silną blokadę ekranu i krótki czas automatycznego blokowania, a w miejscach publicznych korzystaj z telefonu dyskretnie. Ukryj poufne podglądy powiadomień, aktualizuj oprogramowanie i sprawdź funkcje ochrony przed kradzieżą dostępne w swoim urządzeniu. Takie środki ograniczają okazje i skutki incydentu, lecz nie dają gwarancji ochrony telefonu ani danych.",
+          "paragraphs": [
+            "NIST opisuje fizyczne przejęcie zgubionego lub skradzionego urządzenia jako zagrożenie bezpieczeństwa. Wśród środków ochronnych wymienia pilnowanie sprzętu i odpowiednie zabezpieczenia zdalne. Przełóż to na prosty nawyk: po sprawdzeniu informacji schowaj telefon, zamiast zostawiać go na widoku podczas jedzenia, płacenia lub porządkowania bagażu.",
+            "Policyjne wskazówki zwracają uwagę na wyrwanie telefonu w pobliżu jezdni i rozproszenie uwagi podczas chodzenia. Gdy potrzebujesz nawigacji, zatrzymaj się w odpowiednim miejscu z dala od krawędzi ulicy, rozejrzyj się i schowaj urządzenie przed dalszą drogą. Szczególnie w tłoku nie skupiaj całej uwagi na ekranie.",
+            "CERT Polska zaleca regularne aktualizowanie systemu i aplikacji. Sprawdź, czy telefon nadal otrzymuje poprawki, oraz przejrzyj dostępne ustawienia ochrony w aktualnej dokumentacji producenta. Sama nazwa funkcji w poradniku nie oznacza, że działa ona w konkretnym modelu lub została już włączona.",
+            "Plecak antykradzieżowy może być opcjonalnym sposobem organizacji rzeczy. Przy wyborze oceń rozmieszczenie kieszeni, dostęp do zamków oraz możliwość wyjęcia telefonu bez odsłaniania pozostałej zawartości. Nie testowaliśmy wskazanego produktu i nie przypisujemy mu potwierdzonej skuteczności zapobiegania kradzieży. Zakup wyposażenia nie zastępuje przygotowania dostępu awaryjnego."
+          ],
+          "bullets": [
+            "Zasłaniaj wpisywany kod i unikaj łatwych do odgadnięcia kombinacji.",
+            "Sprawdź, jakie wiadomości oraz informacje o kontach widać na zablokowanym ekranie.",
+            "Wybierz stałe miejsce na telefon i sprawdzaj je przed opuszczeniem siedzenia lub pojazdu."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Czarno-złota grafika dotycząca codziennego wyposażenia podróżnego, z motywem tarczy i istniejącymi angielskimi napisami.",
+            "caption": "Ilustracja kontekstowa: ustal, gdzie odkładasz telefon pomiędzy użyciami. Żadna torba ani akcesorium nie gwarantują ochrony."
+          },
+          "sourceIds": [
+            "nist-theft",
+            "police-snatching",
+            "cert-phone",
+            "police-phone"
+          ],
+          "productId": "anti-theft-smart-backpack"
+        },
+        {
+          "id": "immediate-response",
+          "heading": "3. Po kradzieży zadbaj o siebie i wyślij zdalną blokadę",
+          "answer": "Po kradzieży przejdź w bezpieczne miejsce i na zaufanym urządzeniu otwórz oficjalną usługę lokalizowania telefonu. Oznacz sprzęt jako utracony lub użyj dostępnej blokady zdalnej. Zachowaj informacje o położeniu dla policji, ale nie jedź na konfrontację z podejrzewanym sprawcą. Punkt na mapie jest wskazówką, a nie bezpieczną procedurą odzyskania telefonu.",
+          "paragraphs": [
+            "Skorzystaj z usługi Apple pod adresem https://www.icloud.com/find albo Google Find Hub pod adresem https://www.google.com/android/find. Wpisz adres samodzielnie lub przejdź z oficjalnej dokumentacji. Nie korzystaj z odnośnika w niespodziewanej wiadomości informującej, że ktoś znalazł telefon.",
+            "Apple wyjaśnia, że usługa Znajdź musi być włączona przed kradzieżą, aby można było oznaczyć urządzenie jako utracone lub zdalnie je wymazać. Google podaje warunki zdalnego zabezpieczenia i usuwania danych, obejmujące zasilanie, łączność oraz aktywną usługę Find Hub. Brak wykonania polecenia nie powinien zatrzymywać zabezpieczania kont.",
+            "Zapisz, kiedy zauważono brak telefonu, gdzie był ostatnio używany oraz czy ekran był odblokowany lub ktoś mógł poznać kod. Zachowaj zrzuty ekranu wraz z widocznymi godzinami. Oddziel własne obserwacje od przypuszczeń; ułatwi to przygotowanie zrozumiałego zgłoszenia.",
+            "Proponowany podział pracy jest prosty: jeśli pomaga zaufana osoba, może notować przebieg zdarzenia, podczas gdy ty odzyskujesz dostęp do usług. Nie ujawniaj sekretów kont tylko po to, by przyspieszyć działania. Po skorzystaniu z pożyczonego urządzenia wyloguj się ze swoich kont."
+          ],
+          "bullets": [
+            "Nie ścigaj podejrzewanego sprawcy, nie negocjuj i nie podejmuj konfrontacji.",
+            "Sprawdź, czy polecenie blokady zostało wykonane, czy nadal oczekuje na dostarczenie.",
+            "Nie publikuj na żywo lokalizacji urządzenia ani prywatnych informacji o odzyskiwaniu dostępu."
+          ],
+          "sourceIds": [
+            "apple-stolen",
+            "google-find",
+            "police-snatching",
+            "ftc-information"
+          ]
+        },
+        {
+          "id": "contain-accounts",
+          "heading": "4. Zabezpiecz numer, pieniądze i ważne konta",
+          "answer": "Skontaktuj się z operatorem, aby zawiesić usługi skradzionego telefonu, oraz z instytucjami finansowymi w sprawie powiązanych kont i płatności. Na zaufanym urządzeniu zabezpiecz pocztę i inne ważne konta, sprawdź dane odzyskiwania i zakończ niepożądane sesje tam, gdzie jest to możliwe. Działaj szczególnie pilnie, jeśli telefon był odblokowany lub sprawca mógł poznać kod.",
+          "paragraphs": [
+            "Powiedz operatorowi, że telefon został skradziony. Zapytaj o zakres blokady, warunki wydania nowej karty SIM lub eSIM oraz dostępność blokowania urządzenia według IMEI. Zapisz numer sprawy. Zawieszenie usług komórkowych jest inną czynnością niż zdalna blokada telefonu albo zmiana hasła do konta.",
+            "Z bankiem skontaktuj się przez niezależnie sprawdzony kanał. Wyjaśnij, czy sprawca mógł mieć odblokowany telefon, dostęp do bankowości lub danych płatniczych. Wskaż operacje, których nie rozpoznajesz. Ustal z bankiem, jakie dostępy mobilne, karty lub usługi wymagają ograniczenia; nie zakładaj, że jedno polecenie zabezpieczy wszystko.",
+            "Odzyskiwanie kont zacznij od poczty i głównego konta platformy, ponieważ są ważnymi kanałami przywracania dostępu. Dokumentacja Google zaleca sprawdzenie zdarzeń bezpieczeństwa, urządzeń i danych odzyskiwania. W Gmailu przejrzyj również nieznane reguły przekazywania wiadomości i filtry. Kolejne konta wybieraj według rodzaju udostępnionych informacji oraz uprawnień.",
+            "Prowadź krótką listę: usługa, godzina, zlecone działanie i otrzymane potwierdzenie. Taka notatka pomaga odróżnić zgłoszoną prośbę od wykonanej blokady. Jeśli na telefonie były dostępne dane służbowe, niezwłocznie zawiadom organizację i stosuj jej procedury zamiast samodzielnie zmieniać ustawienia zarządzanych usług."
+          ],
+          "bullets": [
+            "Zmień ujawnione lub powtarzane hasła; ważne konta powinny mieć różne hasła.",
+            "Przejrzyj zalogowane urządzenia i zakończ niepożądane sesje, jeśli usługa to umożliwia.",
+            "Sprawdź adresy odzyskiwania, numery telefonów i metody weryfikacji pod kątem obcych zmian."
+          ],
+          "sourceIds": [
+            "police-phone",
+            "google-compromised",
+            "ftc-information",
+            "nist-enterprise"
+          ]
+        },
+        {
+          "id": "erase-decision",
+          "heading": "5. Podejmij decyzję o wymazaniu zgodnie z zasadami platformy",
+          "answer": "Rozważ zdalne wymazanie, gdy odzyskanie skradzionego telefonu jest nierealne, a priorytetem staje się ochrona zapisanych danych. Przed potwierdzeniem przeczytaj ostrzeżenie platformy: reset Androida kończy dostępność urządzenia w Find Hub, natomiast obsługiwane urządzenia Apple można lokalizować po wymazaniu. Oczekujące polecenie nie potwierdza usunięcia danych, a wymazanie nie zastępuje zabezpieczenia kont.",
+          "paragraphs": [
+            "Nie ma jednego właściwego czasu oczekiwania dla każdej kradzieży. Proponujemy oceniać poufność danych lokalnych, prawdopodobny dostęp sprawcy, stan kopii zapasowej i rzeczywiste szanse odzyskania sprzętu. Utrata zdjęć jest istotna, ale trzeba ją rozpatrywać obok ryzyka ujawnienia dokumentów tożsamości lub informacji służbowych.",
+            "Google ostrzega, że zdalny reset trwale usuwa dane urządzenia, może nie usunąć zawartości karty SD i powoduje, że telefon przestaje być dostępny w Find Hub. Apple podaje, że urządzenia z iOS 15 lub nowszym można lokalizować po wymazaniu. Jeśli urządzenie Apple jest offline, usuwanie rozpocznie się po ponownym połączeniu.",
+            "Nie usuwaj skradzionego urządzenia Apple z usługi Znajdź, również po wymazaniu: usuwa to blokadę aktywacji. Odróżniaj tę operację od przeglądania sesji i urządzeń konta. Stosuj dokładne instrukcje Apple, zamiast zakładać, że każdy przycisk z napisem „usuń” ma takie samo znaczenie."
+          ],
+          "table": {
+            "headers": [
+              "Działanie",
+              "Główny cel",
+              "Ważne ograniczenie"
+            ],
+            "rows": [
+              [
+                "Zdalna blokada lub tryb utracony",
+                "Ograniczenie dostępu do telefonu",
+                "Dostępność i wykonanie zależą od konfiguracji oraz warunków platformy."
+              ],
+              [
+                "Zawieszenie usług operatora",
+                "Ograniczenie użycia skradzionej usługi komórkowej",
+                "Nie wykonuje osobnych zadań odzyskania kont ani wymazania telefonu."
+              ],
+              [
+                "Zmiana haseł i przegląd sesji",
+                "Odzyskanie kontroli nad usługami internetowymi",
+                "Wymaga sprawdzenia ważnych usług i ich ustawień odzyskiwania."
+              ],
+              [
+                "Zdalne wymazanie",
+                "Usunięcie danych lokalnych",
+                "Skutki różnią się między Apple i Androidem; najpierw przeczytaj ostrzeżenie."
+              ]
+            ]
+          },
+          "sourceIds": [
+            "apple-stolen",
+            "google-find",
+            "nist-theft",
+            "google-compromised"
+          ]
+        },
+        {
+          "id": "report-rebuild",
+          "heading": "6. Zgłoś kradzież, uważaj na oszustwa i przywróć dostęp",
+          "answer": "Zgłoś kradzież lokalnej policji, przekazując identyfikatory urządzenia i rzeczowy opis zdarzenia. Zachowaj podejrzane wiadomości oraz dowody operacji finansowych, a nowy telefon odtwórz ze sprawdzonej kopii. Ostrożnie traktuj informacje o odnalezieniu sprzętu: nie ujawniaj kodu blokady ani kodów weryfikacyjnych i nie usuwaj telefonu z usługi Znajdź na żądanie nieznajomego.",
+          "paragraphs": [
+            "Przygotuj model, kolor, numer seryjny lub IMEI, przybliżony czas i miejsce zdarzenia oraz numery powiązanych operacji. Zachowaj numer zgłoszenia na potrzeby dalszego kontaktu lub rozmowy z ubezpieczycielem. Wymagane dowody i terminy sprawdź we własnej polisie; poradnik nie obiecuje wypłaty świadczenia ani zwrotu pieniędzy.",
+            "CERT Polska przyjmuje zgłoszenia incydentów przez https://incydent.cert.pl, a podejrzane SMS-y ze złośliwymi linkami można przekazywać na 8080. Kanały te służą zgłaszaniu cyberincydentów i phishingu; nie zastępują zgłoszenia fizycznej kradzieży policji. Poza Polską korzystaj z odpowiednich miejscowych kanałów zgłoszeniowych.",
+            "Na zastępczym urządzeniu zaktualizuj system, odtwórz sprawdzoną kopię i przywróć dostęp do finansów oraz uwierzytelniania zgodnie z procedurami dostawców. Sprawdź, które metody odzyskiwania nadal zależą od skradzionego telefonu. Wracaj do listy działań, aż wyjaśnisz otwarte sprawy, a następnie popraw notatkę awaryjną na podstawie napotkanych trudności."
+          ],
+          "bullets": [
+            "Informacje o odnalezieniu sprzętu sprawdzaj w samodzielnie otwieranych oficjalnych usługach.",
+            "Przed usunięciem podejrzanej wiadomości zachowaj potrzebne dowody.",
+            "Po przywróceniu dostępu przeglądaj alerty i transakcje, zwłaszcza te, których nie potrafisz wyjaśnić."
+          ],
+          "sourceIds": [
+            "police-phone",
+            "apple-stolen",
+            "cert-contact",
+            "ftc-phone",
+            "ftc-information"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy jechać pod adres wskazany na mapie?",
+          "answer": "Nie podejmuj konfrontacji z podejrzewanym sprawcą. Zapisz informacje o lokalizacji wraz z godziną i przekaż je policji. Usługa lokalizowania dostarcza wskazówek do zgłoszenia, a nie gwarancji, że określona osoba lub lokal ma twój telefon."
+        },
+        {
+          "question": "Czy zablokowanie SIM blokuje cały telefon?",
+          "answer": "Nie. Zawieszenie usług operatora, zdalna blokada urządzenia i ochrona kont internetowych to osobne działania. Ustal z operatorem zakres ograniczeń i kontynuuj zabezpieczanie urządzenia oraz odzyskiwanie dostępu do kont."
+        },
+        {
+          "question": "Czy natychmiast wymazać telefon?",
+          "answer": "Uwzględnij prawdopodobny dostęp sprawcy, poufność danych, szanse odzyskania i kopię zapasową. Przeczytaj ostrzeżenie platformy: reset Androida kończy dostępność w Find Hub, a Apple opisuje lokalizowanie po wymazaniu dla iOS 15 i nowszych. Oczekujące polecenie nie potwierdza usunięcia danych."
+        },
+        {
+          "question": "Co zrobić, gdy kody weryfikacyjne trafiają na skradziony telefon?",
+          "answer": "Użyj wcześniej przygotowanej alternatywy, na przykład kodów zapasowych Google, innego zaufanego urządzenia lub procedury odzyskiwania dostawcy. Zapytaj operatora o przywrócenie numeru na nowej karcie. Nie płać przypadkowemu rozmówcy obiecującemu obejście zabezpieczeń konta."
+        },
+        {
+          "question": "Czy plecak zastępuje ustawienia bezpieczeństwa?",
+          "answer": "Nie. Wyposażenie może pomóc w organizacji rzeczy, ale ten artykuł nie przedstawia wyników testów skuteczności produktu przeciw kradzieży. Nadal potrzebujesz blokady ekranu, niezależnego dostępu awaryjnego, kopii zapasowych i planu reagowania."
+        }
+      ],
+      "sources": [
+        {
+          "id": "ftc-phone",
+          "title": "How To Protect Your Phone From Hackers",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/how-protect-your-phone-hackers",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "nist-theft",
+          "title": "Mobile Threat Catalogue: Device Loss or Theft",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/mobile-threat-catalogue/physical-threats/PHY-0.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cert-phone",
+          "title": "Bezpieczeństwo telefonu",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://wiedza.cert.pl/bezpieczenstwo-osobiste/bezpieczny-telefon/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "police-phone",
+          "title": "Protect your mobile phone",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/personal-safety-how-to-stay-safe/mobile-phone-advice/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "police-snatching",
+          "title": "Protect your mobile phone against criminals on bikes and mopeds",
+          "publisher": "Police.uk",
+          "url": "https://www.police.uk/cp/crime-prevention/personal-safety-how-to-stay-safe/protect-your-mobile-phone-against-criminals-on-bikes-and-mopeds/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "apple-stolen",
+          "title": "If your iPhone or iPad has been stolen",
+          "publisher": "Apple Support",
+          "url": "https://support.apple.com/en-ie/120837",
+          "publishedAt": "2026-06-30",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-find",
+          "title": "Find, secure, or erase a lost Android device",
+          "publisher": "Google Android Help",
+          "url": "https://support.google.com/android/answer/6160491?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-backup-codes",
+          "title": "Sign in with backup codes",
+          "publisher": "Google Account Help",
+          "url": "https://support.google.com/accounts/answer/1187538?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "google-compromised",
+          "title": "Secure a hacked or compromised Google Account",
+          "publisher": "Google Account Help",
+          "url": "https://support.google.com/accounts/answer/6294825?hl=en",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "ftc-information",
+          "title": "Protect Your Personal Information From Hackers and Scammers",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/protect-your-personal-information-hackers-and-scammers",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "nist-enterprise",
+          "title": "SP 800-124 Rev. 2: Guidelines for Managing the Security of Mobile Devices in the Enterprise",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://csrc.nist.gov/pubs/sp/800/124/r2/final",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cert-contact",
+          "title": "Kontakt i zgłaszanie incydentów",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://cert.pl/kontakt/",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    }
+  }
+}
