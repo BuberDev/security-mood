@@ -1,0 +1,562 @@
+{
+  "version": 1,
+  "topicKey": "backup-power-home-emergency",
+  "slug": "backup-power-home-emergency",
+  "status": "published",
+  "categoryId": "emergency-prep",
+  "publishedAt": "2026-10-06",
+  "updatedAt": "2026-10-06",
+  "heroImage": "/images/blog/portable_power_station_guide.png",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public-agency publications; no product laboratory testing or professional certification is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie publikacji instytucji publicznych; bez deklarowania testów laboratoryjnych produktów ani certyfikacji zawodowych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore the preparedness library",
+        "pl": "Przeglądaj poradniki przygotowania na sytuacje awaryjne"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review your saved equipment",
+        "pl": "Przejrzyj zapisane wyposażenie"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood",
+        "pl": "Poznaj Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "portable-power-station",
+    "solar-emergency-radio"
+  ],
+  "locales": {
+    "en": {
+      "title": "Safe backup power for a home emergency: compare options and build a practical checklist",
+      "excerpt": "Compare portable batteries, generators and installed backup systems. Calculate essential loads, check safe placement and prepare a clear shutdown and recovery plan.",
+      "heroAlt": "Editorial visual accompanying a guide to portable backup power",
+      "quickAnswer": "Choose backup power around essential devices, required runtime and a safe operating location. A portable battery can support selected compatible loads; a fuel generator needs outdoor separation and strict connection precautions. Check continuous output, starting demand and usable energy separately. For medical equipment or fixed home circuits, arrange manufacturer guidance and qualified electrical support before an outage.",
+      "keyTakeaways": [
+        "Write an essential-load list before choosing equipment; watts and watt-hours answer different questions.",
+        "A fuel generator requires a genuinely suitable outdoor location, even when it has automatic safety features.",
+        "Never feed generator power into a household wall socket.",
+        "Check the exact battery model for safety notices and use the manufacturer-supplied charger.",
+        "Plan a destination with dependable power before a medical or temperature emergency develops."
+      ],
+      "methodology": "We searched and opened primary publications from CDC, OSHA, the US Department of Energy, FDA, CPSC and the US Fire Administration on 2026-10-15. The requested publication and update dates are retained as 2026-10-06; this research therefore represents a later source check, not evidence of review on that earlier date. Comparisons and worksheets are editorial synthesis, not measured product results. US safety guidance is identified as such and does not establish Polish installation requirements. No model is endorsed. Asset limitation: the supplied power image is square, while the other permitted assets are portrait SVG graphics containing existing English lettering; the available files cannot fully satisfy the requested landscape and text-free visual specifications.",
+      "sections": [
+        {
+          "id": "essential-loads",
+          "heading": "1. Define what must keep working",
+          "answer": "The right home backup system starts with a written list of essential loads and an agreed duration for each. Separate equipment needed for health and communication from conveniences, then record how each device will connect. A plan for selected appliances is easier to assess than an undefined promise to power the entire house.",
+          "paragraphs": [
+            "Use a worksheet with these columns: device, purpose, running watts, starting demand, hours needed, connection type and alternative arrangement. Give every unknown an owner and a next action. For example, ask the appliance manufacturer about starting demand rather than copying a figure from a different refrigerator. Record whether a heating controller, pump or other essential device is hardwired; a portable socket cannot automatically solve that connection problem.",
+            "For medical equipment, FDA advises checking the instructions or contacting the supplier about battery or generator operation. Ask specifically about the approved backup arrangement and what to do if power fails. A consumer battery purchase should follow that conversation. Put the supplier's contact details and the agreed fallback beside the equipment.",
+            "Our suggested planning exercise is to write two scenarios: a short interruption while everyone is home, and a longer interruption when the usual operator is absent. Name the person who will connect equipment, read warnings and decide when to leave. If nobody can safely perform a required step, revise the plan before purchasing."
+          ],
+          "bullets": [
+            "List essential devices individually instead of writing 'kitchen' or 'heating'.",
+            "Mark loads that cannot tolerate an interruption and ask the supplier how continuity will be provided.",
+            "Choose a fallback location and confirm who can provide transport.",
+            "Keep the worksheet and operating instructions available on paper."
+          ],
+          "image": {
+            "src": "/images/blog/survival_kit_checklist.svg",
+            "alt": "Dark and gold editorial preparedness graphic with a shield motif",
+            "caption": "Use a written equipment checklist to connect each backup-power choice with a specific household need."
+          },
+          "sourceIds": [
+            "fda-disasters",
+            "fda-checklist"
+          ]
+        },
+        {
+          "id": "compare-options",
+          "heading": "2. Compare the complete operating arrangement",
+          "answer": "Compare backup options by the loads they can support, the installation they require and how they will be replenished. A battery stores a finite supply of energy; a fuel generator adds fuel handling and exhaust precautions. An installed system requires a project-specific design. Rooftop solar alone does not establish that a home will have electricity during an outage.",
+          "paragraphs": [
+            "The Department of Energy explains that many grid-connected solar systems also lose power when the grid fails. Ask the installer which circuits remain supplied during an outage, how the system isolates from the grid and what happens when stored energy runs out. Request a demonstration of the actual backup mode rather than treating the presence of panels as proof of resilience.",
+            "The table is an editorial decision aid, not a performance ranking. For every candidate, request the manual before ordering. Check the relevant voltage and frequency, supported loads, environmental limits and required accessories. For portable equipment, include its weight and the route from storage to its operating position in your assessment.",
+            "Compare complete costs: connection work, permitted fuel storage, replacement parts, maintenance and the time somebody must spend operating the equipment. A system that requires an unavailable operator is a poor fit even if its headline power rating is attractive. Ask the seller to explain any unclear limitations in writing."
+          ],
+          "table": {
+            "headers": [
+              "Option",
+              "Decision to resolve",
+              "Important limitation"
+            ],
+            "rows": [
+              [
+                "Portable battery station",
+                "Can its documented output and usable energy cover the selected devices?",
+                "Runtime and recharge arrangements must be checked for the actual load."
+              ],
+              [
+                "Portable fuel generator",
+                "Is there a suitable outdoor site, safe connection and practical fuel plan?",
+                "Exhaust, electrical and refuelling hazards require active precautions."
+              ],
+              [
+                "Installed home battery or standby system",
+                "Which circuits and outage functions are included in the installation?",
+                "Scope depends on the design; obtain qualified installation advice."
+              ],
+              [
+                "Grid-connected rooftop solar",
+                "Does this installation explicitly provide outage operation?",
+                "Panels alone do not demonstrate backup capability."
+              ]
+            ]
+          },
+          "sourceIds": [
+            "doe-solar",
+            "osha-generators"
+          ],
+          "productId": "portable-power-station"
+        },
+        {
+          "id": "size-and-test",
+          "heading": "3. Check power, energy and the assumptions behind runtime",
+          "answer": "Check output power and stored energy separately: watts describe power demand, while watt-hours describe energy. A device may fit within the continuous output rating yet need more power to start. A runtime estimate is useful only when it states the load, usable energy and operating conditions; it is not a guarantee.",
+          "paragraphs": [
+            "As an illustrative calculation, a constant 50 W load operating for eight hours uses 400 Wh at the load. This is arithmetic, not a tested product result. Dividing a hypothetical 500 Wh of usable delivered energy by 50 W gives ten hours. Do not substitute advertised battery capacity for usable delivered energy without checking the manufacturer's explanation of losses and limits.",
+            "Build a purchase worksheet around questions rather than optimistic assumptions: What is the continuous rating? What starting demand is supported, and for how long? What energy reaches the relevant outlet? Does the intended charging arrangement work during the outage? What remains unverified? Leave a planning reserve instead of scheduling every available watt-hour.",
+            "Before an emergency, conduct a supervised rehearsal using the intended noncritical loads and the manufacturer's instructions. Record the starting charge, connected devices, elapsed time and any warnings. For medical equipment, arrange verification with the supplier rather than creating an improvised interruption test. Keep the result with the manual so another household member can understand its limits."
+          ],
+          "bullets": [
+            "Check the exact combination of loads expected to run together.",
+            "Ask about starting demand for motors and compressors.",
+            "Treat unverified runtime as a planning uncertainty.",
+            "Define when remaining energy triggers relocation or another fallback."
+          ],
+          "sourceIds": [
+            "osha-generators",
+            "fda-disasters"
+          ]
+        },
+        {
+          "id": "generator-safety",
+          "heading": "4. Apply generator safety rules before connecting anything",
+          "answer": "Operate a portable fuel generator outdoors, at least 20 feet, approximately six metres, from doors, windows and vents under CDC guidance. Never operate it in a garage, even with the door open. Never backfeed a wall socket. Home-circuit connection requires a qualified electrician and an appropriate transfer arrangement.",
+          "paragraphs": [
+            "Fit battery-powered or battery-backed carbon monoxide alarms. A small balcony or enclosed courtyard should not be assumed suitable. If the property cannot provide the required safe location, choose another arrangement. The separation rule is US public-health guidance, not permission to disregard the equipment manual or local installation requirements.",
+            "OSHA advises keeping generators dry, inspecting appropriately rated cords and stopping and cooling the engine before refuelling. Store fuel in approved containers away from living areas and ignition sources. Ask an electrician to resolve grounding and protection requirements for the actual equipment; do not improvise connections.",
+            "Make the operating checklist specific to the property: identify the approved position, cable route, weather limitations and shutdown steps. If a carbon monoxide alarm sounds or poisoning is suspected, move to fresh air and call emergency services. Do not return until trained responders say it is safe."
+          ],
+          "bullets": [
+            "Outdoor location confirmed before startup.",
+            "Alarms operational and cable route checked.",
+            "No wall-socket backfeed or improvised household connection.",
+            "Safe shutdown and cooling completed before refuelling."
+          ],
+          "sourceIds": [
+            "cdc-outage",
+            "osha-generators"
+          ]
+        },
+        {
+          "id": "battery-safety",
+          "heading": "5. Treat battery safety as a model-specific check",
+          "answer": "A battery station avoids combustion exhaust during normal battery operation, but its exact model still needs a safety check. Review recalls, follow charging instructions and inspect its condition. Swelling, hissing, venting or unusual heat are warning signs. A damaged battery requires specialist guidance rather than continued use or household disposal.",
+          "paragraphs": [
+            "USFA recommends checking recall information, using the supplied charger and avoiding overloaded outlets. Verify that any testing mark applies to the product being purchased. A logo in a listing is not a substitute for checking the identity of the model and its documentation.",
+            "CPSC's warning about specific Aeiusny 400 W and 500 W stations demonstrates why model identification matters. It does not establish that every battery station has the same defect. Save the model number, serial number, receipt and supplier contact so future notices can be checked accurately.",
+            "Choose a location that meets the manual's ventilation and temperature instructions and leaves exits clear. If smoke or signs of battery failure appear, keep people away and contact emergency services as appropriate. Do not carry a failing pack through the home. Ask local authorities or the manufacturer how damaged equipment should be collected."
+          ],
+          "bullets": [
+            "Check the exact model against applicable safety notices.",
+            "Keep the correct charger and instructions with the station.",
+            "Stop use when damage or abnormal behaviour appears.",
+            "Use an authorised collection route rather than household waste."
+          ],
+          "sourceIds": [
+            "usfa-charging",
+            "usfa-risks",
+            "cpsc-aeiusny",
+            "doe-solar"
+          ]
+        },
+        {
+          "id": "outage-and-recovery",
+          "heading": "6. Rehearse the outage and recovery sequence",
+          "answer": "A complete backup-power plan includes startup, conservation, a decision to leave and checks after electricity returns. Follow local updates, monitor the agreed essential loads and reassess conditions. Restore equipment according to its instructions; medical-device settings need particular attention after an interruption.",
+          "paragraphs": [
+            "Our suggested rehearsal starts with finding the instructions without internet access. Ask a second household member to explain the load priorities, locate the necessary leads and identify the point at which the fallback begins. Correct unclear labels immediately. A solar emergency radio can be considered as a separate information tool, with its actual charging options checked in its manual.",
+            "Keep a simple incident log: outage start, equipment connected, charge or fuel checks, warnings and decisions. This is a practical record for the household, not a prediction of restoration time. If indoor conditions become unsafe, use the relocation plan rather than adding an unplanned high-demand appliance.",
+            "After restoration, check for damage before reconnecting. FDA advises verifying medical-device settings because interruption can reset them. Recharge and replenish according to instructions, review what the rehearsal or outage revealed, and update the worksheet. CDC recommends battery lighting instead of candles and seeking another safe location when heat or cold becomes dangerous."
+          ],
+          "bullets": [
+            "Keep instructions, contacts and essential leads together.",
+            "Name the person responsible for checking remaining backup resources.",
+            "Use an agreed fallback before resources are exhausted.",
+            "Inspect, restore, replenish and revise the plan."
+          ],
+          "image": {
+            "src": "/images/blog/bug_out_bag.svg",
+            "alt": "Dark and gold editorial emergency-preparedness graphic",
+            "caption": "Keep a departure plan alongside the power plan so essential support can continue elsewhere."
+          },
+          "sourceIds": [
+            "fda-disasters",
+            "cdc-outage",
+            "fda-checklist"
+          ],
+          "productId": "solar-emergency-radio"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Can I use a portable battery station indoors?",
+          "answer": "Check the exact model's instructions and condition. Normal battery operation does not involve combustion exhaust, but charging, ventilation, temperature and fire precautions still apply. Indoor suitability is not a blanket property of every product."
+        },
+        {
+          "question": "Will rooftop solar keep working in a blackout?",
+          "answer": "Do not assume so. The Department of Energy explains that many grid-connected systems also stop supplying power when the grid fails. Ask the installer to demonstrate your system's specified outage mode."
+        },
+        {
+          "question": "Can I connect a generator through a wall socket?",
+          "answer": "No. Backfeeding can energise wiring beyond the home. Arrange any fixed-circuit connection with a qualified electrician using an appropriate transfer arrangement."
+        },
+        {
+          "question": "How should I choose backup power for medical equipment?",
+          "answer": "Start with the device supplier and healthcare team. Confirm compatible backup equipment, required continuity and the emergency fallback. Do not rely on a general consumer runtime estimate for essential treatment."
+        },
+        {
+          "question": "What should I check after power returns?",
+          "answer": "Check equipment condition, follow restart instructions and verify medical-device settings and alarms. Replenish supplies and record any failures so the household plan can be corrected."
+        }
+      ],
+      "sources": [
+        {
+          "id": "cdc-outage",
+          "title": "What to Do to Protect Yourself During a Power Outage",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "osha-generators",
+          "title": "Using Portable Generators Safely",
+          "publisher": "Occupational Safety and Health Administration",
+          "url": "https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "doe-solar",
+          "title": "The Road to Resilience with Rooftop Solar",
+          "publisher": "US Department of Energy",
+          "url": "https://www.energy.gov/cmei/systems/articles/road-resilience-rooftop-solar",
+          "publishedAt": "2020-06-30",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fda-disasters",
+          "title": "FDA Offers Tips about Medical Devices and Natural Disasters",
+          "publisher": "US Food and Drug Administration",
+          "url": "https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fda-checklist",
+          "title": "Brochure — Home Healthcare Medical Devices: A Checklist",
+          "publisher": "US Food and Drug Administration",
+          "url": "https://www.fda.gov/medical-devices/home-health-and-consumer-devices/brochure-home-healthcare-medical-devices-checklist",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "usfa-charging",
+          "title": "Lithium-Ion Battery Safety for Electronic Devices",
+          "publisher": "US Fire Administration",
+          "url": "https://www.usfa.fema.gov/downloads/pdf/publications/lithium-ion-battery-safety-handout.pdf",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "usfa-risks",
+          "title": "Risks and Response Strategies for Lithium-ion Battery Fires",
+          "publisher": "US Fire Administration",
+          "url": "https://www.usfa.fema.gov/a-z/lithium-ion-batteries/risks-and-response-strategies/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cpsc-aeiusny",
+          "title": "CPSC Warns Consumers to Immediately Stop Using Aeiusny Power Stations Due to Risk of Serious Injury or Death from Fire; Sold on Amazon",
+          "publisher": "US Consumer Product Safety Commission",
+          "url": "https://www.cpsc.gov/Recalls/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Aeiusny-Power-Stations-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Sold-on-Amazon",
+          "publishedAt": "2025-09-04",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Bezpieczne zasilanie awaryjne domu: porównanie rozwiązań i praktyczna lista kontrolna",
+      "excerpt": "Porównaj stację zasilania, agregat i instalację rezerwową. Określ niezbędne odbiorniki, sprawdź warunki pracy i przygotuj plan bezpiecznego uruchomienia oraz powrotu do zasilania sieciowego.",
+      "heroAlt": "Grafika redakcyjna towarzysząca poradnikowi o przenośnym zasilaniu awaryjnym",
+      "quickAnswer": "Dobierz zasilanie awaryjne do niezbędnych urządzeń, wymaganego czasu pracy i bezpiecznego miejsca użytkowania. Stacja akumulatorowa zasili wybrane zgodne odbiorniki, a agregat spalinowy wymaga pracy na zewnątrz i właściwego podłączenia. Osobno sprawdź moc ciągłą, zapotrzebowanie rozruchowe oraz dostępną energię. Zasilanie sprzętu medycznego i stałych obwodów domu uzgodnij wcześniej z producentem oraz wykwalifikowanym elektrykiem.",
+      "keyTakeaways": [
+        "Przed zakupem sporządź listę niezbędnych odbiorników; waty i watogodziny opisują różne wielkości.",
+        "Agregat spalinowy potrzebuje odpowiedniego miejsca na zewnątrz także wtedy, gdy ma automatyczne zabezpieczenia.",
+        "Nigdy nie podawaj prądu z agregatu przez domowe gniazdko.",
+        "Sprawdź komunikaty bezpieczeństwa dotyczące dokładnego modelu akumulatora i używaj właściwej ładowarki.",
+        "Ustal miejsce z pewnym zasilaniem, zanim brak prądu zagrozi leczeniu lub bezpiecznej temperaturze w domu."
+      ],
+      "methodology": "W dniu 2026-10-15 wyszukaliśmy i otworzyliśmy publikacje źródłowe CDC, OSHA, amerykańskiego Departamentu Energii, FDA, CPSC i US Fire Administration. Zachowujemy zamówione daty publikacji oraz aktualizacji 2026-10-06; badanie stanowi zatem późniejszą weryfikację, a nie potwierdzenie przeglądu w tamtym dniu. Porównania i arkusze są opracowaniem redakcyjnym, bez pomiarów produktów. Amerykańskie zalecenia nie określają polskich wymagań instalacyjnych. Nie rekomendujemy konkretnego modelu. Ograniczenie materiałów wizualnych: dostarczony obraz zasilania jest kwadratowy, a pozostałe dozwolone pliki to pionowe grafiki SVG zawierające istniejące angielskie napisy. Dostępne zasoby nie pozwalają w pełni spełnić wymogu poziomej ilustracji i obrazów bez tekstu.",
+      "sections": [
+        {
+          "id": "essential-loads",
+          "heading": "1. Ustal, co naprawdę musi działać",
+          "answer": "Dobór zasilania awaryjnego zacznij od zapisanej listy niezbędnych odbiorników oraz wymaganego czasu pracy każdego z nich. Oddziel potrzeby zdrowotne i łączność od wygody, a następnie określ sposób podłączenia. Plan dla konkretnych urządzeń łatwiej zweryfikować niż ogólną obietnicę zasilania całego domu.",
+          "paragraphs": [
+            "Przygotuj arkusz z kolumnami: urządzenie, cel, moc podczas pracy, zapotrzebowanie przy rozruchu, potrzebne godziny działania, sposób podłączenia i rozwiązanie zastępcze. Przy każdej niewiadomej wpisz osobę odpowiedzialną oraz kolejne działanie. O parametry rozruchu lodówki zapytaj jej producenta, zamiast przyjmować wartość znalezioną dla innego modelu. Zaznacz urządzenia podłączone na stałe, na przykład sterownik ogrzewania lub pompę. Samo posiadanie przenośnego gniazda nie rozwiązuje kwestii ich bezpiecznego przyłączenia.",
+            "W przypadku sprzętu medycznego FDA zaleca sprawdzenie instrukcji lub rozmowę z dostawcą o możliwości zasilania z akumulatora bądź agregatu. Zapytaj o zatwierdzony sposób podtrzymania pracy i postępowanie przy awarii. Dopiero na tej podstawie rozważ zakup sprzętu konsumenckiego. Obok urządzenia przechowuj kontakt do dostawcy i opis uzgodnionego rozwiązania zastępczego.",
+            "Proponujemy opisać dwa scenariusze: krótką przerwę, gdy wszyscy są w domu, oraz dłuższą awarię pod nieobecność osoby zwykle obsługującej sprzęt. Wskaż, kto podłączy odbiorniki, odczyta ostrzeżenia i zdecyduje o wyjeździe. Jeżeli któregoś kroku nikt nie potrafi bezpiecznie wykonać, popraw plan przed zakupem. Uwzględnij także potrzeby osób mających trudności z przenoszeniem ciężkich urządzeń."
+          ],
+          "bullets": [
+            "Wpisuj konkretne urządzenia zamiast ogólnych haseł „kuchnia” lub „ogrzewanie”.",
+            "Zaznacz odbiorniki wymagające ciągłości pracy i uzgodnij sposób jej zapewnienia.",
+            "Wybierz miejsce zastępcze oraz osobę, która zapewni transport.",
+            "Zachowaj papierowy arkusz i instrukcje obsługi."
+          ],
+          "image": {
+            "src": "/images/blog/survival_kit_checklist.svg",
+            "alt": "Czarno-złota grafika redakcyjna przygotowania awaryjnego z motywem tarczy",
+            "caption": "Pisemna lista wyposażenia pomaga powiązać wybór zasilania z konkretną potrzebą domowników."
+          },
+          "sourceIds": [
+            "fda-disasters",
+            "fda-checklist"
+          ]
+        },
+        {
+          "id": "compare-options",
+          "heading": "2. Porównaj cały sposób użytkowania",
+          "answer": "Porównuj rozwiązania według obsługiwanych odbiorników, wymagań instalacyjnych i możliwości uzupełniania energii. Akumulator przechowuje ograniczony zapas, a agregat wymaga dodatkowo obsługi paliwa i ochrony przed spalinami. Instalacja stała potrzebuje indywidualnego projektu. Same panele fotowoltaiczne nie potwierdzają, że dom zachowa zasilanie podczas awarii sieci.",
+          "paragraphs": [
+            "Amerykański Departament Energii wyjaśnia, że wiele instalacji fotowoltaicznych połączonych z siecią również przestaje dostarczać prąd po jej awarii. Zapytaj instalatora, które obwody działają wtedy dalej, jak następuje odłączenie od sieci i co stanie się po wyczerpaniu magazynu. Poproś o pokaz rzeczywistego trybu awaryjnego. Obecność paneli na dachu nie zastępuje odpowiedzi na te pytania.",
+            "Tabela jest redakcyjną pomocą w podejmowaniu decyzji, bez rankingu wydajności. Przed zamówieniem każdego rozważanego urządzenia zdobądź instrukcję. Sprawdź napięcie i częstotliwość, dopuszczone odbiorniki, warunki otoczenia oraz potrzebne akcesoria. Przy sprzęcie przenośnym uwzględnij masę i drogę z miejsca przechowywania do miejsca pracy. Zastanów się, czy obsługa będzie możliwa również po zmroku.",
+            "Porównuj pełny koszt rozwiązania: prace przyłączeniowe, dopuszczalne przechowywanie paliwa, części, konserwację i czas obsługi. Sprzęt wymagający obecności niedostępnej osoby może być źle dobrany mimo atrakcyjnej mocy znamionowej. Niejasne ograniczenia wyjaśnij ze sprzedawcą na piśmie. Zachowaj odpowiedź razem z dokumentacją, aby później nie polegać wyłącznie na pamięci."
+          ],
+          "table": {
+            "headers": [
+              "Rozwiązanie",
+              "Co trzeba ustalić",
+              "Ważne ograniczenie"
+            ],
+            "rows": [
+              [
+                "Przenośna stacja akumulatorowa",
+                "Czy udokumentowana moc i dostępna energia wystarczą dla wybranych odbiorników?",
+                "Czas pracy oraz ładowanie trzeba sprawdzić dla rzeczywistego obciążenia."
+              ],
+              [
+                "Przenośny agregat spalinowy",
+                "Czy jest bezpieczne miejsce na zewnątrz, właściwe podłączenie i plan paliwowy?",
+                "Spaliny, prąd i tankowanie wymagają konkretnych środków ostrożności."
+              ],
+              [
+                "Stały magazyn energii lub układ rezerwowy",
+                "Które obwody i funkcje awaryjne obejmuje instalacja?",
+                "Zakres zależy od projektu i wymaga fachowej oceny."
+              ],
+              [
+                "Fotowoltaika połączona z siecią",
+                "Czy instalacja rzeczywiście zapewnia pracę podczas awarii?",
+                "Same panele nie potwierdzają możliwości zasilania awaryjnego."
+              ]
+            ]
+          },
+          "sourceIds": [
+            "doe-solar",
+            "osha-generators"
+          ],
+          "productId": "portable-power-station"
+        },
+        {
+          "id": "size-and-test",
+          "heading": "3. Sprawdź moc, energię i założenia czasu pracy",
+          "answer": "Moc wyjściową i zapas energii sprawdzaj osobno: waty opisują zapotrzebowanie na moc, a watogodziny ilość energii. Odbiornik mieszczący się w limicie mocy ciągłej może potrzebować więcej przy uruchamianiu. Szacunek czasu pracy jest użyteczny dopiero wtedy, gdy określa obciążenie, dostępną energię i warunki użytkowania.",
+          "paragraphs": [
+            "Przykładowe stałe obciążenie 50 W pracujące przez osiem godzin zużywa 400 Wh po stronie odbiornika. To obliczenie poglądowe, bez testu produktu. Podzielenie hipotetycznych 500 Wh energii dostarczonej do odbiornika przez 50 W daje dziesięć godzin. Nie podstawiaj automatycznie reklamowanej pojemności akumulatora jako energii dostępnej w gnieździe. Najpierw sprawdź, jak producent opisuje straty i ograniczenia.",
+            "Arkusz zakupowy oprzyj na pytaniach: jaka jest moc ciągła, jakie zapotrzebowanie rozruchowe urządzenie obsłuży i przez jaki czas, ile energii dociera do właściwego wyjścia oraz czy planowane ładowanie będzie możliwe podczas awarii? Wpisz również to, czego nie udało się potwierdzić. Pozostaw rezerwę w planie zamiast rozdzielać wszystkie dostępne watogodziny. Zapisz, które odbiorniki mogą działać kolejno.",
+            "Przed sytuacją awaryjną przeprowadź nadzorowaną próbę z docelowymi odbiornikami niemającymi krytycznego znaczenia i zgodnie z instrukcją. Zanotuj początkowe naładowanie, podłączony sprzęt, czas i ostrzeżenia. Weryfikację urządzenia medycznego uzgodnij z dostawcą, bez samodzielnego wywoływania przerwy w leczeniu. Wynik przechowuj z instrukcją, aby druga osoba rozumiała zakres próby oraz jej ograniczenia."
+          ],
+          "bullets": [
+            "Sprawdź zestaw odbiorników, które rzeczywiście mają działać jednocześnie.",
+            "Wyjaśnij zapotrzebowanie rozruchowe silników i sprężarek.",
+            "Niepotwierdzony czas działania traktuj jako niewiadomą.",
+            "Ustal moment uruchomienia planu zastępczego przed wyczerpaniem energii."
+          ],
+          "sourceIds": [
+            "osha-generators",
+            "fda-disasters"
+          ]
+        },
+        {
+          "id": "generator-safety",
+          "heading": "4. Zastosuj zasady bezpieczeństwa agregatu przed podłączeniem",
+          "answer": "Przenośny agregat spalinowy uruchamiaj na zewnątrz. CDC zaleca co najmniej 20 stóp, czyli około sześciu metrów, od drzwi, okien i otworów wentylacyjnych. Garaż z otwartą bramą nie jest bezpiecznym miejscem pracy. Nigdy nie zasilaj domu przez zwykłe gniazdko; podłączenie obwodów powierz wykwalifikowanemu elektrykowi.",
+          "paragraphs": [
+            "Zapewnij czujniki tlenku węgla z zasilaniem bateryjnym lub podtrzymaniem. Nie zakładaj, że mały balkon albo zamknięte podwórze nadają się do pracy agregatu. Jeżeli nieruchomość nie zapewnia odpowiedniej lokalizacji, wybierz inne rozwiązanie. Podana odległość jest amerykańskim zaleceniem zdrowotnym, bez zastępowania instrukcji sprzętu i lokalnych wymagań instalacyjnych.",
+            "OSHA zaleca ochronę agregatu przed wilgocią, kontrolę przewodów o odpowiednich parametrach oraz wyłączenie i schłodzenie silnika przed tankowaniem. Paliwo przechowuj w przeznaczonych do tego pojemnikach, poza częścią mieszkalną i z dala od źródeł zapłonu. Wymagania uziemienia oraz zabezpieczeń konkretnego układu wyjaśnij z elektrykiem. Nie stosuj prowizorycznych połączeń.",
+            "Przygotuj instrukcję dla swojej posesji: wskaż uzgodnione miejsce, trasę przewodów, ograniczenia pogodowe i kolejność wyłączania. Przy alarmie czadu lub podejrzeniu zatrucia wyjdź na świeże powietrze i wezwij służby ratunkowe. Powrót powinien nastąpić dopiero po potwierdzeniu bezpieczeństwa przez przeszkolonych ratowników."
+          ],
+          "bullets": [
+            "Miejsce na zewnątrz sprawdzone przed uruchomieniem.",
+            "Czujniki działają, a trasa przewodów została skontrolowana.",
+            "Brak zasilania zwrotnego przez gniazdko i prowizorycznych przyłączy.",
+            "Przed tankowaniem wykonano wyłączenie i schłodzenie."
+          ],
+          "sourceIds": [
+            "cdc-outage",
+            "osha-generators"
+          ]
+        },
+        {
+          "id": "battery-safety",
+          "heading": "5. Sprawdzaj bezpieczeństwo konkretnego modelu akumulatora",
+          "answer": "Stacja akumulatorowa podczas normalnej pracy z baterii nie wytwarza spalin, ale nadal wymaga sprawdzenia modelu i stanu technicznego. Przejrzyj komunikaty bezpieczeństwa i przestrzegaj zasad ładowania. Wybrzuszenie, syczenie, wydostające się gazy lub nietypowe nagrzewanie są sygnałami ostrzegawczymi. Uszkodzony akumulator wymaga fachowego postępowania.",
+          "paragraphs": [
+            "USFA zaleca sprawdzenie informacji o wycofaniach, używanie dostarczonej ładowarki i unikanie przeciążania gniazd. Zweryfikuj, czy deklarowany znak badań dotyczy kupowanego produktu. Samo logo w ofercie nie zastępuje identyfikacji modelu i kontroli dokumentacji. Przechowuj instrukcję w miejscu dostępnym również dla pozostałych domowników.",
+            "Ostrzeżenie CPSC dotyczące określonych stacji Aeiusny 400 W i 500 W pokazuje znaczenie dokładnego oznaczenia urządzenia. Nie oznacza, że wszystkie stacje mają tę samą wadę. Zachowaj numer modelu, numer seryjny, dowód zakupu oraz kontakt do dostawcy. Dzięki temu przyszły komunikat można porównać z własnym egzemplarzem bez zgadywania.",
+            "Wybierz miejsce zgodne z instrukcją dotyczącą wentylacji i temperatury, pozostawiając wolne wyjścia. Jeżeli pojawi się dym lub oznaki awarii baterii, odsuń ludzi i odpowiednio wezwij służby. Nie przenoś uszkadzającego się pakietu przez mieszkanie. Sposób odbioru wadliwego sprzętu ustal z producentem lub właściwymi lokalnymi instytucjami."
+          ],
+          "bullets": [
+            "Porównaj dokładny model z właściwymi komunikatami bezpieczeństwa.",
+            "Przechowuj odpowiednią ładowarkę razem z instrukcją.",
+            "Przerwij używanie po zauważeniu uszkodzenia lub nietypowego zachowania.",
+            "Korzystaj z właściwego odbioru odpadów zamiast wyrzucać baterię do śmieci."
+          ],
+          "sourceIds": [
+            "usfa-charging",
+            "usfa-risks",
+            "cpsc-aeiusny",
+            "doe-solar"
+          ]
+        },
+        {
+          "id": "outage-and-recovery",
+          "heading": "6. Przećwicz awarię i powrót do zasilania",
+          "answer": "Pełny plan obejmuje uruchomienie, oszczędzanie zasobów, decyzję o opuszczeniu domu i kontrolę po powrocie prądu. Śledź lokalne komunikaty, nadzoruj wybrane odbiorniki i ponownie oceniaj warunki. Przywracaj pracę zgodnie z instrukcjami; po przerwie szczególnej kontroli wymagają ustawienia sprzętu medycznego.",
+          "paragraphs": [
+            "Proponowaną próbę rozpocznij od odnalezienia instrukcji bez internetu. Poproś drugiego domownika o wyjaśnienie priorytetów, wskazanie potrzebnych przewodów i momentu przejścia do rozwiązania zastępczego. Od razu popraw nieczytelne oznaczenia. Radio awaryjne z panelem słonecznym można rozważyć jako osobne narzędzie odbioru informacji, sprawdzając rzeczywiste możliwości ładowania w jego instrukcji.",
+            "Prowadź prosty zapis zdarzenia: początek awarii, podłączone urządzenia, kontrole energii lub paliwa, ostrzeżenia i decyzje. To praktyczna dokumentacja domowa, bez przewidywania terminu naprawy sieci. Gdy warunki wewnątrz stają się niebezpieczne, uruchom plan wyjazdu zamiast dokładać nieprzewidziany odbiornik o dużej mocy. Wcześniej ustal, kto zabiera instrukcje i niezbędne wyposażenie.",
+            "Po powrocie prądu sprawdź uszkodzenia przed ponownym podłączeniem. FDA zaleca kontrolę ustawień urządzeń medycznych, ponieważ przerwa może je zresetować. Uzupełnij zasoby zgodnie z instrukcjami, omów wykryte problemy i popraw arkusz. CDC zaleca oświetlenie bateryjne zamiast świec oraz przeniesienie się w bezpieczne miejsce, gdy upał lub zimno stają się zagrożeniem."
+          ],
+          "bullets": [
+            "Trzymaj razem instrukcje, kontakty i niezbędne przewody.",
+            "Wskaż osobę kontrolującą pozostałe zasoby zasilania.",
+            "Uruchom uzgodnione rozwiązanie zastępcze przed wyczerpaniem zapasu.",
+            "Skontroluj sprzęt, przywróć pracę, uzupełnij zasoby i popraw plan."
+          ],
+          "image": {
+            "src": "/images/blog/bug_out_bag.svg",
+            "alt": "Czarno-złota grafika redakcyjna dotycząca przygotowania na sytuacje awaryjne",
+            "caption": "Plan wyjazdu powinien uzupełniać plan zasilania, aby niezbędne wsparcie mogło działać w innym miejscu."
+          },
+          "sourceIds": [
+            "fda-disasters",
+            "cdc-outage",
+            "fda-checklist"
+          ],
+          "productId": "solar-emergency-radio"
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy stacji akumulatorowej można używać w mieszkaniu?",
+          "answer": "Sprawdź instrukcję konkretnego modelu i jego stan. Normalna praca z baterii nie powoduje emisji spalin, ale nadal obowiązują wymagania ładowania, wentylacji, temperatury i ochrony przeciwpożarowej. Nie każdy produkt ma identyczne warunki użytkowania."
+        },
+        {
+          "question": "Czy fotowoltaika będzie działać podczas awarii sieci?",
+          "answer": "Nie zakładaj tego automatycznie. Departament Energii wyjaśnia, że wiele instalacji połączonych z siecią również przestaje wtedy dostarczać prąd. Poproś instalatora o pokaz przewidzianego trybu awaryjnego."
+        },
+        {
+          "question": "Czy mogę podłączyć agregat przez domowe gniazdko?",
+          "answer": "Nie. Zasilanie zwrotne może spowodować pojawienie się napięcia poza domem. Podłączenie stałych obwodów uzgodnij z wykwalifikowanym elektrykiem, z zastosowaniem właściwego układu przełączania."
+        },
+        {
+          "question": "Jak dobrać zasilanie sprzętu medycznego?",
+          "answer": "Zacznij od dostawcy urządzenia i zespołu prowadzącego leczenie. Potwierdź zgodność źródła rezerwowego, wymaganą ciągłość pracy i plan awaryjny. Ogólny szacunek czasu działania produktu konsumenckiego nie wystarcza do zabezpieczenia niezbędnej terapii."
+        },
+        {
+          "question": "Co sprawdzić po powrocie prądu?",
+          "answer": "Sprawdź stan sprzętu, wykonaj procedurę ponownego uruchomienia i zweryfikuj ustawienia oraz alarmy urządzeń medycznych. Uzupełnij zapasy i zapisz problemy, aby poprawić domowy plan."
+        }
+      ],
+      "sources": [
+        {
+          "id": "cdc-outage",
+          "title": "What to Do to Protect Yourself During a Power Outage",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/natural-disasters/response/what-to-do-protect-yourself-during-a-power-outage.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "osha-generators",
+          "title": "Using Portable Generators Safely",
+          "publisher": "Occupational Safety and Health Administration",
+          "url": "https://www.osha.gov/sites/default/files/publications/OSHA3286.pdf",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "doe-solar",
+          "title": "The Road to Resilience with Rooftop Solar",
+          "publisher": "US Department of Energy",
+          "url": "https://www.energy.gov/cmei/systems/articles/road-resilience-rooftop-solar",
+          "publishedAt": "2020-06-30",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fda-disasters",
+          "title": "FDA Offers Tips about Medical Devices and Natural Disasters",
+          "publisher": "US Food and Drug Administration",
+          "url": "https://www.fda.gov/medical-devices/emergency-situations-medical-devices/fda-offers-tips-about-medical-devices-and-natural-disasters",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fda-checklist",
+          "title": "Brochure — Home Healthcare Medical Devices: A Checklist",
+          "publisher": "US Food and Drug Administration",
+          "url": "https://www.fda.gov/medical-devices/home-health-and-consumer-devices/brochure-home-healthcare-medical-devices-checklist",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "usfa-charging",
+          "title": "Lithium-Ion Battery Safety for Electronic Devices",
+          "publisher": "US Fire Administration",
+          "url": "https://www.usfa.fema.gov/downloads/pdf/publications/lithium-ion-battery-safety-handout.pdf",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "usfa-risks",
+          "title": "Risks and Response Strategies for Lithium-ion Battery Fires",
+          "publisher": "US Fire Administration",
+          "url": "https://www.usfa.fema.gov/a-z/lithium-ion-batteries/risks-and-response-strategies/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "cpsc-aeiusny",
+          "title": "CPSC Warns Consumers to Immediately Stop Using Aeiusny Power Stations Due to Risk of Serious Injury or Death from Fire; Sold on Amazon",
+          "publisher": "US Consumer Product Safety Commission",
+          "url": "https://www.cpsc.gov/Recalls/2025/CPSC-Warns-Consumers-to-Immediately-Stop-Using-Aeiusny-Power-Stations-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Sold-on-Amazon",
+          "publishedAt": "2025-09-04",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    }
+  }
+}
