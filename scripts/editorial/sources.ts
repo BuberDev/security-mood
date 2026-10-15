@@ -5,12 +5,16 @@ const approvedPrimaryHosts = new Set([
   "ftc.gov", "www.ftc.gov", "enisa.europa.eu", "www.enisa.europa.eu", "europol.europa.eu",
   "www.europol.europa.eu", "cert.pl", "www.cert.pl", "gov.pl", "www.gov.pl",
   "fidoalliance.org", "www.fidoalliance.org", "owasp.org", "www.owasp.org",
+  // Oficjalna dokumentacja producentów — źródło pierwotne dla funkcji ich urządzeń.
+  "support.apple.com", "support.google.com",
 ]);
 
 export function isApprovedPrimarySource(url: string) {
   const hostname = new URL(url).hostname.toLowerCase();
   return (
     approvedPrimaryHosts.has(hostname) ||
+    // Subdomeny zatwierdzonych instytucji, np. wiedza.cert.pl dla cert.pl.
+    [...approvedPrimaryHosts].some((host) => hostname.endsWith(`.${host}`)) ||
     hostname.endsWith(".gov") ||
     hostname.endsWith(".gov.uk") ||
     hostname.endsWith(".police.uk") ||
