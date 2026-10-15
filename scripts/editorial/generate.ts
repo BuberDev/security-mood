@@ -55,8 +55,7 @@ function selectTopic(): PlanItem {
   return topic;
 }
 
-function buildPrompt(topic: PlanItem) {
-  const today = new Date().toISOString().slice(0, 10);
+function buildPrompt(topic: PlanItem, publicationDate: string) {
   const productIdsByCategory: Record<EditorialArticle["categoryId"], string[]> = {
     "home-security": ["biometric-smart-lock", "mini-spy-camera-4k", "outdoor-security-camera", "smart-door-lock", "door-security-bar", "portable-safe", "outdoor-motion-alarm", "solar-motion-light", "window-alarm-kit", "door-wedge-alarm"],
     "personal-safety": ["anti-theft-smart-backpack", "personal-safety-alarm", "tactical-pen", "pepper-spray-gel", "rfid-wallet", "tactical-flashlight"],
@@ -98,7 +97,7 @@ Topic: ${topic.titleEn} / ${topic.titlePl}
 Topic key and slug: ${topic.topicKey}
 Category: ${topic.categoryId}
 Search intent: ${topic.intent}
-Publication and update date: ${today}
+Publication and update date: ${publicationDate}
 
 Research current primary sources with WebSearch and WebFetch before writing. Use at least four reachable sources from standards bodies or public agencies (for example NIST, CISA, ENISA, CERT.PL, FBI, FTC, FEMA/Ready.gov, Europol, FIDO Alliance or OWASP). Never invent a source, statistic, credential, quote, product capability or URL. Assign every factual section at least one sourceId.
 
@@ -186,8 +185,9 @@ function normalizeInternalLinkPaths(value: unknown): unknown {
 async function main() {
   assertCleanMainBranch();
   const today = new Date().toISOString().slice(0, 10);
-  if (process.env.SCHEDULED_PUBLISHER === "true" && alreadyPublishedOn(today)) {
-    console.log(`An article for ${today} is already published; skipping the duplicate scheduled run.`);
+  const publicationDate = process.env.SCHEDULED_FOR ?? today;
+  if (process.env.SCHEDULED_PUBLISHER === "true" && alreadyPublishedOn(publicationDate)) {
+    console.log(`An article for ${publicationDate} is already published; skipping the duplicate scheduled run.`);
     return;
   }
   const topic = selectTopic();
@@ -216,7 +216,7 @@ async function main() {
     "never",
   ];
   if (process.env.CODEX_MODEL) args.push("--model", process.env.CODEX_MODEL);
-  args.push(buildPrompt(topic));
+  args.push(buildPrompt(topic, publicationDate));
 
   console.log(`Researching and drafting: ${topic.titlePl}`);
   try {
@@ -224,12 +224,12 @@ async function main() {
       codexArgs: args,
       cwd: projectRoot,
       outputPath,
-      prompt: buildPrompt(topic),
+      prompt: buildPrompt(topic, publicationDate),
       schema: schemaObject,
-      slot: today,
+      slot: publicationDate,
     });
     const article = editorialArticleSchema.parse(
-      normalizeInternalLinkPaths(removeNullProperties(generatedOutput))
+      normalizeInternalLinkPaths({ ...(removeNullProperties(generatedOutput) as Record<string, unknown>), publishedAt: publicationDate })
     );
     if (article.topicKey !== topic.topicKey || article.slug !== topic.topicKey || article.categoryId !== topic.categoryId) throw new Error("Generated article does not match the selected editorial topic.");
 

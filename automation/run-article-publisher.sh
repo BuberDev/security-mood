@@ -44,4 +44,18 @@ if [[ -f "$publisher_env" ]]; then
 fi
 export ALLOW_PAID_LLM_FALLBACK=true
 npm ci
-SCHEDULED_PUBLISHER=true npm run article:publish
+state_directory="$(dirname "$publisher_repo")/state"
+mkdir -p "$state_directory"
+activation_date_file="$state_directory/activation-date"
+if [[ -f "$activation_date_file" ]]; then
+  export SLOT_NOT_BEFORE="$(<"$activation_date_file")"
+else
+  export SLOT_NOT_BEFORE="$(TZ=Europe/Warsaw date +%F)"
+fi
+
+pending_date="$(node scripts/editorial/schedule.mjs)"
+if [[ "$pending_date" == "NONE" ]]; then
+  print "No unpublished scheduled slot is due."
+  exit 0
+fi
+SCHEDULED_FOR="$pending_date" SCHEDULED_PUBLISHER=true npm run article:publish
