@@ -10,9 +10,12 @@ const approvedPrimaryHosts = new Set([
 ]);
 
 export function isApprovedPrimarySource(url: string) {
-  const hostname = new URL(url).hostname.toLowerCase();
+  const source = new URL(url);
+  const hostname = source.hostname.toLowerCase();
   return (
     approvedPrimaryHosts.has(hostname) ||
+    // CISA uses GovDelivery for official advisories; approve only its CISA account.
+    (hostname === "content.govdelivery.com" && source.pathname.startsWith("/accounts/USDHSCISA/")) ||
     // Subdomeny zatwierdzonych instytucji, np. wiedza.cert.pl dla cert.pl.
     [...approvedPrimaryHosts].some((host) => hostname.endsWith(`.${host}`)) ||
     hostname.endsWith(".gov") ||
