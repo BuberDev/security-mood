@@ -1,0 +1,481 @@
+{
+  "version": 1,
+  "topicKey": "phishing-resistant-mfa-small-business",
+  "slug": "phishing-resistant-mfa-small-business",
+  "status": "published",
+  "categoryId": "cyber-shield",
+  "publishedAt": "2026-10-09",
+  "updatedAt": "2026-10-09",
+  "heroImage": "/images/blog/editorial/passkeys-hardware-keys-hero.webp",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public standards and security guidance; no product certification or laboratory testing is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie publicznych standardów i zaleceń bezpieczeństwa; bez deklarowania certyfikacji produktów lub badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Security Mood implementation guides",
+        "pl": "Poradniki wdrożeniowe Security Mood"
+      }
+    },
+    {
+      "href": "/blog/digital-privacy-cyber-shield-guide",
+      "label": {
+        "en": "Build a broader digital privacy routine",
+        "pl": "Zadbaj o szerszą ochronę prywatności cyfrowej"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Save equipment options for your rollout",
+        "pl": "Zapisz wyposażenie rozważane do wdrożenia"
+      }
+    }
+  ],
+  "productIds": [
+    "hardware-security-key"
+  ],
+  "locales": {
+    "en": {
+      "title": "Phishing-resistant MFA for a small business: a practical rollout guide",
+      "excerpt": "Choose passkeys or FIDO2 security keys, protect priority accounts, close weaker login routes, and rehearse recovery before enforcing your policy.",
+      "heroAlt": "Passkeys and hardware security keys illustrating phishing-resistant business authentication.",
+      "quickAnswer": "Use FIDO2/WebAuthn passkeys or security keys with a policy that requires appropriate user verification. Start with administrators, business email and financial access. Register backup authenticators, test recovery, then enforce the stronger method and remove weaker alternative login routes where supported. Check each application separately: enrolling a passkey does not prove that every sign-in requires it.",
+      "keyTakeaways": [
+        "A one-time code is not phishing-resistant simply because it changes frequently.",
+        "Choose authenticators around device ownership, shared workstations and recovery responsibilities.",
+        "Treat enrollment, enforcement and recovery as three separate implementation tasks.",
+        "Measure protected sign-ins and remaining bypass routes, rather than counting registered keys.",
+        "Keep endpoint security, session controls and payment verification alongside stronger authentication."
+      ],
+      "methodology": "We searched and fetched primary guidance from NIST, OWASP and FIDO Alliance during research on 2026-10-15. The requested publication and update dates remain 2026-10-09; the research date is disclosed rather than backdated. Five reachable documents underpin the article. NIST requirements describe their stated identity-assurance context, not an automatic legal obligation for every small business. The rollout sequence, worksheets and acceptance criteria below are our editorial implementation recommendations. We did not test products, inspect a business tenant, compare prices or verify individual subscription entitlements.",
+      "sections": [
+        {
+          "id": "define-the-target",
+          "heading": "1. Define what phishing-resistant MFA must accomplish",
+          "answer": "Phishing-resistant authentication binds the authentication exchange to the legitimate service, rather than relying on an employee to recognize a convincing fake login page. FIDO2/WebAuthn provides this protection through service-name binding. Passwords and manually entered one-time codes do not provide the same property. For MFA, also verify which second factor the actual login flow requires.",
+          "paragraphs": [
+            "NIST distinguishes resistance to phishing from resistance to replay. A code that expires or works only once can still be entered into an impostor page and relayed immediately. This distinction matters when comparing an authenticator app that generates codes with an app that stores passkeys: the application label alone does not identify the protocol. See the technical definition in [NIST’s authenticator guidance](https://pages.nist.gov/800-63-4/sp800-63b.html).",
+            "A hardware key is likewise not automatically a complete MFA deployment. Decide whether the service requires a local PIN or biometric verification, or combines the key with another factor. Touching a key establishes user presence; do not assume that a touch alone establishes a second factor. Ask your administrator or provider to explain the enforced authentication flow in plain language.",
+            "Write a one-sentence target before buying equipment: named employees must use an approved phishing-resistant method to access the listed business accounts, with documented exceptions and recovery. For a small company, an explicit list of protected accounts is more useful than an undefined promise to make everything passwordless. Give one person responsibility for maintaining that list."
+          ],
+          "bullets": [
+            "Record the account owner, application, current method, intended method and recovery owner.",
+            "Separate everyday accounts from accounts that can reset other users or change security policy.",
+            "Define success as an enforced login requirement, not merely successful enrollment."
+          ],
+          "sourceIds": [
+            "nist"
+          ]
+        },
+        {
+          "id": "choose-authenticators",
+          "heading": "2. Choose passkeys and keys around how people work",
+          "answer": "Choose between synced passkeys, device-bound platform passkeys and hardware security keys according to who controls the devices and credentials. Synced passkeys require scrutiny of the provider account and recovery process; device-bound credentials require a separate continuity plan. Shared workstations deserve particular attention because a shared operating-system profile should not become a shared employee identity.",
+          "paragraphs": [
+            "FIDO Alliance distinguishes credentials that synchronize through a provider from credentials bound to a particular device. Its enterprise guidance discusses hardware keys for shared-device scenarios and the need for backup when a key is lost. These are deployment choices, not a universal ranking that makes one format best for every employee. Review the [enterprise passkey paper](https://fidoalliance.org/white-paper-replacing-password-only-authentication-with-passkeys-in-the-enterprise/) before choosing your default.",
+            "Our suggested procurement exercise is deliberately small: borrow or obtain enough authenticators for a representative pilot, then test the exact laptops, phones, browsers and connectors employees use. Include a remote worker and anyone with accessibility requirements. Do not order for the entire business on the strength of a successful demonstration on the owner's computer.",
+            "For administrators, consider issuing a primary and separately stored spare hardware key under a documented custody process. For routine staff, assess whether an approved managed passkey provider fits existing device management. Ask who can recover the provider account, whether work credentials can enter personal accounts, and what happens when a contractor leaves. Count setup time, support time and replacement handling in the budget."
+          ],
+          "bullets": [
+            "Verify FIDO2/WebAuthn support for the exact service and intended authentication flow.",
+            "Check USB and NFC compatibility on real devices; do not infer compatibility from appearance.",
+            "Document custody of spares without recording PINs in the equipment register."
+          ],
+          "table": {
+            "headers": [
+              "Method",
+              "Phishing resistance",
+              "Decision point"
+            ],
+            "rows": [
+              [
+                "Password plus SMS or app-generated code",
+                "No",
+                "Temporary fallback where stronger methods are unavailable; track as an exception."
+              ],
+              [
+                "Synced passkey",
+                "Yes, with an appropriate WebAuthn implementation",
+                "Review provider-account protection, synchronization policy and recovery."
+              ],
+              [
+                "Device-bound platform passkey",
+                "Yes, with an appropriate WebAuthn implementation",
+                "Plan for device replacement and loss."
+              ],
+              [
+                "FIDO2 hardware security key",
+                "Yes, with an appropriate WebAuthn implementation",
+                "Verify factor requirements, connectors and separately registered backup."
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Editorial illustration of passkey and hardware security key setup.",
+            "caption": "Pilot the complete sign-in flow on employees’ actual devices before purchasing equipment for everyone."
+          },
+          "sourceIds": [
+            "fido-replacing",
+            "fido-moderate",
+            "nist"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "pilot-and-enroll",
+          "heading": "3. Pilot enrollment before changing company-wide policy",
+          "answer": "Run a limited pilot that covers enrollment, normal sign-in, a missing authenticator and replacement. Prioritize accounts with administrative power or access to email and money, but preserve a tested way to administer the service during the change. Expand only when the pilot demonstrates both usable authentication and controlled recovery.",
+          "paragraphs": [
+            "OWASP treats changing MFA factors as a sensitive operation and warns against weak recovery processes. Apply that principle to initial enrollment: do not accept an unsolicited message asking the help desk to attach a new key. Use a scheduled, verified onboarding process and document who approved the binding. Consult [OWASP’s MFA guidance](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html) for the underlying lifecycle considerations.",
+            "Our suggested pilot group includes the business owner, the administrator and one employee with a different work pattern. Schedule a support window and explain the expected prompts beforehand. Ask each person to sign out and start a new session, rather than relying on an already authenticated browser. Register and test the approved backup before declaring the person ready.",
+            "Keep a short acceptance record for every application: the intended method succeeded, the backup succeeded, an unauthorized method failed after enforcement, and the recovery contact knew the procedure. If an application fails, record the precise limitation and a decision owner. A blocked pilot is useful evidence for a replacement or integration decision; it should not silently become a permanent exemption."
+          ],
+          "bullets": [
+            "Begin with the identity provider, business email and privileged access; then assess finance and other sensitive services.",
+            "Prepare a verified enrollment appointment and a plain-language employee instruction sheet.",
+            "Test from a fresh session on each supported device type.",
+            "Do not expand the rollout until someone other than the implementer can follow the recovery instructions."
+          ],
+          "sourceIds": [
+            "owasp",
+            "fido-replacing"
+          ]
+        },
+        {
+          "id": "enforce-and-check",
+          "heading": "4. Enforce the method and investigate alternative routes",
+          "answer": "Enrollment adds an authenticator; enforcement determines when it must be used. After a successful pilot, require the approved phishing-resistant method for the chosen users and applications. Examine local application logins, legacy clients and fallback methods separately. Keep an exception register wherever the service cannot enforce the intended policy.",
+          "paragraphs": [
+            "NIST’s assurance framework evaluates the authentication transaction, while FIDO’s higher-assurance guidance discusses organizational control over credential lifecycles. Neither buying a key nor selecting an assurance label establishes the security of an entire business environment. Use the [FIDO higher-assurance paper](https://fidoalliance.org/white-paper-high-assurance-enterprise-fido-authentication/) to structure questions about control, without claiming that your deployment has been independently assessed.",
+            "Our recommended application worksheet asks whether the app uses the central identity provider, whether a separate local password still works, whether administrators have a different login page, and whether an older mail client bypasses the intended flow. Ask the provider to identify the relevant controls and subscription requirements. Verify the answer in your own tenant; menus and available policies vary.",
+            "For unsupported services, keep the strongest available MFA while assigning an owner and review date to the limitation. Consider federation, restricted access or replacement according to business impact and verified capabilities. Do not disable a working protection while waiting for a future improvement. For an exception, state which users can use it, why it exists and what would allow its removal."
+          ],
+          "bullets": [
+            "Attempt an ordinary password-and-code login after enforcement; record whether it is rejected.",
+            "Review administrator accounts, guest users and emergency access separately.",
+            "Inspect available sign-in records for the method actually used.",
+            "Track protected accounts, unresolved exceptions, failed recovery drills and support problems."
+          ],
+          "sourceIds": [
+            "nist",
+            "fido-high"
+          ]
+        },
+        {
+          "id": "recovery-and-operations",
+          "heading": "5. Rehearse loss, replacement and suspected compromise",
+          "answer": "Plan recovery before requiring phishing-resistant MFA. A lost key should trigger a verified recovery process, removal of the missing authenticator and registration of a replacement. Suspected account compromise also requires session and activity review. Strong authentication does not remove the need to secure devices or investigate an already established session.",
+          "paragraphs": [
+            "FIDO guidance notes that device-bound credentials need a recovery strategy and that synced credentials introduce dependence on the synchronization environment. OWASP recommends protecting factor replacement and recovery against account takeover. Read the [moderate-assurance deployment discussion](https://fidoalliance.org/white-paper-fido-authentication-for-moderate-assurance-use-cases/) alongside your provider’s recovery documentation, especially when choosing who can authorize a reset.",
+            "Our suggested lost-key procedure is: report through the established company channel; verify the employee using a prearranged process; use the separately registered backup if available; remove the missing credential from affected services; register and test its replacement; review recent account changes. A spare in the same laptop bag is a poor continuity choice for a bag-loss scenario. Store it somewhere separately accessible to its authorized custodian.",
+            "If takeover is suspected, ask the administrator to revoke active sessions where supported, examine sign-in records and newly registered factors, and investigate affected devices. Review mailbox forwarding, delegated access and relevant application permissions. If money or supplier details were involved, independently verify pending transactions using a known contact route. These are incident-response tasks, beyond simply issuing another key.",
+            "For ongoing operations, we recommend a recovery drill after rollout and after material changes to devices, administrators or the identity provider. Make offboarding a checklist item: disable access, revoke applicable credentials and sessions, recover company equipment, and confirm who retains custody of spare authenticators. Keep the runbook available outside the account it is intended to recover."
+          ],
+          "bullets": [
+            "If recovery codes are offered, store them securely and separately from the protected account; they are not phishing-resistant authenticators.",
+            "If emergency administrative access is necessary, document custody, monitoring and permitted use, then test it without leaving routine bypasses.",
+            "Ask staff to report unexpected enrollment prompts and recovery requests immediately."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Editorial illustration of backup security keys and account recovery planning.",
+            "caption": "A separately stored backup is useful only when it is registered, tested and covered by a clear recovery procedure."
+          },
+          "sourceIds": [
+            "owasp",
+            "fido-high",
+            "fido-moderate",
+            "nist"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Does every passkey sign-in count as MFA?",
+          "answer": "Do not assume so from the label. Confirm that the enforced flow proves possession plus an appropriate second factor, such as local PIN or biometric verification. NIST distinguishes single-factor and multi-factor cryptographic authenticators; the actual configuration matters."
+        },
+        {
+          "question": "Can we keep authenticator-app codes during migration?",
+          "answer": "Yes, as a documented transition or service limitation. Codes remain phishable. Give the exception an owner and review date, and avoid describing accounts that can still use weaker routes as fully protected by enforced phishing-resistant MFA."
+        },
+        {
+          "question": "Must a small company buy keys for every employee?",
+          "answer": "No universal requirement follows from this guide. Evaluate approved platform or synced passkeys alongside hardware keys. Start with a representative pilot and base procurement on device compatibility, administrative control and recovery needs."
+        },
+        {
+          "question": "What if the only administrator loses access?",
+          "answer": "Follow a previously tested emergency recovery procedure rather than improvising identity checks. Before enforcement, establish authorized recovery custody and confirm that the runbook is accessible without the locked account."
+        },
+        {
+          "question": "Will phishing-resistant MFA stop invoice fraud?",
+          "answer": "It addresses a particular authentication attack path. Keep independent verification for bank-detail changes, suitable approval controls, endpoint protection and session review. A legitimate authenticated user can still be deceived about a payment."
+        }
+      ],
+      "sources": [
+        {
+          "id": "nist",
+          "title": "SP 800-63B-4: Digital Identity Guidelines — Authentication and Authenticator Management",
+          "publisher": "NIST",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "owasp",
+          "title": "Multifactor Authentication Cheat Sheet",
+          "publisher": "OWASP",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-replacing",
+          "title": "Replacing Password-Only Authentication with Passkeys in the Enterprise",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-replacing-password-only-authentication-with-passkeys-in-the-enterprise/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-high",
+          "title": "High Assurance Enterprise FIDO Authentication",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-high-assurance-enterprise-fido-authentication/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-moderate",
+          "title": "FIDO Authentication for Moderate Assurance Use Cases",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-fido-authentication-for-moderate-assurance-use-cases/",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    },
+    "pl": {
+      "title": "MFA odporne na phishing w małej firmie: praktyczny poradnik wdrożenia",
+      "excerpt": "Wybierz passkeys lub klucze FIDO2, zabezpiecz najważniejsze konta, zamknij słabsze drogi logowania i przećwicz odzyskiwanie dostępu przed włączeniem wymagań.",
+      "heroAlt": "Passkeys i sprzętowe klucze bezpieczeństwa ilustrujące firmowe uwierzytelnianie odporne na phishing.",
+      "quickAnswer": "Wdroż passkeys lub klucze bezpieczeństwa FIDO2/WebAuthn z zasadami wymagającymi odpowiedniej weryfikacji użytkownika. Zacznij od administratorów, poczty firmowej i dostępu do finansów. Zarejestruj zapasowe uwierzytelniacze, sprawdź odzyskiwanie dostępu, następnie wymuś mocniejszą metodę i wyłącz słabsze drogi logowania tam, gdzie to możliwe. Każdą aplikację sprawdź oddzielnie: dodanie passkey nie oznacza, że wszystkie logowania muszą go używać.",
+      "keyTakeaways": [
+        "Kod jednorazowy nie jest odporny na phishing tylko dlatego, że często się zmienia.",
+        "Dobierz uwierzytelniacze do własności urządzeń, współdzielonych stanowisk i zasad odzyskiwania dostępu.",
+        "Oddziel rejestrację, wymuszanie metody i odzyskiwanie dostępu jako trzy zadania wdrożeniowe.",
+        "Mierz rzeczywiście chronione logowania i pozostałe obejścia, zamiast liczyć dodane klucze.",
+        "Zachowaj ochronę urządzeń, kontrolę sesji i niezależną weryfikację płatności."
+      ],
+      "methodology": "Podczas prac 2026-10-15 wyszukaliśmy i otworzyliśmy źródłowe zalecenia NIST, OWASP oraz FIDO Alliance. Wymagane daty publikacji i aktualizacji pozostają ustawione na 2026-10-09; ujawniamy rzeczywistą datę badania zamiast ją antydatować. Artykuł opiera się na pięciu dostępnych dokumentach. Wymagania NIST dotyczą opisanego w nich kontekstu poziomów pewności uwierzytelniania i nie stanowią automatycznie obowiązku prawnego każdej małej firmy. Kolejność wdrożenia, proponowane rejestry i kryteria odbioru są rekomendacjami redakcyjnymi. Nie testowaliśmy produktów, nie kontrolowaliśmy środowiska konkretnej firmy ani cen i uprawnień poszczególnych abonamentów.",
+      "sections": [
+        {
+          "id": "define-the-target",
+          "heading": "1. Ustal, co ma zapewniać MFA odporne na phishing",
+          "answer": "Uwierzytelnianie odporne na phishing wiąże wymianę uwierzytelniającą z prawdziwą usługą, zamiast polegać na rozpoznaniu fałszywej strony przez pracownika. FIDO2/WebAuthn zapewnia taką ochronę przez powiązanie z nazwą usługi. Hasła i ręcznie przepisywane kody jednorazowe nie mają tej samej właściwości. Aby mówić o MFA, sprawdź również drugi składnik wymagany w konkretnym procesie logowania.",
+          "paragraphs": [
+            "NIST rozróżnia odporność na phishing od odporności na ponowne wykorzystanie odpowiedzi uwierzytelniającej. Kod może szybko wygasać i działać tylko raz, a mimo to zostać wpisany na fałszywej stronie i natychmiast przekazany dalej. Dlatego aplikacja generująca kody i aplikacja przechowująca passkeys nie są równoważne. Sama nazwa programu nie określa protokołu. Definicję techniczną przedstawiają [wytyczne NIST](https://pages.nist.gov/800-63-4/sp800-63b.html).",
+            "Również sprzętowy klucz nie oznacza automatycznie kompletnego wdrożenia MFA. Ustal, czy usługa wymaga lokalnego PIN-u lub biometrii, czy łączy klucz z innym składnikiem. Dotknięcie klucza potwierdza obecność użytkownika; nie zakładaj, że samo dotknięcie potwierdza drugi składnik. Poproś administratora lub dostawcę o proste wyjaśnienie wymuszanego przebiegu logowania.",
+            "Przed zakupami zapisz cel w jednym zdaniu: wskazani pracownicy mają używać zatwierdzonej metody odpornej na phishing do wymienionych kont firmowych, z udokumentowanymi wyjątkami i odzyskiwaniem dostępu. W małej firmie konkretna lista kont będzie bardziej przydatna niż ogólna deklaracja odejścia od haseł. Wyznacz osobę odpowiedzialną za aktualizowanie tej listy i zatwierdzanie zmian."
+          ],
+          "bullets": [
+            "Zapisz właściciela konta, aplikację, obecną metodę, metodę docelową i osobę odpowiedzialną za odzyskiwanie.",
+            "Oddziel konta codzienne od kont pozwalających resetować dostęp innych osób lub zmieniać zasady bezpieczeństwa.",
+            "Za sukces uznaj wymaganie metody przy logowaniu, a nie samo jej dodanie."
+          ],
+          "sourceIds": [
+            "nist"
+          ]
+        },
+        {
+          "id": "choose-authenticators",
+          "heading": "2. Dobierz passkeys i klucze do sposobu pracy",
+          "answer": "Wybierz synchronizowane passkeys, passkeys związane z urządzeniem albo sprzętowe klucze bezpieczeństwa zależnie od tego, kto kontroluje urządzenia i poświadczenia. Synchronizacja wymaga oceny konta dostawcy oraz odzyskiwania dostępu. Poświadczenia związane z urządzeniem potrzebują odrębnego planu ciągłości. Na współdzielonych stanowiskach wspólny profil systemowy nie powinien zastępować indywidualnej tożsamości pracownika.",
+          "paragraphs": [
+            "FIDO Alliance rozróżnia poświadczenia synchronizowane przez dostawcę oraz związane z konkretnym urządzeniem. W zaleceniach firmowych omawia klucze sprzętowe przy współdzielonych stanowiskach i konieczność przygotowania zapasu na wypadek utraty klucza. Są to wybory wdrożeniowe, a nie uniwersalny ranking dla wszystkich pracowników. Przed ustaleniem domyślnej metody przeczytaj [opracowanie o passkeys w firmach](https://fidoalliance.org/white-paper-replacing-password-only-authentication-with-passkeys-in-the-enterprise/).",
+            "Proponujemy zacząć zakupy od niewielkiego pilotażu. Wypożycz lub kup tyle uwierzytelniaczy, ile potrzeba do sprawdzenia rzeczywiście używanych laptopów, telefonów, przeglądarek i złączy. Uwzględnij osobę pracującą zdalnie oraz potrzeby dostępności. Udana prezentacja na komputerze właściciela nie wystarcza do zamówienia wyposażenia dla całego zespołu. Zapisuj problemy i sposób ich rozwiązania.",
+            "Dla administratorów rozważ klucz podstawowy oraz osobno przechowywany zapasowy, objęte udokumentowanymi zasadami wydawania. Dla pozostałych osób oceń, czy zatwierdzony dostawca zarządzanych passkeys pasuje do obecnej obsługi urządzeń. Ustal, kto odzyskuje konto dostawcy, czy poświadczenia służbowe mogą trafić do kont prywatnych i co następuje po zakończeniu współpracy. W budżecie uwzględnij konfigurację, wsparcie oraz wymiany."
+          ],
+          "bullets": [
+            "Potwierdź obsługę FIDO2/WebAuthn przez konkretną usługę i planowany sposób logowania.",
+            "Sprawdź USB oraz NFC na rzeczywistych urządzeniach; wygląd klucza nie potwierdza zgodności.",
+            "Rejestruj osoby przechowujące zapasy, ale nie wpisuj PIN-ów do ewidencji sprzętu."
+          ],
+          "table": {
+            "headers": [
+              "Metoda",
+              "Odporność na phishing",
+              "Kryterium decyzji"
+            ],
+            "rows": [
+              [
+                "Hasło i kod SMS lub kod z aplikacji",
+                "Nie",
+                "Rozwiązanie przejściowe przy braku mocniejszej metody; wpisz je do rejestru wyjątków."
+              ],
+              [
+                "Synchronizowany passkey",
+                "Tak, przy odpowiednim wdrożeniu WebAuthn",
+                "Oceń ochronę konta dostawcy, zasady synchronizacji i odzyskiwanie."
+              ],
+              [
+                "Passkey platformowy związany z urządzeniem",
+                "Tak, przy odpowiednim wdrożeniu WebAuthn",
+                "Zaplanuj utratę oraz wymianę urządzenia."
+              ],
+              [
+                "Sprzętowy klucz bezpieczeństwa FIDO2",
+                "Tak, przy odpowiednim wdrożeniu WebAuthn",
+                "Sprawdź wymagane składniki, złącza i osobno zarejestrowany zapas."
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Ilustracja redakcyjna konfiguracji passkeys i sprzętowych kluczy bezpieczeństwa.",
+            "caption": "Przed zakupami dla całej firmy sprawdź pełne logowanie na urządzeniach rzeczywiście używanych przez pracowników."
+          },
+          "sourceIds": [
+            "fido-replacing",
+            "fido-moderate",
+            "nist"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "pilot-and-enroll",
+          "heading": "3. Przeprowadź pilotaż przed zmianą zasad całej firmy",
+          "answer": "Pilotaż powinien obejmować rejestrację, zwykłe logowanie, brak uwierzytelniacza i jego wymianę. Nadaj priorytet kontom administracyjnym oraz dostępowi do poczty i pieniędzy, zachowując sprawdzoną możliwość zarządzania usługą podczas zmiany. Rozszerzaj wdrożenie dopiero wtedy, gdy potwierdzisz zarówno wygodne logowanie, jak i kontrolowane odzyskiwanie dostępu.",
+          "paragraphs": [
+            "OWASP traktuje zmianę składników MFA jako operację wrażliwą i wskazuje ryzyko słabych procedur odzyskiwania. Zastosuj tę zasadę również przy pierwszej rejestracji: nie dodawaj klucza wyłącznie na podstawie nieoczekiwanej wiadomości do wsparcia. Zaplanuj potwierdzone wdrożenie pracownika i odnotuj zatwierdzającego. Podstawowe zagadnienia cyklu życia opisuje [poradnik MFA OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html).",
+            "Proponowana grupa pilotażowa obejmuje właściciela firmy, administratora i osobę pracującą w inny sposób niż pozostali. Wyznacz czas dostępności wsparcia oraz wcześniej wyjaśnij spodziewane komunikaty. Każda osoba powinna się wylogować i rozpocząć nową sesję. Otwarta wcześniej przeglądarka może ukryć problem z właściwym logowaniem. Przed zakończeniem konfiguracji dodaj i sprawdź zatwierdzony zapas.",
+            "Dla każdej aplikacji przygotuj krótki protokół odbioru: metoda docelowa działa, zapas działa, niedozwolona metoda jest odrzucana po włączeniu wymagań, a osoba odpowiedzialna zna odzyskiwanie. Jeśli aplikacja nie przechodzi próby, zapisz dokładne ograniczenie oraz właściciela decyzji. Nieudany pilotaż daje podstawę do rozmowy o integracji lub wymianie usługi; nie powinien bez decyzji zmieniać się w stałe odstępstwo.",
+            "Przygotuj także krótką instrukcję dla pracownika: jak rozpocząć logowanie, jaki komunikat powinien zobaczyć i gdzie zgłosić problem. Nie kopiuj instrukcji administratora pełnej nazw ustawień. Poproś uczestnika pilotażu o samodzielne wykonanie czynności na podstawie tekstu; jego pytania pokażą, co trzeba doprecyzować przed szerszym wdrożeniem."
+          ],
+          "bullets": [
+            "Zacznij od dostawcy tożsamości, poczty i dostępu uprzywilejowanego; następnie oceń finanse oraz inne wrażliwe usługi.",
+            "Zaplanuj potwierdzoną rejestrację i prostą instrukcję dla pracownika.",
+            "Sprawdź nową sesję na każdym wspieranym typie urządzenia.",
+            "Nie rozszerzaj wdrożenia, dopóki osoba inna niż autor procedury nie potrafi odzyskać dostępu według instrukcji."
+          ],
+          "sourceIds": [
+            "owasp",
+            "fido-replacing"
+          ]
+        },
+        {
+          "id": "enforce-and-check",
+          "heading": "4. Wymuś metodę i sprawdź alternatywne drogi dostępu",
+          "answer": "Rejestracja dodaje uwierzytelniacz, a wymuszanie określa, kiedy trzeba go używać. Po udanym pilotażu wymagaj zatwierdzonej metody odpornej na phishing dla wybranych osób i aplikacji. Oddzielnie sprawdź lokalne logowanie do aplikacji, starszych klientów i metody zastępcze. Prowadź rejestr wyjątków tam, gdzie usługa nie pozwala wymusić docelowych zasad.",
+          "paragraphs": [
+            "Model poziomów pewności NIST ocenia transakcję uwierzytelniania, natomiast opracowanie FIDO dotyczące wyższej pewności omawia kontrolę organizacji nad cyklem życia poświadczeń. Sam zakup klucza lub wybranie etykiety poziomu nie potwierdza bezpieczeństwa całego środowiska. Wykorzystaj [opracowanie FIDO o wyższej pewności](https://fidoalliance.org/white-paper-high-assurance-enterprise-fido-authentication/) do uporządkowania pytań, bez deklarowania niezależnej oceny wdrożenia.",
+            "W proponowanym arkuszu aplikacji zapytaj, czy usługa korzysta z centralnego dostawcy tożsamości, czy nadal działa osobne lokalne hasło, czy administrator ma inną stronę logowania i czy starszy klient pocztowy omija planowany proces. Poproś dostawcę o wskazanie ustawień i potrzebnego abonamentu. Potwierdź odpowiedź we własnym środowisku, ponieważ dostępne funkcje i nazwy opcji mogą się różnić.",
+            "Dla usług bez odpowiedniej obsługi zachowaj najsilniejsze dostępne MFA, przypisując ograniczeniu właściciela oraz termin przeglądu. Rozważ federację, ograniczenie dostępu lub wymianę usługi na podstawie jej znaczenia i potwierdzonych możliwości. Nie wyłączaj działającej ochrony w oczekiwaniu na przyszłą poprawę. Opis wyjątku powinien wskazywać użytkowników, uzasadnienie oraz warunek pozwalający go usunąć.",
+            "Na spotkaniu podsumowującym pokaż krótką listę decyzji zamiast samej liczby wydanych kluczy. Właściciel firmy powinien wiedzieć, które konta rzeczywiście wymagają nowej metody, które nadal dopuszczają kod i jakie zadanie pozostaje do wykonania. Dzięki temu zakup sprzętu nie zostanie pomylony z zakończeniem wdrożenia."
+          ],
+          "bullets": [
+            "Po wymuszeniu spróbuj zwykłego logowania hasłem i kodem; odnotuj, czy zostało odrzucone.",
+            "Oddzielnie przejrzyj administratorów, gości i dostęp awaryjny.",
+            "Sprawdź w dostępnych dziennikach logowania faktycznie używaną metodę.",
+            "Śledź chronione konta, otwarte wyjątki, nieudane próby odzyskiwania i problemy zgłaszane wsparciu."
+          ],
+          "sourceIds": [
+            "nist",
+            "fido-high"
+          ]
+        },
+        {
+          "id": "recovery-and-operations",
+          "heading": "5. Przećwicz utratę, wymianę i podejrzenie przejęcia konta",
+          "answer": "Zaplanuj odzyskiwanie przed wprowadzeniem obowiązkowego MFA odpornego na phishing. Utrata klucza powinna uruchamiać potwierdzoną procedurę odzyskania dostępu, usunięcie brakującego uwierzytelniacza i dodanie nowego. Podejrzenie przejęcia konta wymaga również przeglądu sesji i aktywności. Mocne logowanie nie zastępuje ochrony urządzeń ani badania już otwartej sesji.",
+          "paragraphs": [
+            "Wytyczne FIDO wskazują potrzebę odzyskiwania dla poświadczeń związanych z urządzeniem oraz zależność synchronizowanych poświadczeń od środowiska synchronizacji. OWASP zaleca zabezpieczenie wymiany składników i odzyskiwania przed przejęciem konta. Zestaw [omówienie wdrożeń o umiarkowanym poziomie pewności](https://fidoalliance.org/white-paper-fido-authentication-for-moderate-assurance-use-cases/) z dokumentacją dostawcy, szczególnie przy ustalaniu osób uprawnionych do zatwierdzania resetu.",
+            "Proponowana procedura utraty klucza: zgłoś zdarzenie ustalonym kanałem firmowym; potwierdź pracownika zgodnie z przygotowanym procesem; użyj osobno zarejestrowanego zapasu, jeśli jest dostępny; usuń brakujące poświadczenie z odpowiednich usług; dodaj i sprawdź zamiennik; przejrzyj ostatnie zmiany na koncie. Zapas w tej samej torbie co laptop słabo zabezpiecza scenariusz utraty torby. Przechowuj go oddzielnie, z dostępem dla upoważnionej osoby.",
+            "Przy podejrzeniu przejęcia poproś administratora o unieważnienie aktywnych sesji tam, gdzie jest to obsługiwane, kontrolę logowań i nowych składników oraz sprawdzenie urządzeń. Przejrzyj przekierowania poczty, dostęp delegowany i odpowiednie uprawnienia aplikacji. Jeśli zdarzenie dotyczy pieniędzy lub danych dostawcy, niezależnie potwierdź oczekujące transakcje przez znany kanał kontaktu. To zadania obsługi incydentu wykraczające poza wydanie kolejnego klucza.",
+            "W codziennej obsłudze proponujemy próbę odzyskiwania po wdrożeniu i po istotnych zmianach urządzeń, administratorów lub dostawcy tożsamości. Dodaj zakończenie współpracy do listy kontrolnej: wyłącz dostęp, unieważnij odpowiednie poświadczenia i sesje, odbierz sprzęt oraz potwierdź opiekuna zapasowych uwierzytelniaczy. Instrukcja musi być dostępna poza kontem, którego odzyskanie ma umożliwiać."
+          ],
+          "bullets": [
+            "Jeśli usługa udostępnia kody odzyskiwania, przechowuj je bezpiecznie i poza chronionym kontem; nie są odporne na phishing.",
+            "Jeśli potrzebny jest awaryjny dostęp administracyjny, opisz przechowywanie, monitoring i dozwolone użycie oraz sprawdź procedurę bez pozostawiania codziennych obejść.",
+            "Poproś pracowników o natychmiastowe zgłaszanie nieoczekiwanych próśb o rejestrację lub odzyskanie dostępu."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Ilustracja redakcyjna zapasowych kluczy bezpieczeństwa i planowania odzyskiwania konta.",
+            "caption": "Osobno przechowywany zapas pomaga dopiero wtedy, gdy został zarejestrowany, sprawdzony i objęty jasną procedurą."
+          },
+          "sourceIds": [
+            "owasp",
+            "fido-high",
+            "fido-moderate",
+            "nist"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy każde logowanie passkey jest MFA?",
+          "answer": "Nie zakładaj tego na podstawie nazwy. Potwierdź, że wymagany proces sprawdza posiadanie oraz odpowiedni drugi składnik, na przykład lokalny PIN lub biometrię. NIST rozróżnia jedno- i wieloskładnikowe uwierzytelniacze kryptograficzne; liczy się rzeczywista konfiguracja."
+        },
+        {
+          "question": "Czy podczas migracji można zachować kody z aplikacji?",
+          "answer": "Tak, jako opisany etap przejściowy lub ograniczenie konkretnej usługi. Kody pozostają podatne na phishing. Przypisz wyjątkowi właściciela i termin przeglądu; kont z dostępną słabszą drogą nie opisuj jako w pełni objętych wymuszonym MFA odpornym na phishing."
+        },
+        {
+          "question": "Czy mała firma musi kupić klucz każdemu pracownikowi?",
+          "answer": "Z tego poradnika nie wynika taki powszechny obowiązek. Porównaj zatwierdzone passkeys platformowe lub synchronizowane z kluczami sprzętowymi. Zakupy oprzyj na pilotażu, zgodności urządzeń, kontroli administracyjnej i odzyskiwaniu dostępu."
+        },
+        {
+          "question": "Co zrobić, jeśli jedyny administrator straci dostęp?",
+          "answer": "Użyj wcześniej sprawdzonej procedury awaryjnej zamiast improwizować potwierdzanie tożsamości. Przed wymuszeniem metody ustal upoważnione osoby i sprawdź dostępność instrukcji bez logowania na zablokowane konto."
+        },
+        {
+          "question": "Czy MFA odporne na phishing zatrzyma oszustwa fakturowe?",
+          "answer": "Ogranicza konkretną drogę ataku na uwierzytelnianie. Nadal stosuj niezależne potwierdzanie zmian rachunków, odpowiednie zatwierdzanie płatności, ochronę urządzeń i przegląd sesji. Prawidłowo zalogowany użytkownik również może zostać oszukany w sprawie przelewu."
+        }
+      ],
+      "sources": [
+        {
+          "id": "nist",
+          "title": "SP 800-63B-4: Digital Identity Guidelines — Authentication and Authenticator Management",
+          "publisher": "NIST",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "owasp",
+          "title": "Multifactor Authentication Cheat Sheet",
+          "publisher": "OWASP",
+          "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-replacing",
+          "title": "Replacing Password-Only Authentication with Passkeys in the Enterprise",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-replacing-password-only-authentication-with-passkeys-in-the-enterprise/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-high",
+          "title": "High Assurance Enterprise FIDO Authentication",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-high-assurance-enterprise-fido-authentication/",
+          "accessedAt": "2026-10-15"
+        },
+        {
+          "id": "fido-moderate",
+          "title": "FIDO Authentication for Moderate Assurance Use Cases",
+          "publisher": "FIDO Alliance",
+          "url": "https://fidoalliance.org/white-paper-fido-authentication-for-moderate-assurance-use-cases/",
+          "accessedAt": "2026-10-15"
+        }
+      ]
+    }
+  }
+}
