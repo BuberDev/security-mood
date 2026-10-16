@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "topicKey": "hotel-room-security-checklist",
+  "slug": "hotel-room-security-checklist",
+  "status": "published",
+  "categoryId": "personal-safety",
+  "publishedAt": "2026-10-16",
+  "updatedAt": "2026-10-16",
+  "heroImage": "/images/blog/rfid_passport_wallet_guide.png",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public-agency publications; no professional certification, hotel inspection or laboratory testing is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie publikacji instytucji publicznych; bez deklarowania certyfikatów zawodowych, inspekcji hoteli ani badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog/edc-essentials-solo-travelers",
+      "label": {
+        "en": "Everyday essentials for solo travelers",
+        "pl": "Podręczne wyposażenie na podróż solo"
+      }
+    },
+    {
+      "href": "/blog/rfid-passport-wallet-travel-checklist",
+      "label": {
+        "en": "Travel document organization checklist",
+        "pl": "Lista organizacji dokumentów podróżnych"
+      }
+    },
+    {
+      "href": "/blog",
+      "label": {
+        "en": "More Security Mood safety guides",
+        "pl": "Więcej poradników bezpieczeństwa Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "tactical-flashlight"
+  ],
+  "locales": {
+    "en": {
+      "title": "Hotel room security checklist: arrival, overnight safety and recovery",
+      "excerpt": "A practical hotel checklist covering locks, evacuation routes, privacy, online accounts and what to do when something needs fixing.",
+      "heroAlt": "Travel wallet, passport and boarding pass on a wooden surface, with an existing English title overlay.",
+      "quickAnswer": "On arrival, check that the room closes and locks, identify emergency exits, and confirm how to reach reception. Keep the route to the door clear and your key accessible. Verify unexpected visitors or payment requests independently. Report defects before settling in; leave and seek emergency help if there is an immediate threat.",
+      "keyTakeaways": [
+        "Check access, escape routes and communication before unpacking.",
+        "Ask for a specific remedy when a lock, alarm or exit arrangement raises concern.",
+        "Treat an unexpected visitor or urgent payment message as something to verify through reception.",
+        "Use account protection and legitimate websites rather than assuming hotel Wi-Fi is automatically dangerous.",
+        "Prepare a simple response plan that everyone sharing the room understands."
+      ],
+      "methodology": "We searched for and opened primary public-agency guidance on 2026-10-16. Sources cover lodging, fire precautions, carbon monoxide and online security. The sequence, decision table and reporting templates below are our editorial synthesis, not an official inspection standard. No hotel, lock or product was tested. US guidance is applied as general travel advice, not as a statement of local law. Visual limitation: the permitted PNG is square and the SVGs are portrait; all contain existing English text. The supplied paths therefore cannot meet the requested landscape, text-free visual specification without replacement assets.",
+      "sections": [
+        {
+          "id": "arrival-check",
+          "heading": "What should you check before unpacking?",
+          "answer": "Start with the room entrance, accessible windows, privacy curtains and a way to contact reception. The US Department of State recommends checking room locks, the telephone and the room itself after arrival. Treat this as a brief orientation, then ask staff to resolve anything you cannot confidently use.",
+          "paragraphs": [
+            "Use a repeatable order: entrance, room, bathroom, windows, telephone. Our suggested approach is to keep your luggage together until you have finished. You are deciding whether to settle in, request help or change rooms; you are not conducting a technical security inspection. Avoid dismantling fittings or trying to defeat any lock.",
+            "Describe a defect in terms of what happened. For example: “The door remains open after I pull it closed,” or “I cannot secure the balcony latch.” Ask reception to demonstrate the correct operation or arrange a repair. Before accepting a different room, repeat the relevant checks there.",
+            "For a shared room, agree who holds each key and how you will contact each other if separated. For an accessible room, discuss your actual assistance needs with staff rather than accepting a general assurance that the building is accessible. Record the hotel address and reception number in a place you can reach without searching through booking messages."
+          ],
+          "bullets": [
+            "Check ordinary operation of the entrance lock and any provided internal latch.",
+            "Confirm that curtains provide the privacy you need.",
+            "Locate the room telephone or save a verified reception contact.",
+            "Ask for help with unclear controls before relying on them overnight."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Dark travel-themed illustration with a shield motif and an existing English call to action.",
+            "caption": "Use an arrival routine before unpacking. This illustration does not demonstrate a hotel lock or a tested security device."
+          },
+          "sourceIds": [
+            "state-lodging"
+          ]
+        },
+        {
+          "id": "escape-plan",
+          "heading": "How do you prepare an escape route?",
+          "answer": "Read the evacuation plan and locate the two nearest exits. The US Fire Administration also advises counting doors between your room and those exits and locating the floor’s fire alarms. Make the route part of your arrival routine, rather than something you first investigate when an alarm sounds.",
+          "paragraphs": [
+            "Our practical addition is to walk the relevant corridor while you are alert and unhurried. Identify which direction you would initially turn from your room. If a route is confusing, an exit appears obstructed or a door cannot be used as indicated, ask staff for a specific explanation and correction.",
+            "Before sleeping, choose a consistent place for your room key, shoes and phone. Keep luggage away from the route between the bed and the door. A small flashlight may be useful for orientation; select one you can operate easily. We have not tested the listed product or its performance during an emergency.",
+            "If you need help using stairs or responding to alarms, discuss the hotel’s assistance arrangements before bedtime. Agree a meeting point with companions and make sure children understand whom to follow. This planning does not establish that a building meets fire regulations or guarantee that any particular route will remain usable."
+          ],
+          "bullets": [
+            "Find both nearest exits and identify the floor alarm points.",
+            "Ask staff to explain an unclear or obstructed route.",
+            "Keep the room’s walking route clear overnight.",
+            "Follow emergency-service directions during an incident."
+          ],
+          "sourceIds": [
+            "usfa-hotel"
+          ],
+          "productId": "tactical-flashlight"
+        },
+        {
+          "id": "overnight-decisions",
+          "heading": "When should you request a repair or a different room?",
+          "answer": "Ask for a remedy when an essential feature cannot be used as intended, such as a door that will not secure or an unclear escape arrangement. The decision table below is an editorial triage tool based on public-agency lodging and fire guidance. It is not a building inspection or a legal compliance assessment.",
+          "paragraphs": [
+            "Separate an observation from a conclusion. “The latch does not engage” gives staff something concrete to investigate; “this hotel is unsafe” does not identify the required remedy. Ask who will address the problem, what the temporary arrangement is and when you should expect an answer. Do not mark an unresolved issue as complete merely because it has been reported.",
+            "Use a short note containing the time, room number, observation and staff response. If the proposed solution does not meet your needs, say so plainly and request an alternative. A change of room should address the actual concern rather than simply move you elsewhere in the same situation.",
+            "For unexpected knocks, our suggested routine is to keep the door closed while confirming the visit through reception. Arrange to meet unfamiliar visitors in the lobby, as the Department of State recommends. You do not need to conduct an investigation yourself or confront someone to justify asking staff for help."
+          ],
+          "table": {
+            "headers": [
+              "Observation",
+              "Suggested next step",
+              "What counts as resolved?"
+            ],
+            "rows": [
+              [
+                "You do not understand a lock or control",
+                "Ask staff to demonstrate it",
+                "You can operate it yourself"
+              ],
+              [
+                "The room entrance will not secure",
+                "Request repair or another room before settling in",
+                "The entrance secures correctly"
+              ],
+              [
+                "The escape route is unclear or obstructed",
+                "Ask staff to explain and address the problem",
+                "You understand an available route"
+              ],
+              [
+                "An unexpected person requests entry",
+                "Verify the visit through reception",
+                "The purpose and identity are independently confirmed"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "state-lodging",
+            "usfa-hotel"
+          ]
+        },
+        {
+          "id": "digital-privacy",
+          "heading": "How should you handle hotel Wi-Fi and payment messages?",
+          "answer": "Use legitimate websites, updated devices and multifactor authentication for important accounts. The FTC explains that widespread website encryption makes public Wi-Fi usually safe, while warning that encrypted scam websites still exist. CISA recommends stronger authentication. A hotel name on a message is therefore a reason to verify its origin, not proof of authenticity.",
+          "paragraphs": [
+            "Our suggested verification workflow is simple: pause, locate the contact details in your original booking record, and ask reception whether the request is genuine. For example, if a message demands another card payment to keep your reservation, verify it before opening the payment link. Keep the conversation and the transaction reference if you need to dispute what happened.",
+            "For work travel, follow your employer’s device and connection policy. Decide before departure which accounts you need and how you will recover access if your phone becomes unavailable. Do not make an unfamiliar hotel login page the place where you first work out your recovery arrangements.",
+            "Keep physical and digital privacy checks distinct. Closing curtains addresses visibility into the room; it does not answer questions about an account or website. Likewise, a successful network connection says nothing about whether an unexpected visitor should enter. Give each concern its own check instead of treating one security accessory as a complete solution."
+          ],
+          "bullets": [
+            "Enable multifactor authentication before departure.",
+            "Verify urgent payment requests through an established contact.",
+            "Do not treat HTTPS as proof that a business is genuine.",
+            "Use your organization’s approved arrangements for work devices."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Dark travel privacy illustration with a shield motif and an existing English call to action.",
+            "caption": "Plan account access and request verification before travel; an illustration or accessory cannot validate a hotel payment link."
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "cisa-mfa"
+          ]
+        },
+        {
+          "id": "incident-response",
+          "heading": "What should you do if an alarm sounds or something goes wrong?",
+          "answer": "Prioritize getting help over documenting the room. Carbon monoxide is odorless and colorless; headache, dizziness and confusion can be warning symptoms. If exposure is suspected, get to fresh air and seek urgent medical assistance. For other immediate threats, contact local emergency services and follow their instructions rather than waiting for a routine maintenance response.",
+          "paragraphs": [
+            "The Department of State advises asking about carbon monoxide detectors when choosing accommodation. Our suggested booking question is: “What carbon monoxide detection is provided for this room?” Record the answer, especially if you require clarification. A guest’s visual check cannot establish detector coverage, maintenance history or the safety of combustion equipment.",
+            "For a non-emergency loss or access problem, use a separate recovery note: what is missing or failing, when you last had normal access, whom you informed and what action was agreed. Request a written incident reference when appropriate. If your room key is missing, ask reception to explain the replacement and access-control steps.",
+            "Once the immediate situation is stable, contact the relevant booking provider, insurer, employer or payment provider according to the issue. Keep factual records and avoid publishing your room number or personal documents in public reviews. Our recommended final check is whether you now have a safe place to stay, a working contact method and a clear next action."
+          ],
+          "bullets": [
+            "Suspected carbon monoxide exposure: fresh air and urgent medical help.",
+            "Immediate danger: use the local emergency number.",
+            "Routine defect: request a remedy and record the response.",
+            "After an incident: confirm accommodation, communication and follow-up arrangements."
+          ],
+          "sourceIds": [
+            "cdc-co",
+            "niosh-co",
+            "state-lodging"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Should I check the room every day?",
+          "answer": "Repeat the relevant check after a change: a replacement key, a room move, maintenance work or a newly noticed defect. Our recommendation is a brief bedtime check of the entrance, accessible key and clear walking route, rather than repeating a lengthy inspection."
+        },
+        {
+          "question": "Does this checklist prove that a hotel is safe?",
+          "answer": "No. It helps organize guest observations and questions. It cannot verify concealed equipment, maintenance records, regulatory compliance or staff access procedures. Ask the hotel for clarification when a decision depends on information you cannot observe."
+        },
+        {
+          "question": "Is hotel Wi-Fi automatically unsafe?",
+          "answer": "No. The FTC says widespread encryption makes public Wi-Fi usually safe. Verify the website itself and protect your accounts; encryption does not make a fraudulent website trustworthy. See the FTC source in the digital privacy section."
+        },
+        {
+          "question": "What should I tell reception about a defect?",
+          "answer": "Give the room number, the specific observation and the remedy you need. For example: “The balcony door will not lock; please repair it or offer another room.” Note the agreed action and confirm the issue is actually resolved."
+        }
+      ],
+      "sources": [
+        {
+          "id": "state-lodging",
+          "title": "Lodging Safety",
+          "publisher": "U.S. Department of State",
+          "url": "https://travel.state.gov/en/international-travel/planning/guidance/lodging-safety.html",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "usfa-hotel",
+          "title": "Hotel and Vacation Rental Fire Safety",
+          "publisher": "U.S. Fire Administration, FEMA",
+          "url": "https://www.usfa.fema.gov/prevention/hotel-fires/",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "ftc-wifi",
+          "title": "Are Public Wi-Fi Networks Safe? What You Need To Know",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/are-public-wi-fi-networks-safe-what-you-need-know",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "cisa-mfa",
+          "title": "Stay safer with Multifactor Authentication",
+          "publisher": "Cybersecurity and Infrastructure Security Agency",
+          "url": "https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-MFA-Tip-Sheet.pdf",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "cdc-co",
+          "title": "Carbon Monoxide Poisoning Basics",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+          "publishedAt": "2024-05-15",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "niosh-co",
+          "title": "Carbon Monoxide Hazards at Work",
+          "publisher": "CDC, National Institute for Occupational Safety and Health",
+          "url": "https://www.cdc.gov/niosh/carbon-monoxide/about/index.html",
+          "publishedAt": "2024-09-30",
+          "accessedAt": "2026-10-16"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Lista bezpieczeństwa pokoju hotelowego: przyjazd, nocleg i reakcja na problemy",
+      "excerpt": "Praktyczna lista kontroli zamków, dróg ewakuacji, prywatności i dostępu do kont oraz wskazówki dotyczące zgłaszania usterek.",
+      "heroAlt": "Portfel podróżny, paszport i karta pokładowa na drewnianym blacie, z istniejącym angielskim napisem.",
+      "quickAnswer": "Po przyjeździe sprawdź, czy drzwi pokoju zamykają się i ryglują, znajdź wyjścia ewakuacyjne oraz ustal sposób kontaktu z recepcją. Zostaw wolną drogę do drzwi i odkładaj klucz w dostępne miejsce. Potwierdzaj niespodziewane wizyty i żądania płatności. Zgłoś usterki przed rozpakowaniem; przy bezpośrednim zagrożeniu opuść niebezpieczne miejsce i wezwij pomoc.",
+      "keyTakeaways": [
+        "Przed rozpakowaniem sprawdź dostęp do pokoju, drogę wyjścia i możliwość wezwania pomocy.",
+        "Przy problemie z zamkiem, alarmem lub drogą ewakuacji poproś o konkretne rozwiązanie.",
+        "Niespodziewaną wizytę albo pilne żądanie płatności potwierdź niezależnie przez recepcję.",
+        "Chroń konta i sprawdzaj strony zamiast zakładać, że każde hotelowe Wi-Fi jest niebezpieczne.",
+        "Ustal prosty plan działania z osobami, z którymi dzielisz pokój."
+      ],
+      "methodology": "Wyszukaliśmy i otworzyliśmy źródła instytucji publicznych 2026-10-16. Obejmują one noclegi, ochronę przeciwpożarową, tlenek węgla i bezpieczeństwo kont. Kolejność kontroli, tabela decyzji oraz wzory zgłoszeń są opracowaniem redakcyjnym, a nie oficjalną normą inspekcji. Nie testowaliśmy hotelu, zamków ani produktów. Amerykańskie zalecenia wykorzystujemy jako ogólne wskazówki podróżne, bez przypisywania im mocy lokalnego prawa. Ograniczenie wizualne: dozwolony PNG jest kwadratowy, SVG są pionowe, a wszystkie zawierają angielskie napisy. Bez zastąpienia plików nie można spełnić wymogu poziomych ilustracji bez tekstu.",
+      "sections": [
+        {
+          "id": "arrival-check",
+          "heading": "Co sprawdzić przed rozpakowaniem bagażu?",
+          "answer": "Zacznij od drzwi wejściowych, dostępnych okien, zasłon i sposobu kontaktu z recepcją. Departament Stanu USA zaleca kontrolę zamków, telefonu oraz samego pokoju po przyjeździe. Potraktuj to jako krótkie zapoznanie się z miejscem, a następnie poproś obsługę o rozwiązanie problemów z wyposażeniem, którego nie potrafisz pewnie użyć.",
+          "paragraphs": [
+            "Przyjmij stałą kolejność: wejście, pokój, łazienka, okna, telefon. Proponujemy pozostawić bagaż w jednym miejscu do zakończenia tej kontroli. Twoim zadaniem jest zdecydować, czy możesz się rozgościć, potrzebujesz pomocy czy chcesz zmienić pokój. Nie przeprowadzasz technicznej inspekcji zabezpieczeń. Nie demontuj elementów wyposażenia i nie próbuj obchodzić zamków.",
+            "Opisuj usterkę przez konkretne zdarzenie. Powiedz na przykład: „Drzwi pozostają otwarte po ich dociągnięciu” albo „Nie mogę zaryglować drzwi balkonowych”. Poproś pracownika o pokazanie prawidłowej obsługi lub zorganizowanie naprawy. Po przeniesieniu do innego pokoju ponownie sprawdź element, który wcześniej budził zastrzeżenia.",
+            "Jeśli podróżujesz z innymi osobami, ustalcie, kto ma poszczególne klucze i jak skontaktujecie się po rozdzieleniu. W pokoju dostosowanym do potrzeb osób z niepełnosprawnością omów rzeczywiste potrzeby dotyczące pomocy. Zapisz adres obiektu i numer recepcji tak, aby nie szukać ich później wśród wiadomości o rezerwacji."
+          ],
+          "bullets": [
+            "Sprawdź normalne działanie zamka wejściowego i dostępnej zasuwki wewnętrznej.",
+            "Upewnij się, że zasłony zapewniają potrzebną prywatność.",
+            "Znajdź telefon pokojowy lub zapisz potwierdzony kontakt do recepcji.",
+            "Poproś o wyjaśnienie niejasnych funkcji, zanim będziesz na nich polegać w nocy."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Ciemna ilustracja podróżna z motywem tarczy i istniejącym angielskim wezwaniem do działania.",
+            "caption": "Przeprowadź kontrolę po przyjeździe, zanim rozpakujesz bagaż. Ilustracja nie pokazuje działania hotelowego zamka ani przetestowanego zabezpieczenia."
+          },
+          "sourceIds": [
+            "state-lodging"
+          ]
+        },
+        {
+          "id": "escape-plan",
+          "heading": "Jak przygotować się do opuszczenia pokoju w sytuacji awaryjnej?",
+          "answer": "Przeczytaj plan ewakuacji i znajdź dwa najbliższe wyjścia. US Fire Administration zaleca również policzenie drzwi między pokojem a wyjściami oraz zlokalizowanie alarmów pożarowych na piętrze. Zrób to po przyjeździe, aby nie poznawać układu korytarza dopiero po usłyszeniu sygnału alarmowego.",
+          "paragraphs": [
+            "Nasza praktyczna propozycja to przejście odpowiednim odcinkiem korytarza bez pośpiechu, gdy nie jesteś jeszcze senny. Sprawdź, w którą stronę skręcisz po wyjściu z pokoju. Jeśli przebieg drogi jest niejasny, przejście wygląda na zastawione albo wskazanych drzwi nie można użyć, poproś obsługę o wyjaśnienie i usunięcie problemu.",
+            "Przed snem wybierz stałe miejsce na klucz, buty i telefon. Nie zostawiaj walizek na trasie między łóżkiem a drzwiami. Niewielka latarka może ułatwić orientację; wybierz taką, którą potrafisz łatwo obsłużyć. Nie testowaliśmy wskazanego produktu ani jego działania podczas rzeczywistej sytuacji awaryjnej.",
+            "Jeśli potrzebujesz pomocy przy korzystaniu ze schodów lub reagowaniu na alarm, omów organizację wsparcia przed snem. Ustal miejsce spotkania z towarzyszami podróży, a dzieciom wyjaśnij, za kim mają podążać. Takie przygotowanie nie potwierdza zgodności budynku z przepisami ani nie gwarantuje dostępności konkretnej drogi podczas zdarzenia."
+          ],
+          "bullets": [
+            "Znajdź dwa najbliższe wyjścia oraz punkty alarmowe na piętrze.",
+            "Poproś obsługę o wyjaśnienie niejasnej lub zastawionej drogi.",
+            "Pozostaw wolne przejście przez pokój także na noc.",
+            "Podczas zdarzenia stosuj się do poleceń służb ratunkowych."
+          ],
+          "sourceIds": [
+            "usfa-hotel"
+          ],
+          "productId": "tactical-flashlight"
+        },
+        {
+          "id": "overnight-decisions",
+          "heading": "Kiedy poprosić o naprawę albo zmianę pokoju?",
+          "answer": "Poproś o rozwiązanie, jeśli istotny element nie działa zgodnie z przeznaczeniem, na przykład nie można zabezpieczyć wejścia lub ustalić drogi wyjścia. Poniższa tabela jest redakcyjnym narzędziem porządkującym decyzje na podstawie zaleceń dotyczących noclegów i pożarów. Nie zastępuje inspekcji budynku ani oceny zgodności z prawem.",
+          "paragraphs": [
+            "Oddziel obserwację od ogólnego wniosku. Informacja „zasuwka nie wchodzi w zaczep” wskazuje, co pracownik powinien sprawdzić. Stwierdzenie „ten hotel jest niebezpieczny” nie określa potrzebnej naprawy. Zapytaj, kto zajmie się sprawą, jakie rozwiązanie obowiązuje do tego czasu i kiedy otrzymasz odpowiedź. Samo przyjęcie zgłoszenia nie kończy problemu.",
+            "Zapisz godzinę, numer pokoju, zauważoną usterkę oraz odpowiedź obsługi. Jeżeli proponowane rozwiązanie nie odpowiada twoim potrzebom, powiedz to wprost i poproś o inną możliwość. Zmiana pokoju powinna usuwać przyczynę zastrzeżeń, a nie wyłącznie przenosić cię w inne miejsce z identycznym problemem.",
+            "Przy niespodziewanym pukaniu proponujemy pozostawić drzwi zamknięte do potwierdzenia wizyty przez recepcję. Z nieznajomymi umawiaj się w lobby, zgodnie z zaleceniem Departamentu Stanu USA. Nie musisz samodzielnie prowadzić dochodzenia ani wdawać się w konfrontację, żeby uzasadnić prośbę o pomoc personelu."
+          ],
+          "table": {
+            "headers": [
+              "Obserwacja",
+              "Proponowany kolejny krok",
+              "Kiedy uznać sprawę za rozwiązaną?"
+            ],
+            "rows": [
+              [
+                "Nie rozumiesz działania zamka lub przycisku",
+                "Poproś pracownika o demonstrację",
+                "Potrafisz samodzielnie go obsłużyć"
+              ],
+              [
+                "Nie można zabezpieczyć drzwi wejściowych",
+                "Poproś o naprawę lub inny pokój przed rozpakowaniem",
+                "Drzwi prawidłowo się ryglują"
+              ],
+              [
+                "Droga wyjścia jest niejasna lub zastawiona",
+                "Poproś obsługę o wyjaśnienie i rozwiązanie problemu",
+                "Znasz dostępną drogę wyjścia"
+              ],
+              [
+                "Niespodziewana osoba prosi o wpuszczenie",
+                "Potwierdź wizytę przez recepcję",
+                "Cel wizyty i tożsamość zostały niezależnie potwierdzone"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "state-lodging",
+            "usfa-hotel"
+          ]
+        },
+        {
+          "id": "digital-privacy",
+          "heading": "Jak korzystać z hotelowego Wi-Fi i sprawdzać żądania płatności?",
+          "answer": "Korzystaj z prawdziwych stron usługodawców, aktualizuj urządzenia i włącz uwierzytelnianie wieloskładnikowe na ważnych kontach. FTC wyjaśnia, że dzięki szyfrowaniu stron publiczne Wi-Fi jest zwykle bezpieczne, ale szyfrowane bywają również strony oszustów. CISA zaleca dodatkowy składnik logowania. Nazwa hotelu w wiadomości nie potwierdza więc jej autentyczności.",
+          "paragraphs": [
+            "Proponujemy prosty sposób weryfikacji: zatrzymaj się, znajdź dane kontaktowe w pierwotnym potwierdzeniu rezerwacji i zapytaj recepcję o otrzymane żądanie. Jeśli wiadomość domaga się kolejnej płatności kartą pod groźbą anulowania noclegu, potwierdź ją przed otwarciem odnośnika płatniczego. Zachowaj korespondencję oraz identyfikator transakcji na wypadek późniejszego wyjaśniania sprawy.",
+            "W podróży służbowej stosuj zasady pracodawcy dotyczące sprzętu i połączeń. Przed wyjazdem ustal, których kont potrzebujesz oraz jak odzyskasz do nich dostęp po utracie telefonu. Nie odkładaj planowania odzyskiwania kont do chwili, gdy staniesz przed nieznanym ekranem logowania hotelowej sieci.",
+            "Rozpatruj prywatność fizyczną i cyfrową oddzielnie. Zasłonięcie okien ogranicza widoczność wnętrza, ale nie rozstrzyga kwestii bezpieczeństwa konta lub strony. Podobnie udane połączenie z siecią nie mówi nic o tym, czy należy wpuścić niespodziewanego gościa. Każda z tych sytuacji wymaga własnego sprawdzenia; jeden gadżet nie zastępuje całej procedury."
+          ],
+          "bullets": [
+            "Włącz dodatkowy składnik logowania przed wyjazdem.",
+            "Pilne żądania płatności sprawdzaj przez wcześniej ustalony kontakt.",
+            "Nie traktuj HTTPS jako potwierdzenia uczciwości firmy.",
+            "Na sprzęcie służbowym korzystaj z rozwiązań zatwierdzonych przez pracodawcę."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Ciemna ilustracja prywatności w podróży z motywem tarczy i istniejącym angielskim wezwaniem do działania.",
+            "caption": "Zaplanuj dostęp do kont i weryfikację wiadomości przed podróżą. Ilustracja ani akcesorium nie potwierdzą autentyczności odnośnika do płatności."
+          },
+          "sourceIds": [
+            "ftc-wifi",
+            "cisa-mfa"
+          ]
+        },
+        {
+          "id": "incident-response",
+          "heading": "Co zrobić po alarmie lub wystąpieniu problemu?",
+          "answer": "Najpierw zadbaj o pomoc, dopiero później o dokumentowanie sytuacji. Tlenek węgla jest bezwonny i bezbarwny; ból głowy, zawroty głowy oraz splątanie mogą sygnalizować zatrucie. Przy podejrzeniu narażenia wyjdź na świeże powietrze i pilnie uzyskaj pomoc medyczną. Przy innym bezpośrednim zagrożeniu skontaktuj się z lokalnymi służbami ratunkowymi.",
+          "paragraphs": [
+            "Departament Stanu USA zaleca pytanie o czujniki tlenku węgla przy wyborze noclegu. Proponujemy konkretne pytanie: „Jakie wykrywanie tlenku węgla zapewniono dla tego pokoju?”. Zapisz odpowiedź, szczególnie jeśli wymaga dalszego wyjaśnienia. Oględziny wykonane przez gościa nie potwierdzą zasięgu ochrony, historii konserwacji ani bezpieczeństwa urządzeń spalających paliwo.",
+            "Przy utracie przedmiotu lub problemie z dostępem, który nie jest nagłym zagrożeniem, sporządź osobną notatkę. Zapisz, czego brakuje lub co nie działa, kiedy ostatnio sytuacja była prawidłowa, kogo zawiadomiono i jakie działanie uzgodniono. W razie potrzeby poproś o pisemne potwierdzenie zgłoszenia. Po utracie klucza zapytaj o wymianę oraz dalszą kontrolę dostępu.",
+            "Po opanowaniu sytuacji skontaktuj się z odpowiednim pośrednikiem rezerwacji, ubezpieczycielem, pracodawcą lub dostawcą płatności. Zachowuj rzeczowe zapisy i nie publikuj numeru pokoju ani dokumentów osobistych w publicznych opiniach. Na zakończenie sprawdź, czy masz bezpieczne miejsce noclegu, działający sposób kontaktu oraz jasno określony następny krok."
+          ],
+          "bullets": [
+            "Podejrzenie zatrucia tlenkiem węgla: świeże powietrze i pilna pomoc medyczna.",
+            "Bezpośrednie zagrożenie: lokalny numer alarmowy.",
+            "Zwykła usterka: konkretna prośba o naprawę i zapis odpowiedzi.",
+            "Po zdarzeniu: potwierdzenie noclegu, kontaktu i dalszych działań."
+          ],
+          "sourceIds": [
+            "cdc-co",
+            "niosh-co",
+            "state-lodging"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy codziennie trzeba sprawdzać cały pokój?",
+          "answer": "Ponów odpowiednią kontrolę po zmianie pokoju, wymianie klucza, pracach technicznych albo zauważeniu nowej usterki. Proponujemy krótkie sprawdzenie wejścia, dostępności klucza i wolnego przejścia przed snem, zamiast codziennego powtarzania rozbudowanych oględzin."
+        },
+        {
+          "question": "Czy ta lista potwierdza bezpieczeństwo hotelu?",
+          "answer": "Nie. Porządkuje obserwacje i pytania gościa. Nie sprawdza ukrytych instalacji, dokumentacji konserwacji, zgodności z przepisami ani zasad dostępu personelu. Jeśli decyzja zależy od informacji, której nie możesz samodzielnie ustalić, poproś hotel o wyjaśnienie."
+        },
+        {
+          "question": "Czy hotelowe Wi-Fi jest zawsze niebezpieczne?",
+          "answer": "Nie. Według FTC powszechne szyfrowanie sprawia, że korzystanie z publicznego Wi-Fi jest zwykle bezpieczne. Sprawdzaj jednak samą stronę i chroń konta: szyfrowanie nie czyni fałszywej witryny wiarygodną. Źródło FTC znajduje się w sekcji o prywatności cyfrowej."
+        },
+        {
+          "question": "Jak zgłosić usterkę recepcji?",
+          "answer": "Podaj numer pokoju, konkretną obserwację i potrzebne rozwiązanie. Na przykład: „Drzwi balkonowych nie można zaryglować; proszę o naprawę lub inny pokój”. Zapisz uzgodnione działanie i sprawdź, czy problem rzeczywiście został usunięty."
+        }
+      ],
+      "sources": [
+        {
+          "id": "state-lodging",
+          "title": "Lodging Safety — bezpieczeństwo miejsca noclegu",
+          "publisher": "U.S. Department of State",
+          "url": "https://travel.state.gov/en/international-travel/planning/guidance/lodging-safety.html",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "usfa-hotel",
+          "title": "Hotel and Vacation Rental Fire Safety — ochrona przeciwpożarowa podczas noclegu",
+          "publisher": "U.S. Fire Administration, FEMA",
+          "url": "https://www.usfa.fema.gov/prevention/hotel-fires/",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "ftc-wifi",
+          "title": "Are Public Wi-Fi Networks Safe? What You Need To Know",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/are-public-wi-fi-networks-safe-what-you-need-know",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "cisa-mfa",
+          "title": "Stay safer with Multifactor Authentication — dodatkowa ochrona logowania",
+          "publisher": "Cybersecurity and Infrastructure Security Agency",
+          "url": "https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-MFA-Tip-Sheet.pdf",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "cdc-co",
+          "title": "Carbon Monoxide Poisoning Basics — podstawy wiedzy o zatruciu tlenkiem węgla",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/carbon-monoxide/about/index.html",
+          "publishedAt": "2024-05-15",
+          "accessedAt": "2026-10-16"
+        },
+        {
+          "id": "niosh-co",
+          "title": "Carbon Monoxide Hazards at Work — zagrożenia związane z tlenkiem węgla",
+          "publisher": "CDC, National Institute for Occupational Safety and Health",
+          "url": "https://www.cdc.gov/niosh/carbon-monoxide/about/index.html",
+          "publishedAt": "2024-09-30",
+          "accessedAt": "2026-10-16"
+        }
+      ]
+    }
+  }
+}
