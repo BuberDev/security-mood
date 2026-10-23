@@ -1,0 +1,521 @@
+{
+  "version": 1,
+  "topicKey": "data-breach-personal-response",
+  "slug": "data-breach-personal-response",
+  "status": "published",
+  "categoryId": "cyber-shield",
+  "publishedAt": "2026-10-23",
+  "updatedAt": "2026-10-23",
+  "heroImage": "/images/blog/editorial/passkeys-hardware-keys-hero.webp",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Guidance reviewed against primary public-agency and standards sources; no professional certifications or laboratory testing claimed.",
+      "pl": "Wskazówki zweryfikowane na podstawie źródeł pierwotnych instytucji publicznych i organizacji normalizacyjnych; bez deklarowania certyfikatów zawodowych lub testów laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "More security research and practical guides",
+        "pl": "Więcej analiz i praktycznych poradników bezpieczeństwa"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review your saved security tools",
+        "pl": "Przejrzyj zapisane narzędzia bezpieczeństwa"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore practical security plans",
+        "pl": "Poznaj praktyczne plany bezpieczeństwa"
+      }
+    }
+  ],
+  "productIds": [
+    "hardware-security-key"
+  ],
+  "locales": {
+    "en": {
+      "title": "Your personal response plan after a data breach",
+      "excerpt": "A practical checklist for verifying a breach, protecting accounts and money, addressing exposed identity details, and documenting recovery—with distinct steps for Poland and the United States.",
+      "heroAlt": "Editorial visual accompanying guidance on passkeys and hardware security keys",
+      "quickAnswer": "Verify the breach through the organisation’s official website or app, then identify exactly what was exposed. Contact your bank immediately if money or payment details are at risk. Secure affected accounts and reused passwords, review active sessions, and enable stronger authentication. Apply identity protections appropriate to your country, preserve evidence, and schedule follow-up checks.",
+      "keyTakeaways": [
+        "Choose actions according to the exposed information and signs of misuse, rather than treating every breach alike.",
+        "An unfamiliar transaction or account takeover needs immediate escalation through verified support channels.",
+        "Changing a password is only part of recovery: check sessions, recovery details and email forwarding.",
+        "Polish PESEL reservation and US credit freezes address different systems and are not interchangeable.",
+        "Keep a dated action log and continue reviewing accounts after the initial cleanup."
+      ],
+      "methodology": "Reviewed on 2026-10-23 using live search and direct retrieval of primary guidance from CERT Polska, Gov.pl, the FTC, the UK NCSC and NIST. We separated country-specific identity measures from general account recovery. The suggested work order, incident worksheet and review schedule are editorial tools, not agency deadlines or guarantees. NIST guidance informs authentication choices; its organisational requirements are not presented as obligations for individual readers. No breach datasets, commercial monitoring services or products were tested.",
+      "sections": [
+        {
+          "id": "verify-and-triage",
+          "heading": "1. Verify the notice and decide what needs attention first",
+          "answer": "Start by confirming the incident through an independently opened official channel and listing the information exposed. Prioritise active financial loss, account takeover and exposed identity credentials. A breach notice establishes possible exposure; it does not by itself prove that someone has accessed your accounts or stolen your identity.",
+          "paragraphs": [
+            "Open the organisation’s app, use a saved bookmark or type its known address. Read the full notice rather than relying on a headline or forwarded screenshot. Record the incident date, notification date, affected service, stated data categories and any unanswered questions. If the notice says only “personal information”, ask the organisation to clarify which fields relate to your account.",
+            "Create a small incident worksheet with four columns: finding, action, confirmation and next review. For example, “payment card exposed” should lead to a bank contact and a recorded outcome, not simply a tick beside “read notice”. Keep uncertainty visible: write “password exposure not confirmed” instead of assuming either safety or compromise.",
+            "Use the table to choose parallel tasks if several categories were exposed. If you are helping a relative, agree who will contact each provider and who will maintain the log. This is an editorial way to organise the work; it is not a requirement to finish every task before asking a bank for urgent help."
+          ],
+          "bullets": [
+            "Use contact details obtained independently of the incoming breach message.",
+            "Record what the organisation confirms, what remains unknown and the support reference.",
+            "Escalate evidence of ongoing misuse immediately; do not wait for a complete worksheet."
+          ],
+          "table": {
+            "headers": [
+              "Exposure or warning sign",
+              "First response",
+              "Important limitation"
+            ],
+            "rows": [
+              [
+                "Unauthorised transaction or exposed card details",
+                "Contact the bank through its app or a verified number",
+                "A password change does not replace a payment dispute"
+              ],
+              [
+                "Exposed password or unfamiliar account activity",
+                "Secure the affected account and any reused credentials",
+                "Other active sessions may need separate attention"
+              ],
+              [
+                "PESEL, identity document or US Social Security number",
+                "Use the relevant national identity-protection route",
+                "Protection differs by jurisdiction"
+              ],
+              [
+                "Email address, phone number or postal address",
+                "Prepare for targeted impersonation and review privacy",
+                "Knowing your details does not authenticate a caller"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "cert-breach",
+            "ftc-breach",
+            "ncsc-phishing"
+          ]
+        },
+        {
+          "id": "recover-accounts",
+          "heading": "2. Recover accounts and close remaining access",
+          "answer": "For an affected account, replace the compromised password, address password reuse and review remaining access. Give particular attention to email because it supports recovery of other services. If you cannot sign in, follow the provider’s official recovery process rather than paying someone who promises to restore access.",
+          "paragraphs": [
+            "Work from an account list instead of changing unrelated passwords at random. Mark which services used the exposed password, including close variations, and which depend on the affected email address. Use a password manager to create and store different passwords. CERT Polska recommends unique passwords and changing a password when compromise is suspected, rather than routine changes without a reason.",
+            "For email, inspect forwarding rules and filters, then check the account’s recovery email address, telephone number and security settings. Sign out other devices and apps using the service’s security controls. The exact menus differ between providers, so use their help pages and record whether the action succeeded. A new password alone is not a complete recovery record.",
+            "If messages were sent from your account without permission, warn contacts through a channel you still control. State which messages to disregard and how to verify future requests. If provider recovery fails, make a migration list for essential services tied to the old address; avoid abandoning it without considering those dependencies."
+          ],
+          "bullets": [
+            "Record affected services without writing live passwords into the incident log.",
+            "Confirm that recovery contact details belong to you.",
+            "Keep support case numbers and unresolved recovery steps together."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Editorial visual for account recovery and backup authentication",
+            "caption": "Recovery should cover access, recovery settings and remaining sessions—not just a replacement password."
+          },
+          "sourceIds": [
+            "ncsc-recovery",
+            "cert-passwords"
+          ]
+        },
+        {
+          "id": "money-and-identity",
+          "heading": "3. Protect money and use the right identity safeguards",
+          "answer": "Contact your bank immediately about exposed payment credentials or transactions you did not authorise. For identity information, use country-specific protections: Poland offers PESEL reservation, while US consumers can freeze their credit reports. Neither measure removes leaked information or replaces reporting misuse that has already happened.",
+          "paragraphs": [
+            "Tell the bank what was exposed and distinguish an unfamiliar transaction from a suspicious message that has not led to a payment. Ask which cards or access methods need blocking, how to submit a dispute and how to provide evidence securely. Record the bank’s instructions and any follow-up date. Do not assume a temporary card lock resolves every consequence of exposure.",
+            "In Poland, the official Gov.pl service explains how adults with a PESEL number can reserve it online or through an office. The service is free and immediate. You can also arrange automatic reservation after a temporary reversal. Check the official instructions before an intended transaction that may require lifting the reservation.",
+            "For US credit protection, the FTC explains that a freeze must be placed with Equifax, Experian and TransUnion separately. A fraud alert is a different measure and can be initiated through one bureau. Keep the confirmations in your worksheet. If you live elsewhere, identify the local equivalent rather than assuming either the Polish or US process applies."
+          ],
+          "bullets": [
+            "Separate bank case references from identity-protection confirmations.",
+            "Ask for specific instructions when identity-document details or an image were exposed.",
+            "Review unfamiliar credit accounts or debts as possible misuse requiring investigation."
+          ],
+          "sourceIds": [
+            "cert-breach",
+            "gov-pesel",
+            "ftc-freezes",
+            "ftc-breach"
+          ]
+        },
+        {
+          "id": "stronger-authentication",
+          "heading": "4. Strengthen sign-in without losing your recovery route",
+          "answer": "After securing access, enable stronger authentication supported by each important service. Passkeys and compatible FIDO security keys can provide phishing-resistant authentication; manually entered one-time codes do not offer the same protection. Before changing methods, check how you would recover the account if your usual device became unavailable.",
+          "paragraphs": [
+            "Start with email, then accounts that matter most to your finances, work or personal communications. Make a simple record of the available authentication method, where recovery instructions are kept and which device or authenticator is required. Do not put recovery codes in the same shared incident worksheet used to track support calls.",
+            "A hardware security key is an optional tool, not a prerequisite for beginning recovery. Check that the service supports the intended sign-in method and that the key works with your devices. The generic product reference here is not a claim about a particular model’s compatibility, certification or performance. A supported passkey may already meet your needs without another purchase.",
+            "Test the new method while you still have a working recovery route. Our suggested acceptance check is practical: can you sign in, explain the fallback process and locate the provider’s recovery instructions? If the answer is unclear, resolve that uncertainty before removing a working method. Stronger authentication reduces particular attack opportunities; it cannot retrieve records already copied from an organisation."
+          ],
+          "bullets": [
+            "Prefer phishing-resistant authentication where supported.",
+            "Treat recovery planning as part of setup.",
+            "Do not approve an unexpected authentication request."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Editorial visual accompanying passkey and security-key setup guidance",
+            "caption": "Check service support and recovery arrangements before relying on a new authentication method."
+          },
+          "sourceIds": [
+            "nist-auth",
+            "cert-passwords"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "document-and-follow-up",
+          "heading": "5. Preserve evidence and make recovery a scheduled task",
+          "answer": "Keep the breach notice, relevant messages, transaction details and provider reference numbers in a protected incident record. Report suspected crime through the appropriate local route and use the organisation’s complaint process where needed. Continue reviewing accounts because completing the initial checklist does not establish that all consequences have ended.",
+          "paragraphs": [
+            "Separate original evidence from your working notes. Preserve the message or notice as received, then add a dated explanation of what you observed and which action you took. Share documents only through a verified reporting channel and provide the information requested, rather than circulating a full identity-document copy with every enquiry.",
+            "Use a manageable editorial schedule: review unresolved tasks the next day, reassess the worksheet after a week, and add recurring financial and account checks over the following months. These are planning prompts, not official deadlines or a point at which exposure becomes harmless. Bring the next review forward whenever a new notice, unfamiliar login or disputed transaction appears.",
+            "Prepare a short response script for unexpected contact: “I will contact the organisation through its published channel.” Personal details can make a fraudulent request sound convincing. At each review, also ask whether unused accounts or unnecessary stored information can be reduced. Close a task when the specific action is confirmed; keep unresolved disputes and provider investigations open."
+          ],
+          "bullets": [
+            "For US identity misuse, the FTC points consumers to IdentityTheft.gov for reporting and recovery.",
+            "In Poland, distinguish reporting suspected crime to police from a data-protection complaint to UODO.",
+            "A negative breach-search result is not proof that information was never exposed."
+          ],
+          "sourceIds": [
+            "ftc-breach",
+            "cert-breach",
+            "ncsc-phishing"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Should I change every password after a breach?",
+          "answer": "Change the affected password and passwords reused elsewhere, including close variations. Prioritise essential accounts. CERT Polska does not recommend routine password changes without a reason; use unique passwords and stronger authentication instead."
+        },
+        {
+          "question": "Does a breach notice mean my identity has been stolen?",
+          "answer": "No. Exposure and confirmed misuse are different findings. Follow the notice’s verified instructions, protect the relevant accounts or identity records, and investigate unfamiliar activity."
+        },
+        {
+          "question": "Can a hardware security key undo a data leak?",
+          "answer": "No. A compatible key can strengthen future authentication. It cannot remove copied information, reverse payments or substitute for account recovery and identity-protection measures."
+        },
+        {
+          "question": "What if only my email address was exposed?",
+          "answer": "Be alert to targeted phishing and verify unexpected requests independently. An exposed address alone does not establish that the mailbox password was stolen. Check the notice’s data categories before deciding which credentials require replacement."
+        },
+        {
+          "question": "When can I stop monitoring?",
+          "answer": "There is no universal safe stopping date in the reviewed guidance. Keep routine financial checks, review new security alerts and retain unresolved case records. The suggested next-day, weekly and monthly reviews are organisational prompts."
+        }
+      ],
+      "sources": [
+        {
+          "id": "cert-breach",
+          "title": "Co zrobić w przypadku wycieku danych? Praktyczny poradnik krok po kroku",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://wiedza.cert.pl/sciezki-postepowania/wycieki-danych/",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ftc-breach",
+          "title": "What To Do After a Data Breach",
+          "publisher": "Federal Trade Commission",
+          "url": "https://www.ftc.gov/media/79862",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "gov-pesel",
+          "title": "Zastrzeż swój numer PESEL lub cofnij zastrzeżenie",
+          "publisher": "Gov.pl",
+          "url": "https://www.gov.pl/web/gov/zastrzez-swoj-numer-pesel-lub-cofnij-zastrzezenie",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ftc-freezes",
+          "title": "Credit Freezes and Fraud Alerts",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/credit-freezes-and-fraud-alerts",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ncsc-recovery",
+          "title": "Recovering a hacked account",
+          "publisher": "UK National Cyber Security Centre",
+          "url": "https://www.ncsc.gov.uk/guidance/recovering-a-hacked-account",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ncsc-phishing",
+          "title": "Phishing scams: how to spot and report them",
+          "publisher": "UK National Cyber Security Centre",
+          "url": "https://www.ncsc.gov.uk/collection/phishing-scams",
+          "publishedAt": "2021-11-26",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "cert-passwords",
+          "title": "Zadbaj o bezpieczne hasła i logowanie",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://cert.pl/bezpieczne-hasla/",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "nist-auth",
+          "title": "Digital Identity Guidelines: Authentication and Authenticator Management, SP 800-63B-4",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "accessedAt": "2026-10-23"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Osobisty plan działania po wycieku danych",
+      "excerpt": "Praktyczna lista działań: potwierdzenie wycieku, ochrona kont i pieniędzy, zabezpieczenie danych tożsamości oraz dokumentowanie sprawy. Z rozróżnieniem procedur w Polsce i Stanach Zjednoczonych.",
+      "heroAlt": "Ilustracja redakcyjna towarzysząca poradnikowi o kluczach dostępu i sprzętowych kluczach bezpieczeństwa",
+      "quickAnswer": "Potwierdź wyciek na oficjalnej stronie organizacji lub w jej aplikacji i ustal, jakie dane ujawniono. Jeśli zagrożone są pieniądze albo dane płatnicze, natychmiast skontaktuj się z bankiem. Zabezpiecz konta, zmień ujawnione i powtarzane hasła, sprawdź sesje oraz włącz silniejsze uwierzytelnianie. Zastosuj ochronę tożsamości właściwą dla swojego kraju, zachowaj dowody i zaplanuj kolejne kontrole.",
+      "keyTakeaways": [
+        "Dobieraj działania do ujawnionych informacji oraz oznak nadużycia; każdy wyciek może wymagać innej reakcji.",
+        "Nieznana transakcja lub przejęcie konta wymagają pilnego kontaktu przez sprawdzony kanał.",
+        "Zmiana hasła to część odzyskiwania kontroli: sprawdź także sesje, dane odzyskiwania i przekierowania poczty.",
+        "Zastrzeżenie PESEL w Polsce oraz blokada raportów kredytowych w USA dotyczą różnych systemów.",
+        "Prowadź dziennik działań i wracaj do kontroli kont po zakończeniu pierwszych zabezpieczeń."
+      ],
+      "methodology": "Przegląd wykonano 2026-10-23, korzystając z wyszukiwania internetowego i bezpośredniego odczytu źródeł pierwotnych CERT Polska, Gov.pl, FTC, brytyjskiego NCSC oraz NIST. Oddzielono krajowe mechanizmy ochrony tożsamości od ogólnych zasad odzyskiwania kont. Proponowana kolejność pracy, karta incydentu i harmonogram kontroli są narzędziami redakcyjnymi, a nie urzędowymi terminami ani gwarancją bezpieczeństwa. Wytyczne NIST wykorzystano do omówienia uwierzytelniania; wymagań dla organizacji nie przedstawiono jako obowiązków czytelnika. Nie testowano baz wycieków, usług monitoringu ani produktów.",
+      "sections": [
+        {
+          "id": "verify-and-triage",
+          "heading": "1. Potwierdź komunikat i ustal kolejność działań",
+          "answer": "Najpierw potwierdź incydent przez niezależnie otwarty oficjalny kanał i wypisz ujawnione informacje. Pierwszeństwo mają trwająca utrata pieniędzy, przejęcie konta oraz ujawnienie danych służących do potwierdzania tożsamości. Sam komunikat o wycieku oznacza możliwe narażenie danych; nie dowodzi jeszcze włamania na konto ani kradzieży tożsamości.",
+          "paragraphs": [
+            "Otwórz aplikację organizacji, skorzystaj z zapisanej zakładki albo wpisz znany adres strony. Przeczytaj cały komunikat, zamiast opierać się na nagłówku lub przesłanym zrzucie ekranu. Zapisz datę incydentu, datę powiadomienia, nazwę usługi, wymienione kategorie danych i pytania bez odpowiedzi. Jeżeli organizacja pisze jedynie o „danych osobowych”, poproś o wyjaśnienie, które informacje dotyczą twojego konta.",
+            "Przygotuj prostą kartę incydentu z czterema kolumnami: ustalenie, działanie, potwierdzenie i następna kontrola. Przykładowo wpis „ujawnione dane karty” powinien prowadzić do kontaktu z bankiem oraz zapisania wyniku rozmowy, a nie tylko odhaczenia przeczytanego komunikatu. Wyraźnie oznaczaj niewiadome. Zapis „ujawnienie hasła niepotwierdzone” jest użyteczniejszy niż założenie, że wszystko jest bezpieczne albo całkowicie przejęte.",
+            "Tabela pomaga rozdzielić zadania, gdy ujawniono kilka kategorii informacji. Jeśli pomagasz bliskiej osobie, ustalcie, kto kontaktuje się z poszczególnymi usługodawcami, a kto prowadzi notatki. To redakcyjny sposób organizacji pracy. Nie trzeba uzupełnić całej karty, zanim zgłosisz bankowi pilny problem lub rozpoczniesz odzyskiwanie konta."
+          ],
+          "bullets": [
+            "Dane kontaktowe znajdź niezależnie od otrzymanej wiadomości o wycieku.",
+            "Oddziel potwierdzone ustalenia od niewiadomych i zapisz numer zgłoszenia.",
+            "Przy oznakach trwającego nadużycia reaguj od razu, bez czekania na komplet informacji."
+          ],
+          "table": {
+            "headers": [
+              "Ujawnione dane lub sygnał ostrzegawczy",
+              "Pierwsze działanie",
+              "Ważne ograniczenie"
+            ],
+            "rows": [
+              [
+                "Nieautoryzowana transakcja lub dane karty",
+                "Kontakt z bankiem przez aplikację lub sprawdzony numer",
+                "Zmiana hasła nie zastępuje reklamacji płatności"
+              ],
+              [
+                "Ujawnione hasło lub obca aktywność na koncie",
+                "Zabezpieczenie konta i haseł użytych także gdzie indziej",
+                "Pozostałe sesje mogą wymagać osobnego wylogowania"
+              ],
+              [
+                "PESEL, dokument tożsamości lub amerykański numer Social Security",
+                "Zastosowanie właściwej krajowej ochrony tożsamości",
+                "Mechanizmy zależą od kraju"
+              ],
+              [
+                "Adres e-mail, numer telefonu lub adres zamieszkania",
+                "Ostrożność wobec podszywania się i przegląd prywatności",
+                "Znajomość danych nie potwierdza tożsamości rozmówcy"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "cert-breach",
+            "ftc-breach",
+            "ncsc-phishing"
+          ]
+        },
+        {
+          "id": "recover-accounts",
+          "heading": "2. Odzyskaj konta i zamknij pozostawiony dostęp",
+          "answer": "Zmień ujawnione hasło, usuń jego powtórzenia w innych usługach i sprawdź pozostałe możliwości dostępu do konta. Szczególną uwagę poświęć poczcie, która obsługuje odzyskiwanie innych usług. Jeżeli nie możesz się zalogować, skorzystaj z oficjalnej procedury dostawcy, zamiast płacić osobie obiecującej przywrócenie dostępu.",
+          "paragraphs": [
+            "Pracuj na liście kont, zamiast przypadkowo zmieniać niezwiązane z incydentem hasła. Zaznacz usługi, w których używano ujawnionego hasła lub podobnego wariantu, oraz te zależne od zagrożonej skrzynki. Menedżer haseł pomoże tworzyć i przechowywać różne hasła. CERT Polska zaleca ich unikalność oraz zmianę przy podejrzeniu ujawnienia, a nie okresową wymianę bez konkretnej przyczyny.",
+            "W poczcie sprawdź reguły przekazywania wiadomości i filtry, a następnie pomocniczy adres e-mail, numer telefonu oraz ustawienia bezpieczeństwa. Wyloguj inne urządzenia i aplikacje za pomocą dostępnych funkcji usługi. Nazwy ustawień różnią się między dostawcami, dlatego korzystaj z ich pomocy i zapisuj, czy czynność zakończyła się powodzeniem. Samo ustawienie nowego hasła nie dokumentuje pełnego odzyskania kontroli nad kontem.",
+            "Jeśli z konta wysłano wiadomości bez twojej zgody, ostrzeż kontakty przez kanał, nad którym nadal masz kontrolę. Wyjaśnij, które wiadomości zignorować i jak potwierdzać kolejne prośby. Gdy odzyskanie konta się nie powiedzie, przygotuj listę ważnych usług do przeniesienia na nowy adres. Nie porzucaj starej skrzynki bez sprawdzenia tych zależności i potrzebnych zmian."
+          ],
+          "bullets": [
+            "Zapisuj nazwy usług, ale nie umieszczaj aktualnych haseł w dzienniku incydentu.",
+            "Potwierdź, że dane odzyskiwania rzeczywiście należą do ciebie.",
+            "Przechowuj razem numery zgłoszeń oraz listę nierozwiązanych problemów z dostępem."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-recovery.webp",
+            "alt": "Ilustracja redakcyjna dotycząca odzyskiwania kont i zapasowego uwierzytelniania",
+            "caption": "Odzyskiwanie kontroli obejmuje dostęp, ustawienia odzyskiwania i pozostałe sesje, a także zmianę hasła."
+          },
+          "sourceIds": [
+            "ncsc-recovery",
+            "cert-passwords"
+          ]
+        },
+        {
+          "id": "money-and-identity",
+          "heading": "3. Zabezpiecz pieniądze i zastosuj właściwą ochronę tożsamości",
+          "answer": "Natychmiast skontaktuj się z bankiem w sprawie ujawnionych danych płatniczych lub nieautoryzowanych transakcji. Przy danych tożsamości wybierz ochronę właściwą dla kraju: w Polsce dostępne jest zastrzeżenie PESEL, a w USA blokada raportów kredytowych. Żadne z tych rozwiązań nie usuwa wycieku ani nie zastępuje zgłoszenia nadużycia.",
+          "paragraphs": [
+            "Powiedz bankowi, jakie informacje ujawniono. Oddziel nieznaną transakcję od podejrzanej wiadomości, która nie doprowadziła do płatności. Zapytaj, które karty lub sposoby dostępu trzeba zablokować, jak złożyć reklamację oraz jak bezpiecznie przekazać dowody. Zapisz instrukcje i uzgodniony termin dalszego kontaktu. Nie zakładaj, że tymczasowa blokada karty rozwiązuje wszystkie następstwa ujawnienia jej danych.",
+            "W Polsce oficjalna strona Gov.pl wyjaśnia, jak pełnoletnia osoba posiadająca PESEL może zastrzec numer przez internet lub w urzędzie. Usługa jest bezpłatna i realizowana od razu. Można także ustawić ponowne automatyczne zastrzeżenie po czasowym cofnięciu. Przed planowaną czynnością mogącą wymagać cofnięcia blokady sprawdź aktualne instrukcje. Zapisz potwierdzenie wykonania operacji w swojej karcie incydentu.",
+            "W USA FTC wskazuje, że blokadę raportu kredytowego należy założyć osobno w Equifax, Experian i TransUnion. Alert dotyczący oszustwa jest innym rozwiązaniem i można go rozpocząć w jednym biurze. Zachowaj potwierdzenia. Jeśli mieszkasz w innym kraju, ustal lokalną procedurę, zamiast przenosić automatycznie rozwiązania polskie lub amerykańskie na własną sytuację."
+          ],
+          "bullets": [
+            "Oddziel numery spraw bankowych od potwierdzeń ochrony tożsamości.",
+            "Przy ujawnieniu danych lub zdjęcia dokumentu poproś o konkretne instrukcje postępowania.",
+            "Nieznane zobowiązanie lub rachunek kredytowy potraktuj jako możliwe nadużycie wymagające wyjaśnienia."
+          ],
+          "sourceIds": [
+            "cert-breach",
+            "gov-pesel",
+            "ftc-freezes",
+            "ftc-breach"
+          ]
+        },
+        {
+          "id": "stronger-authentication",
+          "heading": "4. Wzmocnij logowanie i zachowaj możliwość odzyskania konta",
+          "answer": "Po zabezpieczeniu dostępu włącz silniejsze uwierzytelnianie obsługiwane przez ważne usługi. Klucze dostępu, czyli passkeys, oraz zgodne klucze FIDO mogą zapewniać odporność na phishing; ręcznie wpisywane kody jednorazowe nie dają takiej samej ochrony. Przed zmianą metody sprawdź możliwość odzyskania konta po utracie zwykle używanego urządzenia.",
+          "paragraphs": [
+            "Zacznij od poczty, a następnie kont najważniejszych dla finansów, pracy i prywatnej komunikacji. Przygotuj krótki wykaz dostępnych metod logowania, miejsca przechowywania instrukcji odzyskiwania oraz potrzebnych urządzeń lub uwierzytelniaczy. Kodów odzyskiwania nie dopisuj do wspólnej karty incydentu, którą przekazujesz innym osobom do śledzenia rozmów z pomocą techniczną. Taka karta ma porządkować zadania, a nie gromadzić wszystkie sekrety.",
+            "Sprzętowy klucz bezpieczeństwa jest opcjonalnym narzędziem, nie warunkiem rozpoczęcia naprawy sytuacji. Sprawdź, czy usługa obsługuje wybraną metodę i czy klucz współpracuje z twoimi urządzeniami. Ogólne odwołanie do produktu w artykule nie oznacza deklaracji zgodności, certyfikacji ani skuteczności konkretnego modelu. Obsługiwany klucz dostępu może wystarczyć bez kupowania dodatkowego urządzenia.",
+            "Przetestuj nową metodę, dopóki masz działającą możliwość odzyskiwania. Proponujemy praktyczne kryterium zakończenia zadania: potrafisz się zalogować, opisać procedurę awaryjną i znaleźć instrukcje dostawcy. Jeśli któryś punkt pozostaje niejasny, wyjaśnij go przed usunięciem działającej metody. Silniejsze uwierzytelnianie ogranicza określone możliwości ataku, ale nie odzyskuje kopii danych zabranych wcześniej z systemów organizacji."
+          ],
+          "bullets": [
+            "Wybieraj uwierzytelnianie odporne na phishing tam, gdzie jest obsługiwane.",
+            "Uwzględnij odzyskiwanie konta już podczas konfiguracji.",
+            "Nie zatwierdzaj niespodziewanego żądania uwierzytelnienia."
+          ],
+          "image": {
+            "src": "/images/blog/editorial/passkeys-hardware-keys-setup.webp",
+            "alt": "Ilustracja redakcyjna towarzysząca instrukcjom konfiguracji kluczy dostępu i kluczy bezpieczeństwa",
+            "caption": "Przed zmianą sposobu logowania sprawdź obsługę usługi oraz przygotuj drogę odzyskania konta."
+          },
+          "sourceIds": [
+            "nist-auth",
+            "cert-passwords"
+          ],
+          "productId": "hardware-security-key"
+        },
+        {
+          "id": "document-and-follow-up",
+          "heading": "5. Zachowaj dowody i wpisz kontrole do kalendarza",
+          "answer": "Przechowuj komunikat o wycieku, istotne wiadomości, szczegóły transakcji i numery zgłoszeń w zabezpieczonej dokumentacji. Podejrzenie przestępstwa zgłoś właściwą lokalną drogą, a w razie potrzeby skorzystaj z procedury skargowej. Wracaj do kontroli kont: wykonanie pierwszej listy działań nie potwierdza zakończenia wszystkich skutków incydentu.",
+          "paragraphs": [
+            "Oddziel oryginalne materiały od własnych notatek. Zachowaj wiadomość lub komunikat w otrzymanej postaci, a następnie dodaj datowany opis obserwacji i wykonanych czynności. Dokumenty przekazuj tylko przez zweryfikowany kanał zgłoszeniowy. Odpowiadaj na konkretne wymagania instytucji, zamiast dołączać pełną kopię dokumentu tożsamości do każdego zapytania. Przy kolejnych rozmowach łatwiej będzie wskazać istniejący numer sprawy.",
+            "Zastosuj wykonalny harmonogram redakcyjny: następnego dnia sprawdź zadania bez potwierdzenia, po tygodniu przejrzyj całą kartę, a na kolejne miesiące zaplanuj powtarzalne kontrole finansów i kont. To podpowiedzi organizacyjne, nie urzędowe terminy ani moment, po którym wyciek przestaje zagrażać. Przyspiesz kontrolę, jeśli pojawi się nowy komunikat, nieznane logowanie lub kolejna kwestionowana transakcja.",
+            "Przygotuj prostą odpowiedź na niespodziewany kontakt: „Skontaktuję się z organizacją przez jej oficjalny kanał”. Znajomość prywatnych szczegółów może uwiarygodniać oszukańczą prośbę. Podczas przeglądu zapytaj również, czy można ograniczyć nieużywane konta i niepotrzebnie zapisane informacje. Zamykaj zadanie po potwierdzeniu konkretnej czynności; otwarte reklamacje i prowadzone wyjaśnienia pozostaw na liście do dalszego śledzenia."
+          ],
+          "bullets": [
+            "Przy nadużyciu tożsamości w USA FTC kieruje do IdentityTheft.gov w celu zgłoszenia i przygotowania planu naprawczego.",
+            "W Polsce odróżnij zawiadomienie policji o podejrzeniu przestępstwa od skargi dotyczącej ochrony danych do UODO.",
+            "Brak wyniku w wyszukiwarce wycieków nie dowodzi, że informacje nigdy nie zostały ujawnione."
+          ],
+          "sourceIds": [
+            "ftc-breach",
+            "cert-breach",
+            "ncsc-phishing"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy po wycieku trzeba zmienić wszystkie hasła?",
+          "answer": "Zmień hasło objęte incydentem oraz jego powtórzenia i zbliżone warianty w innych usługach. Zacznij od ważnych kont. CERT Polska nie zaleca okresowej zmiany bez przyczyny; podstawą są unikalne hasła i silniejsze uwierzytelnianie."
+        },
+        {
+          "question": "Czy komunikat o wycieku oznacza kradzież tożsamości?",
+          "answer": "Nie. Ujawnienie danych i potwierdzone nadużycie to różne ustalenia. Wykonaj zweryfikowane instrukcje z komunikatu, zabezpiecz odpowiednie konta lub dane tożsamości i wyjaśniaj nieznaną aktywność."
+        },
+        {
+          "question": "Czy sprzętowy klucz bezpieczeństwa cofnie wyciek?",
+          "answer": "Nie. Zgodny klucz może wzmocnić przyszłe logowanie. Nie usuwa skopiowanych informacji, nie odwraca płatności i nie zastępuje odzyskiwania konta ani krajowych mechanizmów ochrony tożsamości."
+        },
+        {
+          "question": "Co zrobić, jeśli ujawniono tylko adres e-mail?",
+          "answer": "Uważaj na ukierunkowany phishing i niezależnie potwierdzaj niespodziewane prośby. Samo ujawnienie adresu nie dowodzi kradzieży hasła do skrzynki. Sprawdź kategorie danych w komunikacie przed podjęciem decyzji o zmianie danych logowania."
+        },
+        {
+          "question": "Kiedy można zakończyć monitorowanie?",
+          "answer": "W przejrzanych źródłach nie ma jednej bezpiecznej daty zakończenia kontroli. Zachowaj zwykły przegląd finansów, sprawdzaj nowe alerty i przechowuj dokumentację otwartych spraw. Kontrole następnego dnia, po tygodniu i w kolejnych miesiącach są propozycją organizacji pracy."
+        }
+      ],
+      "sources": [
+        {
+          "id": "cert-breach",
+          "title": "Co zrobić w przypadku wycieku danych? Praktyczny poradnik krok po kroku",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://wiedza.cert.pl/sciezki-postepowania/wycieki-danych/",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ftc-breach",
+          "title": "What To Do After a Data Breach",
+          "publisher": "Federal Trade Commission",
+          "url": "https://www.ftc.gov/media/79862",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "gov-pesel",
+          "title": "Zastrzeż swój numer PESEL lub cofnij zastrzeżenie",
+          "publisher": "Gov.pl",
+          "url": "https://www.gov.pl/web/gov/zastrzez-swoj-numer-pesel-lub-cofnij-zastrzezenie",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ftc-freezes",
+          "title": "Credit Freezes and Fraud Alerts",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/credit-freezes-and-fraud-alerts",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ncsc-recovery",
+          "title": "Recovering a hacked account",
+          "publisher": "UK National Cyber Security Centre",
+          "url": "https://www.ncsc.gov.uk/guidance/recovering-a-hacked-account",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "ncsc-phishing",
+          "title": "Phishing scams: how to spot and report them",
+          "publisher": "UK National Cyber Security Centre",
+          "url": "https://www.ncsc.gov.uk/collection/phishing-scams",
+          "publishedAt": "2021-11-26",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "cert-passwords",
+          "title": "Zadbaj o bezpieczne hasła i logowanie",
+          "publisher": "CERT Polska / NASK",
+          "url": "https://cert.pl/bezpieczne-hasla/",
+          "accessedAt": "2026-10-23"
+        },
+        {
+          "id": "nist-auth",
+          "title": "Digital Identity Guidelines: Authentication and Authenticator Management, SP 800-63B-4",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+          "accessedAt": "2026-10-23"
+        }
+      ]
+    }
+  }
+}
