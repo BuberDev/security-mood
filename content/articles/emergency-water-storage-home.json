@@ -1,0 +1,577 @@
+{
+  "version": 1,
+  "topicKey": "emergency-water-storage-home",
+  "slug": "emergency-water-storage-home",
+  "status": "published",
+  "categoryId": "emergency-prep",
+  "publishedAt": "2026-10-27",
+  "updatedAt": "2026-10-27",
+  "heroImage": "/images/blog/portable_power_station_guide.png",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public-agency publications; no certification, product testing or laboratory validation is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie publikacji instytucji publicznych; bez deklarowania certyfikacji, testów produktów lub badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore preparedness articles",
+        "pl": "Przeglądaj artykuły o przygotowaniu na sytuacje awaryjne"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review your saved preparedness items",
+        "pl": "Przejrzyj zapisane wyposażenie awaryjne"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood",
+        "pl": "Poznaj Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "solar-emergency-radio"
+  ],
+  "locales": {
+    "en": {
+      "title": "Emergency water storage at home: quantities, containers and a practical recovery plan",
+      "excerpt": "Calculate a realistic household reserve, choose suitable containers, maintain the supply and understand when boiling or filtering cannot make water safe.",
+      "heroAlt": "Preparedness graphic showing a portable power station, laptop, lamp and phones on a desk.",
+      "quickAnswer": "Keep a three-day emergency water reserve for everyone at home. Polish government guidance starts at 3 litres per person daily; CDC recommends about 3.8 litres. Add water for pets and individual needs. Use sealed bottled water or suitable sanitized containers, rotate supplies, and follow local notices: boiling does not remove chemical contamination.",
+      "keyTakeaways": [
+        "Calculate people × days × daily allowance, then add pets and household-specific needs.",
+        "Separate drinking water from water reserved exclusively for sanitation.",
+        "Use suitable containers, record filling dates and replace home-filled water every six months.",
+        "Treat a boil-water notice differently from a do-not-drink or do-not-use instruction.",
+        "After service returns, follow the utility’s recovery instructions before resuming normal use."
+      ],
+      "methodology": "We searched for and opened primary guidance from CDC, the US Environmental Protection Agency, Poland’s government preparedness guide, Pennsylvania emergency management and Szczecin’s municipal crisis-management service. Sources were accessed on 2026-10-28; the requested editorial publication and update dates are 2026-10-27, so this is not an archived verification of what each page displayed that day. Arithmetic examples and household checklists are editorial planning tools, not tested performance claims. US recommendations are identified separately from Polish guidance. Visual limitation: the permitted existing assets contain English text, and the inspected hero is square rather than landscape. They are included as contextual preparedness illustrations; the requested landscape, text-free visual specification cannot be met using these unchanged assets.",
+      "sections": [
+        {
+          "id": "calculate-reserve",
+          "heading": "How much emergency water should a household store?",
+          "answer": "Poland’s government preparedness guide recommends at least three days of supplies and a minimum of 3 litres of water per person daily. Pennsylvania’s emergency checklist uses one US gallon, approximately 3.8 litres. Treat these as starting allowances and budget separately for needs that your household calculation does not cover.",
+          "paragraphs": [
+            "For four people, the Polish starting calculation is 4 × 3 × 3 = 36 litres. Using a rounded 3.8-litre allowance produces 45.6 litres for the same period. Neither calculation is a promise that the reserve will cover normal showers, laundry and toilet flushing. Write down which activities your allowance is intended to support before buying containers.",
+            "Our editorial suggestion is to make a one-page inventory with columns for people, days, drinking and food preparation, pets, and additional needs. Check the instructions on foods you actually store: a meal requiring added water needs a place in the budget. Include any water-dependent care arrangements in a separate discussion with the person’s care team.",
+            "Build a complete three-day reserve before expanding its duration. If space or budget is limited, record the shortfall explicitly rather than describing a partially filled cupboard as a finished emergency supply. Review the calculation when someone moves in, a visitor stays, or household routines change."
+          ],
+          "bullets": [
+            "Count everyone likely to be at home during an interruption.",
+            "Record the daily allowance and number of days beside the total.",
+            "Add a separate line for pets and additional household needs.",
+            "Keep an inventory of usable litres rather than the number of containers."
+          ],
+          "table": {
+            "headers": [
+              "People",
+              "Three days at 3 L/person/day",
+              "Three days at 3.8 L/person/day"
+            ],
+            "rows": [
+              [
+                "1",
+                "9 L",
+                "11.4 L"
+              ],
+              [
+                "2",
+                "18 L",
+                "22.8 L"
+              ],
+              [
+                "4",
+                "36 L",
+                "45.6 L"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "pl-preparedness",
+            "pa-supplies"
+          ]
+        },
+        {
+          "id": "choose-containers",
+          "heading": "Which containers and storage arrangement make sense?",
+          "answer": "Use unopened bottled water or containers intended for food contact and water storage. Keep drinking supplies separate from water reserved for sanitation. Szczecin’s municipal guidance recommends a cool, shaded storage location away from chemicals and identifies smaller bottles as useful when leaving home.",
+          "paragraphs": [
+            "Choose the arrangement around the people who must use it. Before committing to a large container, check whether the intended user can carry it, open its closure and pour into a cup. A theoretical reserve is less useful if someone cannot reach or dispense it independently. Our practical preference is a mix of manageable containers rather than one vessel holding the entire allocation.",
+            "Compare the purchase as a household workflow. Bottles require space and replacement after use; refillable vessels require preparation and an agreed maintenance routine. Neither choice removes the need to count the remaining supply. Keep the main inventory where all adults can find it, and identify who will check it.",
+            "Use a clear distinction between drinking and sanitation containers. An editorial label can state purpose, volume and location, with a matching entry in the inventory. Do not count an empty collapsible vessel as stored water: it is collection capacity until filled from an acceptable source."
+          ],
+          "table": {
+            "headers": [
+              "Option",
+              "Useful role",
+              "Decision to make"
+            ],
+            "rows": [
+              [
+                "Sealed bottled water",
+                "Ready household reserve",
+                "Can everyone access and open it?"
+              ],
+              [
+                "Refillable water container",
+                "Planned reusable storage",
+                "Who prepares and maintains it?"
+              ],
+              [
+                "Small portable bottles",
+                "Leaving home or reaching a collection point",
+                "How much can the user carry?"
+              ],
+              [
+                "Separate sanitation container",
+                "Tasks permitted by local instructions",
+                "Is its purpose unmistakably labelled?"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/bug_out_bag.svg",
+            "alt": "Emergency preparedness graphic headed with an evacuation-bag checklist title.",
+            "caption": "Plan a manageable take-away water allocation alongside the main household reserve."
+          },
+          "sourceIds": [
+            "szczecin-water",
+            "cdc-storage"
+          ]
+        },
+        {
+          "id": "maintain-supply",
+          "heading": "How do you prepare and rotate stored water?",
+          "answer": "CDC recommends replacing home-filled water every six months and following the date on commercially bottled water. For refillable storage, clean and sanitize a suitable container before adding safe water. Never repurpose a container that previously held toxic chemicals, even if it appears clean.",
+          "paragraphs": [
+            "Keep container sanitation separate from drinking-water treatment. CDC’s container procedure uses one teaspoon of unscented bleach containing 5–9% sodium hypochlorite in one US quart of water. Close and shake so the solution contacts all internal surfaces, wait at least 30 seconds, empty it and air-dry before filling. This is a container-cleaning procedure, not a recipe for water to drink.",
+            "Our suggested maintenance card has five fields: container identifier, volume, filling or purchase date, next review date and action taken. Put a reminder in a calendar that someone actually checks. At each review, reconcile the written total with what remains after everyday use.",
+            "Give one person responsibility for the review and name a substitute. The task should end with a concrete result: replenished bottles, replaced home-filled water or an updated shortfall. A reminder that is repeatedly dismissed is a signal to simplify the arrangement. Smaller purchases or fewer container types may be easier for your household to maintain consistently."
+          ],
+          "bullets": [
+            "Write the filling date where it remains readable.",
+            "Keep drinking-water access and dispensing equipment clean.",
+            "Replace consumed supplies as part of the normal shopping routine.",
+            "Record completed maintenance, rather than relying on memory."
+          ],
+          "sourceIds": [
+            "cdc-storage",
+            "pl-preparedness"
+          ]
+        },
+        {
+          "id": "respond-to-advisory",
+          "heading": "What should you do when the tap stops or a warning arrives?",
+          "answer": "Check the water utility and public-health instructions before deciding how to use tap water. A boil-water advisory addresses germs; a do-not-drink instruction requires an alternative drinking supply; a do-not-use instruction can prohibit all contact. Restored flow alone does not establish that restrictions have ended.",
+          "paragraphs": [
+            "Szczecin’s guidance suggests first establishing whether an interruption affects only the dwelling or the wider building. Contact the building manager or local utility as appropriate. For your own household plan, write down these contacts in advance and identify the official website or broadcast source you will consult.",
+            "Our response checklist starts with three questions: What area does the notice cover? Which uses are permitted? When is the next update expected? Copy the wording and time of the notice into the household log. This helps prevent someone acting on an older message or a neighbour’s incomplete summary.",
+            "CDC advises against using water and ice from appliances connected to the water line during an advisory. Tell everyone which supply to use for drinking and food preparation. A battery or hand-crank radio can form part of the information plan, as Pennsylvania’s emergency checklist recommends, but no particular radio model or reception performance is assessed here."
+          ],
+          "image": {
+            "src": "/images/blog/survival_kit_checklist.svg",
+            "alt": "Preparedness graphic with a title referring to ten crisis survival essentials.",
+            "caption": "Keep water supplies, official information channels and household responsibilities in the same emergency plan."
+          },
+          "sourceIds": [
+            "cdc-advisories",
+            "szczecin-water",
+            "pa-supplies"
+          ],
+          "productId": "solar-emergency-radio"
+        },
+        {
+          "id": "treatment-limits",
+          "heading": "When can boiling or disinfection help?",
+          "answer": "Boiling can control disease-causing microorganisms, but it cannot make water contaminated with fuel or toxic chemicals safe. Follow the local advisory and use a different safe source when chemical contamination is suspected. A filter should never be assumed to address every hazard.",
+          "paragraphs": [
+            "For microbial treatment, CDC instructs users to bring clear water to a rolling boil for one minute, or three minutes above 6,500 feet, approximately 1,981 metres. Let it cool and protect it in a clean, sanitized, covered container. Removing visible particles with a cloth is a preparation step; it does not establish that water is safe to drink.",
+            "If boiling is unavailable, use an agency procedure or drinking-water treatment product instructions that match the chemical concentration and water volume. EPA warns against scented bleach and bleach with added cleaners. Do not transfer a dosage from an unrelated cleaning task or assume every household bleach has the same formulation.",
+            "Our editorial decision rule is to identify the hazard before choosing equipment. Ask what the treatment is documented to address, what conditions it requires and what remains untreated. Without those answers, keep the item outside the calculation of guaranteed usable drinking water. This article does not verify any filtration straw, tablet or household filter."
+          ],
+          "sourceIds": [
+            "cdc-treatment",
+            "epa-disinfection"
+          ]
+        },
+        {
+          "id": "recover-and-replenish",
+          "heading": "How do you return to normal use and rebuild the reserve?",
+          "answer": "Wait for the relevant authority to lift restrictions, then follow the utility’s instructions for household plumbing and connected appliances. EPA explains that flushing requirements depend on the system and incident. Replenish used reserves and document what the interruption revealed about your plan.",
+          "paragraphs": [
+            "Do not invent a universal flushing time. EPA says the supplier should explain whether and how to flush service lines, taps and appliances after a contamination incident. Save that instruction with the final advisory so everyone in the home uses the same recovery procedure.",
+            "A rainwater cistern is a separate recovery problem. CDC advises seeking health-department guidance when untreated catchment storage has received storm debris or floodwater; disinfection in an open, contaminated system is difficult. Do not automatically add its full volume to your drinking-water inventory.",
+            "Our suggested review is short and specific: How many usable litres remained? Which container was awkward? Was the official notice easy to find? Did meals consume more water than expected? Assign each correction an owner and a completion date. Replace what was used, update the inventory and check that the reserve is accessible again. The purpose of the review is a working household arrangement, not a longer shopping list."
+          ],
+          "sourceIds": [
+            "epa-recovery",
+            "cdc-cistern"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Is 36 litres enough for four people for three days?",
+          "answer": "It meets the arithmetic of the Polish 3-litre daily starting allowance. It is not a full normal-use household water budget. Add pets and any needs outside the allowance, and consider a larger reserve where practical."
+        },
+        {
+          "question": "Should I replace bottled water every six months?",
+          "answer": "CDC applies the six-month replacement interval to water you fill yourself. For commercially bottled water, follow its stated date and storage instructions."
+        },
+        {
+          "question": "Can I boil water during a do-not-drink notice?",
+          "answer": "Do not assume boiling makes it usable. Chemical or toxin contamination may remain. Follow the notice and use the specified alternative supply."
+        },
+        {
+          "question": "Can I resume drinking as soon as water flows again?",
+          "answer": "Check that restrictions have been lifted and complete any utility-directed recovery steps. Flow returning and drinking-water clearance are different events."
+        }
+      ],
+      "sources": [
+        {
+          "id": "pl-preparedness",
+          "title": "Przygotuj swoje otoczenie",
+          "publisher": "Government of Poland",
+          "url": "https://www.gov.pl/web/poradnikbezpieczenstwa/przygotuj-swoje-otoczenie",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "pa-supplies",
+          "title": "Gather Emergency Supplies",
+          "publisher": "Commonwealth of Pennsylvania, Ready PA",
+          "url": "https://www.pa.gov/agencies/ready/get-prepared/gather-supplies",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "szczecin-water",
+          "title": "Zapasy wody – pigułka wiedzy",
+          "publisher": "City of Szczecin, Crisis Management and Civil Protection Department",
+          "url": "https://bezpieczny.szczecin.eu/aktualnosci/zapasy-wody-pigulka-wiedzy",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-storage",
+          "title": "How to Create an Emergency Water Supply",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+          "publishedAt": "2025-06-27",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-advisories",
+          "title": "Drinking Water Advisories: An Overview",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html",
+          "publishedAt": "2024-03-04",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-treatment",
+          "title": "How to Make Water Safe in an Emergency",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/",
+          "publishedAt": "2024-09-19",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "epa-disinfection",
+          "title": "Emergency Disinfection of Drinking Water",
+          "publisher": "US Environmental Protection Agency",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "epa-recovery",
+          "title": "Water Decontamination Frequently Asked Questions for Customers",
+          "publisher": "US Environmental Protection Agency",
+          "url": "https://www.epa.gov/waterutilityresponse/water-decontamination-frequently-asked-questions-customers",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-cistern",
+          "title": "Cistern Safety and Disasters: Before, During, and After",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/cistern-safety-and-disasters-before-during-and-after.html",
+          "publishedAt": "2024-08-20",
+          "accessedAt": "2026-10-28"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Awaryjne przechowywanie wody w domu: ilości, pojemniki i powrót do normalnego korzystania",
+      "excerpt": "Oblicz zapas dla domowników, dobierz pojemniki, zaplanuj wymianę wody i sprawdź, kiedy gotowanie lub filtrowanie nie usuwa zagrożenia.",
+      "heroAlt": "Grafika o przygotowaniu awaryjnym przedstawiająca przenośną stację zasilania, laptop, lampę i telefony na biurku.",
+      "quickAnswer": "Przygotuj zapas wody dla wszystkich domowników na minimum trzy dni. Polski poradnik rządowy wskazuje co najmniej 3 litry na osobę dziennie, a CDC około 3,8 litra. Dolicz zwierzęta i indywidualne potrzeby. Wybierz zamknięte butelki lub odpowiednio przygotowane pojemniki, pilnuj wymiany i stosuj lokalne komunikaty: gotowanie nie usuwa skażenia chemicznego.",
+      "keyTakeaways": [
+        "Pomnóż liczbę osób przez liczbę dni i przyjętą ilość wody, następnie dolicz pozostałe potrzeby.",
+        "Oddziel wodę pitną od zapasu przeznaczonego wyłącznie do celów sanitarnych.",
+        "Oznacz datę napełnienia; wodę rozlaną samodzielnie wymieniaj co sześć miesięcy.",
+        "Nakaz przegotowania, zakaz spożywania i zakaz używania oznaczają różne ograniczenia.",
+        "Po przywróceniu dostaw wykonaj zalecenia wodociągów i odbuduj wykorzystany zapas."
+      ],
+      "methodology": "Wyszukaliśmy i otworzyliśmy źródłowe materiały CDC, amerykańskiej Agencji Ochrony Środowiska, polskiego rządowego Poradnika bezpieczeństwa, służb przygotowania kryzysowego Pensylwanii oraz miejskiego serwisu zarządzania kryzysowego Szczecina. Dostęp nastąpił 2026-10-28; wskazane przez zamawiającego daty publikacji i aktualizacji to 2026-10-27, dlatego nie przedstawiamy przeglądu jako archiwalnej weryfikacji treści z tego dnia. Obliczenia i listy organizacyjne są propozycjami redakcyjnymi, bez testów skuteczności. Odróżniamy zalecenia amerykańskie od polskich. Ograniczenie wizualne: dozwolone istniejące grafiki zawierają angielskie napisy, a sprawdzona grafika główna jest kwadratowa. Służą jako ilustracje kontekstowe; bez zmiany zasobów nie można spełnić wymogu poziomej grafiki bez tekstu.",
+      "sections": [
+        {
+          "id": "calculate-reserve",
+          "heading": "Ile wody awaryjnej zgromadzić dla domowników?",
+          "answer": "Polski Poradnik bezpieczeństwa zaleca zapasy na minimum trzy dni i co najmniej 3 litry wody na osobę dziennie. Lista awaryjna Pensylwanii przyjmuje jeden galon amerykański, czyli około 3,8 litra. To wartości wyjściowe; osobno uwzględnij potrzeby, których nie obejmuje przyjęty domowy budżet.",
+          "paragraphs": [
+            "Dla czterech osób polski punkt wyjścia wynosi 4 × 3 × 3 = 36 litrów. Przy zaokrąglonym przeliczniku 3,8 litra otrzymamy 45,6 litra na ten sam okres. Żadne z tych obliczeń nie oznacza zapasu pozwalającego normalnie brać prysznic, prać i spłukiwać toaletę. Przed zakupami zapisz, do jakich czynności przeznaczasz wyliczoną wodę.",
+            "Proponujemy prostą kartę z rubrykami: liczba osób, liczba dni, picie i przygotowanie jedzenia, zwierzęta oraz potrzeby dodatkowe. Przeczytaj instrukcje przygotowania produktów, które rzeczywiście przechowujesz. Jeżeli posiłek wymaga dolania wody, uwzględnij ją w obliczeniach. Potrzeby związane z opieką nad osobą zależną omów oddzielnie z osobami odpowiedzialnymi za jej leczenie lub opiekę.",
+            "Najpierw skompletuj rzeczywisty zapas na trzy dni, a później zwiększaj jego zakres. Przy ograniczonym miejscu lub budżecie zapisz brakującą ilość. Częściowo zapełniona szafka nie powinna figurować w planie jako gotowe zabezpieczenie całej rodziny. Przelicz zapasy po zmianie liczby domowników albo przy dłuższym pobycie gości."
+          ],
+          "bullets": [
+            "Policz wszystkie osoby, które mogą przebywać w domu podczas awarii.",
+            "Zapisz przyjętą ilość dzienną oraz liczbę dni.",
+            "Dodaj oddzielną pozycję dla zwierząt i potrzeb indywidualnych.",
+            "Kontroluj liczbę dostępnych litrów, a nie samą liczbę opakowań."
+          ],
+          "table": {
+            "headers": [
+              "Liczba osób",
+              "Trzy dni przy 3 l/osobę/dzień",
+              "Trzy dni przy 3,8 l/osobę/dzień"
+            ],
+            "rows": [
+              [
+                "1",
+                "9 l",
+                "11,4 l"
+              ],
+              [
+                "2",
+                "18 l",
+                "22,8 l"
+              ],
+              [
+                "4",
+                "36 l",
+                "45,6 l"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "pl-preparedness",
+            "pa-supplies"
+          ]
+        },
+        {
+          "id": "choose-containers",
+          "heading": "Jak dobrać pojemniki i miejsce przechowywania?",
+          "answer": "Wybierz fabrycznie zamkniętą wodę butelkowaną albo pojemniki przeznaczone do kontaktu z żywnością i magazynowania wody. Oddziel zapas pitny od sanitarnego. Miejski poradnik Szczecina zaleca chłodne, zacienione miejsce z dala od chemikaliów i wskazuje mniejsze butelki jako przydatne podczas ewakuacji.",
+          "paragraphs": [
+            "Dobieraj rozwiązanie do osób, które będą z niego korzystać. Przed zakupem dużego zbiornika sprawdź, czy użytkownik potrafi go przenieść, otworzyć oraz nalać wodę do kubka. Zapas zapisany na kartce niewiele pomaga, jeśli domownik nie może samodzielnie do niego sięgnąć. Nasza propozycja organizacyjna to kilka poręcznych pojemników zamiast uzależniania całego planu od jednego zbiornika.",
+            "Porównaj również obowiązki po zakupie. Butelki trzeba przechowywać i uzupełniać po zużyciu, a pojemniki wielorazowe wymagają przygotowania oraz ustalonego harmonogramu obsługi. W obu przypadkach potrzebna jest kontrola pozostałej ilości. Umieść spis tam, gdzie znajdą go wszyscy dorośli domownicy, i ustal osobę odpowiedzialną za przegląd.",
+            "Wprowadź jednoznaczne oznaczenie przeznaczenia. Na etykiecie organizacyjnej można umieścić rodzaj wody, objętość oraz nazwę miejsca przechowywania odpowiadającą wpisowi w spisie. Pusty składany zbiornik nie jest zapasem wody: dopóki nie zostanie napełniony z odpowiedniego źródła, zapewnia jedynie możliwość jej zebrania."
+          ],
+          "table": {
+            "headers": [
+              "Rozwiązanie",
+              "Zastosowanie",
+              "Pytanie przed wyborem"
+            ],
+            "rows": [
+              [
+                "Zamknięte butelki",
+                "Gotowy zapas domowy",
+                "Czy każdy potrafi po nie sięgnąć i je otworzyć?"
+              ],
+              [
+                "Pojemnik wielorazowy",
+                "Planowane magazynowanie",
+                "Kto go przygotuje i będzie obsługiwać?"
+              ],
+              [
+                "Małe butelki",
+                "Wyjście z domu lub odbiór wody",
+                "Ile użytkownik może przenieść?"
+              ],
+              [
+                "Oddzielny pojemnik sanitarny",
+                "Czynności dopuszczone komunikatem",
+                "Czy oznaczenie wyklucza pomyłkę?"
+              ]
+            ]
+          },
+          "image": {
+            "src": "/images/blog/bug_out_bag.svg",
+            "alt": "Grafika o przygotowaniu awaryjnym z angielskim tytułem listy wyposażenia plecaka ewakuacyjnego.",
+            "caption": "Obok głównego zapasu domowego zaplanuj poręczną ilość wody do zabrania ze sobą."
+          },
+          "sourceIds": [
+            "szczecin-water",
+            "cdc-storage"
+          ]
+        },
+        {
+          "id": "maintain-supply",
+          "heading": "Jak przygotować pojemniki i pilnować wymiany?",
+          "answer": "CDC zaleca wymianę samodzielnie rozlanej wody co sześć miesięcy, a dla wody butelkowanej przestrzeganie daty na opakowaniu. Pojemnik wielorazowy należy umyć i odkazić przed napełnieniem bezpieczną wodą. Nie wykorzystuj opakowań po toksycznych chemikaliach, nawet gdy wyglądają na czyste.",
+          "paragraphs": [
+            "Odróżnij odkażanie pojemnika od uzdatniania wody do spożycia. Procedura CDC dla pojemnika wykorzystuje jedną łyżeczkę bezzapachowego wybielacza z 5–9% podchlorynu sodu na jedną kwartę amerykańską wody. Zamknij i wstrząśnij, zwilżając wszystkie powierzchnie wewnętrzne, odczekaj minimum 30 sekund, wylej roztwór i pozostaw do wyschnięcia. To procedura czyszczenia opakowania, a nie przepis na wodę do picia.",
+            "Proponowana karta przeglądu ma pięć pól: oznaczenie pojemnika, objętość, datę napełnienia lub zakupu, termin kolejnej kontroli i wykonaną czynność. Dodaj przypomnienie w kalendarzu, z którego rzeczywiście korzystasz. Podczas kontroli porównaj zapisany stan z zapasem pozostałym po codziennym zużyciu.",
+            "Wyznacz osobę odpowiedzialną oraz zastępstwo. Przegląd powinien kończyć się konkretnym wynikiem: uzupełnieniem butelek, wymianą rozlanej wody albo zapisaniem niedoboru. Wielokrotnie odkładane przypomnienie oznacza, że warto uprościć organizację. Mniejsze zakupy lub ograniczenie liczby różnych pojemników mogą ułatwić regularne utrzymywanie zapasu w danym gospodarstwie domowym."
+          ],
+          "bullets": [
+            "Zapisz datę napełnienia w czytelnym miejscu.",
+            "Dbaj o czystość miejsca pobierania wody i używanych akcesoriów.",
+            "Uzupełniaj zużyte zapasy przy zwykłych zakupach.",
+            "Odnotuj wykonaną wymianę zamiast polegać wyłącznie na pamięci."
+          ],
+          "sourceIds": [
+            "cdc-storage",
+            "pl-preparedness"
+          ]
+        },
+        {
+          "id": "respond-to-advisory",
+          "heading": "Co zrobić po zaniku dostaw lub ogłoszeniu ostrzeżenia?",
+          "answer": "Przed użyciem kranówki sprawdź zalecenia wodociągów i służb sanitarnych. Nakaz przegotowania dotyczy zagrożenia drobnoustrojami, zakaz spożywania wymaga innego źródła do picia, a zakaz używania może wykluczać każdy kontakt. Sam powrót ciśnienia w kranie nie oznacza odwołania ograniczeń.",
+          "paragraphs": [
+            "Poradnik Szczecina zaleca najpierw ustalić, czy awaria obejmuje tylko mieszkanie, czy również budynek. W zależności od sytuacji skontaktuj się z administratorem albo lokalnym przedsiębiorstwem wodociągowym. W swoim planie zapisz wcześniej te dane i wskaż oficjalną stronę lub kanał informacji, z którego będziesz korzystać.",
+            "Nasza lista reakcji zaczyna się od trzech pytań: Jakiego obszaru dotyczy komunikat? Jakie zastosowania wody są dozwolone? Kiedy przewidziano kolejną aktualizację? Zapisz treść i godzinę informacji w domowym notatniku. Ułatwi to uniknięcie sytuacji, w której ktoś działa według starszego ostrzeżenia lub niepełnej relacji sąsiada.",
+            "CDC odradza podczas ostrzeżeń korzystanie z wody i lodu z urządzeń podłączonych do instalacji. Ustal z domownikami, skąd pobierać wodę do picia i jedzenia. Radio bateryjne lub na korbkę może być elementem planu informacji, zgodnie z listą Pensylwanii. Nie oceniamy tutaj parametrów odbioru ani możliwości konkretnego modelu."
+          ],
+          "image": {
+            "src": "/images/blog/survival_kit_checklist.svg",
+            "alt": "Grafika o przygotowaniu kryzysowym z angielskim tytułem dotyczącym dziesięciu podstawowych elementów wyposażenia.",
+            "caption": "Połącz zapas wody, oficjalne źródła informacji i podział obowiązków w jednym planie domowym."
+          },
+          "sourceIds": [
+            "cdc-advisories",
+            "szczecin-water",
+            "pa-supplies"
+          ],
+          "productId": "solar-emergency-radio"
+        },
+        {
+          "id": "treatment-limits",
+          "heading": "Kiedy gotowanie lub odkażanie może pomóc?",
+          "answer": "Gotowanie może unieszkodliwić drobnoustroje chorobotwórcze, ale nie zapewnia bezpieczeństwa wody skażonej paliwem lub toksycznymi chemikaliami. Stosuj lokalny komunikat, a przy podejrzeniu skażenia chemicznego wybierz inne bezpieczne źródło. Nie zakładaj, że dowolny filtr usuwa każde zagrożenie.",
+          "paragraphs": [
+            "W przypadku zagrożenia mikrobiologicznego CDC zaleca utrzymywanie intensywnego wrzenia klarownej wody przez minutę, a powyżej 6500 stóp, czyli około 1981 metrów, przez trzy minuty. Następnie wodę ostudź i zabezpiecz w czystym, odkażonym, zamkniętym pojemniku. Usunięcie widocznych drobin tkaniną jest etapem przygotowania i samo nie potwierdza przydatności do picia.",
+            "Jeżeli gotowanie jest niemożliwe, korzystaj z procedury instytucji publicznej lub instrukcji preparatu przeznaczonego do wody pitnej, dopasowanej do stężenia i objętości. EPA wyklucza wybielacze zapachowe oraz zawierające dodatkowe środki czyszczące. Nie przenoś dawkowania z innych prac porządkowych i nie zakładaj identycznego składu wszystkich produktów.",
+            "Proponowana zasada wyboru brzmi: najpierw rozpoznaj zagrożenie, potem dobieraj sposób postępowania. Sprawdź, jakie działanie udokumentowano, jakich warunków wymaga metoda i czego nie usuwa. Bez tych odpowiedzi nie wliczaj sprzętu do gwarantowanego zapasu wody pitnej. W artykule nie weryfikujemy skuteczności żadnej słomki filtrującej, tabletki ani domowego filtra."
+          ],
+          "sourceIds": [
+            "cdc-treatment",
+            "epa-disinfection"
+          ]
+        },
+        {
+          "id": "recover-and-replenish",
+          "heading": "Jak bezpiecznie wrócić do normalnego korzystania z wody?",
+          "answer": "Poczekaj na odwołanie ograniczeń przez właściwą instytucję, a następnie wykonaj zalecenia wodociągów dotyczące instalacji i podłączonych urządzeń. EPA wskazuje, że sposób płukania zależy od instalacji oraz zdarzenia. Odbuduj zużyte zapasy i zapisz wnioski z awarii.",
+          "paragraphs": [
+            "Nie ustalaj samodzielnie uniwersalnego czasu płukania. Według EPA dostawca powinien wyjaśnić, czy i jak przepłukać przyłącze, krany oraz urządzenia po incydencie skażenia. Zachowaj instrukcję razem z komunikatem końcowym, aby wszyscy domownicy stosowali tę samą procedurę powrotu do zwykłego korzystania.",
+            "Zbiornik deszczówki wymaga odrębnej oceny. CDC zaleca konsultację ze służbami zdrowia, gdy do magazynowanej nieuzdatnionej wody dostały się odpady naniesione przez burzę lub woda powodziowa. Odkażanie otwartego, zanieczyszczonego układu jest trudne. Nie dodawaj automatycznie całej objętości takiego zbiornika do domowego zapasu pitnego.",
+            "Proponujemy krótki przegląd po zdarzeniu: Ile użytecznych litrów zostało? Który pojemnik sprawiał trudność? Czy łatwo znaleziono oficjalny komunikat? Czy przygotowanie posiłków zużyło więcej wody, niż zakładano? Każdej poprawce przypisz osobę i termin. Uzupełnij zużyte zapasy, popraw spis i sprawdź dostępność pojemników. Celem jest działający układ organizacji domu, a nie samo wydłużanie listy zakupów."
+          ],
+          "sourceIds": [
+            "epa-recovery",
+            "cdc-cistern"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy 36 litrów wystarczy czterem osobom na trzy dni?",
+          "answer": "To wynik obliczenia według polskiego minimum 3 litrów dziennie na osobę. Nie jest to budżet normalnego zużycia w całym domu. Dolicz zwierzęta i potrzeby nieuwzględnione w tej ilości; jeśli możesz, zwiększ rezerwę."
+        },
+        {
+          "question": "Czy wodę butelkowaną trzeba wymieniać co sześć miesięcy?",
+          "answer": "CDC odnosi ten odstęp do wody rozlanej samodzielnie. W przypadku fabrycznie butelkowanej wody przestrzegaj daty oraz warunków przechowywania podanych na opakowaniu."
+        },
+        {
+          "question": "Czy przy zakazie spożywania wystarczy wodę przegotować?",
+          "answer": "Nie zakładaj tego. Gotowanie może nie usunąć chemikaliów lub toksyn. Postępuj według komunikatu i korzystaj ze wskazanego bezpiecznego źródła zastępczego."
+        },
+        {
+          "question": "Czy można pić wodę od razu po przywróceniu dostaw?",
+          "answer": "Sprawdź odwołanie ograniczeń i wykonaj zalecenia dostawcy dotyczące powrotu do użytkowania. Przywrócenie przepływu i potwierdzenie bezpieczeństwa wody to odrębne kwestie."
+        }
+      ],
+      "sources": [
+        {
+          "id": "pl-preparedness",
+          "title": "Przygotuj swoje otoczenie",
+          "publisher": "Rząd Rzeczypospolitej Polskiej",
+          "url": "https://www.gov.pl/web/poradnikbezpieczenstwa/przygotuj-swoje-otoczenie",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "pa-supplies",
+          "title": "Gather Emergency Supplies",
+          "publisher": "Commonwealth of Pennsylvania, Ready PA",
+          "url": "https://www.pa.gov/agencies/ready/get-prepared/gather-supplies",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "szczecin-water",
+          "title": "Zapasy wody – pigułka wiedzy",
+          "publisher": "Urząd Miasta Szczecin, Wydział Zarządzania Kryzysowego i Ochrony Ludności",
+          "url": "https://bezpieczny.szczecin.eu/aktualnosci/zapasy-wody-pigulka-wiedzy",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-storage",
+          "title": "How to Create an Emergency Water Supply",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/how-to-create-and-store-an-emergency-water-supply.html",
+          "publishedAt": "2025-06-27",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-advisories",
+          "title": "Drinking Water Advisories: An Overview",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/drinking-water-advisories-an-overview.html",
+          "publishedAt": "2024-03-04",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-treatment",
+          "title": "How to Make Water Safe in an Emergency",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/",
+          "publishedAt": "2024-09-19",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "epa-disinfection",
+          "title": "Emergency Disinfection of Drinking Water",
+          "publisher": "US Environmental Protection Agency",
+          "url": "https://www.epa.gov/ground-water-and-drinking-water/emergency-disinfection-drinking-water",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "epa-recovery",
+          "title": "Water Decontamination Frequently Asked Questions for Customers",
+          "publisher": "US Environmental Protection Agency",
+          "url": "https://www.epa.gov/waterutilityresponse/water-decontamination-frequently-asked-questions-customers",
+          "accessedAt": "2026-10-28"
+        },
+        {
+          "id": "cdc-cistern",
+          "title": "Cistern Safety and Disasters: Before, During, and After",
+          "publisher": "Centers for Disease Control and Prevention",
+          "url": "https://www.cdc.gov/water-emergency/about/cistern-safety-and-disasters-before-during-and-after.html",
+          "publishedAt": "2024-08-20",
+          "accessedAt": "2026-10-28"
+        }
+      ]
+    }
+  }
+}
