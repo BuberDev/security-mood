@@ -4,6 +4,7 @@ const approvedPrimaryHosts = new Set([
   "fbi.gov", "www.fbi.gov", "ready.gov", "www.ready.gov", "fema.gov", "www.fema.gov",
   "ftc.gov", "www.ftc.gov", "enisa.europa.eu", "www.enisa.europa.eu", "europol.europa.eu",
   "www.europol.europa.eu", "cert.pl", "www.cert.pl", "gov.pl", "www.gov.pl",
+  "bezpieczny.szczecin.eu", "www.bezpieczny.szczecin.eu",
   "fidoalliance.org", "www.fidoalliance.org", "owasp.org", "www.owasp.org",
   // Oficjalna dokumentacja producentów — źródło pierwotne dla funkcji ich urządzeń.
   "support.apple.com", "support.google.com",
