@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "topicKey": "location-sharing-family-safety",
+  "slug": "location-sharing-family-safety",
+  "status": "published",
+  "categoryId": "personal-safety",
+  "publishedAt": "2026-10-30",
+  "updatedAt": "2026-10-30",
+  "heroImage": "/images/blog/rfid_passport_wallet_guide.png",
+  "author": {
+    "name": "Security Mood Research Desk",
+    "role": {
+      "en": "Security and resilience editorial team",
+      "pl": "Redakcja bezpieczeństwa i odporności"
+    },
+    "credentials": {
+      "en": "Source-reviewed editorial guidance based on public-agency publications; no professional certification, product testing or laboratory validation is claimed.",
+      "pl": "Wskazówki redakcyjne zweryfikowane na podstawie publikacji instytucji publicznych; bez deklarowania certyfikatów zawodowych, testów produktów ani badań laboratoryjnych."
+    }
+  },
+  "internalLinks": [
+    {
+      "href": "/blog",
+      "label": {
+        "en": "Explore more safety and privacy guides",
+        "pl": "Więcej poradników o bezpieczeństwie i prywatności"
+      }
+    },
+    {
+      "href": "/favorites",
+      "label": {
+        "en": "Review your saved safety equipment",
+        "pl": "Przejrzyj zapisane wyposażenie"
+      }
+    },
+    {
+      "href": "/landing",
+      "label": {
+        "en": "Explore Security Mood",
+        "pl": "Poznaj Security Mood"
+      }
+    }
+  ],
+  "productIds": [
+    "personal-safety-alarm"
+  ],
+  "locales": {
+    "en": {
+      "title": "Location sharing without giving up privacy: a family safety plan",
+      "excerpt": "Choose who sees your location, for how long and at what precision. Build a practical family agreement, test its limits and know how to respond to unwanted tracking.",
+      "heroAlt": "Travel wallet, passport and boarding pass on a wooden table, with an English travel-security headline.",
+      "quickAnswer": "Share location for a specific purpose with a small, agreed audience and a clear stopping point. Prefer an arrival message when continuous tracking adds little value. Review app permissions and account access separately, test how sharing ends, and agree on a backup contact plan. If monitoring may involve abuse, seek help from a safer device before changing settings.",
+      "keyTakeaways": [
+        "Start with the safety task, then choose the least revealing way to complete it.",
+        "Agree on recipients, duration, precision and what happens after a missed check-in.",
+        "Review location permissions, sharing recipients and account access as separate controls.",
+        "Treat a map position as supporting information rather than proof of someone’s safety.",
+        "Plan carefully before removing access when stalking or coercive control is suspected."
+      ],
+      "methodology": "We searched for and opened primary guidance from the FTC, Australia’s eSafety Commissioner, the Canadian Centre for Cyber Security and NIST on 2026-11-02. The publication and update fields retain the requested editorial date, 2026-10-30; they are not the research-access date. The checklists, comparison and family agreement are editorial applications of these sources, not a tested protocol or an app ranking. We did not test devices, measure accuracy or verify provider retention practices. Interface names and available controls vary. Visual limitation: the supplied PNG is square and both supplied SVGs are portrait; all contain English text. No supplied asset meets both the landscape and text-free requirements. The existing files are used without inventing replacements, and captions identify their illustrative role.",
+      "sections": [
+        {
+          "id": "choose-minimum-sharing",
+          "heading": "Choose the smallest amount of sharing that solves the problem",
+          "answer": "The best starting point is a specific question: does your family need an arrival confirmation, a meeting point or temporary visibility during a journey? Choose the least detailed option that answers it. Routine reassurance does not automatically require a permanent location feed.",
+          "paragraphs": [
+            "For example, agree that someone travelling home sends a message after reaching the station and another after arriving. If meeting in a crowded place is the problem, a single meeting-point pin may be sufficient. For an unfamiliar journey, consider temporary sharing with one person who has agreed to monitor it. These are suggested decision rules, not guarantees of safety.",
+            "Distinguish a one-time location from a live feed and from stored journey history. Before using a feature, check which of these it actually provides. Ask the recipient what they can see instead of relying on the sender’s interpretation of the interface. The eSafety Commissioner explains that location exposure can arise through multiple services and account settings [Location sharing](https://www.esafety.gov.au/key-topics/online-tools-and-features/location-sharing).",
+            "Use the table as a conversation starter. Move toward more detail only when you can explain what useful action that detail enables. If nobody will be available to respond, first solve the contact problem rather than adding another map."
+          ],
+          "bullets": [
+            "Name the purpose in one sentence: meeting up, confirming arrival or supporting a particular journey.",
+            "Choose one responsible contact and an alternative if that person is unavailable.",
+            "Choose an end event, such as arrival, and an expiry time where supported.",
+            "Decide what information the recipient actually needs to act."
+          ],
+          "table": {
+            "headers": [
+              "Approach",
+              "Suggested use",
+              "Privacy boundary to check"
+            ],
+            "rows": [
+              [
+                "Arrival message",
+                "Routine journeys where confirmation is enough",
+                "Message recipients and any location attached"
+              ],
+              [
+                "One-time location pin",
+                "Meeting at a specific place",
+                "Whether the pin is static and who can forward it"
+              ],
+              [
+                "Temporary live sharing",
+                "A defined journey with an available contact",
+                "Expiry, recipients and precision"
+              ],
+              [
+                "Ongoing sharing",
+                "A continuing support need agreed together",
+                "Regular review, ability to stop and retained history"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "esafety-location"
+          ]
+        },
+        {
+          "id": "family-agreement",
+          "heading": "Write a family agreement people can actually follow",
+          "answer": "A useful location-sharing agreement states who participates, who receives updates, when sharing starts and ends, and how to respond when contact is missed. Make it understandable and reviewable. For adults, our editorial recommendation is voluntary participation with a practical way to withdraw.",
+          "paragraphs": [
+            "For children, explain the arrangement in language they understand: who can see the map, why it is being used and whom to ask for help. Revisit the arrangement as independence and support needs change. For an older relative, discuss what help they want rather than assuming continuous observation is the only suitable arrangement. These are family decision criteria, not legal advice about parental authority or capacity.",
+            "Try this template: ‘For this journey, I will share with Alex until arrival. If I miss our agreed contact time, Alex will message, then call, then contact our backup person according to the plan.’ Choose intervals that fit the circumstances; there is no universal delay that proves an emergency.",
+            "Add a rule against forwarding links or posting screenshots. The FTC warns that recipients can save or redistribute shared content, so expiry cannot undo everything already seen [Heads Up](https://consumer.ftc.gov/articles/heads-up). Ask before including someone else’s location in a group conversation.",
+            "Practice stopping sharing during an ordinary, low-pressure moment. Invite each participant to explain the plan in their own words. If someone cannot identify the recipient or stopping point, simplify the arrangement before relying on it."
+          ],
+          "bullets": [
+            "Record the purpose, named recipients and stopping point.",
+            "Agree on a missed-contact sequence and a backup contact.",
+            "Set a review date and revisit after travel, a new phone or a relationship change.",
+            "Keep group chats and public posts outside the sharing arrangement unless explicitly agreed."
+          ],
+          "sourceIds": [
+            "ftc-heads-up"
+          ]
+        },
+        {
+          "id": "settings-audit",
+          "heading": "Audit permissions and account access separately",
+          "answer": "Check three separate boundaries: whether an app can obtain location, which people can receive it, and who can access the account. Reduce precision and background access where suitable, then test the intended task. A restricted permission does not by itself verify the recipient list or the provider’s retention policy.",
+          "paragraphs": [
+            "Open the phone’s location-permission list and review each app individually. Look for approximate versus precise access and foreground versus background access where available. The Canadian Centre for Cyber Security notes that approximate location may affect functionality and should not be relied on alone for sensitive locations [Mobile-device security guidance](https://www.cyber.gc.ca/en/guidance/security-configurations-best-practices-protect-your-mobile-device-itsm80002).",
+            "Next, open the sharing feature itself. Record the people or links currently authorised and remove obsolete access when safe. Separately inspect account sessions, recovery details and linked devices where those controls exist. Use an individual account rather than treating a shared family password as the sharing mechanism.",
+            "For every candidate service, ask concrete questions before committing: can access expire automatically; can you identify every recipient; can you stop sharing clearly; what history is retained; and does the privacy notice describe onward sharing? Treat an unanswered question as a reason to investigate, not as proof of a protective feature.",
+            "NIST identifies abuse of granted location permissions as a mobile threat [APP-24](https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-24.html). Our practical rule is to grant access for an identified function and review it when that function is no longer needed."
+          ],
+          "bullets": [
+            "Remove unnecessary location permissions.",
+            "Check recipient lists inside each sharing service.",
+            "Review account access and recovery routes separately.",
+            "Repeat the actual journey-sharing test after making changes."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Black-and-gold travel-privacy illustration with a shield motif and an English call to read the article.",
+            "caption": "Illustrative travel-privacy artwork, not a settings screenshot. Review permissions, recipients and account access separately."
+          },
+          "sourceIds": [
+            "canada-mobile",
+            "nist-app24"
+          ]
+        },
+        {
+          "id": "test-and-backup",
+          "heading": "Test the arrangement and prepare for missing updates",
+          "answer": "Before relying on location sharing, run a short rehearsal with the actual sender and recipient. Confirm that both understand the display, the stopping control and the backup contact plan. Our recommendation is to treat an unavailable or old position as missing information that requires context.",
+          "paragraphs": [
+            "During the rehearsal, ask the recipient to describe what they see, including any update time or accuracy indicator the service provides. Walk a short, familiar route, send the planned check-in and stop sharing. Confirm what remains visible afterward. Do not assume every service exposes the same status information.",
+            "Write down a fallback that does not depend on opening the map: a contact number, a planned meeting point and the person to contact next. Test the plan with anyone who finds the interface difficult. A simpler message routine may be more usable than a feature-rich service that one participant cannot operate confidently.",
+            "Use the missed-contact plan to guide a proportionate response. Try the agreed contact methods and consider known circumstances. Where there is credible immediate danger, seek local emergency help; do not wait for a map to become conclusive. This is an editorial planning framework rather than an emergency-dispatch protocol.",
+            "A personal safety alarm can be considered separately when planning what to carry. It should not change your assumptions about the sharing service. No alarm capability, connectivity or rescue response is evaluated here. Keep equipment choices subordinate to a clear communication plan."
+          ],
+          "bullets": [
+            "Rehearse starting, viewing and stopping sharing.",
+            "Check what happens when the planned sharing period ends.",
+            "Keep essential contact details available outside the location app.",
+            "Reassess the plan if reduced permissions prevent the intended function."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Black-and-gold everyday-carry illustration with a shield motif and an English article prompt.",
+            "caption": "Illustrative everyday-carry artwork. A written contact plan should accompany decisions about equipment and location sharing."
+          },
+          "sourceIds": [
+            "canada-mobile",
+            "esafety-location"
+          ],
+          "productId": "personal-safety-alarm"
+        },
+        {
+          "id": "unwanted-tracking",
+          "heading": "Respond carefully to unwanted tracking",
+          "answer": "If unwanted tracking may involve an abusive person, prioritise a safety plan before changing access or resetting a phone. Seek support using a device the person cannot monitor. Preserve relevant evidence safely, then decide with appropriate support how to secure accounts and address the suspected device.",
+          "paragraphs": [
+            "The FTC warns that removing stalkerware can alert an abuser and escalate abuse. Its guidance recommends seeking help through another device and considering evidence preservation before replacement or reset [Stalkerware: What To Know](https://consumer.ftc.gov/articles/stalkerware-what-know). Do not make a conspicuous cleanup checklist your first step when retaliation is a concern.",
+            "Prepare a factual record if it is safe: unexpected account-access notices, unfamiliar sharing recipients and incidents in which someone knew an undisclosed location. Keep observations separate from conclusions. A battery problem alone does not identify the cause, and an absence of obvious signs should not be treated as a completed investigation.",
+            "When it is safe to proceed, include passwords, additional sign-in protection, recovery access and physical control of the phone in the recovery plan. If resetting or replacing a device, the FTC cautions against reinstalling applications from the old backup because this could restore stalkerware. Rebuild deliberately rather than restoring everything automatically.",
+            "Finally, check indirect disclosures. Review public route posts, check-ins and photos, together with linked services relevant to your situation. Set a follow-up date after the initial changes. Recovery is complete only when the revised arrangement is understandable, usable and consistent with the affected person’s safety needs."
+          ],
+          "bullets": [
+            "Use a safer device to seek support when monitoring is suspected.",
+            "Discuss possible retaliation before cutting off access.",
+            "Preserve evidence where safe before destructive changes.",
+            "Review both deliberate sharing and indirect location disclosures."
+          ],
+          "sourceIds": [
+            "ftc-stalkerware",
+            "esafety-location"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Should every family member share location continuously?",
+          "answer": "Our recommendation is to start with the purpose and consider an arrival message or temporary sharing first. Use ongoing sharing only after discussing the continuing need, recipients, stopping process and review date."
+        },
+        {
+          "question": "Does approximate location make sharing private?",
+          "answer": "It reduces detail in supported configurations, but it is not a complete privacy safeguard and may affect functionality. Test whether it meets the task; the Canadian guidance specifically cautions against relying on it alone for sensitive locations."
+        },
+        {
+          "question": "Does ending sharing delete everything already disclosed?",
+          "answer": "Do not assume so. Check the service’s history and deletion controls separately. Recipients may also have saved content; the FTC explains that screenshots and redistribution can outlast the original sharing."
+        },
+        {
+          "question": "What should I do if someone knows locations I did not share?",
+          "answer": "Consider account access, indirect posts and unwanted monitoring without assuming a single cause. If abuse is possible, use a safer device to seek support before making changes that might alert the person."
+        }
+      ],
+      "sources": [
+        {
+          "id": "esafety-location",
+          "title": "Location sharing",
+          "publisher": "eSafety Commissioner",
+          "url": "https://www.esafety.gov.au/key-topics/online-tools-and-features/location-sharing",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "ftc-heads-up",
+          "title": "Heads Up: Stop. Think. Connect.",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/heads-up",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "canada-mobile",
+          "title": "Security configurations and best practices to protect your mobile device (ITSM.80.002)",
+          "publisher": "Canadian Centre for Cyber Security",
+          "url": "https://www.cyber.gc.ca/en/guidance/security-configurations-best-practices-protect-your-mobile-device-itsm80002",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "nist-app24",
+          "title": "APP-24: Covertly Track Device Location",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-24.html",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "ftc-stalkerware",
+          "title": "Stalkerware: What To Know",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/stalkerware-what-know",
+          "accessedAt": "2026-11-02"
+        }
+      ]
+    },
+    "pl": {
+      "title": "Udostępnianie lokalizacji bez rezygnacji z prywatności: rodzinny plan bezpieczeństwa",
+      "excerpt": "Ustal, kto widzi Twoją lokalizację, jak długo i z jaką dokładnością. Przygotuj rodzinne zasady, sprawdź ograniczenia usługi i poznaj sposób reagowania na niechciane śledzenie.",
+      "heroAlt": "Portfel podróżny, paszport i karta pokładowa na drewnianym stole, z angielskim nagłówkiem o bezpieczeństwie podróży.",
+      "quickAnswer": "Udostępniaj lokalizację w konkretnym celu, wybranym osobom i z ustalonym momentem zakończenia. Jeśli wystarczy potwierdzenie dotarcia, wybierz wiadomość zamiast stałego podglądu. Oddzielnie sprawdź uprawnienia aplikacji oraz dostęp do konta. Przećwicz wyłączenie udostępniania i ustal kontakt awaryjny. Przy podejrzeniu przemocy najpierw poszukaj pomocy z bezpieczniejszego urządzenia, zanim zmienisz ustawienia.",
+      "keyTakeaways": [
+        "Najpierw określ potrzebę, a potem wybierz sposób ujawniający najmniej informacji.",
+        "Ustal odbiorców, czas, dokładność i reakcję na brak umówionego kontaktu.",
+        "Uprawnienia lokalizacji, odbiorcy udostępniania oraz dostęp do konta wymagają osobnego sprawdzenia.",
+        "Punkt na mapie traktuj jako informację pomocniczą, a nie dowód bezpieczeństwa osoby.",
+        "Jeżeli podejrzewasz przemoc lub kontrolę, zaplanuj bezpieczne działanie przed odebraniem dostępu."
+      ],
+      "methodology": "W dniu 2026-11-02 wyszukaliśmy i otworzyliśmy pierwotne wytyczne FTC, australijskiego eSafety Commissioner, Canadian Centre for Cyber Security oraz NIST. Pola publikacji i aktualizacji zachowują zamówioną datę redakcyjną 2026-10-30; nie jest to data dostępu do źródeł. Listy kontrolne, porównanie i rodzinne ustalenia stanowią redakcyjne zastosowanie źródeł, a nie przetestowany protokół czy ranking aplikacji. Nie testowaliśmy urządzeń, dokładności pomiarów ani zasad przechowywania danych przez dostawców. Nazwy ustawień i dostępne funkcje mogą się różnić. Ograniczenie wizualne: dozwolony PNG jest kwadratowy, a oba SVG mają pionowe proporcje; wszystkie zawierają tekst angielski. Żaden dostępny plik nie spełnia jednocześnie wymogu poziomego kadru i braku tekstu zależnego od języka. Wykorzystujemy istniejące pliki bez wymyślania zamienników, a podpisy wyjaśniają ich ilustracyjny charakter.",
+      "sections": [
+        {
+          "id": "choose-minimum-sharing",
+          "heading": "Wybierz najmniejszy zakres udostępniania, który rozwiązuje problem",
+          "answer": "Zacznij od konkretnego pytania: czy rodzina potrzebuje potwierdzenia dotarcia, miejsca spotkania, czy czasowego podglądu podczas podróży? Wybierz najmniej szczegółową opcję, która odpowiada na tę potrzebę. Zwykłe uspokojenie bliskich nie musi oznaczać stałego dostępu do lokalizacji.",
+          "paragraphs": [
+            "Przykładowo osoba wracająca do domu może wysłać wiadomość po dotarciu na dworzec i drugą po zakończeniu podróży. Jeżeli chodzi o odnalezienie się w tłumie, rozważ pojedynczy punkt spotkania. Przy nieznanej trasie można uzgodnić czasowe udostępnianie jednej osobie, która rzeczywiście będzie dostępna. To proponowane kryteria wyboru, a nie gwarancja bezpieczeństwa.",
+            "Rozróżnij jednorazowy punkt, bieżący podgląd i zapisaną historię przejazdów. Przed użyciem sprawdź, którą z tych informacji zapewnia dana funkcja. Poproś odbiorcę o opis tego, co widzi, zamiast polegać wyłącznie na interpretacji ekranu nadawcy. eSafety Commissioner wyjaśnia, że ujawnianie miejsca pobytu może wynikać z różnych usług i ustawień kont [Location sharing](https://www.esafety.gov.au/key-topics/online-tools-and-features/location-sharing).",
+            "Poniższą tabelę potraktuj jako początek rozmowy. Zwiększaj szczegółowość dopiero wtedy, gdy potrafisz wyjaśnić, jakie przydatne działanie umożliwi dodatkowa informacja. Jeśli nikt nie będzie mógł zareagować, najpierw rozwiąż problem kontaktu. Sam kolejny ekran z mapą nie zastąpi osoby, która zna ustalenia i wie, co zrobić."
+          ],
+          "bullets": [
+            "Nazwij cel jednym zdaniem: spotkanie, potwierdzenie dotarcia albo wsparcie podczas określonej podróży.",
+            "Wybierz osobę odpowiedzialną za kontakt oraz zastępstwo na czas jej niedostępności.",
+            "Określ zdarzenie kończące udostępnianie i czas wygaśnięcia, jeśli usługa go obsługuje.",
+            "Ustal, jakich informacji odbiorca potrzebuje do podjęcia działania."
+          ],
+          "table": {
+            "headers": [
+              "Sposób",
+              "Proponowane zastosowanie",
+              "Co sprawdzić dla ochrony prywatności"
+            ],
+            "rows": [
+              [
+                "Wiadomość po dotarciu",
+                "Zwykła podróż, gdy wystarcza potwierdzenie",
+                "Odbiorców wiadomości i ewentualnie dołączoną lokalizację"
+              ],
+              [
+                "Jednorazowy punkt",
+                "Spotkanie w określonym miejscu",
+                "Czy punkt jest statyczny i kto może go przekazać dalej"
+              ],
+              [
+                "Czasowy podgląd",
+                "Określona podróż i dostępny odbiorca",
+                "Wygaśnięcie, odbiorców oraz dokładność"
+              ],
+              [
+                "Stałe udostępnianie",
+                "Wspólnie uzgodniona, ciągła potrzeba wsparcia",
+                "Regularny przegląd, możliwość zakończenia i historię"
+              ]
+            ]
+          },
+          "sourceIds": [
+            "esafety-location"
+          ]
+        },
+        {
+          "id": "family-agreement",
+          "heading": "Spisz rodzinne zasady, które da się stosować",
+          "answer": "Przydatne ustalenia określają uczestników, odbiorców, początek i koniec udostępniania oraz reakcję na brak kontaktu. Powinny być zrozumiałe i możliwe do zmiany. W przypadku dorosłych rekomendujemy dobrowolny udział oraz praktyczny sposób wycofania się z uzgodnionego rozwiązania.",
+          "paragraphs": [
+            "Dziecku wyjaśnij prostym językiem, kto widzi mapę, dlaczego z niej korzystacie i do kogo zwrócić się po pomoc. Wracajcie do zasad wraz ze zmianą samodzielności i potrzeb. Ze starszą osobą porozmawiaj o oczekiwanym wsparciu, zamiast z góry wybierać ciągłą obserwację. Są to kryteria rodzinnej decyzji, a nie porada prawna dotycząca władzy rodzicielskiej czy zdolności do podejmowania decyzji.",
+            "Możecie przyjąć taki wzór: „Na czas tej podróży udostępniam lokalizację Oli do chwili dotarcia. Jeśli nie odezwę się o ustalonej porze, Ola napisze, następnie zadzwoni, a później skontaktuje się z naszą osobą zastępczą zgodnie z planem”. Dobierzcie odstępy do okoliczności. Nie istnieje jeden uniwersalny czas spóźnienia, który sam potwierdza zagrożenie.",
+            "Dodajcie zasadę nieprzekazywania linków i niepublikowania zrzutów ekranu. FTC przypomina, że odbiorcy mogą zapisywać i rozpowszechniać udostępnione treści, więc wygaśnięcie dostępu nie cofnie wszystkiego, co zobaczyli [Heads Up](https://consumer.ftc.gov/articles/heads-up). Zanim przekażesz cudzą lokalizację grupie, zapytaj zainteresowaną osobę.",
+            "Przećwiczcie zakończenie udostępniania w spokojnej sytuacji. Poproś każdego uczestnika, aby własnymi słowami opisał zasady. Jeżeli ktoś nie wie, kto jest odbiorcą albo kiedy dostęp się kończy, uprośćcie rozwiązanie przed kolejną podróżą."
+          ],
+          "bullets": [
+            "Zapiszcie cel, imiennych odbiorców i moment zakończenia.",
+            "Ustalcie kolejność działań przy braku kontaktu oraz osobę zastępczą.",
+            "Wyznaczcie termin przeglądu zasad i wróćcie do nich po podróży, zmianie telefonu lub relacji.",
+            "Nie włączajcie czatów grupowych i publicznych wpisów bez osobnego uzgodnienia."
+          ],
+          "sourceIds": [
+            "ftc-heads-up"
+          ]
+        },
+        {
+          "id": "settings-audit",
+          "heading": "Oddzielnie sprawdź uprawnienia i dostęp do konta",
+          "answer": "Sprawdź trzy granice dostępu: możliwość pobierania lokalizacji przez aplikację, listę osób otrzymujących dane oraz dostęp do konta. Ogranicz dokładność i działanie w tle tam, gdzie to wystarcza, a następnie wykonaj próbę. Samo ograniczenie uprawnienia nie potwierdza odbiorców ani zasad przechowywania danych.",
+          "paragraphs": [
+            "Otwórz systemową listę uprawnień lokalizacji i przejrzyj aplikacje pojedynczo. Poszukaj wyboru lokalizacji przybliżonej lub dokładnej oraz dostępu podczas używania lub w tle, jeśli urządzenie je udostępnia. Canadian Centre for Cyber Security wskazuje, że mniejsza dokładność może wpływać na działanie funkcji i nie wystarcza jako jedyna ochrona miejsc wrażliwych [Wytyczne bezpieczeństwa urządzeń mobilnych](https://www.cyber.gc.ca/en/guidance/security-configurations-best-practices-protect-your-mobile-device-itsm80002).",
+            "Następnie sprawdź samą funkcję udostępniania. Ustal, które osoby lub linki nadal zapewniają dostęp, i usuń nieaktualne pozycje, gdy jest to bezpieczne. Osobno przejrzyj sesje konta, dane odzyskiwania i powiązane urządzenia, o ile usługa oferuje takie ustawienia. Wspólne rodzinne hasło nie powinno zastępować świadomego wyboru odbiorców.",
+            "Przed wyborem usługi zadaj konkretne pytania: czy dostęp może sam wygasnąć, czy można rozpoznać wszystkich odbiorców, jak zakończyć udostępnianie, jaka historia pozostaje i czy polityka prywatności opisuje dalsze przekazywanie danych? Brak odpowiedzi oznacza potrzebę sprawdzenia, a nie potwierdzenie istnienia ochrony.",
+            "NIST opisuje nadużywanie przyznanych uprawnień lokalizacji jako zagrożenie mobilne [APP-24](https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-24.html). Nasza praktyczna zasada brzmi: przyznawaj dostęp dla określonej funkcji i wracaj do ustawień, gdy przestaje być potrzebna."
+          ],
+          "bullets": [
+            "Odbierz niepotrzebne uprawnienia lokalizacji.",
+            "Sprawdź odbiorców wewnątrz każdej używanej usługi.",
+            "Osobno przejrzyj dostęp do konta i sposoby jego odzyskania.",
+            "Po zmianach ponownie przetestuj rzeczywisty scenariusz podróży."
+          ],
+          "image": {
+            "src": "/images/blog/travel_privacy_kit.svg",
+            "alt": "Czarno-złota ilustracja prywatności w podróży z motywem tarczy i angielską zachętą do przeczytania artykułu.",
+            "caption": "Ilustracja tematyczna, a nie zrzut ustawień. Uprawnienia, odbiorców i dostęp do konta sprawdzaj oddzielnie."
+          },
+          "sourceIds": [
+            "canada-mobile",
+            "nist-app24"
+          ]
+        },
+        {
+          "id": "test-and-backup",
+          "heading": "Przetestuj ustalenia i przygotuj się na brak aktualizacji",
+          "answer": "Zanim zaczniesz polegać na udostępnianiu lokalizacji, wykonaj krótką próbę z rzeczywistym nadawcą i odbiorcą. Sprawdźcie rozumienie widoku, sposobu zakończenia i kontaktu zastępczego. Rekomendujemy traktowanie niedostępnej lub starej pozycji jako brakującej informacji wymagającej kontekstu.",
+          "paragraphs": [
+            "Podczas próby poproś odbiorcę, żeby opisał ekran, w tym czas aktualizacji lub wskaźnik dokładności, jeśli usługa je pokazuje. Przejdź krótką, znaną trasę, wyślij umówioną wiadomość i zakończ udostępnianie. Sprawdźcie, co pozostaje widoczne. Nie zakładaj, że każda aplikacja przedstawia status w ten sam sposób.",
+            "Zapisz rozwiązanie zastępcze, które nie wymaga otwarcia mapy: numer kontaktowy, umówione miejsce spotkania oraz kolejną osobę do powiadomienia. Przećwiczcie je także z uczestnikiem, któremu obsługa interfejsu sprawia trudność. Prosty zwyczaj wysyłania wiadomości może być praktyczniejszy niż rozbudowana usługa, której ktoś nie potrafi pewnie obsłużyć.",
+            "Przy braku kontaktu kieruj się uzgodnioną kolejnością działań. Spróbuj ustalonych sposobów komunikacji i uwzględnij znane okoliczności. Jeśli istnieją wiarygodne przesłanki bezpośredniego zagrożenia, szukaj lokalnej pomocy alarmowej; nie czekaj, aż mapa rozstrzygnie sytuację. To redakcyjny schemat planowania, a nie procedura dyspozytorska.",
+            "Alarm osobisty możesz rozważyć osobno przy wyborze wyposażenia. Jego obecność nie powinna zmieniać założeń dotyczących usługi lokalizacyjnej. Nie oceniamy tutaj funkcji alarmów, ich łączności ani reakcji służb. Wybór sprzętu podporządkuj jasnemu planowi komunikacji, a nie odwrotnie."
+          ],
+          "bullets": [
+            "Przećwiczcie rozpoczęcie, oglądanie i zakończenie udostępniania.",
+            "Sprawdźcie zachowanie po upływie uzgodnionego czasu.",
+            "Przechowuj podstawowe dane kontaktowe również poza aplikacją lokalizacyjną.",
+            "Zmień plan, jeżeli ograniczenie uprawnień uniemożliwia potrzebną funkcję."
+          ],
+          "image": {
+            "src": "/images/blog/solo_travelers_edc.svg",
+            "alt": "Czarno-złota ilustracja wyposażenia codziennego z motywem tarczy i angielskim odsyłaczem do artykułu.",
+            "caption": "Ilustracja wyposażenia codziennego. Decyzjom o sprzęcie i udostępnianiu lokalizacji powinien towarzyszyć zapisany plan kontaktu."
+          },
+          "sourceIds": [
+            "canada-mobile",
+            "esafety-location"
+          ],
+          "productId": "personal-safety-alarm"
+        },
+        {
+          "id": "unwanted-tracking",
+          "heading": "Ostrożnie reaguj na niechciane śledzenie",
+          "answer": "Jeżeli niechciane śledzenie może wiązać się z przemocą, najpierw przygotuj plan bezpieczeństwa, a dopiero potem zmieniaj dostęp lub resetuj telefon. Szukaj wsparcia z urządzenia, którego sprawca nie monitoruje. Bezpiecznie zachowaj istotne dowody i ustal dalsze działania z odpowiednią pomocą.",
+          "paragraphs": [
+            "FTC ostrzega, że usunięcie oprogramowania szpiegującego może zaalarmować sprawcę i nasilić przemoc. Zaleca szukanie pomocy z innego urządzenia oraz rozważenie zabezpieczenia dowodów przed wymianą lub resetem telefonu [Stalkerware: What To Know](https://consumer.ftc.gov/articles/stalkerware-what-know). Jeżeli obawiasz się odwetu, nie zaczynaj od widocznego porządkowania wszystkich ustawień.",
+            "Jeśli jest to bezpieczne, przygotuj rzeczowy zapis: nieoczekiwane powiadomienia o dostępie do konta, nieznanych odbiorców oraz sytuacje, w których ktoś znał nieujawnioną lokalizację. Oddziel obserwacje od wniosków. Sam problem z baterią nie ustala przyczyny, a brak wyraźnych oznak nie oznacza zakończonego sprawdzenia urządzenia.",
+            "Gdy można bezpiecznie działać, uwzględnij w planie odzyskiwania kontroli hasła, dodatkową ochronę logowania, sposoby odzyskiwania konta i fizyczny dostęp do telefonu. Przy wymianie lub resetowaniu FTC przestrzega przed ponownym instalowaniem aplikacji ze starej kopii, ponieważ mogłoby to przywrócić oprogramowanie szpiegujące. Odtwarzaj potrzebne środowisko świadomie, zamiast automatycznie przywracać wszystko.",
+            "Sprawdź również pośrednie ujawnienia: publiczne trasy, oznaczenia miejsc, zdjęcia i powiązane usługi istotne w Twojej sytuacji. Wyznacz termin kolejnego przeglądu po pierwszych zmianach. Oceniaj nowe ustalenia także pod kątem codziennej obsługi: osoba, której dotyczą, powinna wiedzieć, kto ma dostęp, jak uzyskać pomoc i kiedy wrócić do rozmowy o zasadach."
+          ],
+          "bullets": [
+            "Przy podejrzeniu monitorowania szukaj wsparcia z bezpieczniejszego urządzenia.",
+            "Przed odcięciem dostępu omów ryzyko odwetu.",
+            "Jeśli to bezpieczne, zachowaj dowody przed nieodwracalnymi zmianami.",
+            "Sprawdź zarówno świadome udostępnianie, jak i pośrednie ujawnianie lokalizacji."
+          ],
+          "sourceIds": [
+            "ftc-stalkerware",
+            "esafety-location"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Czy każdy domownik powinien stale udostępniać lokalizację?",
+          "answer": "Rekomendujemy rozpoczęcie od celu i rozważenie wiadomości po dotarciu lub czasowego dostępu. Stałe udostępnianie wymaga rozmowy o trwającej potrzebie, odbiorcach, możliwości zakończenia i terminie przeglądu."
+        },
+        {
+          "question": "Czy lokalizacja przybliżona zapewnia prywatność?",
+          "answer": "W obsługiwanych konfiguracjach ogranicza szczegółowość, ale nie stanowi pełnej ochrony i może wpływać na działanie aplikacji. Sprawdź ją w praktyce; kanadyjskie wytyczne przestrzegają przed poleganiem wyłącznie na niej przy miejscach wrażliwych."
+        },
+        {
+          "question": "Czy zakończenie udostępniania usuwa wcześniejsze informacje?",
+          "answer": "Nie zakładaj tego. Osobno sprawdź historię i zasady usuwania danych w usłudze. Odbiorcy mogli też zachować treści; FTC wskazuje, że zrzuty ekranu i dalsze przekazywanie mogą przetrwać pierwotne udostępnienie."
+        },
+        {
+          "question": "Co zrobić, gdy ktoś zna miejsca, których nie ujawniam?",
+          "answer": "Rozważ dostęp do konta, pośrednie publikacje i niechciane monitorowanie, nie przesądzając przyczyny. Jeśli możliwa jest przemoc, najpierw poszukaj wsparcia z bezpieczniejszego urządzenia, zanim wprowadzisz zmiany mogące zaalarmować tę osobę."
+        }
+      ],
+      "sources": [
+        {
+          "id": "esafety-location",
+          "title": "Location sharing",
+          "publisher": "eSafety Commissioner",
+          "url": "https://www.esafety.gov.au/key-topics/online-tools-and-features/location-sharing",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "ftc-heads-up",
+          "title": "Heads Up: Stop. Think. Connect.",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/heads-up",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "canada-mobile",
+          "title": "Security configurations and best practices to protect your mobile device (ITSM.80.002)",
+          "publisher": "Canadian Centre for Cyber Security",
+          "url": "https://www.cyber.gc.ca/en/guidance/security-configurations-best-practices-protect-your-mobile-device-itsm80002",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "nist-app24",
+          "title": "APP-24: Covertly Track Device Location",
+          "publisher": "National Institute of Standards and Technology",
+          "url": "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-24.html",
+          "accessedAt": "2026-11-02"
+        },
+        {
+          "id": "ftc-stalkerware",
+          "title": "Stalkerware: What To Know",
+          "publisher": "Federal Trade Commission",
+          "url": "https://consumer.ftc.gov/articles/stalkerware-what-know",
+          "accessedAt": "2026-11-02"
+        }
+      ]
+    }
+  }
+}
