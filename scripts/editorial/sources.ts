@@ -6,6 +6,9 @@ const approvedPrimaryHosts = new Set([
   "www.europol.europa.eu", "cert.pl", "www.cert.pl", "gov.pl", "www.gov.pl",
   "bezpieczny.szczecin.eu", "www.bezpieczny.szczecin.eu",
   "etsi.org", "www.etsi.org",
+  // Oficjalne organy publiczne: brytyjski regulator danych oraz krajowe urzędy cyberbezpieczeństwa.
+  "ico.org.uk", "www.ico.org.uk", "esafety.gov.au", "www.esafety.gov.au",
+  "cyber.gc.ca", "www.cyber.gc.ca",
   "fidoalliance.org", "www.fidoalliance.org", "owasp.org", "www.owasp.org",
   // Oficjalna dokumentacja producentów — źródło pierwotne dla funkcji ich urządzeń.
   "support.apple.com", "support.google.com",
